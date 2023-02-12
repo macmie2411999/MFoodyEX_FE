@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/header_home_demo.min.css">
+    <title>MFoody - Grocery Store</title>
+    <link rel="icon" href="../image/icon/icon_black_64_custome2.png">
+
+    <!-- Library (For Slider) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container_header">
+            <nav class="top_container_header">
+
+                <div class="rol-1">
+                    <div class="container_logo_brand">
+                        <!-- LOGO -->
+                        <h1>
+                            <a class="brand_company">
+                                <img src="../image/icon/icon_black_64_custome2.png" alt="Company Logo">
+                                <span class="logo">
+                                    MFoody
+                                </span>
+
+                                <span class="content_logo">Vegetarian Grocery Store</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="container_search">
+                        <!-- Search -->
+                        <form class="search-form mt-4" action="" method="">
+                            <input class="input-search" type="search" placeholder="Search" aria-label="email"
+                                required="">
+                            <button class="btn btn-search" type="submit"><span class="fa fa-search"></span></button>
+                        </form>
+                        <!-- Search End -->
+                    </div>
+                    <div class="container_icons">
+                        <!-- Icons -->
+                        <span class="fa fa-searchsolid fa-heart" style="margin-right: 60px"></span>
+                        <span class="fa-solid fa-cart-shopping" style="margin-right: 60px"></span>
+                        <span class="fa-solid fa-user" style="margin-right: 60px"></span>
+                    </div>
+                </div>
+
+                <!-- <div class="rol-2">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse item-navbar" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="home_page.html">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about_page.html">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="service_page.html">SERVICE</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    PAGES
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="blog_posts_page.html">BLOG POSTS</a></li>
+                                    <li><a class="dropdown-item" href="404_page.html">404 PAGE</a></li>
+                                    <li><a class="dropdown-item" href="single_landing_page.html">LANDING PAGE</a></li>
+                                    <li><a class="dropdown-item" href="elements_page.html">ELEMENT PAGE</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact_page.html">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slick Carousel -->
+    <div class="wrap-sliders">
+        <div class="carousel-slider">
+            <!-- Slide 1 -->
+            <div class="banner-slide bg1">
+                <style>
+                    .bg1 {
+                        background: url(../image/b1.jpg);
+                        background-size: cover;
+                        background-repeat: no-repeat,
+                            no-repeat,
+                            no-repeat;
+                        background-position: top;
+                    }
+                </style>
+                <div class="banner-slide-container">
+                    <div class="banner-slide-container-content">
+                        <h1 data-animation="flipInX" data-delay="0.8s" data-color="#fff">
+                            We will solve your issues our vision to your future</h1>
+                        <p data-animation="fadeInDown" class="mt-4">Lorem ipsum dolor sit amet, elit, sed do eiusmod ut
+                            labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nisi ut ea. </p>
+                        <div class="div-btn" data-animation="fadeInUp" data-delay="1s">
+                            <a href="#" class="btn btn-learn-more btn-primary">
+                                Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="over-layout"></div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="banner-slide bg2">
+                <style>
+                    .bg2 {
+                        background: url(../image/b2.jpg);
+                        background-size: cover;
+                        background-repeat: no-repeat,
+                            no-repeat,
+                            no-repeat;
+                        background-position: top;
+                    }
+                </style>
+                <div class="banner-slide-container">
+                    <div class="banner-slide-container-content">
+                        <h1 data-animation="fadeInDown" data-delay="0.8s" data-color="#fff">
+                            Embracing success do our best, need best advice </h1>
+                        <p data-animation="fadeInDown" class="mt-4">Lorem ipsum dolor sit amet, elit, sed do eiusmod ut
+                            labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nisi ut ea. </p>
+                        <div class="div-btn" data-animation="fadeInDown" data-delay="1s">
+                            <a href="#" class="btn btn-learn-more btn-primary">
+                                Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="over-layout"></div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="banner-slide bg3">
+                <style>
+                    .bg3 {
+                        background: url(../image/b3.jpg);
+                        background-size: cover;
+                        background-repeat: no-repeat,
+                            no-repeat,
+                            no-repeat;
+                        background-position: top;
+                    }
+                </style>
+                <div class="banner-slide-container">
+                    <div class="banner-slide-container-content">
+                        <h1 data-animation="fadeInUp" data-color="#fff" data-delay="0.8s">
+                            Digital transformation driven by technology</h1>
+                        <p data-animation="fadeInUp" class="mt-4">Lorem ipsum dolor sit amet, elit, sed do eiusmod ut
+                            labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nisi ut ea. </p>
+                        <div class="div-btn" data-animation="fadeInDown" data-delay="1s">
+                            <a href="#" class="btn btn-learn-more btn-primary">
+                                Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="over-layout"></div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="banner-slide bg4">
+                <style>
+                    .bg4 {
+                        background: url(../image/b4.jpg);
+                        background-size: cover;
+                        background-repeat: no-repeat,
+                            no-repeat,
+                            no-repeat;
+                        background-position: top;
+                    }
+                </style>
+                <div class="banner-slide-container">
+                    <div class="banner-slide-container-content">
+                        <h1 data-animation="flipInX" data-color="#fff" data-delay="0.8s">
+                            For those who believe in leaving a mark</h1>
+                        <p data-animation="fadeInDown" class="mt-4">Lorem ipsum dolor sit amet, elit, sed do eiusmod ut
+                            labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nisi ut ea. </p>
+                        <div class="div-btn" data-animation="fadeInUp" data-delay="1s">
+                            <a href="#" class="btn btn-learn-more btn-primary">
+                                Contact Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="over-layout"></div>
+            </div>
+        </div>
+
+        <div class="shape">
+            <svg viewBox="0 0 1440 160">
+                <path fill-opacity="1">
+                    <animate attributeName="d" dur="20000ms" repeatCount="indefinite"
+                        values="M0,80L48,90.7C96,102,192,122.5,288,130.7C384,139,480,133.5,576,117.35C672,101,768,74.5,864,58.65C960,43,1056,37.5,1152,45.35C1248,53,1344,74.5,1392,85.35L1440,96L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z; M0,80L48,90.7C96,102,192,122.5,288,117.35C384,112,480,80,576,66.65C672,53,768,58,864,69.35C960,80,1056,96,1152,99.15C1248,102,1344,91,1392,85.35L1440,80L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z; M0,32L48,37.5C96,43,192,53.5,288,66.65C384,80,480,96,576,85.35C672,75,768,37.5,864,40C960,43,1056,85.5,1152,90.65C1248,96,1344,64,1392,48L1440,32L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z;
+                    M0,80L48,90.7C96,102,192,122.5,288,130.7C384,139,480,133.5,576,117.35C672,101,768,74.5,864,58.65C960,43,1056,37.5,1152,45.35C1248,53,1344,74.5,1392,85.35L1440,96L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z;" />
+                </path>
+
+            </svg>
+        </div>
+    </div>
+    <!-- Slick Carousel End-->
+
+    <!-- Calling jQuery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- Calling Slick Library -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- HEADER END -->
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+        </script>
+
+    <!-- Import JS -->
+    <script type="module" src="../javascript/header_home.js"></script>
+</body>
+
+</html>
