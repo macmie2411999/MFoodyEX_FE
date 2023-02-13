@@ -11,10 +11,10 @@ ul {
 }
 
 .header {
-  background: #fff;
+  background: #100f19;
   padding: 0px;
   transition: all 0.4s ease 0s;
-  height: 200px;
+  height: 160px;
   display: grid;
   align-items: center;
   z-index: 10;
@@ -23,15 +23,6 @@ ul {
   top: 0;
   right: 0;
   left: 0;
-}
-.header button {
-  background-color: white;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
 }
 .header a:hover {
   color: #fff;
@@ -47,34 +38,18 @@ ul {
   opacity: 0.8;
 }
 .header .container_header {
-  max-width: 1800px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 15px;
 }
-.header .container_header .top_container_header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.header .container_header .navbar {
+  background-color: transparent;
 }
-.header .container_header .top_container_header .rol-1 {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.6em;
-}
-.header .container_header .top_container_header .rol-1 .container_logo_brand {
-  width: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 100px;
-}
-.header .container_header .top_container_header .rol-1 .container_logo_brand .brand_company {
+.header .container_header .navbar .brand_company {
+  margin: 25px;
   font-size: 32px;
   font-weight: 600;
   text-transform: capitalize;
@@ -83,83 +58,21 @@ ul {
   display: inline-block;
   white-space: nowrap;
 }
-.header .container_header .top_container_header .rol-1 .container_logo_brand .brand_company .logo {
-  font-family: "Homemade Apple", cursive;
-  font-size: 40px;
+.header .container_header .navbar .brand_company .logo {
+  color: #009f4d;
+  margin-right: 5px;
+  font-size: 45px;
   vertical-align: bottom;
-  color: #AAE640;
 }
-.header .container_header .top_container_header .rol-1 .container_logo_brand .brand_company span.content_logo {
+.header .container_header .navbar .brand_company span.content_logo {
   text-transform: none;
   display: block;
   font-size: 20px;
-  margin-top: 5px;
-  padding-top: 10px;
+  padding-top: 15px;
   font-weight: 600;
   opacity: 0.9;
-  color: #015A28;
 }
-.header .container_header .top_container_header .rol-1 .container_search {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.header .container_header .top_container_header .rol-1 .container_search .search-form {
-  width: 100%;
-  position: relative;
-  margin: 0 auto;
-}
-.header .container_header .top_container_header .rol-1 .container_search .search-form .input-search {
-  width: 100%;
-  color: #000;
-  background: #F2F3F5;
-  padding: 12px 70px 12px 17px;
-  font-size: 25px;
-  height: 70px;
-  border: 0px solid rgba(255, 255, 255, 0.5);
-  font-style: italic;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0 auto;
-}
-.header .container_header .top_container_header .rol-1 .container_search .search-form .btn-search {
-  color: #fff;
-  font-size: 16px;
-  width: 60px;
-  letter-spacing: 0px;
-  position: absolute;
-  display: inline-block;
-  height: 100%;
-  background: #1CAF37;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  cursor: pointer !important;
-  text-align: center;
-  font-weight: 400;
-}
-.header .container_header .top_container_header .rol-1 .container_icons {
-  width: 25%;
-  font-size: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: right !important;
-  margin-left: 150px;
-}
-.header .container_header .bottom_container_header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.6em;
-  /* Your content here */
-}
-.header .container_header .bottom_container_header .item-navbar .navbar-nav {
+.header .container_header .navbar .item-navbar .navbar-nav {
   display: flex !important;
   flex-grow: 1;
   align-items: center;
@@ -167,30 +80,27 @@ ul {
   width: 100%;
   justify-content: center !important;
 }
-.header .container_header .bottom_container_header .item-navbar .navbar-nav .nav-item {
-  transition: all 0.8s ease;
+.header .container_header .navbar .item-navbar .navbar-nav .nav-item {
+  transition: all 0.5s ease;
   position: relative;
   padding: 0 10px;
 }
-.header .container_header .bottom_container_header .item-navbar .navbar-nav .nav-item:hover .nav-link {
-  color: #009f4d;
-}
-.header .container_header .bottom_container_header .item-navbar .navbar-nav .nav-item .nav-link {
+.header .container_header .navbar .item-navbar .navbar-nav .nav-item .nav-link {
   transition: all 0.5s ease;
   padding: 14px 0 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
-  color: #000;
+  color: #fff;
   opacity: 0.8;
   text-transform: uppercase;
 }
-.header .container_header .bottom_container_header .item-navbar .dropdown-menu {
+.header .container_header .navbar .item-navbar .dropdown-menu {
   transform: translateX(-50px);
   background: #151421;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
 }
-.header .container_header .bottom_container_header .item-navbar .dropdown-menu .dropdown-item {
+.header .container_header .navbar .item-navbar .dropdown-menu .dropdown-item {
   font-size: 15px;
   color: #eee;
   background: none;
@@ -199,7 +109,7 @@ ul {
   padding: 6px 20px;
   text-transform: uppercase;
 }
-.header .container_header .bottom_container_header .btn-material {
+.header .container_header .navbar .btn-material {
   line-height: 45px;
   text-align: center;
   width: 45px;
@@ -256,7 +166,6 @@ ul {
 
 .wrap-sliders {
   height: auto;
-  margin-top: 150px;
   position: relative;
   overflow: hidden;
 }
@@ -270,7 +179,6 @@ ul {
           user-select: none;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
-  transition: opacity 0.5s ease-in-out;
 }
 .wrap-sliders .carousel-slider .banner-slide {
   width: 100%;
@@ -280,7 +188,6 @@ ul {
   display: flex !important;
   align-items: center;
   z-index: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 .wrap-sliders .carousel-slider .banner-slide .banner-slide-container {
   position: relative;
@@ -328,9 +235,6 @@ ul {
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
-}
-.wrap-sliders .carousel-slider .banner-slide.active {
-  opacity: 1;
 }
 .wrap-sliders .shape {
   position: absolute;
