@@ -89,6 +89,11 @@ ul {
   font-size: 40px;
   vertical-align: bottom;
   color: #AAE640;
+  transition: all 0.3s ease-in-out;
+}
+.header .container_header .top_container_header .rol-1 .container_logo_brand .brand_company .logo:hover {
+  color: #009f4d;
+  font-size: 45px;
 }
 .header .container_header .top_container_header .rol-1 .container_logo_brand .brand_company span.content_logo {
   text-transform: none;

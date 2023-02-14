@@ -1,5 +1,5 @@
 // Base
-@import './scss/base';
+@import '../scss/base';
 
 $text-c1-primary:#AAE640;
 $text-c2-primary: #1CAF37;
@@ -98,7 +98,14 @@ $text-c4-primary:#015A28;
                             font-size: 40px;
                             vertical-align: bottom;
                             color: $text-c1-primary;
+                            transition: all 0.3s ease-in-out;
+
                         }
+
+                        .logo:hover {
+                            color: $text-c3-primary;
+                            font-size: 45px;
+                          }
 
                         span.content_logo {
                             text-transform: none;
