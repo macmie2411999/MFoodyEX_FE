@@ -84,9 +84,9 @@ $text-c4-primary:#015A28;
                         }
                     }
 
-                    .content_company{
+                    .content_company {
                         a:hover {
-                            color:$text-c2-primary;
+                            color: $text-c2-primary;
                             opacity: 1;
                         }
                     }
@@ -115,7 +115,7 @@ $text-c4-primary:#015A28;
                         padding: 0;
                         opacity: .8;
                         display: block;
-                        
+
                     }
                 }
 
@@ -135,11 +135,7 @@ $text-c4-primary:#015A28;
 
                 // element 4
                 .column_follow_us {
-                    .container_follow_us{
-                        
-                    }
-
-
+                    .container_follow_us {}
                 }
             }
 
@@ -153,7 +149,6 @@ $text-c4-primary:#015A28;
 
         .copyright_container {
             .content_copyright {
-
                 font-size: 18px;
                 line-height: 28px;
                 color: #97a1a9;
@@ -164,6 +159,8 @@ $text-c4-primary:#015A28;
 
                 a {
                     color: $text-c1-primary;
+                    font-family: 'Homemade Apple', cursive;
+                    font-size: 20px;
                 }
 
                 a:hover {

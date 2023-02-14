@@ -112,6 +112,8 @@ ul {
 }
 .footer .copyright .copyright_container .content_copyright a {
   color: #AAE640;
+  font-family: "Homemade Apple", cursive;
+  font-size: 20px;
 }
 .footer .copyright .copyright_container .content_copyright a:hover {
   color: #1CAF37;

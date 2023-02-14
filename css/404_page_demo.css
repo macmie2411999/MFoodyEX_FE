@@ -10,6 +10,18 @@ ul {
   padding: 0 !important;
 }
 
+body {
+  padding: 0.5;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0 !important;
+}
+
 .header {
   background: #fff;
   padding: 0px;
@@ -392,4 +404,210 @@ ul {
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+
+body {
+  padding: 0.5;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0 !important;
+}
+
+.footer {
+  background: #151421;
+  border-top: 1px solid rgba(249, 249, 249, 0.1);
+}
+.footer a:hover {
+  color: #fff;
+  opacity: 1;
+}
+.footer a {
+  background-color: transparent;
+  cursor: pointer !important;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9;
+  opacity: 0.8;
+}
+.footer .footer_embrace .footer_container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.footer .footer_embrace .footer_container .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.footer .footer_embrace .footer_container .row .column_corp_vision .content_company {
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+  display: block;
+  text-align: justify;
+}
+.footer .footer_embrace .footer_container .row .column_corp_vision .footer_logo .brand_company {
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+  opacity: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
+.footer .footer_embrace .footer_container .row .column_corp_vision .footer_logo .brand_company .logo {
+  font-family: "Homemade Apple", cursive;
+  font-size: 40px;
+  vertical-align: bottom;
+  color: #AAE640;
+}
+.footer .footer_embrace .footer_container .row .column_corp_vision .content_company a:hover {
+  color: #1CAF37;
+  opacity: 1;
+}
+.footer .footer_embrace .footer_container .row .name_column {
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 25px;
+  font-weight: 400;
+  position: relative;
+  color: #fff;
+  letter-spacing: 0.5px;
+  padding-top: 35px;
+}
+.footer .footer_embrace .footer_container .row .column_contact_info .content_contact_info {
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+  display: block;
+}
+.footer .footer_embrace .footer_container .row ul {
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+}
+.footer .footer_embrace .footer_container .row ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footer .copyright {
+  padding: 1.5em 0;
+  border-top: 1px solid rgba(249, 249, 249, 0.1);
+}
+.footer .copyright .copyright_container .content_copyright {
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.footer .copyright .copyright_container .content_copyright a {
+  color: #AAE640;
+  font-family: "Homemade Apple", cursive;
+  font-size: 20px;
+}
+.footer .copyright .copyright_container .content_copyright a:hover {
+  color: #1CAF37;
+  opacity: 1;
+}
+
+.main-page-not-found .page-not-found {
+  background: #F7F7F7;
+}
+.main-page-not-found .page-not-found .container-page-not-found {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found img {
+  max-width: 80%;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .pnf-text {
+  font-size: 100px;
+  line-height: 1;
+  text-align: center;
+  flex-basis: 100%;
+  color: #F67E3C;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .pnf-content {
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 36px;
+  padding-top: 25px;
+  color: #015A28;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search p {
+  margin: 0 !important;
+  padding-top: 5px;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+  opacity: 0.9;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction {
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-go-back-home,
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-contact-us {
+  text-decoration: none;
+  background-color: #fff;
+  border: 0px solid #ccc;
+  border-radius: 5px;
+  color: #009f4d;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  width: 150px;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-go-back-home {
+  margin-right: 10px;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-contact-us {
+  margin-left: 10px;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-go-back-home:hover,
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-contact-us:hover {
+  background-color: #1CAF37;
+  color: #fff;
 }
