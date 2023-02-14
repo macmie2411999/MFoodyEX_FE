@@ -1,0 +1,179 @@
+// Base
+@import './scss/base';
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+
+// Footer Style
+.footer {
+
+    // format sundries
+    a:hover {
+        color: #fff;
+        opacity: 1;
+    }
+
+    a {
+        background-color: transparent;
+        cursor: pointer !important;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 28px;
+        color: #97a1a9;
+        opacity: .8;
+    }
+
+    // format general footer
+    background: #151421;
+    border-top: 1px solid rgba(249, 249, 249, 0.1);
+
+    // format content of footer
+    .footer_embrace {
+
+        .footer_container {
+            // format general footer_container
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+
+                // element 1
+                .column_corp_vision {
+
+                    .content_company {
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: #97a1a9;
+                        margin: 0;
+                        padding: 0;
+                        opacity: .8;
+                        display: block;
+                        text-align: justify;
+                    }
+
+                    .footer_logo {
+                        .brand_company {
+                            //margin: 25px;
+                            font-size: 32px;
+                            font-weight: 600;
+                            text-transform: capitalize;
+                            color: #fff;
+                            opacity: 1;
+                            display: inline-block;
+                            white-space: nowrap;
+
+                            .logo {
+                                // font-family: 'Inter', sans-serif;
+                                font-family: 'Homemade Apple', cursive;
+                                //margin-right: 5px;
+                                font-size: 40px;
+                                vertical-align: bottom;
+                                color: $text-c1-primary;
+                            }
+                        }
+                    }
+
+                    .content_company{
+                        a:hover {
+                            color:$text-c2-primary;
+                            opacity: 1;
+                        }
+                    }
+
+                }
+
+                // format name_column in all columns
+                .name_column {
+                    font-size: 22px;
+                    line-height: 28px;
+                    margin-bottom: 25px;
+                    font-weight: 400;
+                    position: relative;
+                    color: #fff;
+                    letter-spacing: .5px;
+                    padding-top: 35px;
+                }
+
+                // element 2
+                .column_contact_info {
+                    .content_contact_info {
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: #97a1a9;
+                        margin: 0;
+                        padding: 0;
+                        opacity: .8;
+                        display: block;
+                        
+                    }
+                }
+
+                ul {
+                    li {
+                        list-style: none;
+                        margin-bottom: 10px;
+                    }
+
+                    margin: 0;
+                    padding: 0;
+                    list-style: disc;
+                }
+
+                // element 3
+                .column_categories {}
+
+                // element 4
+                .column_follow_us {
+                    .container_follow_us{
+                        
+                    }
+
+
+                }
+            }
+
+        }
+    }
+
+    .copyright {
+        // format general copyright
+        padding: 1.5em 0;
+        border-top: 1px solid rgba(249, 249, 249, 0.1);
+
+        .copyright_container {
+            .content_copyright {
+
+                font-size: 18px;
+                line-height: 28px;
+                color: #97a1a9;
+                margin: 0;
+                padding: 0;
+                // opacity: 0.8;
+                display: block;
+
+                a {
+                    color: $text-c1-primary;
+                }
+
+                a:hover {
+                    color: $text-c2-primary;
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+}
+
+// Footer Style End

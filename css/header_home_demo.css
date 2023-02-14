@@ -73,6 +73,7 @@ ul {
   align-items: center;
   justify-content: center;
   margin-right: 100px;
+  background-color: #fff;
 }
 .header .container_header .top_container_header .rol-1 .container_logo_brand .brand_company {
   font-size: 32px;
@@ -281,6 +282,8 @@ ul {
   align-items: center;
   z-index: 0;
   transition: opacity 0.5s ease-in-out;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .wrap-sliders .carousel-slider .banner-slide .banner-slide-container {
   position: relative;
@@ -291,6 +294,7 @@ ul {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  z-index: 2;
 }
 .wrap-sliders .carousel-slider .banner-slide .banner-slide-container .banner-slide-container-content {
   color: #ffffff;
@@ -331,6 +335,34 @@ ul {
 }
 .wrap-sliders .carousel-slider .banner-slide.active {
   opacity: 1;
+}
+.wrap-sliders .slick-prev,
+.wrap-sliders .slick-next {
+  display: block;
+  position: absolute;
+  top: 90%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  line-height: 36px;
+  color: #333;
+  cursor: pointer;
+}
+.wrap-sliders .slick-prev:before,
+.wrap-sliders .slick-next:before {
+  content: "";
+}
+.wrap-sliders .slick-prev {
+  left: 90%;
+}
+.wrap-sliders .slick-next {
+  right: 5%;
 }
 .wrap-sliders .shape {
   position: absolute;

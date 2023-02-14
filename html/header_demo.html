@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/header_home_demo.min.css">
-    <title>MFoody - Grocery Store</title>
+    <title>Header MFoody - Grocery Store</title>
     <link rel="icon" href="../image/icon/icon_black_64_custome2.png">
 
     <!-- Library (For Slider) -->
@@ -39,6 +39,10 @@
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- Slick Carousel-->>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
     <!-- Bootstrap CSS v5.2.0-beta1 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -62,7 +66,7 @@
                                 <span class="logo">
                                     MFoody
                                 </span>
-    
+
                                 <span class="content_logo">Vegetarian Grocery Store</span>
                             </a>
                         </h1>
@@ -84,7 +88,7 @@
                     </div>
                 </div>
             </nav>
-    
+
             <div class="bottom_container_header">
                 <!-- NAVBAR 2-->
                 <nav class="navbar navbar-expand-lg bg-light bg-transparent">
@@ -94,7 +98,7 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-    
+
                         <div class="collapse navbar-collapse item-navbar" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
@@ -103,7 +107,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="about_page.html">PRODUCTS</a>
                                 </li>
-    
+
                                 <!-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
@@ -145,7 +149,7 @@
             <div class="banner-slide bg1">
                 <style>
                     .bg1 {
-                        background: url(../image/carousel/banner_background_1.jpeg);
+                        background: url(../image/carousel/banner_background_6.jpeg);
                         background-size: cover;
                         background-repeat: no-repeat,
                             no-repeat,
@@ -155,18 +159,6 @@
                 </style>
                 <div class="banner-slide-container">
 
-                    <!-- <div class="banner-slide-container-content">
-                        <h1 data-animation="flipInX" data-delay="0.8s" data-color="#fff">
-                            We will solve your issues our vision to your future</h1>
-                        <p data-animation="fadeInDown" class="mt-4">Lorem ipsum dolor sit amet, elit, sed do eiusmod ut
-                            labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nisi ut ea. </p>
-                        <div class="div-btn" data-animation="fadeInUp" data-delay="1s">
-                            <a href="#" class="btn btn-learn-more btn-primary">
-                                Learn More</a>
-                        </div>
-                    </div> -->
-                    
                 </div>
                 <div class="over-layout"></div>
             </div>
@@ -184,19 +176,7 @@
                     }
                 </style>
                 <div class="banner-slide-container">
-                    <!-- <div class="banner-slide-container-content">
-                        <h1 data-animation="fadeInDown" data-delay="0.8s" data-color="#fff">
-                            Embracing success do our best, need best advice </h1>
-                        <p data-animation="fadeInDown" class="mt-4">Lorem ipsum dolor sit amet, elit, sed do eiusmod ut
-                            labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nisi ut ea. </p>
-                        <div class="div-btn" data-animation="fadeInDown" data-delay="1s">
-                            <a href="#" class="btn btn-learn-more btn-primary">
-                                Get Started</a>
-                        </div>
 
-                    </div> -->
-                    
                 </div>
                 <div class="over-layout"></div>
             </div>
@@ -214,18 +194,7 @@
                     }
                 </style>
                 <div class="banner-slide-container">
-                    <!-- <div class="banner-slide-container-content">
-                        <h1 data-animation="fadeInUp" data-color="#fff" data-delay="0.8s">
-                            Digital transformation driven by technology</h1>
-                        <p data-animation="fadeInUp" class="mt-4">Lorem ipsum dolor sit amet, elit, sed do eiusmod ut
-                            labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nisi ut ea. </p>
-                        <div class="div-btn" data-animation="fadeInDown" data-delay="1s">
-                            <a href="#" class="btn btn-learn-more btn-primary">
-                                Learn More</a>
-                        </div>
-                    </div> -->
-                    
+
                 </div>
                 <div class="over-layout"></div>
             </div>
@@ -257,14 +226,11 @@
                 </div>
                 <div class="over-layout"></div>
             </div>
-
-            <!-- Add the previous and next buttons -->
-            <!-- <button class="prev-button" style="background-color: black;">Previous</button>
-            <button class="next-button">Next</button> -->
         </div>
-
-
+        <button class="slick-prev"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <button class="slick-next"><i class="fa-solid fa-circle-chevron-right"></i></button>
         <div class="shape">
+
             <svg viewBox="0 0 1440 160">
                 <path fill-opacity="1">
                     <animate attributeName="d" dur="20000ms" repeatCount="indefinite"
@@ -298,7 +264,7 @@
         </script>
 
     <!-- Import JS -->
-    <script type="module" src="../javascript/header_home.js"></script>
+    <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
 </body>
 
 </html>

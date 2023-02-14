@@ -63,7 +63,7 @@ $text-c4-primary:#015A28;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            
+
 
             .rol-1 {
 
@@ -79,6 +79,7 @@ $text-c4-primary:#015A28;
                     align-items: center;
                     justify-content: center;
                     margin-right: 100px;
+                    background-color: #fff;
 
                     .brand_company {
                         //margin: 25px;
@@ -208,9 +209,9 @@ $text-c4-primary:#015A28;
 
                         &:hover {
                             .nav-link {
-                              color: $text-c3-primary;
+                                color: $text-c3-primary;
                             }
-                          }
+                        }
 
                         .nav-link {
                             transition: all 0.5s ease;
@@ -327,7 +328,7 @@ $text-c4-primary:#015A28;
         touch-action: pan-y;
         -webkit-tap-highlight-color: transparent;
         transition: opacity 0.5s ease-in-out;
-        
+
 
         .banner-slide {
             width: 100%;
@@ -338,6 +339,8 @@ $text-c4-primary:#015A28;
             align-items: center;
             z-index: 0;
             transition: opacity 0.5s ease-in-out;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
 
             .banner-slide-container {
                 position: relative;
@@ -348,6 +351,7 @@ $text-c4-primary:#015A28;
                 width: 100%;
                 padding-right: 15px;
                 padding-left: 15px;
+                z-index: 2;
 
                 .banner-slide-container-content {
                     color: #ffffff;
@@ -401,6 +405,42 @@ $text-c4-primary:#015A28;
         }
     }
 
+    //buttons slick
+    .slick-prev,
+    .slick-next {
+        display: block;
+        position: absolute;
+        top: 90%;
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        line-height: 36px;
+        color: #333;
+        cursor: pointer;
+
+        &:before {
+            content: "";
+        }
+
+
+    }
+
+    .slick-prev {
+        left: 90%;
+    }
+
+    .slick-next {
+        right: 5%;
+    }
+
+    // button slick end
+
     .shape {
         position: absolute;
         bottom: 0;
@@ -428,6 +468,8 @@ $text-c4-primary:#015A28;
     height: 100%;
     z-index: -1;
 }
+
+
 
 // @-webkit-keyframes flipInX {
 //     0% {
