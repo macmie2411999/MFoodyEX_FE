@@ -1,0 +1,112 @@
+// Base
+@import '../scss/base';
+
+// Header and Footer Style
+@import '../scss/header_home_demo.scss';
+
+@import '../scss/footer_home_demo.scss';
+// Header and Footer Style End
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+
+// Main Style
+
+.main-page-about-us {
+    .page-about-us {
+        .container-page-about-us {
+            .content-page-about-us {
+                .row {
+                    .first-column {
+                        img {
+                            max-width: 70%;
+                            display: block;
+                            margin: 0 auto;
+                            transition: transform 2s ease-in-out;
+                        }
+
+                        &:hover img {
+                            transform: scale(1.2);
+                          }
+                    }
+
+                    .second-column {
+                        padding: 0;
+                        margin: 0;
+                        .section-truncation-history {
+                            margin-right: 30px;
+
+                            .section-truncation-container {
+                                background-color: #dfe6e9;
+                                display: flex;
+                                flex-direction: column;
+                                color: #111;
+                                gap: 1rem;
+                                
+
+                                .container-section-truncation-content {
+                                    position: relative;
+                                    padding: 1rem;
+                                    background-color: #fff;
+                                    border-radius: 2px;
+                                    line-height: 1.4rem;
+                                    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+
+                                    .read-more-text {
+                                        position: absolute;
+                                        top: 100%;
+                                        left: 0;
+                                        width: 100%;
+                                        padding-top: 1rem;
+                                        height: 0;
+                                        background-color: #fff;
+                                        overflow: hidden;
+                                        transition: all 2s ease-in-out;
+                                        color: #000;
+                                        padding-right: 2rem;
+                                        padding-left: 2rem;
+                                        
+                                    }
+                                }
+
+                                .container-section-truncation-content:hover .read-more-text {
+                                    height: 200px;
+                                    border-radius: 2px;
+                                    line-height: 1.4rem;
+                                    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                                }
+
+                                .container-section-truncation-content:hover .first-column img {
+                                    transform: scale(1.2);
+                                    transition: transform 0.3s ease-in-out;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @media screen and (max-width: 768px) {
+//     .container-content-truncation-content {
+//         max-width: 100%;
+//         padding: 0 20px;
+//     }
+
+//     .read-more-second-part-text {
+//         display: none;
+//     }
+// }
+
+// Main Style End

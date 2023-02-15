@@ -1,0 +1,71 @@
+// Base
+@import '../scss/base';
+
+// Header and Footer Style
+@import '../scss/header_home_demo.scss';
+
+@import '../scss/footer_home_demo.scss';
+// Header and Footer Style End
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+
+// Main Style
+
+.section-truncation-history {
+
+    .section-truncation-container {
+        background-color: #dfe6e9;
+        display: flex;
+        flex-direction: column;
+        color: #111;
+        gap: 1rem;
+    }
+
+    .container-section-truncation-content {
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 2px;
+        line-height: 1.4rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    }
+
+    .read-more-text {
+        display: none;
+
+        span {}
+    }
+
+    .read-more-btn {
+        color: #0984e3;
+    }
+
+    .read-more-text--show {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-content-truncation-content {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .read-more-second-part-text {
+        display: none;
+    }
+}
+
+
+
+
+
+
+// Main Style End
