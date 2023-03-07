@@ -2,7 +2,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -14,7 +14,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -30,7 +30,7 @@ ul {
   display: grid;
   align-items: center;
   z-index: 10;
-  border-bottom: 1px solid rgba(231, 231, 231, 0.18);
+  border-bottom: 10px solid rgba(231, 231, 231, 0.18);
   position: fixed;
   top: 0;
   right: 0;
@@ -175,6 +175,7 @@ ul {
   align-items: center;
   justify-content: center;
   font-size: 0.6em;
+  margin-top: -15px;
   /* Your content here */
 }
 .header .container_header .bottom_container_header .item-navbar .navbar-nav {
@@ -410,7 +411,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -436,7 +437,7 @@ ul {
   opacity: 0.8;
 }
 .footer .footer_embrace .footer_container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -496,6 +497,7 @@ ul {
   padding: 0;
   opacity: 0.8;
   display: block;
+  text-align: justify;
 }
 .footer .footer_embrace .footer_container .row ul {
   margin: 0;

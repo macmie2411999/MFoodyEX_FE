@@ -2,7 +2,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -14,7 +14,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -30,7 +30,7 @@ ul {
   display: grid;
   align-items: center;
   z-index: 10;
-  border-bottom: 1px solid rgba(231, 231, 231, 0.18);
+  border-bottom: 10px solid rgba(231, 231, 231, 0.18);
   position: fixed;
   top: 0;
   right: 0;
@@ -175,6 +175,7 @@ ul {
   align-items: center;
   justify-content: center;
   font-size: 0.6em;
+  margin-top: -15px;
   /* Your content here */
 }
 .header .container_header .bottom_container_header .item-navbar .navbar-nav {
@@ -410,7 +411,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -436,7 +437,7 @@ ul {
   opacity: 0.8;
 }
 .footer .footer_embrace .footer_container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -496,6 +497,7 @@ ul {
   padding: 0;
   opacity: 0.8;
   display: block;
+  text-align: justify;
 }
 .footer .footer_embrace .footer_container .row ul {
   margin: 0;
@@ -528,58 +530,55 @@ ul {
   opacity: 1;
 }
 
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .first-column img {
-  max-width: 70%;
-  display: block;
-  margin: 0 auto;
-  transition: transform 2s ease-in-out;
-}
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .first-column:hover img {
-  transform: scale(1.2);
-}
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column {
-  padding: 0;
+ul {
   margin: 0;
+  padding: 0;
+  list-style: disc;
 }
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history {
-  margin-right: 30px;
+ul li {
+  list-style: none;
+  margin-bottom: 10px;
 }
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container {
-  background-color: #dfe6e9;
-  display: flex;
-  flex-direction: column;
-  color: #111;
-  gap: 1rem;
+
+h1 {
+  font-size: 36px;
+  margin-top: 0;
 }
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container .container-section-truncation-content {
-  position: relative;
-  padding: 1rem;
-  background-color: #fff;
-  border-radius: 2px;
-  line-height: 1.4rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
 }
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container .container-section-truncation-content .read-more-text {
-  position: absolute;
-  top: 100%;
-  left: 0;
+
+.catalog-full-list {
+  margin-top: 200px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+.catalog-full-list .container-catalog-full-list {
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
   width: 100%;
-  padding-top: 1rem;
-  height: 0;
-  background-color: #fff;
-  overflow: hidden;
-  transition: all 2s ease-in-out;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.catalog-full-list .container-catalog-full-list .sidebar {
+  background-color: #ccc;
+  padding: 20px;
+}
+.catalog-full-list .container-catalog-full-list .sidebar .has-sub-menu {
+  margin-bottom: 10px;
+}
+.catalog-full-list .container-catalog-full-list .sidebar .has-sub-menu .category {
+  font-weight: bold;
+  text-decoration: none;
   color: #000;
-  padding-right: 2rem;
-  padding-left: 2rem;
 }
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container .container-section-truncation-content:hover .read-more-text {
-  height: 200px;
-  border-radius: 2px;
-  line-height: 1.4rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+.catalog-full-list .container-catalog-full-list .sidebar .has-sub-menu .sub-menu {
+  margin-top: 5px;
+  padding-left: 10px;
 }
-.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container .container-section-truncation-content:hover .first-column img {
-  transform: scale(1.2);
-  transition: transform 0.3s ease-in-out;
+.catalog-full-list .container-catalog-full-list .content {
+  padding: 20px;
 }

@@ -2,10 +2,15 @@ body {
     padding: 0.5;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Jost', sans-serif !important;
 }
 
 ul {
     list-style: none;
     padding: 0 !important;
-  }
+}
+
+// a {
+//     cursor: pointer !important;
+//     text-decoration: none;
+// }

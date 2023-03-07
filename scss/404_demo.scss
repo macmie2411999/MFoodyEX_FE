@@ -17,12 +17,17 @@ $text-c1-yellow: #FACF39;
 $text-c2-yellow: #F67E3C;
 $text-c3-yellow: #C31A24;
 
+body {
+    zoom: 0.75;
+}
+
 // Main Style
 .main-page-not-found {
     // position: absolute;
+    margin-top: 200px;
 
     .page-not-found {
-        background: #F7F7F7;
+        background: #fff;
 
         .container-page-not-found {
             max-width: 1200px;
@@ -76,8 +81,8 @@ $text-c3-yellow: #C31A24;
                         color: #000;
                         opacity: .9;
                         text-align: justify;
-                        font-family: 'Montserrat', sans-serif;
-                        font-weight: 500;
+                        // font-family: 'Montserrat', sans-serif;
+                        // font-weight: 500;
                     }
 
                     .re-direction {

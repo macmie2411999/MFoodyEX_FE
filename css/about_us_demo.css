@@ -10,6 +10,18 @@ ul {
   padding: 0 !important;
 }
 
+body {
+  padding: 0.5;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif !important;
+}
+
+ul {
+  list-style: none;
+  padding: 0 !important;
+}
+
 .header {
   background: #fff;
   padding: 0px;
@@ -393,4 +405,185 @@ ul {
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+
+body {
+  padding: 0.5;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif !important;
+}
+
+ul {
+  list-style: none;
+  padding: 0 !important;
+}
+
+.footer {
+  background: #151421;
+  border-top: 1px solid rgba(249, 249, 249, 0.1);
+}
+.footer a:hover {
+  color: #fff;
+  opacity: 1;
+}
+.footer a {
+  background-color: transparent;
+  cursor: pointer !important;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9;
+  opacity: 0.8;
+}
+.footer .footer_embrace .footer_container {
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.footer .footer_embrace .footer_container .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.footer .footer_embrace .footer_container .row .column_corp_vision .content_company {
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+  display: block;
+  text-align: justify;
+}
+.footer .footer_embrace .footer_container .row .column_corp_vision .footer_logo .brand_company {
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+  opacity: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
+.footer .footer_embrace .footer_container .row .column_corp_vision .footer_logo .brand_company .logo {
+  font-family: "Homemade Apple", cursive;
+  font-size: 40px;
+  vertical-align: bottom;
+  color: #AAE640;
+}
+.footer .footer_embrace .footer_container .row .column_corp_vision .content_company a:hover {
+  color: #1CAF37;
+  opacity: 1;
+}
+.footer .footer_embrace .footer_container .row .name_column {
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 25px;
+  font-weight: 400;
+  position: relative;
+  color: #fff;
+  letter-spacing: 0.5px;
+  padding-top: 35px;
+}
+.footer .footer_embrace .footer_container .row .column_contact_info .content_contact_info {
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+  display: block;
+  text-align: justify;
+}
+.footer .footer_embrace .footer_container .row ul {
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+}
+.footer .footer_embrace .footer_container .row ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footer .copyright {
+  padding: 1.5em 0;
+  border-top: 1px solid rgba(249, 249, 249, 0.1);
+}
+.footer .copyright .copyright_container .content_copyright {
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.footer .copyright .copyright_container .content_copyright a {
+  color: #AAE640;
+  font-family: "Homemade Apple", cursive;
+  font-size: 20px;
+}
+.footer .copyright .copyright_container .content_copyright a:hover {
+  color: #1CAF37;
+  opacity: 1;
+}
+
+.main-page-about-us .page-about-us .container-page-about-us {
+  display: grid;
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row {
+  padding: 20px;
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .first-column img {
+  max-width: 70%;
+  display: block;
+  margin: 0 auto;
+  transition: transform 2s ease-in-out;
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column {
+  padding: 0;
+  margin: 0;
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history {
+  margin-right: 30px;
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container {
+  background-color: #dfe6e9;
+  display: flex;
+  flex-direction: column;
+  color: #111;
+  gap: 1rem;
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container .container-section-truncation-content {
+  position: relative;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 2px;
+  line-height: 1.4rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container .container-section-truncation-content .read-more-text {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-top: 1rem;
+  height: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transition: all 2s ease-in-out;
+  color: #000;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container:hover .read-more-text {
+  height: 200px;
+  border-radius: 2px;
+  line-height: 1.4rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+.main-page-about-us .page-about-us .container-page-about-us .content-page-about-us .row .second-column .section-truncation-history .section-truncation-container:hover .content-page-about-us .row .first-column img {
+  transform: scale(1.2);
 }

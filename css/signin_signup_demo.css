@@ -2,7 +2,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -14,7 +14,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -30,7 +30,7 @@ ul {
   display: grid;
   align-items: center;
   z-index: 10;
-  border-bottom: 1px solid rgba(231, 231, 231, 0.18);
+  border-bottom: 10px solid rgba(231, 231, 231, 0.18);
   position: fixed;
   top: 0;
   right: 0;
@@ -175,6 +175,7 @@ ul {
   align-items: center;
   justify-content: center;
   font-size: 0.6em;
+  margin-top: -15px;
   /* Your content here */
 }
 .header .container_header .bottom_container_header .item-navbar .navbar-nav {
@@ -410,7 +411,7 @@ body {
   padding: 0.5;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
 }
 
 ul {
@@ -436,7 +437,7 @@ ul {
   opacity: 0.8;
 }
 .footer .footer_embrace .footer_container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -496,6 +497,7 @@ ul {
   padding: 0;
   opacity: 0.8;
   display: block;
+  text-align: justify;
 }
 .footer .footer_embrace .footer_container .row ul {
   margin: 0;
@@ -528,86 +530,225 @@ ul {
   opacity: 1;
 }
 
-.main-page-not-found .page-not-found {
-  background: #F7F7F7;
-}
-.main-page-not-found .page-not-found .container-page-not-found {
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found img {
-  max-width: 80%;
-}
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search {
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .pnf-text {
-  font-size: 100px;
-  line-height: 1;
-  text-align: center;
-  flex-basis: 100%;
-  color: #F67E3C;
-  display: inline-block;
-  font-weight: 700;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-}
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .pnf-content {
-  font-size: 30px;
-  font-weight: 600;
-  text-transform: capitalize;
-  line-height: 36px;
-  padding-top: 25px;
-  color: #015A28;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-}
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search p {
-  margin: 0 !important;
-  padding-top: 5px;
-  font-size: 20px;
-  line-height: 30px;
-  color: #000;
-  opacity: 0.9;
-  text-align: justify;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-}
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction {
-  margin-top: 0px;
+body {
+  zoom: 0.9;
+  background: #f6f5f7;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  height: 100vh;
+  margin: -20px 0 50px;
+  margin-top: 20px;
 }
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-go-back-home,
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-contact-us {
-  text-decoration: none;
-  background-color: #fff;
-  border: 0px solid #ccc;
-  border-radius: 5px;
-  color: #009f4d;
+
+h1 {
   font-weight: bold;
-  cursor: pointer;
-  display: inline-block;
-  padding: 10px 20px;
-  text-align: center;
-  width: 150px;
+  margin: 0;
 }
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-go-back-home {
-  margin-right: 10px;
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+  text-align: justify;
 }
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-contact-us {
-  margin-left: 10px;
+
+span {
+  font-size: 12px;
 }
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-go-back-home:hover,
-.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-contact-us:hover {
-  background-color: #1CAF37;
+
+a:hover {
+  color: #333 !important;
+  opacity: 0.9;
+}
+
+a {
+  background-color: transparent;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  font-size: 18px;
+  line-height: 28px;
+  color: #97a1a9 !important;
+  opacity: 0.8;
+  margin: 15px 0;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background: transparent;
+  border-color: #fff;
+}
+
+button {
+  border-radius: 5px !important;
+  border: 1px solid #AAE640;
+  background: #009f4d;
   color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  margin-top: 15px !important;
+}
+
+.container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 540px;
+}
+.container .form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+.container .form-container form {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container .form-container form .social-container {
+  margin: 20px 0;
+}
+.container .form-container form .social-container a {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+.container .form-container input {
+  background: #F2F3F5;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+.container .sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+.container .sign-up-container {
+  left: 0;
+  width: 50%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+.overlay-container .overlay {
+  background: #AAE640;
+  background: linear-gradient(to right, #1CAF37, #015A28) no-repeat 0 0/cover;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+.overlay-container .overlay .link_to_policy {
+  font-size: 20px !important;
+  line-height: 40px !important;
+  color: #F67E3C !important;
+  opacity: 1 !important;
+}
+.overlay-container .overlay .link_to_policy:hover {
+  font-weight: 500 !important;
+}
+.overlay-container .overlay .overlay-panel {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+.overlay-container .overlay .overlay-right {
+  right: 0;
+  transform: translateY(0);
+}
+.overlay-container .overlay .overlay-left {
+  transform: translateY(-20%);
+}
+
+/* Move signin to right */
+.container.right-panel-active .sign-in-container {
+  transform: translateY(100%);
+}
+
+/* Move overlay to left */
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+/* Bring signup over signin */
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+/* Move overlay back to right */
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+/* Bring back the text to center */
+.container.right-panel-active .overlay-left {
+  transform: translateY(0);
+}
+
+/* Same effect for right */
+.container.right-panel-active .overlay-right {
+  transform: translateY(20%);
+}
+
+.icons {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  letter-spacing: 15px;
+  align-items: center;
 }

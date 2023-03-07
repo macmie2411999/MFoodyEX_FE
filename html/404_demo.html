@@ -5,12 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/header_home_demo.min.css">
-    <title>Header MFoody - Grocery Store</title>
+    <link rel="stylesheet" href="../css/404_demo.min.css">
+    <title>404 MFoody - Grocery Store</title>
     <link rel="icon" href="../image/icon/icon_gfgl_green_64.png">
-
-    <!-- jQuery-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Library (For Slider) -->
     <link rel="stylesheet" type="text/css"
@@ -37,6 +34,13 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Jost:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap"
         rel="stylesheet">
 
+    <!--- Font Montserrat-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap"
+        rel="stylesheet">
+
     <!-- (Optional) Use CSS or JS implementation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
@@ -56,7 +60,7 @@
 <body>
 
     <!-- HEADER -->
-    <header class="header">
+    <header class="header" id="justHeader">
         <div class="container_header py-md-4">
             <!-- NAVBAR 1 -->
             <nav class="top_container_header">
@@ -145,107 +149,155 @@
     </header>
     <!-- HEADER END -->
 
-    <!-- Slick Carousel -->
-    <div class="wrap-sliders">
-        <br/>
-        <div class="carousel-slider">
-            <!-- Slide 1 -->
-            <div class="banner-slide bg1">
-                <style>
-                    .bg1 {
-                        background: url(../image/carousel/banner_background_6.jpeg);
-                        background-size: cover;
-                        background-repeat: no-repeat,
-                            no-repeat,
-                            no-repeat;
-                        background-position: top;
-                    }
-                </style>
-                <div class="banner-slide-container">
+    <!-- 404 PAGE -->
+    <main class="main-page-not-found">
+        <section class="page-not-found py-5">
+            <div class="container-page-not-found py-lg-5 py-md-4 ">
+                <div class="content-page-not-found align-items-center">
+                    <div class="row">
+                        <div class="col-md-6 col-9">
+                            <!-- <img src="../image/pages/confused_brocolli.jpeg" class="img-error"
+                                alt="page-not-found-image"> -->
+                                <img src="../image/pages/404_v3.png" style="transform: scale(1.1);" class="img-error"
+                                alt="page-not-found-image">
+                        </div>
+                        <div class="title-and-search col-md-6">
+                            <h3 class="pnf-text">Oops!</h3>
+                            <h5 class="pnf-content mt-lg-4">Something's Missing</h5>
+                            <p>We apologize, but the page you are looking for cannot be found. It may have been moved or
+                                deleted. Please return to our homepage or use the search bar to find what you're looking
+                                for. If you continue to experience issues, please contact us for assistance.
+                            </p>
+                            <div class="re-direction">
+                                <a href="home_page_demo.html" class="btn-go-back-home mt-md-6 mt-4">
+                                    Go Home
+                                </a>
 
-                </div>
-                <div class="over-layout"></div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="banner-slide bg2">
-                <style>
-                    .bg2 {
-                        background: url(../image/carousel/banner_background_2.avif);
-                        background-size: cover;
-                        background-repeat: no-repeat,
-                            no-repeat,
-                            no-repeat;
-                        background-position: top;
-                    }
-                </style>
-                <div class="banner-slide-container">
-
-                </div>
-                <div class="over-layout"></div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="banner-slide bg3">
-                <style>
-                    .bg3 {
-                        background: url(../image/carousel/banner_background_3.jpeg);
-                        background-size: cover;
-                        background-repeat: no-repeat,
-                            no-repeat,
-                            no-repeat;
-                        background-position: top;
-                    }
-                </style>
-                <div class="banner-slide-container">
-
-                </div>
-                <div class="over-layout"></div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="banner-slide bg4">
-                <style>
-                    .bg4 {
-                        background: url(../image/carousel/banner_background_5.avif);
-                        background-size: cover;
-                        background-repeat: no-repeat,
-                            no-repeat,
-                            no-repeat;
-                        background-position: top;
-                    }
-                </style>
-                <div class="banner-slide-container">
-                    <div class="banner-slide-container-content">
-                        <h1 data-animation="flipInX" data-color="#fff" data-delay="0.8s">
-                            For those who believe in leaving a mark</h1>
-                        <p data-animation="fadeInDown" class="mt-4">Lorem ipsum dolor sit amet, elit, sed do eiusmod ut
-                            labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nisi ut ea. </p>
-                        <div class="div-btn" data-animation="fadeInUp" data-delay="1s">
-                            <a href="#" class="btn btn-learn-more btn-primary">
-                                Contact Now</a>
+                                <a href="contact_us_page_demo.html" class="btn-contact-us mt-md-6 mt-4">
+                                    Contact Us </i>
+                                    </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="over-layout"></div>
+            </div>
+        </section>
+    </main>
+    <!-- 404 PAGE END -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer_embrace ">
+            <div class="footer_container py-md-4">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 column_corp_vision">
+
+                        <div class="footer_logo mb-4">
+                            <a class="brand_company" href="home_page.html">
+                                <img src="../image/icon/icon_gfgl_green_64.png" alt="Company Logo">
+                                <span class="logo"> MFoody </span>
+
+                                <span class="content_logo"></span></a>
+                        </div>
+
+                        <p class="content_company"> <a>Mfoody is a company specializing in the sale of fresh and healthy
+                                food items, including Vegetables, Cereals & Beans, Fruits, and more. With a commitment
+                                to
+                                quality and sustainability, Mfoody sources its products from trusted suppliers and
+                                delivers them
+                                straight to customers' doors, making it easier than ever to eat well and live well.</a>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 pr-lg-5 mt-md-0 mt-5 column_contact_info">
+                        <h6 class="name_column">Contact Infomation </h6>
+
+                        <p class="content_contact_info mb-2">
+                            Address : MFoody Store, Moscow, Russia </p>
+
+                        <p class="content_contact_info mb-2">Phone Number : <a href="tel:89653682225">
+                                +8(965) 368 22-25</a></p>
+
+                        <p class="content_contact_info mb-2">Email : <a href="mailto:caoducmanh2411999@gmail.com">
+                                caoducmanh2411999@gmail.com</a></p>
+
+                        <p class="content_contact_info mb-2">Support : <a href="mailto:caoducmanh2411999@support.com">
+                                caoducmanh2411999@support.com</a></p>
+
+                        <p class="content_contact_info mb-2">
+                            Our working hours are from 9:00 AM to 5:00 PM from Monday to Friday. Contact us via email or
+                            leave a message for afterhours support. </p>
+
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 mt-lg-0 mt-5 column_categories">
+                        <div id="categories-4" class="widget_categories">
+                            <h6 class="name_column">Products</h6>
+                            <ul>
+                                <li class="cat-item cat-item-1"><a href="#">Spice & Condiments</a>
+                                </li>
+                                <li class="cat-item cat-item-2"><a href="#">Hard-shelled Nuts</a>
+                                </li>
+                                <li class="cat-item cat-item-3"><a href="#">Vegetables</a>
+                                </li>
+                                <li class="cat-item cat-item-4"><a href="#">Jam & Syrup</a>
+                                </li>
+                                <li class="cat-item cat-item-5"><a href="#">Cereals & Beans</a>
+                                </li>
+                                <li class="cat-item cat-item-6"><a href="#">Fresh & Dried Fruits</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 mt-lg-0 mt-5 column_follow_us">
+                        <div id="follow_us-4" class="widget_follow_us">
+                            <h6 class="name_column">Follow Us</h6>
+                            <div class="container_follow_us mt-md-4 mt-3">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/mie.mac.378" class="facebook">
+                                            <span class="fab fa-facebook-square fa-lg"></span>
+                                            <span style="padding-left: 5px">Facebook</span>
+                                        </a></li>
+                                    <li><a href="https://github.com/macmie2411999" class="github">
+                                            <span class="fab fa-github-square fa-lg"></span>
+                                            <span style="padding-left: 5px">Github</span>
+                                        </a></li>
+                                    <li><a href="https://twitter.com" class="twitter">
+                                            <span class="fab fa-twitter-square fa-lg"></span>
+                                            <span style="padding-left: 5px">Twitter</span>
+                                        </a></li>
+                                    <li><a href="https://instagram.com" class="instagram">
+                                            <span class="fab fa-instagram-square fa-lg"></span>
+                                            <span style="padding-left: 5px">Instagram</span>
+                                        </a></li>
+                                    <li><a href="https://in.linkedin.com" class="linkedin">
+                                            <span class="fab fa-linkedin-in fa-lg"></span>
+                                            <span style="padding-left: 5px">Linked In</span>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <button class="slick-prev"><i class="fa-solid fa-circle-chevron-left"></i></button>
-        <button class="slick-next"><i class="fa-solid fa-circle-chevron-right"></i></button>
-        <div class="shape">
 
-            <svg viewBox="0 0 1440 160">
-                <path fill-opacity="1">
-                    <animate attributeName="d" dur="20000ms" repeatCount="indefinite"
-                        values="M0,80L48,90.7C96,102,192,122.5,288,130.7C384,139,480,133.5,576,117.35C672,101,768,74.5,864,58.65C960,43,1056,37.5,1152,45.35C1248,53,1344,74.5,1392,85.35L1440,96L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z; M0,80L48,90.7C96,102,192,122.5,288,117.35C384,112,480,80,576,66.65C672,53,768,58,864,69.35C960,80,1056,96,1152,99.15C1248,102,1344,91,1392,85.35L1440,80L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z; M0,32L48,37.5C96,43,192,53.5,288,66.65C384,80,480,96,576,85.35C672,75,768,37.5,864,40C960,43,1056,85.5,1152,90.65C1248,96,1344,64,1392,48L1440,32L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z;
-                    M0,80L48,90.7C96,102,192,122.5,288,130.7C384,139,480,133.5,576,117.35C672,101,768,74.5,864,58.65C960,43,1056,37.5,1152,45.35C1248,53,1344,74.5,1392,85.35L1440,96L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z;" />
-                </path>
+        <!-- COPY RIGHT -->
+        <section class="copyright text-center">
+            <div class="copyright_container">
+                <p class="content_copyright">&copy; 2023 <a href="#">
+                        MFoody </a> All Rights Reserved
+                </p>
+            </div>
+        </section>
 
-            </svg>
-        </div>
-    </div>
-    <!-- Slick Carousel End-->
+    </footer>
+    <!-- FOOTER END -->
+
 
     <!-- Calling jQuery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -253,6 +305,7 @@
 
     <!-- Calling Slick Library -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"

@@ -22,8 +22,12 @@ $text-c3-yellow: #C31A24;
 .main-page-about-us {
     .page-about-us {
         .container-page-about-us {
+            display: grid;
+
             .content-page-about-us {
                 .row {
+                    padding: 20px;
+
                     .first-column {
                         img {
                             max-width: 70%;
@@ -32,14 +36,15 @@ $text-c3-yellow: #C31A24;
                             transition: transform 2s ease-in-out;
                         }
 
-                        &:hover img {
-                            transform: scale(1.2);
-                          }
+                        // &:hover img {
+                        //     transform: scale(1.2);
+                        // }
                     }
 
                     .second-column {
                         padding: 0;
                         margin: 0;
+
                         .section-truncation-history {
                             margin-right: 30px;
 
@@ -49,7 +54,7 @@ $text-c3-yellow: #C31A24;
                                 flex-direction: column;
                                 color: #111;
                                 gap: 1rem;
-                                
+
 
                                 .container-section-truncation-content {
                                     position: relative;
@@ -70,23 +75,45 @@ $text-c3-yellow: #C31A24;
                                         overflow: hidden;
                                         transition: all 2s ease-in-out;
                                         color: #000;
-                                        padding-right: 2rem;
-                                        padding-left: 2rem;
-                                        
+                                        padding-right: 1rem;
+                                        padding-left: 1rem;
+
                                     }
                                 }
 
-                                .container-section-truncation-content:hover .read-more-text {
-                                    height: 200px;
-                                    border-radius: 2px;
-                                    line-height: 1.4rem;
-                                    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                                &:hover{
+                                    .read-more-text {
+                                        height: 200px;
+                                        border-radius: 2px;
+                                        line-height: 1.4rem;
+                                        box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                                        // border-top: none;
+                                    }
+
+                                    .content-page-about-us .row .first-column img {
+                                        transform: scale(1.2);
+                                        // transition: transform 0.3s ease-in-out;
+                                    }
                                 }
 
-                                .container-section-truncation-content:hover .first-column img {
-                                    transform: scale(1.2);
-                                    transition: transform 0.3s ease-in-out;
-                                }
+                                // .container-section-truncation-content:hover .read-more-text {
+                                //     height: 200px;
+                                //     border-radius: 2px;
+                                //     line-height: 1.4rem;
+                                //     box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                                //     // border-top: none;
+                                // }
+
+                                // .container-section-truncation-content:hover .first-column img {
+                                //     transform: scale(1.2);
+                                //     // transition: transform 0.3s ease-in-out;
+                                // }
+
+                                // .container-section-truncation-content:hover + .row2 {
+                                //     transform: translateY(80px);
+                                //     /* move row2 down */
+                                //     transition: transform 0.5s ease;
+                                // }
                             }
 
 
