@@ -11,3 +11,16 @@ let toggle = (button, targetId) => {
     }
   }
   
+
+// let toggle = (button, targetId) => {
+//   let element = document.getElementById(targetId);
+//   let isHidden = element.classList.contains('open');
+
+//   if (isHidden) {
+//       element.classList.remove('open');
+//       button.innerHTML = '<i class="fa fa-angle-down"></i>';
+//   } else {
+//       element.classList.add('open');
+//       button.innerHTML = '<i class="fa fa-angle-up"></i>';
+//   }
+// }

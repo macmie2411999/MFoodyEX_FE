@@ -5,11 +5,6 @@ body {
   font-family: "Jost", sans-serif !important;
 }
 
-ul {
-  list-style: none;
-  padding: 0 !important;
-}
-
 body {
   padding: 0.5;
   margin: 0;
@@ -17,16 +12,11 @@ body {
   font-family: "Jost", sans-serif !important;
 }
 
-ul {
-  list-style: none;
-  padding: 0 !important;
-}
-
 .header {
   background: #fff;
   padding: 0px;
   transition: all 0.4s ease 0s;
-  height: 200px;
+  height: 190px;
   display: grid;
   align-items: center;
   z-index: 10;
@@ -175,7 +165,7 @@ ul {
   align-items: center;
   justify-content: center;
   font-size: 0.6em;
-  margin-top: -15px;
+  margin-top: -25px;
   /* Your content here */
 }
 .header .container_header .bottom_container_header .item-navbar .navbar-nav {
@@ -414,11 +404,6 @@ body {
   font-family: "Jost", sans-serif !important;
 }
 
-ul {
-  list-style: none;
-  padding: 0 !important;
-}
-
 .footer {
   background: #151421;
   border-top: 1px solid rgba(249, 249, 249, 0.1);
@@ -531,7 +516,7 @@ ul {
 }
 
 body {
-  zoom: 0.75;
+  zoom: 0.8;
 }
 
 .main-page-not-found {

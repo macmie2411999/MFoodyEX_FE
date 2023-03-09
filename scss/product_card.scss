@@ -1,0 +1,279 @@
+// Base
+@import '../scss/base';
+
+// Header and Footer Style
+@import '../scss/header_home_demo.scss';
+
+@import '../scss/footer_home_demo.scss';
+// Header and Footer Style End
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+$text-c4-yellow: #FFD96C;
+
+$text-c1-grey: #F8F8F8;
+$text-c2-grey: #DFE0E2;
+$text-c3-grey: #DEDDDC;
+$text-c4-grey: #B6BAC2;
+
+
+// body {
+//     zoom: 0.8;
+// }
+
+
+@mixin fontAdjust ($weight, $size, $height) {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+@mixin inlineBlocks() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin handleURL() {
+    a {
+        text-decoration: none !important;
+        color: #F6F6F6;
+        border: 1px solid #000000;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        width: 90px;
+        height: 32px;
+        top: 15px;
+    }
+}
+
+@mixin leftRightTopBottom($left, $right, $top, $bottom) {
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+}
+
+.main_products {
+    // max-width: 1600px;
+    margin: 50px auto 50px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container_products {
+        width: 100%;
+
+        .products_title {
+            text-align: left;
+            @include fontAdjust(400, 40px, 48px);
+            color: #000;
+        }
+
+        .row {
+
+            // margin: 10px;
+            // margin-bottom: 5px !important;
+            .col {
+                .card {
+                    width: 369;
+                    height: 334;
+                    background: #fff;
+                    position: relative;
+
+                    .tag-product {
+                        z-index: 2;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        font-size: 15px;
+                        margin: 1rem;
+                        color: #fff;
+                        background-color: $text-c2-yellow;
+                        padding: 3px 5px 3px 5px;
+                        border-radius: 5px;
+                        // cursor: pointer;
+                    }
+
+                    .heart-icon {
+                        z-index: 2;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        font-size: 1.8rem;
+                        margin: 1rem;
+                        cursor: pointer;
+
+                        svg {
+                            color: $text-c2-grey;
+                            border-radius: 50%;
+                            transition: color 0.3s ease-in-out;
+                        }
+
+                        svg:hover {
+                            color: $text-c1-primary;
+                            cursor: pointer;
+                        }
+                    }
+
+                    img {
+                        scale: 0.8;
+                    }
+
+                    .card-body {
+                        .rated-star {
+                            svg {
+                                color: $text-c4-yellow;
+                                font-size: 1.3rem;
+                            }
+                        }
+
+                        .card-title {
+                            padding-top: 10px;
+                            @include fontAdjust(300, 24px, 29px);
+                            color: #000;
+                        }
+
+                        .card-text {
+
+                            @include fontAdjust(300, 20px, 24px);
+                            color: #CBC9C9;
+                        }
+                    }
+
+
+                    .card-footer {
+                        width: 369;
+                        padding-top: 0 !important;
+                        margin-top: 0 !important;
+                        border-top: transparent;
+                        background-color: #fff;
+                        display: flex;
+
+                        .tag-prices {
+                            width: 50%;
+                            display: flex;
+                            // flex-direction: row;
+                            // justify-content: space-between;
+                            flex-wrap: nowrap;
+                            justify-content: center;
+                            align-items: center;
+                            background: #fff !important;
+                            border: none !important;
+                            // height: 64px;
+
+                            .tag-sale-price {
+
+                                
+                                background: #fff;
+                                border-color: transparent;
+                                font-size: 28px;
+                                padding-right: 5px;
+                                color: $text-c3-yellow;
+                            }
+
+                            .tag-full-price {
+                                font-size: 18px;
+                                text-align: left;
+                                color: $text-c4-grey;
+                                text-decoration: line-through;
+                            }
+                        }
+
+
+                        .more-infor {
+                            width: 25%;
+                            height: 64px;
+                            background: #fff;
+                            border-color: transparent;
+
+                            a {
+                                text-decoration: none !important;
+                                @include fontAdjust(200px, 24px, 29px);
+                                color: #000;
+                            }
+
+                        }
+
+                        .to-cart {
+                            width: 25%;
+                            height: 64px;
+                            background: #fff;
+                            @include fontAdjust(600, 24px, 29px);
+                            text-align: center;
+                            color: #000;
+                            border-color: transparent;
+                            border-radius: 50%;
+
+                        }
+
+                        svg {
+                            color: $text-c2-primary;
+                            font-size: 1.8rem;
+                            transition: all 0.4s ease-in-out;
+                        }
+
+                        svg:hover {
+                            scale: 1.3;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .tag-full-price {
+        display: none;
+    }
+
+    .tag-sale-price {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 772px) {
+    .tag-full-price {
+        font-size: 15px;
+    }
+
+    .tag-sale-price {
+        font-size: 20px;
+    }
+}
+
+// @media only screen and (max-width: 850px) {
+//     .tag-sale-price {
+//         font-size: 25px;
+//     }
+
+//     .tag-sale-price {
+//         font-size: 15px;
+//     }
+// }
+// @media (max-width: 768px) {
+//     .card-footer {
+//         display: flex;
+//         flex-wrap: wrap;
+//     }
+
+//     .tag-sale-price {
+//         flex-basis: 100%;
+//         text-align: center;
+//     }
+// }
+
+// Main Style
+
+// Main Style End
