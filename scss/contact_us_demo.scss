@@ -1,0 +1,270 @@
+// Base
+@import '../scss/base';
+
+// Header and Footer Style
+@import '../scss/header_home_demo.scss';
+
+@import '../scss/footer_home_demo.scss';
+// Header and Footer Style End
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+
+$text-c1-grey: #F8F8F8;
+$text-c2-grey: #DFE0E2;
+$text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
+
+body {
+    zoom: 0.8;
+}
+
+.contact {
+    background: #fff;
+    margin-top: 180px;
+
+    .contact-container {
+
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        .contact-title-content {
+            max-width: 800px;
+            margin: auto;
+
+            .title {
+                font-size: 35px;
+                line-height: 45px;
+                font-weight: 700;
+                margin: 0;
+                padding: 0;
+                color: #000;
+                opacity: 0.8;
+            }
+
+            .title-content {
+                font-size: 22px;
+                line-height: 28px;
+                color: $text-c5-grey;
+                // opacity: 0.8;
+                margin: 0;
+                padding: 0;
+            }
+
+        }
+
+        .contact-info {
+
+            .contact-info-container {
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+
+                .element-contact-info {
+
+                    display: grid;
+                    height: 170px;
+                    grid-template-columns: auto 1fr;
+                    grid-gap: 20px;
+                    background: #fff;
+                    padding: 30px;
+                    box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0px;
+                    border-radius: 8px;
+                    border: 1px solid $text-c8-grey;
+
+                    .icon-element {
+                        color: $text-c2-primary;
+                    }
+
+                    .text-element {
+
+                        h3 {
+                            font-size: 22px;
+                            font-weight: 600;
+                            margin: 0;
+                            padding: 0;
+                            color: #000;
+                            opacity: 0.8;
+                        }
+
+                        p {
+                            margin: 0;
+                            padding: 0;
+                            font-size: 20px;
+                            line-height: 28px;
+                            color: $text-c5-grey;
+                            opacity: 0.9;
+
+                            a:hover {
+                                color: #fff;
+                                opacity: 1;
+                            }
+
+                            a {
+                                background-color: transparent;
+                                cursor: pointer !important;
+                                text-decoration: none;
+                                font-size: 20px;
+                                line-height: 28px;
+                                color: $text-c5-grey;
+                                opacity: 0.9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.map-contact {
+    background: #fff;
+
+    .map-container {
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+        max-width: 1200px;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        iframe {
+            border: none;
+            width: 100%;
+            min-height: 400px;
+            display: block;
+            max-width: 100%;
+        }
+    }
+}
+
+.form-contact {
+    background: #fff;
+
+    .form-contact-over {
+
+        .form-contact-container {
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            .form-content {
+                margin: 0 auto;
+                max-width: 900px;
+
+                .form-content-container {
+
+                    .form-title-content {
+
+                        .title {
+                            font-size: 35px;
+                            line-height: 45px;
+                            font-weight: 700;
+                            // text-align: center !important;
+                            margin: 0;
+                            padding: 0;
+                            color: #000;
+                            opacity: 0.8;
+                        }
+
+                        .title-form {
+                            max-width: 600px;
+                            margin: auto;
+                            font-size: 22px;
+                            line-height: 28px;
+                            color: $text-c5-grey;
+                            // opacity: 0.8;
+                        }
+
+                        .form-top {
+
+                            input,
+                            textarea {
+                                width: 100%;
+                                background: $text-c6-grey;
+                                color: $text-c5-grey;
+                                font-size: 20px;
+                                font-weight: normal;
+                                font-style: normal;
+                                padding: 0px 25px;
+                                border: 1px solid $text-c8-grey;
+                                outline: none;
+                                height: 60px;
+                                display: inline-block;
+                                line-height: 50px;
+                                box-shadow: none;
+                                overflow: visible;
+                                border-radius: 8px;
+                            }
+
+                            .basic-infor {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                grid-gap: 20px;
+                            }
+
+                            .form-bottom-right {
+                                textarea {
+                                    height: 120px !important;
+                                }
+                            }
+
+                            // .message-infor {
+                            //     textarea {
+                            //         margin: 25px;
+                            //         resize: none;
+                            //         height: 130px;
+
+                            //     }
+                            // }
+                        }
+
+                    }
+
+                    .submit {
+                        text-align: center !important;
+
+                        button {
+                            padding: 15px 50px;
+                            font-size: 16px;
+                            line-height: 18px;
+                            font-weight: 600;
+                            // transition: 0.3s ease-in;
+                            border-radius: 8px;
+                            cursor: pointer !important;
+                            color: #fff;
+                            background-color: $text-c3-primary;
+                            border-color: $text-c2-primary;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
