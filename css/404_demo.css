@@ -12,6 +12,35 @@ body {
   font-family: "Jost", sans-serif !important;
 }
 
+.breadcrumb {
+  list-style: none;
+  display: inline-block;
+}
+.breadcrumb li {
+  background-color: transparent !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  font-size: 18px !important;
+  line-height: 28px !important;
+  color: #838384 !important;
+  opacity: 0.9;
+  display: inline;
+}
+.breadcrumb li a {
+  text-decoration: none !important;
+  color: #838384 !important;
+}
+.breadcrumb li a:hover {
+  color: #1CAF37 !important;
+}
+
+body {
+  padding: 0.5;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif !important;
+}
+
 .header {
   background: #fff;
   padding: 0px;
@@ -520,7 +549,7 @@ body {
 }
 
 .main-page-not-found {
-  margin-top: 200px;
+  margin-top: 115px;
 }
 .main-page-not-found .page-not-found {
   background: #fff;
@@ -532,6 +561,9 @@ body {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+}
+.main-page-not-found .page-not-found .container-page-not-found .content-page-not-found {
+  padding-top: 20px;
 }
 .main-page-not-found .page-not-found .container-page-not-found .content-page-not-found img {
   max-width: 80%;
@@ -553,22 +585,21 @@ body {
   padding: 0;
 }
 .main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .pnf-content {
-  font-size: 30px;
-  font-weight: 600;
-  text-transform: capitalize;
-  line-height: 36px;
-  padding-top: 25px;
-  color: #015A28;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
+  padding-top: 20px !important;
+  font-size: 32px;
+  line-height: 45px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  opacity: 0.8;
 }
 .main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search p {
   margin: 0 !important;
   padding-top: 5px;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 30px;
-  color: #000;
-  opacity: 0.9;
+  color: #757575;
   text-align: justify;
 }
 .main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction {
@@ -594,12 +625,14 @@ body {
 }
 .main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-go-back-home {
   margin-right: 10px;
+  font-size: 20px !important;
 }
 .main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-contact-us {
   margin-left: 10px;
+  font-size: 20px !important;
 }
 .main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-go-back-home:hover,
 .main-page-not-found .page-not-found .container-page-not-found .content-page-not-found .title-and-search .re-direction .btn-contact-us:hover {
-  background-color: #1CAF37;
+  background-color: #009f4d;
   color: #fff;
 }

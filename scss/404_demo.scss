@@ -1,11 +1,10 @@
 // Base
 @import '../scss/base';
+@import '../scss/breadcrumb_demo.scss';
 
 // Header and Footer Style
 @import '../scss/header_home_demo.scss';
-
 @import '../scss/footer_home_demo.scss';
-// Header and Footer Style End
 
 $text-c1-primary:#AAE640;
 $text-c2-primary: #1CAF37;
@@ -20,6 +19,11 @@ $text-c3-yellow: #C31A24;
 $text-c1-grey: #F8F8F8;
 $text-c2-grey: #DFE0E2;
 $text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
 
 body {
     zoom: 0.8;
@@ -28,7 +32,7 @@ body {
 // Main Style
 .main-page-not-found {
     // position: absolute;
-    margin-top: 200px;
+    margin-top: 115px;
 
     .page-not-found {
         background: #fff;
@@ -42,6 +46,7 @@ body {
             padding-left: 15px;
 
             .content-page-not-found {
+                padding-top: 20px;
 
                 img {
                     max-width: 80%;
@@ -65,28 +70,35 @@ body {
                     }
 
                     .pnf-content {
-                        font-size: 30px;
-                        font-weight: 600;
-                        text-transform: capitalize;
-                        line-height: 36px;
+                        // font-size: 30px;
+                        // font-weight: 600;
+                        // text-transform: capitalize;
+                        // line-height: 36px;
                         // margin: 16px 0 18px 0;
-                        padding-top: 25px;
                         // padding: 0;
-                        color: $text-c4-primary;
-                        font-family: 'Montserrat', sans-serif;
-                        font-weight: 600;
+
+                        padding-top: 20px !important;
+                        font-size: 32px;
+                        line-height: 45px;
+                        font-weight: 700;
+                        margin: 0;
+                        padding: 0;
+                        color: #000;
+                        opacity: 0.8;
                     }
 
                     p {
                         margin: 0 !important;
                         padding-top: 5px;
-                        font-size: 20px;
+                        font-size: 22px;
                         line-height: 30px;
-                        color: #000;
-                        opacity: .9;
+                        // color: #000;
+                        color: $text-c5-grey;
+                        // opacity: .9;
                         text-align: justify;
                         // font-family: 'Montserrat', sans-serif;
                         // font-weight: 500;
+                        
                     }
 
                     .re-direction {
@@ -114,15 +126,17 @@ body {
 
                         .btn-go-back-home {
                             margin-right: 10px;
+                            font-size: 20px !important;
                         }
 
                         .btn-contact-us {
                             margin-left: 10px;
+                            font-size: 20px !important;
                         }
 
                         .btn-go-back-home:hover,
                         .btn-contact-us:hover {
-                            background-color: $text-c2-primary;
+                            background-color: $text-c3-primary;
                             color: #fff;
                         }
 

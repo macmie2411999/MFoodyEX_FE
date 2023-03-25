@@ -12,6 +12,35 @@ body {
   font-family: "Jost", sans-serif !important;
 }
 
+.breadcrumb {
+  list-style: none;
+  display: inline-block;
+}
+.breadcrumb li {
+  background-color: transparent !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  font-size: 18px !important;
+  line-height: 28px !important;
+  color: #838384 !important;
+  opacity: 0.9;
+  display: inline;
+}
+.breadcrumb li a {
+  text-decoration: none !important;
+  color: #838384 !important;
+}
+.breadcrumb li a:hover {
+  color: #1CAF37 !important;
+}
+
+body {
+  padding: 0.5;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif !important;
+}
+
 .header {
   background: #fff;
   padding: 0px;
@@ -521,7 +550,7 @@ body {
 
 .contact {
   background: #fff;
-  margin-top: 180px;
+  margin-top: 140px;
 }
 .contact .contact-container {
   max-width: 1200px;
@@ -547,7 +576,8 @@ body {
 .contact .contact-container .contact-title-content .title-content {
   font-size: 22px;
   line-height: 28px;
-  color: #757575;
+  color: #000;
+  opacity: 0.7;
   margin: 0;
   padding: 0;
 }
@@ -576,7 +606,7 @@ body {
   font-weight: 600;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #015A28;
   opacity: 0.8;
 }
 .contact .contact-container .contact-info .contact-info-container .element-contact-info .text-element p {
@@ -584,11 +614,11 @@ body {
   padding: 0;
   font-size: 20px;
   line-height: 28px;
-  color: #757575;
-  opacity: 0.9;
+  color: #000;
+  opacity: 0.8;
 }
 .contact .contact-container .contact-info .contact-info-container .element-contact-info .text-element p a:hover {
-  color: #fff;
+  color: #015A28;
   opacity: 1;
 }
 .contact .contact-container .contact-info .contact-info-container .element-contact-info .text-element p a {
@@ -597,8 +627,8 @@ body {
   text-decoration: none;
   font-size: 20px;
   line-height: 28px;
-  color: #757575;
-  opacity: 0.9;
+  color: #000;
+  opacity: 0.8;
 }
 
 .map-contact {
@@ -650,7 +680,8 @@ body {
   margin: auto;
   font-size: 22px;
   line-height: 28px;
-  color: #757575;
+  color: #000;
+  opacity: 0.7;
 }
 .form-contact .form-contact-over .form-contact-container .form-content .form-content-container .form-title-content .form-top input,
 .form-contact .form-contact-over .form-contact-container .form-content .form-content-container .form-title-content .form-top textarea {

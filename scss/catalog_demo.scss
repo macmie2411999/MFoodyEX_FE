@@ -1,13 +1,12 @@
 // Base
 @import '../scss/base';
+@import '../scss/breadcrumb_demo.scss';
 
 // Header and Footer Style
 @import '../scss/header_home_demo.scss';
-
 @import '../scss/footer_home_demo.scss';
-// Header and Footer Style End
 
-//
+// Card
 @import '../scss/product_card.scss';
 
 $text-c1-primary:#AAE640;
@@ -23,6 +22,11 @@ $text-c3-yellow: #C31A24;
 $text-c1-grey: #F8F8F8;
 $text-c2-grey: #DFE0E2;
 $text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
 
 @mixin fontAdjust ($weight, $size, $height) {
     font-family: 'Inter';
@@ -64,18 +68,18 @@ body {
 
 .catalog-full-list {
     a:hover {
-        color: $text-c1-primary !important;
+        color: $text-c3-primary !important;
         opacity: 1 !important;
     }
 
     a {
         text-decoration: none !important;
         background-color: transparent;
-        cursor: pointer !important;
-        font-size: 20px !important;
-        line-height: 30px !important;
-        color: #8D8D8D !important;
-        opacity: 0.6 !important;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 30px;
+        color: #000;
+        opacity: 0.5;
     }
 
     ul {

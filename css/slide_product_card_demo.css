@@ -1225,90 +1225,152 @@ body {
     font-size: 20px;
   }
 }
-body {
+.container .row .splide .splide__arrows .splide__arrow--prev {
+  width: 40px;
+  height: 40px;
+  background-color: #fff !important;
+  left: -5px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  opacity: 2;
+}
+.container .row .splide .splide__arrows .splide__arrow--next {
+  width: 40px;
+  height: 40px;
+  background-color: #fff !important;
+  right: -5px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  opacity: 2;
+}
+.container .row .splide .splide__arrows .splide__arrow svg {
+  transition: all 0.2s ease;
+}
+.container .row .splide .splide__arrows .splide__arrow svg:hover {
+  fill: #1CAF37;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card {
   zoom: 0.8;
-}
-
-.catalog-full-list {
-  margin-top: 200px;
-}
-.catalog-full-list a:hover {
-  color: #009f4d !important;
-  opacity: 1 !important;
-}
-.catalog-full-list a {
-  text-decoration: none !important;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 30px;
-  color: #000;
-  opacity: 0.5;
-}
-.catalog-full-list ul {
-  margin: 0;
-  padding: 0 !important;
-  list-style: disc;
-}
-.catalog-full-list ul li {
-  list-style: none;
-  margin-bottom: 10px;
-  margin-left: 15px;
-  transition: all 0.5s ease;
-}
-.catalog-full-list h1 {
-  font-size: 36px;
-  margin-top: 0;
-}
-.catalog-full-list p {
-  font-size: 18px;
-  line-height: 1.5;
-}
-.catalog-full-list .container-catalog-full-list {
-  max-width: 1600px;
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 0px;
-}
-.catalog-full-list .container-catalog-full-list .sidebar {
-  background-color: #fff;
-  padding: 20px;
-  padding-left: 0;
-}
-.catalog-full-list .container-catalog-full-list .sidebar .has-sub-menu {
-  margin-bottom: 10px;
+  background: #fff;
   position: relative;
+  margin: 5px;
 }
-.catalog-full-list .container-catalog-full-list .sidebar .has-sub-menu .sub-menu {
-  margin-top: 5px;
-  padding-left: 10px;
-}
-.catalog-full-list .container-catalog-full-list .sidebar .has-sub-menu button {
-  text-decoration: none;
-  background-color: #fff;
-  border: 0px solid #ccc;
-  border-radius: 5px;
-  color: #009f4d;
-  font-weight: bold;
-  cursor: pointer;
-  display: inline-block;
-  padding-right: 0px;
-  text-align: center;
-  width: 20px;
+.container .row .splide .splide__track .splide__list .splide__slide .card .tag-product {
+  z-index: 2;
   position: absolute;
-  right: 0;
   top: 0;
+  left: 0;
+  font-size: 15px;
+  margin: 1rem;
+  color: #fff;
+  background-color: #F67E3C;
+  padding: 3px 5px 3px 5px;
+  border-radius: 5px;
 }
-.catalog-full-list .container-catalog-full-list .sidebar .category {
-  color: #000 !important;
-  opacity: 0.7 !important;
+.container .row .splide .splide__track .splide__list .splide__slide .card .heart-icon {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.8rem;
+  margin: 1rem;
+  cursor: pointer;
 }
-.catalog-full-list .container-catalog-full-list .sidebar .category:hover {
-  color: #408A36 !important;
-  opacity: 1 !important;
+.container .row .splide .splide__track .splide__list .splide__slide .card .heart-icon i {
+  color: #DFE0E2 !important;
+  border-radius: 50%;
+  transition: color 0.3s ease-in-out;
 }
-.catalog-full-list .container-catalog-full-list .content {
-  padding-bottom: 50px;
+.container .row .splide .splide__track .splide__list .splide__slide .card .heart-icon i:hover {
+  color: #AAE640 !important;
+  cursor: pointer;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card img {
+  scale: 0.8;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-body .rated-star i {
+  color: #FFD96C;
+  font-size: 1.3rem;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-body .card-title {
+  padding-top: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-body .card-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #CBC9C9;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  border-top: transparent;
+  background-color: #fff;
+  display: flex;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer .tag-prices {
+  width: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #fff !important;
+  border: none !important;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer .tag-prices .tag-sale-price {
+  background: #fff;
+  border-color: transparent;
+  font-size: 28px;
+  padding-right: 5px;
+  color: #C31A24;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer .tag-prices .tag-full-price {
+  font-size: 18px;
+  text-align: left;
+  color: #F2F3F5;
+  text-decoration: line-through;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer .more-infor {
+  width: 25%;
+  height: 64px;
+  background: #fff;
+  border-color: transparent;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer .more-infor a {
+  text-decoration: none !important;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200px;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer .to-cart {
+  width: 25%;
+  height: 64px;
+  background: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #000;
+  border-color: transparent;
+  border-radius: 50%;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer i {
+  color: #1CAF37;
+  font-size: 1.8rem;
+  transition: all 0.4s ease-in-out;
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card .card-footer i:hover {
+  scale: 1.3;
+  cursor: pointer;
 }

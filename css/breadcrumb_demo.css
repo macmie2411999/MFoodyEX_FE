@@ -1,0 +1,28 @@
+body {
+  padding: 0.5;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif !important;
+}
+
+.breadcrumb {
+  list-style: none;
+  display: inline-block;
+}
+.breadcrumb li {
+  background-color: transparent !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  font-size: 18px !important;
+  line-height: 28px !important;
+  color: #838384 !important;
+  opacity: 0.9;
+  display: inline;
+}
+.breadcrumb li a {
+  text-decoration: none !important;
+  color: #838384 !important;
+}
+.breadcrumb li a:hover {
+  color: #1CAF37 !important;
+}

@@ -1,11 +1,10 @@
 // Base
 @import '../scss/base';
+@import '../scss/breadcrumb_demo.scss';
 
 // Header and Footer Style
 @import '../scss/header_home_demo.scss';
-
 @import '../scss/footer_home_demo.scss';
-// Header and Footer Style End
 
 $text-c1-primary:#AAE640;
 $text-c2-primary: #1CAF37;
@@ -32,7 +31,8 @@ body {
 
 .contact {
     background: #fff;
-    margin-top: 180px;
+    margin-top: 140px;
+    // zoom: 1;
 
     .contact-container {
 
@@ -42,10 +42,12 @@ body {
         width: 100%;
         padding-right: 15px;
         padding-left: 15px;
+        // background-color: $text-c1-primary;
 
         .contact-title-content {
             max-width: 800px;
             margin: auto;
+            
 
             .title {
                 font-size: 35px;
@@ -60,8 +62,8 @@ body {
             .title-content {
                 font-size: 22px;
                 line-height: 28px;
-                color: $text-c5-grey;
-                // opacity: 0.8;
+                color: #000;
+                opacity: 0.7;
                 margin: 0;
                 padding: 0;
             }
@@ -99,7 +101,7 @@ body {
                             font-weight: 600;
                             margin: 0;
                             padding: 0;
-                            color: #000;
+                            color: $text-c4-primary;
                             opacity: 0.8;
                         }
 
@@ -108,11 +110,11 @@ body {
                             padding: 0;
                             font-size: 20px;
                             line-height: 28px;
-                            color: $text-c5-grey;
-                            opacity: 0.9;
+                            color: #000;
+                            opacity: 0.8;
 
                             a:hover {
-                                color: #fff;
+                                color: $text-c4-primary;
                                 opacity: 1;
                             }
 
@@ -122,8 +124,8 @@ body {
                                 text-decoration: none;
                                 font-size: 20px;
                                 line-height: 28px;
-                                color: $text-c5-grey;
-                                opacity: 0.9;
+                                color: #000;
+                                opacity: 0.8;
                             }
                         }
                     }
@@ -157,6 +159,10 @@ body {
 
 .form-contact {
     background: #fff;
+    // background-image: url('../image/pages/map.png');
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: center;
 
     .form-contact-over {
 
@@ -192,8 +198,8 @@ body {
                             margin: auto;
                             font-size: 22px;
                             line-height: 28px;
-                            color: $text-c5-grey;
-                            // opacity: 0.8;
+                            color: #000;
+                            opacity: 0.7;
                         }
 
                         .form-top {
