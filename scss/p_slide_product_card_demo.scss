@@ -1,0 +1,255 @@
+// Base
+@import '../scss/base';
+@import '../scss/breadcrumb_demo.scss';
+
+// Header and Footer Style
+@import '../scss/header_home_demo.scss';
+@import '../scss/footer_home_demo.scss';
+
+// Card
+@import '../scss/p_product_card.scss';
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+
+$text-c1-grey: #F8F8F8;
+$text-c2-grey: #DFE0E2;
+$text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
+
+@mixin fontAdjust ($weight, $size, $height) {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+@mixin inlineBlocks() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin handleURL() {
+    a {
+        text-decoration: none !important;
+        color: #F6F6F6;
+        border: 1px solid #000000;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        width: 90px;
+        height: 32px;
+        top: 15px;
+    }
+}
+
+@mixin leftRightTopBottom($left, $right, $top, $bottom) {
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+}
+
+.container {
+    .row {
+        .splide {
+
+            .splide__arrows {
+                
+                .splide__arrow--prev {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff !important;
+                    left: -5px;
+                    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                    opacity: 2;
+                }
+
+                .splide__arrow--next {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff !important;
+                    right: -5px;
+                    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                    opacity: 2;
+                }
+
+                .splide__arrow svg{
+                    transition: all 0.2s ease;
+                }
+
+                .splide__arrow svg:hover{
+                    fill: $text-c2-primary;
+                }
+
+
+            }
+
+            .splide__track {
+                .splide__list {
+                    .splide__slide {
+
+
+                        .card {
+                            zoom: 0.8;
+                            background: #fff;
+                            position: relative;
+                            margin: 5px;
+
+                            .tag-product {
+                                z-index: 2;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                font-size: 15px;
+                                margin: 1rem;
+                                color: #fff;
+                                background-color: $text-c2-yellow;
+                                padding: 3px 5px 3px 5px;
+                                border-radius: 5px;
+                                // cursor: pointer;
+                            }
+
+                            .heart-icon {
+                                z-index: 2;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                font-size: 1.8rem;
+                                margin: 1rem;
+                                cursor: pointer;
+
+                                i {
+                                    color: $text-c2-grey !important;
+                                    border-radius: 50%;
+                                    transition: color 0.3s ease-in-out;
+                                }
+
+                                i:hover {
+                                    color: $text-c1-primary !important;
+                                    cursor: pointer;
+                                }
+                            }
+
+
+
+                            img {
+                                scale: 0.8;
+                            }
+
+                            .card-body {
+                                .rated-star {
+                                    i {
+                                        color: $text-c4-yellow;
+                                        font-size: 1.3rem;
+                                    }
+                                }
+
+                                .card-title {
+                                    padding-top: 10px;
+                                    @include fontAdjust(300, 24px, 29px);
+                                    color: #000;
+                                }
+
+                                .card-text {
+
+                                    @include fontAdjust(300, 20px, 24px);
+                                    color: #CBC9C9;
+                                }
+                            }
+
+
+                            .card-footer {
+                                // width: 369;
+                                padding-top: 0 !important;
+                                margin-top: 0 !important;
+                                border-top: transparent;
+                                background-color: #fff;
+                                display: flex;
+
+                                .tag-prices {
+                                    width: 50%;
+                                    display: flex;
+                                    // flex-direction: row;
+                                    // justify-content: space-between;
+                                    flex-wrap: nowrap;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background: #fff !important;
+                                    border: none !important;
+                                    // height: 64px;
+
+                                    .tag-sale-price {
+
+
+                                        background: #fff;
+                                        border-color: transparent;
+                                        font-size: 28px;
+                                        padding-right: 5px;
+                                        color: $text-c3-yellow;
+                                    }
+
+                                    .tag-full-price {
+                                        font-size: 18px;
+                                        text-align: left;
+                                        color: $text-c4-grey;
+                                        text-decoration: line-through;
+                                    }
+                                }
+
+                                .more-infor {
+                                    width: 25%;
+                                    height: 64px;
+                                    background: #fff;
+                                    border-color: transparent;
+
+                                    a {
+                                        text-decoration: none !important;
+                                        @include fontAdjust(200px, 24px, 29px);
+                                        color: #000;
+                                    }
+
+                                }
+
+                                .to-cart {
+                                    width: 25%;
+                                    height: 64px;
+                                    background: #fff;
+                                    @include fontAdjust(600, 24px, 29px);
+                                    text-align: center;
+                                    color: #000;
+                                    border-color: transparent;
+                                    border-radius: 50%;
+
+                                }
+
+                                i {
+                                    color: $text-c2-primary;
+                                    font-size: 1.8rem;
+                                    transition: all 0.4s ease-in-out;
+                                }
+
+                                i:hover {
+                                    scale: 1.3;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

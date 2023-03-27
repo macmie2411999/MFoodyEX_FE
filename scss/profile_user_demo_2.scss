@@ -1,0 +1,156 @@
+// Base
+@import '../scss/base';
+@import '../scss/breadcrumb_demo.scss';
+
+// Header and Footer Style
+@import '../scss/header_home_demo.scss';
+@import '../scss/footer_home_demo.scss';
+
+// Card
+@import '../scss/p_product_card.scss';
+
+// General Profile
+@import '../scss/p_general_profile_user.scss';
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+
+$text-c1-grey: #F8F8F8;
+$text-c2-grey: #DFE0E2;
+$text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
+
+// Main Style
+
+body {
+    zoom: 0.8;
+}
+
+.profile-full-list {
+
+    h1 {
+        font-size: 36px;
+        margin-top: 0;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    margin-top: 200px;
+
+    .container-profile-full-list {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+
+        max-width: 1600px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 15px;
+        padding-left: 0px;
+
+        #sidebar {
+
+            a {
+                text-decoration: none !important;
+                background-color: transparent;
+                cursor: pointer;
+                font-size: 20px;
+                line-height: 30px;
+                color: #000;
+                opacity: 0.5;
+            }
+        
+            ul {
+                li {
+                    list-style: none;
+                    margin-bottom: 20px;
+                    margin-right: 15px !important;
+                    transition: all 0.5s ease;
+                }
+        
+                margin: 0;
+                padding: 0 !important;
+                list-style: disc;
+            }
+            
+            min-width: 250px;
+            max-width: 250px;
+            background: transparent;
+            color: #fff;
+            transition: all 0.3s;
+            padding-top: 45px;
+
+            .components {
+                padding: 5px 20px 20px 20px;
+
+                button {
+                    width: 50px;
+                    border: none;
+                    background-color: transparent;
+
+                    svg {
+                        color: $text-c2-primary;
+                        opacity: 0.7;
+                    }
+
+                    .icon-log-out {
+                        color: $text-c2-yellow !important;
+                    }
+
+                    .icon-delete-account {
+                        color: red !important;
+                    }
+                }
+
+                .category {
+                    color: #000 !important;
+                    opacity: 0.7 !important;
+                    display: inline-block;
+                    padding-left: 20px;
+                    text-align: center;
+                    right: 0;
+                    top: 0;
+
+                    &:hover {
+                        color: #000 !important;
+                        opacity: 1 !important;
+                    }
+
+                }
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+// Main Style End
