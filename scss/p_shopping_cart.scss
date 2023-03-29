@@ -14,6 +14,7 @@ $text-c2-primary: #1CAF37;
 $text-c3-primary:#009f4d;
 $text-c4-primary:#015A28;
 $text-c5-primary:#408A36;
+$text-c6-primary: #0FC44C;
 
 $text-c1-yellow: #FACF39;
 $text-c2-yellow: #F67E3C;
@@ -29,152 +30,184 @@ $text-c7-grey: #838384;
 $text-c8-grey: #eee;
 
 .shopping-cart {
-    padding-bottom: 50px;
-    background-color: #fff;
-    display: flex;
-    flex-wrap: wrap;
 
-    .container {
+    .container-shopping-cart {
+        padding-bottom: 50px;
+        background-color: #fff;
+        display: flex;
+        flex-wrap: wrap;
 
-        // background-color: #009f4d;
-        // border-radius: 5px;
-        .container-heading {
-            padding-top: 50px;
-            margin-bottom: 40px;
-            text-align: center;
+        .container {
 
-            p {
-                text-align: center;
-                max-width: 420px;
-                margin: auto;
-                opacity: 0.7;
+            .container-heading {
+                padding-top: 50px;
+                margin-bottom: 20px;
+                text-align: left;
+
+                p {
+                    text-align: center;
+                    max-width: 420px;
+                    margin: auto;
+                    opacity: 0.7;
+                }
             }
 
-            h1 {
-                margin-bottom: 1.2rem;
-                color: #3b99e0;
-            }
+            .content {
+                box-shadow: 0 0 1rem rgba(0, 0, 0, 0.075);
+                background-color: white;
 
-            h2 {
-                margin-bottom: 1.2rem;
-                color: #3b99e0;
-            }
+                .content-container {
+                    .list-items {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
 
-            h3 {
-                margin-bottom: 1.2rem;
-                color: #3b99e0;
-            }
-        }
+                        .items {
+                            margin: 12px 15px 0 15px;
+                            background-color: #fff;
 
-        .content {
-            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.075);
-            background-color: white;
+                            .product {
+                                margin-bottom: 20px;
+                                padding-top: 20px;
+                                padding-bottom: 20px;
+                                display: flex;
+                                align-items: center;
+                                // box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                                border: 2px solid mix($text-c5-grey, #fff, 10%);
+                                border-radius: 5px;
 
-            .content-container {
-                .list-items {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                                .container-product {
+                                    padding: 0 !important;
+                                    margin: 0 !important;
 
-                    .items {
-                        margin: 12px 0 0 20px;
-                        background-color: #fff;
-                        // box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
 
-                        .product {
-                            margin-bottom: 20px;
-                            padding-top: 20px;
-                            padding-bottom: 20px;
-                            display: flex;
-                            align-items: center;
-
-                            .container-product {
-                                .image-product {
-                                    // margin: auto;
-                                    border: 1px solid mix($text-c2-grey, #fff, 50%);
-                                    border-radius: 5px;
-                                    // box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
-
-                                    img {}
-                                }
-
-                                .infor-product {
-                                    // margin: 0;
-                                    padding: 0;
-                                    text-align: left;
-                                    position: relative;
-
-                                    .container-infor {
-                                        padding-top: 0px;
-                                        text-align: center;
-
-                                        .product-general {
-                                            font-weight: 600;
-
-                                            .product-info {
-                                                font-size: 14px;
-                                                margin-top: 15px;
-
-                                                .value {
-                                                    font-weight: 400;
-                                                }
-                                            }
-
-                                            .price {
-                                                margin-top: 15px;
-                                                font-weight: bold;
-                                                font-size: 22px;
-                                            }
+                                    .image-product {
+                                        img {
+                                            margin-left: 5px !important;
                                         }
+                                    }
 
-                                        .adjust-product-quantity {
-                                            
-                                            // padding-right: 0px;
-                                            // text-align: center;
-                                            // right: 0;
-                                            // top: 0;
+                                    .infor-product {
+                                        padding: 0;
+                                        text-align: left;
+                                        position: relative;
 
-                                            .price-general {
-                                                position: absolute;
-                                                bottom: 0;
-                                                right: 0;
-                                                margin-bottom: 40px;
-                                                margin-right: 0px;
-                                            }
+                                        .container-infor {
+                                            padding-top: 0px;
+                                            // padding-right: 10px;
+                                            text-align: left;
 
-                                            .quantity-general {
-                                                position: absolute;
-                                                top: 0;
-                                                right: 0;
+                                            .product-general {
+                                                font-weight: 600;
+                                                margin-left: 20px;
 
-                                                .quantity {
-                                                    .quantity-input {
-                                                        margin: auto;
-                                                        width: 80px;
+                                                h4 {}
+
+                                                .product-star-and-sale {
+                                                    .rated-star {
+                                                        svg {
+                                                            color: $text-c4-yellow;
+                                                            font-size: 1.3rem;
+                                                        }
+                                                    }
+
+                                                    .tag-product {
+                                                        z-index: 2;
+                                                        font-size: 15px;
+                                                        margin: 1rem 1rem 1rem 0;
+                                                        color: #fff;
+                                                        background-color: $text-c2-yellow;
+                                                        padding: 3px 5px 3px 5px;
+                                                        border-radius: 5px;
                                                     }
                                                 }
 
-                                                .product-removal {
+                                                .product-info {
+                                                    font-size: 14px;
+                                                    margin-top: 15px;
 
-                                                    .remove-product {
-                                                        border: none;
-                                                        height: 37px;
-                                                        width: 37px;
+                                                    .product-description {
+                                                        padding-right: 10px;
+                                                    }
+
+                                                    .tag-prices {
+                                                        width: 50%;
+                                                        display: flex;
+                                                        background: #fff !important;
+                                                        border: none !important;
+                                                        margin-top: 1rem;
+
+                                                        .tag-sale-price {
+                                                            border-color: transparent;
+                                                            font-size: 25px;
+                                                            padding-right: 5px;
+                                                            color: $text-c6-primary;
+                                                        }
+
+                                                        .tag-full-price {
+                                                            font-size: 18px;
+                                                            text-align: left;
+                                                            color: $text-c3-yellow;
+                                                            text-decoration: line-through;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .adjust-product-quantity {
+                                                .price-general {
+                                                    position: absolute;
+                                                    bottom: 0;
+                                                    right: 0;
+                                                    margin-bottom: 0px;
+                                                    margin-right: 15px;
+
+                                                    .container-price-general {
+                                                        background-color: $text-c6-primary;
                                                         border-radius: 5px;
-                                                        background-color: $text-c3-yellow;
-                                                        transition: all 0.7 ease;
 
-                                                        svg {
+                                                        .product-line-price {
+                                                            font-size: 25px;
                                                             color: #fff;
-                                                            transition: all 2 ease !important;
                                                         }
+                                                    }
+                                                }
 
-                                                        &:hover {
+                                                .quantity-general {
+                                                    position: absolute;
+                                                    top: 0;
+                                                    right: 0;
+
+                                                    .quantity {
+                                                        .quantity-input {
+                                                            margin: auto;
+                                                            width: 80px;
+                                                        }
+                                                    }
+
+                                                    .product-removal {
+                                                        padding-left: 20px;
+
+                                                        .remove-product {
+                                                            border: none;
+                                                            height: 32px;
+                                                            width: 32px;
+                                                            border-radius: 5px;
+                                                            background-color: $text-c3-yellow;
+                                                            transition: all 0.7 ease;
+
                                                             svg {
-                                                                scale: 1.2;
+                                                                color: #fff;
+                                                                transition: all 0.7 ease !important;
                                                             }
-                                                        }
 
+                                                            &:hover {
+                                                                svg {
+                                                                    scale: 1.2;
+                                                                }
+                                                            }
+
+                                                        }
                                                     }
                                                 }
                                             }
@@ -182,57 +215,82 @@ $text-c8-grey: #eee;
                                     }
                                 }
                             }
-
-
-
-
                         }
                     }
                 }
             }
         }
-    }
 
-    .summary {
-        border-top: 2px solid $text-c2-primary;
-        border-bottom: 2px solid $text-c2-primary;
-        background-color: mix($text-c3-primary, #fff, 20%);
-        height: 90%;
-        border-radius: 5px;
-        margin: 10px !important;
-        padding: 30px;
+        .summary {
+            // border-top: 2px solid $text-c6-primary;
+            // border-bottom: 2px solid $text-c6-primary;
+            // background-color: $text-c1-grey;
+            // height: 90%;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.075);
+            border-radius: 5px;
+            margin: 15px !important;
+            padding: 30px;
 
-        h3 {
-            text-align: center;
-            font-size: 1.3em;
-            font-weight: 600;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .summary-item {
-            &:not(:last-of-type) {
-                padding-bottom: 10px;
-                padding-top: 10px;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            h3 {
+                text-align: center;
+                font-size: 1.3em;
+                font-weight: 600;
+                padding-top: 20px;
+                padding-bottom: 20px;
             }
-        }
 
-        .text {
-            font-size: 1em;
-            font-weight: 600;
-        }
+            .summary-item {
+                &:not(:last-of-type) {
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                }
+            }
 
-        .price {
-            font-size: 1em;
-            float: right;
-        }
+            .text {
+                font-size: 1em;
+                font-weight: 600;
+            }
 
-        button {
-            margin-top: 20px;
+            .price {
+                font-size: 1em;
+                float: right;
+            }
+
+            .checkout-container {
+                width: 100%;
+                background-color: $text-c6-primary;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                border-radius: 5px;
+                cursor: pointer;
+
+                button {
+                    border: none;
+                    font-size: 20px;
+                    color: #fff;
+                    opacity: 0.8;
+                    background-color: transparent;
+                    padding: 5px 0 5px 0;
+                    // margin-top: 20px;
+                }
+
+                &:hover{
+                    button{
+                        color: #fff;
+                        opacity: 1.3;
+                    }
+                }
+            }
+
+
         }
     }
 }
+
+
 
 @media (min-width: 768px) {
     .shopping-cart {
@@ -263,7 +321,7 @@ $text-c8-grey: #eee;
 }
 
 @media (max-width: 768px) {
-    .adjust-product-quantity{
+    .quantity-general {
         display: none !important;
     }
 }

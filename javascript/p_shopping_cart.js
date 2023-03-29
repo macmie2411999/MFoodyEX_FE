@@ -64,8 +64,6 @@ function recalculateCart() {
   });
 }
 
-
-
 /* Remove item from cart */
 function removeItem(removeButton) {
   /* Remove row from DOM and recalc cart total */

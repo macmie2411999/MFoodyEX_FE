@@ -58,8 +58,8 @@
     <!-- CATALOG PAGE -->
     <!-- CATALOG PAGE END -->
 
-    <main class="page">
-        <section class="shopping-cart dark">
+    <main class="shopping-cart">
+        <section class="container-shopping-cart">
             <div class="container">
                 <div class="container-heading">
                     <h2>Shopping Cart</h2>
@@ -69,33 +69,42 @@
                         <div class="col-md-12 col-lg-8 list-items">
                             <div class="items">
 
+                                <!-- List Products-->
                                 <div class="product">
                                     <div class="row container-product">
                                         <div class="col-md-3 image-product">
-                                            <img class="img-fluid mx-auto d-block image"
-                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                            <img class="img-fluid mx-auto d-block image" src="../image/products/Vegetable_Avovado_3.webp">
                                         </div>
-                                        <div class="col-md-9  infor-product">
+                                        <div class="col-md-9 infor-product">
                                             <div class="row container-infor">
                                                 <div class="col-md-7 product-general">
-                                                    <a href="#">Name Product</a>
+                                                    <h4 href="#">Name Product</h4>
+                                                    <div class="product-star-and-sale">
+                                                        <span class="tag-product"> New Product </span>
+                                                        <span class="rated-star card-text"><i
+                                                                class="fa-solid fa-star"></i> 4.2 </span>
+                                                    </div>
                                                     <div class="product-info">
-                                                        <div>$Product Description Lorem ipsum dolor, sit amet
+                                                        <div class="product-description">$Product Description Lorem
+                                                            ipsum dolor, sit amet
                                                             consectetur adipisicing elit. Quidem, exercitationem!</div>
+                                                        <button class="tag-prices">
+                                                            <span class="tag-sale-price product-price">150$</span>
+                                                            <span class="tag-full-price">170$</span>
+                                                        </button>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-5 adjust-product-quantity">
                                                     <div class="row price-general">
-                                                        <div class="col-md-6 price">
-                                                            <span class="product-price">$120</span>
+                                                        <div class="col-md-12 container-price-general">
+                                                            <span class="product-line-price">150$</span>
                                                         </div>
-                                                        <div class="col-md-6 product-line-price">25.98</div>
                                                     </div>
 
                                                     <div class="row quantity-general">
                                                         <div class="col-md-6 quantity product-quantity">
-                                                            <input id="quantity" type="number" value="1"
+                                                            <input id="quantity" type="number" value="1" min="1"
                                                                 class="form-control quantity-input">
                                                         </div>
 
@@ -106,15 +115,64 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>    
 
+                                <div class="product">
+                                    <div class="row container-product">
+                                        <div class="col-md-3 image-product">
+                                            <img class="img-fluid mx-auto d-block image"
+                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                        </div>
+                                        <div class="col-md-9 infor-product">
+                                            <div class="row container-infor">
+                                                <div class="col-md-7 product-general">
+                                                    <h4 href="#">Name Product</h4>
+                                                    <div class="product-star-and-sale">
+                                                        <span class="tag-product"> New Product </span>
+                                                        <span class="rated-star card-text"><i
+                                                                class="fa-solid fa-star"></i> 4.2 </span>
+                                                        <!-- <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span> -->
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="product-description">$Product Description Lorem
+                                                            ipsum dolor, sit amet
+                                                            consectetur adipisicing elit. Quidem, exercitationem!</div>
+                                                        <button class="tag-prices">
+                                                            <span class="tag-sale-price product-price">150$</span>
+                                                            <span class="tag-full-price">170$</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-5 adjust-product-quantity">
+                                                    <div class="row price-general">
+                                                        <div class="col-md-12 container-price-general">
+                                                            <span class="product-line-price">150$</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row quantity-general">
+                                                        <div class="col-md-6 quantity product-quantity">
+                                                            <input id="quantity" type="number" value="1" min="1"
+                                                                class="form-control quantity-input">
+                                                        </div>
+
+                                                        <div class="col-md-6 product-removal">
+                                                            <button class="remove-product">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                                
+                                 <!-- List Products END-->
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-4">
@@ -136,7 +194,7 @@
                                     <div class="totals-value price" id="cart-total">90.57</div>
                                 </div>
                                 <div class="checkout-container">
-                                    <button class="checkout">Checkout</button>
+                                    <button class="checkout">Check Out</button>
                                 </div>
 
                             </div>
