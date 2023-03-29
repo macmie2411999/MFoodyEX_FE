@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/p_shopping_cart.min.css">
+    <title>pCart MFoody - Grocery Store</title>
+    <link rel="icon" href="../image/icon/icon_gfgl_green_64.png">
+
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Library (For Slider) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--- Font Josh-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Jost:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap"
+        rel="stylesheet">
+
+    <!--- Font Shrikhand-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Jost:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Slick Carousel-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <!-- CATALOG PAGE -->
+    <!-- CATALOG PAGE END -->
+
+    <main class="page">
+        <section class="shopping-cart dark">
+            <div class="container">
+                <div class="container-heading">
+                    <h2>Shopping Cart</h2>
+                </div>
+                <div class="content">
+                    <div class="row content-container">
+                        <div class="col-md-12 col-lg-8 list-items">
+                            <div class="items">
+
+                                <div class="product">
+                                    <div class="row container-product">
+                                        <div class="col-md-3 image-product">
+                                            <img class="img-fluid mx-auto d-block image"
+                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                        </div>
+                                        <div class="col-md-9  infor-product">
+                                            <div class="row container-infor">
+                                                <div class="col-md-7 product-general">
+                                                    <a href="#">Name Product</a>
+                                                    <div class="product-info">
+                                                        <div>$Product Description Lorem ipsum dolor, sit amet
+                                                            consectetur adipisicing elit. Quidem, exercitationem!</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-5 adjust-product-quantity">
+                                                    <div class="row price-general">
+                                                        <div class="col-md-6 price">
+                                                            <span class="product-price">$120</span>
+                                                        </div>
+                                                        <div class="col-md-6 product-line-price">25.98</div>
+                                                    </div>
+
+                                                    <div class="row quantity-general">
+                                                        <div class="col-md-6 quantity product-quantity">
+                                                            <input id="quantity" type="number" value="1"
+                                                                class="form-control quantity-input">
+                                                        </div>
+
+                                                        <div class="col-md-6 product-removal">
+                                                            <button class="remove-product">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="summary">
+                                <div class="summary-item">
+                                    <label>Subtotal</label>
+                                    <div class="totals-value price" id="cart-subtotal">71.97</div>
+                                </div>
+                                <div class="summary-item">
+                                    <label>Tax (5%)</label>
+                                    <div class="totals-value price" id="cart-tax">3.60</div>
+                                </div>
+                                <div class="summary-item">
+                                    <label>Shipping</label>
+                                    <div class="totals-value price" id="cart-shipping">15.00</div>
+                                </div>
+                                <div class="summary-item totals-item-total">
+                                    <label>Grand Total</label>
+                                    <div class="totals-value price" id="cart-total">90.57</div>
+                                </div>
+                                <div class="checkout-container">
+                                    <button class="checkout">Checkout</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Calling jQuery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- Calling Slick Library -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+        </script>
+
+    <!-- Import JS -->
+    <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
+    <script src="../javascript/catalog_show_element_in_ul.js"></script>
+    <script src="../javascript/p_shopping_cart.js"></script>
+</body>
+
+</html>

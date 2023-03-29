@@ -193,7 +193,7 @@ body {
                                 position: relative;
 
                                 .heart-icon {
-                                    z-index: 999;
+                                    z-index: 2;
                                     position: absolute;
                                     top: 0;
                                     right: 0;
@@ -284,6 +284,10 @@ body {
     }
 }
 
-
-
 // Main Style End
+
+@media (max-width: 768) {
+    .sidebar {
+        display: none;
+    }
+}

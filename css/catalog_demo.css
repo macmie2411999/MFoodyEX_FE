@@ -1342,7 +1342,7 @@ body {
   position: relative;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .row .col .card .heart-icon {
-  z-index: 999;
+  z-index: 2;
   position: absolute;
   top: 0;
   right: 0;
@@ -1423,4 +1423,10 @@ body {
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .row .col .card .card-footer svg:hover {
   scale: 1.3;
   cursor: pointer;
+}
+
+@media (max-width: 768) {
+  .sidebar {
+    display: none;
+  }
 }

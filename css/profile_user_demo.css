@@ -2475,7 +2475,7 @@ body {
   top: 0;
 }
 .default-profile-user .container .row .card .card-body .list-entity {
-  margin: 15px 0 15px 0;
+  margin: 15px 0 15px 0 !important;
 }
 .default-profile-user .container .row .card .card-body .list-entity a {
   text-decoration: none;
