@@ -1,0 +1,183 @@
+// Base
+@import '../scss/base';
+@import '../scss/breadcrumb_demo.scss';
+
+// Header and Footer Style
+@import '../scss/header_home_demo.scss';
+@import '../scss/footer_home_demo.scss';
+
+// Card
+@import '../scss/p_product_card.scss';
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+$text-c6-primary: #0FC44C;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+
+$text-c1-grey: #F8F8F8;
+$text-c2-grey: #DFE0E2;
+$text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
+$text-c9-grey: #1A233A;
+$text-c10-grey: #172033;
+
+// Main Style
+body {
+    // zoom: 0.8;
+}
+
+
+
+.invoice {
+    .container {
+        .row {
+            .card {
+                background: #fff;
+                border-radius: 5px;
+                border: 0;
+                margin-bottom: 1rem;
+
+                .card-body {
+                    .download-and-print {
+                        .container-download-and-print {
+                            margin: auto;
+                            display: flex;
+                            justify-content: flex-end;
+
+                            .btn {
+                                margin: .3rem 0 0 .3rem;
+                                background-color: $text-c2-primary;
+                                border-color: transparent;
+                                color: #fff;
+                            }
+
+                            .button-download {
+                                
+                            }
+
+                            .button-print {
+                                
+                            }
+                        }
+                    }
+
+                    .invoice-title {}
+
+                    .invoice-container {
+                        padding: 1rem;
+                        margin: 0;
+                        font: 400 .875rem 'Open Sans', sans-serif;
+                        color: #fff;
+                        background: $text-c9-grey;
+                        position: relative;
+                        height: 100%;
+
+                        .invoice-header {
+                            .logo-address-brand {
+                                .logo-brand {
+                                    .invoice-logo {
+                                        // margin: 0.8rem 0 0 0;
+                                        // display: inline-block;
+                                        // font-size: 1.6rem;
+                                        // font-weight: 700;
+                                        // color: #fff;
+                                        // text-decoration: none;
+                                    }
+
+                                    img {
+                                        max-width: 130px;
+                                    }
+                                }
+
+                                .address-brand {
+                                    address {
+                                        font-size: 0.8rem;
+                                        color: #fff;
+                                        margin: 0;
+                                    }
+                                }
+                            }
+
+                            .client-invoice-infor {
+                                .invoice-details {
+                                    margin: 1rem 0 0 0;
+                                    padding: 1rem;
+                                    line-height: 180%;
+                                    // background: #1a233a;
+
+                                    .invoice-num {
+                                        text-align: right;
+                                        font-size: 0.8rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .invoice-body {
+                            padding: 1rem 0 0 0;
+
+                            .row {
+                                .table-responsive {
+                                    .custom-table {
+                                        thead {
+                                            background: $text-c3-primary;
+
+                                            th {
+                                                border: 0;
+                                                color: #fff;
+                                            }
+                                        }
+
+                                        tbody {
+                                            tr {
+                                                &:hover {
+                                                    background: $text-c10-grey;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .table {
+                                        // background: #1a243a;
+                                        color: #fff;
+                                        font-size: .75rem;
+                                    }
+
+                                    // .text-success {
+                                    //     color: $text-c1-yellow !important;
+                                    // }
+                                }
+                            }
+                        }
+
+                        .invoice-footer {
+                            text-align: center;
+                            font-size: 0.7rem;
+                            margin: 10px 0 0px 0;
+
+                            .thank-for-purchase {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .invoice-container {
+        padding: 1rem;
+    }
+}
+
+// Main Style End

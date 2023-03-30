@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/invoice_demo.min.css">
+    <title>Invoice MFoody - Grocery Store</title>
+    <link rel="icon" href="../image/icon/icon_gfgl_green_64.png">
+
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Library (For Slider) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--- Font Josh-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Jost:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap"
+        rel="stylesheet">
+
+    <!--- Font Shrikhand-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Jost:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Slick Carousel-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- Library For Download-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="../js/html2pdf.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- INVOICE PAGE -->
+    <main class="invoice">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body p-0">
+
+                            <!-- Row start -->
+                            <div class="row download-and-print">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="container-download-and-print mb-5">
+                                        <a href="#" id="download-btn" class="btn button-download">
+                                            <i class="icon-download"></i> Download
+                                        </a>
+                                        <a href="#" class="btn button-print" onclick="printInvoice()">
+                                            <i class="icon-printer"></i> Print
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Row end -->
+                            <h4 class="invoice-title">Your Invoice</h4>
+                            <div class="invoice-container" id="invoice-container">
+                                
+                                <div class="invoice-header">
+
+                                    <!-- Row start -->
+                                    <div class="row logo-address-brand">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 logo-brand">
+                                            <img src="../image/icon/icon_gfgl_green_64.png" alt="Company Logo">
+                                            <a href="index.html" class="invoice-logo" style="display: inline-block; font-size: 1.6rem; font-weight: 700; color: #009f4d; text-decoration: none;">
+                                                MFoody
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 address-brand">
+                                            <address class="text-right">
+                                                MFoody Store, Moscow, Russia.<br>
+                                                00000 00000
+                                            </address>
+                                        </div>
+                                    </div>
+                                    <!-- Row end -->
+
+                                    <!-- Row start -->
+                                    <div class="row client-invoice-infor">
+                                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                                            <div class="invoice-details">
+                                                <address>
+                                                    Client Name<br>
+                                                    150-600 Church Street, Florida, USA
+                                                </address>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                                            <div class="invoice-details">
+                                                <div class="invoice-num">
+                                                    <div>Invoice - #009</div>
+                                                    <div>January 10th 2020</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Row end -->
+
+                                </div>
+
+                                <div class="invoice-body">
+                                    <!-- Row start -->
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="table-responsive">
+                                                <table class="table custom-table m-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Items</th>
+                                                            <th>Product ID</th>
+                                                            <th>Quantity</th>
+                                                            <th>Sub Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                Wordpress Template
+                                                            </td>
+                                                            <td>#50000981</td>
+                                                            <td>9</td>
+                                                            <td>$5000.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Maxwell Admin Template
+                                                                
+                                                            </td>
+                                                            <td>#50000126</td>
+                                                            <td>5</td>
+                                                            <td>$100.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Unify Admin Template
+                                                                
+                                                            </td>
+                                                            <td>#50000821</td>
+                                                            <td>6</td>
+                                                            <td>$49.99</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td colspan="2">
+                                                                <p>
+                                                                    Subtotal<br>
+                                                                    Shipping &amp; Handling<br>
+                                                                    Tax<br>
+                                                                </p>
+                                                                <h5 style="color: #FACF39"><strong>Grand Total</strong>
+                                                                </h5>
+                                                            </td>
+                                                            <td>
+                                                                <p>
+                                                                    $5000.00<br>
+                                                                    $100.00<br>
+                                                                    $49.00<br>
+                                                                </p>
+                                                                <h5 style="color: #FACF39"><strong>$5150.99</strong></h5>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Row end -->
+                                </div>
+
+                                <div class="invoice-footer">
+                                    <span class="thank-for-purchase">Thank you for your purchase.</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- INVOICE PAGE END -->
+
+    <!-- Calling jQuery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- Calling Slick Library -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+        </script>
+
+    <!-- Import JS -->
+    <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
+    <script src="../javascript/catalog_show_element_in_ul.js"></script>
+    <script src="../javascript/invoice_print.js"></script>
+    <script type="text/javascript" src="../javascript/invoice_download.js"></script>
+</body>
+
+</html>
