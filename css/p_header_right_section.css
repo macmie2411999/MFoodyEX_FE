@@ -1,3 +1,4 @@
+@import url(https://weloveiconfonts.com/api/?family=fontawesome);
 body {
   padding: 0.5;
   margin: 0;
@@ -1225,73 +1226,96 @@ body {
     font-size: 20px;
   }
 }
-.invoice .container .row .card {
-  background: #fff;
-  border-radius: 5px;
-  border: 0;
-  margin-bottom: 1rem;
+/* ---------- FONTAWESOME ---------- */
+/* ---------- GENERAL ---------- */
+.header_right_section {
+  scale: 1.1;
+  background: transparent;
 }
-.invoice .container .row .card .card-body .download-and-print .container-download-and-print {
-  margin: auto;
+.header_right_section a[class*=fontawesome-]:before,
+.header_right_section span[class*=fontawesome-]:before {
+  display: block;
+  font-family: "FontAwesome", sans-serif;
+}
+.header_right_section button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-transform: none;
+}
+.header_right_section a {
+  text-decoration: none !important;
+}
+.header_right_section input {
+  border: 0;
+}
+.header_right_section input:focus {
+  outline: none;
+}
+.header_right_section input[type=search] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  box-sizing: content-box;
+}
+.header_right_section .container_header_right_section {
+  align-items: center !important;
+}
+.header_right_section .container_header_right_section .toolbar {
+  color: #fff;
   display: flex;
-  justify-content: flex-end;
+  margin: 0 !important;
 }
-.invoice .container .row .card .card-body .download-and-print .container-download-and-print .btn {
-  margin: 0.3rem 0 0 0.3rem;
-  background-color: #1CAF37;
-  border-color: transparent;
-  color: #fff;
+.header_right_section .container_header_right_section .toolbar li:first-child a, .header_right_section .container_header_right_section .toolbar li:first-child svg {
+  border-radius: 0.5em 0 0 0.5em;
 }
-.invoice .container .row .card .card-body .invoice-container {
-  padding: 1rem;
-  margin: 0;
-  font: 400 0.875rem "Open Sans", sans-serif;
-  color: #fff;
-  background: #1A233A;
+.header_right_section .container_header_right_section .toolbar li:last-child button {
+  border-radius: 0 0.5em 0.5em 0;
+}
+.header_right_section .container_header_right_section .toolbar a, .header_right_section .container_header_right_section .toolbar svg {
+  background: transparent;
+  color: #4A4A4B;
+  display: block;
+  padding: 0.5em 1em;
   position: relative;
-  height: 100%;
 }
-.invoice .container .row .card .card-body .invoice-container .invoice-header .logo-address-brand .logo-brand img {
-  max-width: 130px;
+.header_right_section .container_header_right_section .toolbar a:hover, .header_right_section .container_header_right_section .toolbar svg:hover {
+  background: transparent !important;
+  color: #1CAF37;
 }
-.invoice .container .row .card .card-body .invoice-container .invoice-header .logo-address-brand .address-brand address {
-  font-size: 0.8rem;
-  color: #fff;
-  margin: 0;
+.header_right_section .container_header_right_section .toolbar input[type=search] {
+  background: transparent;
+  color: #4A4A4B;
+  display: block;
+  padding: 0.5em 1em;
+  position: relative;
+  display: none;
+  height: 21px;
+  width: 190px;
+  border-radius: 5px;
 }
-.invoice .container .row .card .card-body .invoice-container .invoice-header .client-invoice-infor .invoice-details {
-  margin: 1rem 0 0 0;
-  padding: 1rem;
-  line-height: 180%;
+.header_right_section .container_header_right_section .toolbar input[type=search]:hover {
+  background: #F8F8F8;
 }
-.invoice .container .row .card .card-body .invoice-container .invoice-header .client-invoice-infor .invoice-details .invoice-num {
-  text-align: right;
-  font-size: 0.8rem;
+.header_right_section .container_header_right_section .toolbar input[type=search]:focus {
+  background: #F8F8F8;
 }
-.invoice .container .row .card .card-body .invoice-container .invoice-body {
-  padding: 1rem 0 0 0;
+.header_right_section .container_header_right_section .toolbar button {
+  background: transparent;
+  color: #4A4A4B;
+  display: block;
+  padding: 0.5em 1em;
+  position: relative;
 }
-.invoice .container .row .card .card-body .invoice-container .invoice-body .row .table-responsive .custom-table thead {
-  background: #009f4d;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-body .row .table-responsive .custom-table thead th {
-  border: 0;
-  color: #fff;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-body .row .table-responsive .custom-table tbody tr:hover {
-  background: #172033;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-body .row .table-responsive .table {
-  color: #fff;
-  font-size: 0.75rem;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-footer {
-  text-align: center;
-  font-size: 0.7rem;
-  margin: 10px 0 0px 0;
-}
-@media (max-width: 767px) {
-  .invoice-container {
-    padding: 1rem;
-  }
+.header_right_section .container_header_right_section .toolbar button:hover {
+  background: transparent !important;
+  color: #1CAF37;
 }

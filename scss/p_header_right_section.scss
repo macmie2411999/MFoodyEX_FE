@@ -1,0 +1,159 @@
+// Base
+@import '../scss/base';
+@import '../scss/breadcrumb_demo.scss';
+
+// Header and Footer Style
+@import '../scss/header_home_demo.scss';
+@import '../scss/footer_home_demo.scss';
+
+// Card
+@import '../scss/p_product_card.scss';
+
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+$text-c6-primary: #0FC44C;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+
+$text-c1-grey: #F8F8F8;
+$text-c2-grey: #DFE0E2;
+$text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
+$text-c9-grey: #1A233A;
+$text-c10-grey: #172033;
+
+
+/* ---------- FONTAWESOME ---------- */
+@import url(https://weloveiconfonts.com/api/?family=fontawesome);
+
+
+/* ---------- GENERAL ---------- */
+
+.header_right_section {
+  scale: 1.1;
+  background: transparent;
+  // display: grid;
+  // font: 87.5%/1.5em "Open Sans", sans-serif;
+  // margin: 0;
+  // min-block-size: 100vh;
+  // place-items: center;
+  // box-sizing: border-box;
+
+  a[class*=fontawesome-]:before,
+  span[class*=fontawesome-]:before {
+    display: block;
+    font-family: "FontAwesome", sans-serif;
+  }
+
+  button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-transform: none;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+
+  input {
+    border: 0;
+
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input[type=search] {
+    appearance: textfield;
+    box-sizing: content-box;
+  }
+
+  .container_header_right_section {
+    align-items: center !important;
+    .toolbar {
+      color: #fff;
+      display: flex;
+      margin: 0 !important;
+      
+
+      li {
+        &:first-child {
+          a, svg {
+            border-radius: 0.5em 0 0 0.5em;
+          }
+        }
+
+        &:last-child {
+          button {
+            border-radius: 0 0.5em 0.5em 0;
+          }
+        }
+      }
+
+      a, svg {
+        background: transparent;
+        color: #4A4A4B;
+        display: block;
+        padding: 0.5em 1em;
+        position: relative;
+
+        &:hover {
+          background: transparent !important;
+          color: $text-c2-primary;
+        }
+      }
+
+      input[type=search] {
+        background: transparent;
+        color: #4A4A4B;
+        display: block;
+        padding: 0.5em 1em;
+        position: relative;
+        display: none;
+        height: 21px;
+        width: 190px;
+        border-radius: 5px;
+
+        &:hover {
+          background: $text-c1-grey;
+        }
+
+        &:focus {
+          background: $text-c1-grey;
+        }
+      }
+
+      button {
+        background: transparent;
+        color: #4A4A4B;
+        display: block;
+        padding: 0.5em 1em;
+        position: relative;
+
+        &:hover {
+          background: transparent !important;
+          color: $text-c2-primary;
+        }
+      }
+    }
+
+  }
+}

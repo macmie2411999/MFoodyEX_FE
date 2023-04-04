@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/product_detail_demo.min.css">
+    <title>Product Detail MFoody - Grocery Store</title>
+    <link rel="icon" href="../image/icon/icon_gfgl_green_64.png">
+
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Library (For Slider) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--- Font Josh-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Jost:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap"
+        rel="stylesheet">
+
+    <!--- Font Shrikhand-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Jost:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Slick Carousel-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- PRODUCT DETAIL PAGE -->
+    <main class="product-detail">
+        <div class="product-detail-container">
+            <div class="row">
+                <div class="col-xs-5 item-photo">
+                    <img style="max-width:90%;" class="img-fluid mx-auto d-block image"
+                        src="../image/products/Vegetable_Avovado_3.webp" />
+                </div>
+                <div class="col-xs-5 card-information">
+
+                    <h3>Name Product</h3>
+                    <h5 style="color:#337ab7">Product Brand<a href="#">Perestok</a> · <small style="color:#337ab7">(5054
+                            Comments)</small></h5>
+
+                    <h6 class="title-price"><small>Price</small></h6>
+                    <h3 style="margin-top:0px;">150$</h3>
+
+                    <div class="section">
+                        <h6 class="title-attr" style="margin-top:15px;"><small>COLOR</small></h6>
+                        <div>
+                            <div class="attr" style="width:25px;background:#5a5a5a;"></div>
+                            <div class="attr" style="width:25px;background:white;"></div>
+                        </div>
+                    </div>
+                    <div class="section" style="padding-bottom:5px;">
+                        <h6 class="title-attr"><small>CAPACIDAD</small></h6>
+                        <div>
+                            <div class="attr2">16 GB</div>
+                            <div class="attr2">32 GB</div>
+                        </div>
+                    </div>
+                    <div class="section" style="padding-bottom:20px;">
+                        <h6 class="title-attr"><small>CANTIDAD</small></h6>
+                        <div>
+                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                            <input class="quantity-product" value="1" />
+                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Botones de compra -->
+                    <div class="section" style="padding-bottom:20px;">
+                        <button class="btn btn-success button-to-cart"><span style="margin-right:20px"
+                                class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> To Cart</button>
+                        <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span>
+                                Add to favorite List</a></h6>
+                    </div>
+                </div>
+
+                <div class="col-xs-10 bottom-product-detail">
+                    <ul class="menu-items">
+                      <li class="active" data-content="comments-and-rating">Comments and Rating</li>
+                      <li data-content="brand">Brand</li>
+                      <li data-content="more-information">More Information</li>
+                      <li data-content="similar-products">Similar Products</li>
+                      <li data-content="leave-your-opinion">Leave Your Opinion</li>
+                    </ul>
+                    <div class="content-bottom-product-detail">
+                      <div class="active container-content-bottom-product-detail" id="comments-and-rating">
+                        Your Comments and Rating Content Here
+                      </div>
+                      <div class="container-content-bottom-product-detail" id="brand">
+                        Your Brand Content Here
+                      </div>
+                      <div class="container-content-bottom-product-detail" id="more-information">
+                        Your More Information Content Here
+                      </div>
+                      <div class="container-content-bottom-product-detail" id="similar-products">
+                        Your Similar Products Content Here
+                      </div>
+                      <div class="container-content-bottom-product-detail" id="leave-your-opinion">
+                        Your Leave Your Opinion Content Here
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- PRODUCT DETAIL PAGE END -->
+
+    <!-- Calling jQuery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- Calling Slick Library -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+        </script>
+
+    <!-- Import JS -->
+    <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
+    <script src="../javascript/catalog_show_element_in_ul.js"></script>
+    <script src="../javascript/product_detail.js"></script>
+</body>
+
+</html>

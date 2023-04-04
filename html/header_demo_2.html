@@ -51,93 +51,218 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-    <!-- Unique -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
 <body>
 
     <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar_top_header">
+        <div class="container-fluid container_navbar_top_header">
+            <a class="navbar-brand" href="#"><img width="auto" height="60" class="img-navbar-brand"
+                    src="../image/icon/icon_logo_brand_updated1_crop.png" alt="Company Logo">
+            </a>
 
-    <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse selection_container" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 list_selection">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ'S</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            CATALOG
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">CTL1</a></li>
+                            <li><a class="dropdown-item" href="#">CTL2</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">CTL3</a></li>
+                        </ul>
+                    </li> -->
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-home"></i>
-                        Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-envelope-o">
-                            <span class="badge badge-danger">11</span>
-                        </i>
-                        Link
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">
-                        <i class="fa fa-envelope-o">
-                            <span class="badge badge-warning">11</span>
-                        </i>
-                        Disabled
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-envelope-o">
-                            <span class="badge badge-primary">11</span>
-                        </i>
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-bell">
-                            <span class="badge badge-info">11</span>
-                        </i>
-                        Test
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-globe">
-                            <span class="badge badge-success">11</span>
-                        </i>
-                        Test
-                    </a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                </ul>
+
+                <form class="header_right_section" action="#" method="GET">
+
+                    <fieldset class="container_header_right_section">
+
+                        <ul class="toolbar">
+                            <li><input type="search" id="search" placeholder="What are you looking for?"></li>
+                            <li><button type="submit" id="btn-search"><span class="fontawesome-search"></span></button>
+                            </li>
+                            <li><a href="#" class="fontawesome-heart"></a></li>
+                            <li><a href="#" class="fontawesome-user"></a></li>
+                            <li><a href="#" class="fontawesome-shopping-cart "></a></li>
+                        </ul>
+
+                    </fieldset>
+
+                </form>
+
+            </div>
         </div>
     </nav>
     <!-- HEADER END -->
 
     <!-- Slick Carousel -->
+    <div class="wrap-sliders">
+        <div class="carousel-slider">
+            <!-- Slide 1 -->
+            <div class="banner-slide bg1">
+                <style>
+                    .bg1 {
+                        background: url(../image/carousel/banner_background_6.jpeg);
+                        background-size: cover;
+                        background-repeat: no-repeat,
+                            no-repeat,
+                            no-repeat;
+                        background-position: top;
+                    }
+                </style>
+                <div class="banner-slide-container">
+                    <div class="banner-slide-container-content">
+                        <h1>
+                            Welcome to MFOODY!</h1>
+                        <p class="mt-4">We are your one-stop-shop for all your grocery needs! We take pride
+                            in providing our customers with the freshest produce, highest quality meat, and an extensive
+                            selection of pantry staples. But MFOODY is more than just an online grocery store. We are a
+                            team of passionate foodies who love sharing our knowledge and expertise with our customers.
+                            Let's learn more about us, our story, and our mission. </p>
+                        <div class="div-btn">
+                            <a href="#" class="btn btn-learn-more btn-primary">
+                                About Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="over-layout"></div>
+            </div>
 
+            <!-- Slide 2 -->
+            <div class="banner-slide bg2">
+                <style>
+                    .bg2 {
+                        background: url(../image/carousel/banner_background_2.avif);
+                        background-size: cover;
+                        background-repeat: no-repeat,
+                            no-repeat,
+                            no-repeat;
+                        background-position: top;
+                    }
+                </style>
+                <div class="banner-slide-container-special">
+                    <div class="banner-slide-container-content">
+                        <h1>
+                            Quick answers to your questions</h1>
+                        <p class="mt-4">We want to make sure that all your questions are answered and you have a
+                            seamless experience. That's why we have put together a comprehensive Frequently Asked
+                            Questions (FAQ) page to help you quickly find the answers you need. From shipping and
+                            delivery to returns and refunds, our FAQ page covers all the important details. Take a look
+                            and if you can't find what you're looking for, don't hesitate to contact us. </p>
+                        <div class="div-btn">
+                            <a href="#" class="btn btn-learn-more btn-primary">
+                                Website's Policy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="over-layout"></div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="banner-slide bg3">
+                <style>
+                    .bg3 {
+                        background: url(../image/carousel/banner_background_3.jpeg);
+                        background-size: cover;
+                        background-repeat: no-repeat,
+                            no-repeat,
+                            no-repeat;
+                        background-position: top;
+                    }
+                </style>
+                <div class="banner-slide-container">
+                    <div class="banner-slide-container-content">
+                        <h1>
+                            Let Us Serve You Better</h1>
+                        <p class="mt-4">Whether you have any questions or want to share your feedback, we are always
+                            available to listen and assist. So, feel free to get in touch with us anytime, and we will
+                            be more than happy to hear from you. Don't hesitate to reach out, as we value your input and
+                            strive to provide the best possible service to our customers. </p>
+                        <div class="div-btn">
+                            <a href="#" class="btn btn-learn-more btn-primary">
+                                Contact Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="over-layout"></div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="banner-slide bg4">
+                <style>
+                    .bg4 {
+                        background: url(../image/carousel/banner_background_5.avif);
+                        background-size: cover;
+                        background-repeat: no-repeat,
+                            no-repeat,
+                            no-repeat;
+                        background-position: top;
+                    }
+                </style>
+                <div class="banner-slide-container">
+                    <div class="banner-slide-container-content">
+                        <h1>
+                            Products with the best quality</h1>
+                        <p class="mt-4">You will find a wide range of high-quality products
+                            that cater to your needs. Our products are carefully selected and curated to ensure that you
+                            receive the best value for your money. We are committed to providing you with excellent
+                            customer service and a seamless shopping experience. Browse our collection now and discover
+                            your next favorite product! </p>
+                        <div class="div-btn">
+                            <a href="#" class="btn btn-learn-more btn-primary">
+                                Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="over-layout"></div>
+            </div>
+        </div>
+        <button class="slick-prev"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <button class="slick-next"><i class="fa-solid fa-circle-chevron-right"></i></button>
+        <div class="shape">
+
+            <svg viewBox="0 0 1440 160">
+                <path fill-opacity="1">
+                    <animate attributeName="d" dur="20000ms" repeatCount="indefinite"
+                        values="M0,80L48,90.7C96,102,192,122.5,288,130.7C384,139,480,133.5,576,117.35C672,101,768,74.5,864,58.65C960,43,1056,37.5,1152,45.35C1248,53,1344,74.5,1392,85.35L1440,96L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z; M0,80L48,90.7C96,102,192,122.5,288,117.35C384,112,480,80,576,66.65C672,53,768,58,864,69.35C960,80,1056,96,1152,99.15C1248,102,1344,91,1392,85.35L1440,80L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z; M0,32L48,37.5C96,43,192,53.5,288,66.65C384,80,480,96,576,85.35C672,75,768,37.5,864,40C960,43,1056,85.5,1152,90.65C1248,96,1344,64,1392,48L1440,32L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z;
+                    M0,80L48,90.7C96,102,192,122.5,288,130.7C384,139,480,133.5,576,117.35C672,101,768,74.5,864,58.65C960,43,1056,37.5,1152,45.35C1248,53,1344,74.5,1392,85.35L1440,96L1440,160L1392,160C1344,160,1248,160,1152,160C1056,160,960,160,864,160C768,160,672,160,576,160C480,160,384,160,288,160C192,160,96,160,48,160L0,160Z;" />
+                </path>
+
+            </svg>
+        </div>
+    </div>
     <!-- Slick Carousel End-->
 
     <!-- Calling jQuery -->
@@ -158,6 +283,7 @@
 
     <!-- Import JS -->
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
+    <script src="../javascript/p_header_right_section.js"></script>
 </body>
 
 </html>

@@ -1225,73 +1225,145 @@ body {
     font-size: 20px;
   }
 }
-.invoice .container .row .card {
-  background: #fff;
-  border-radius: 5px;
-  border: 0;
-  margin-bottom: 1rem;
+.product-detail {
+  margin-bottom: 50px;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
 }
-.invoice .container .row .card .card-body .download-and-print .container-download-and-print {
-  margin: auto;
+.product-detail ul li {
+  margin-right: 25px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.product-detail li.active {
+  border-bottom: 3px solid silver;
+}
+.product-detail .product-detail-container .row .item-photo {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #f6f6f6;
 }
-.invoice .container .row .card .card-body .download-and-print .container-download-and-print .btn {
-  margin: 0.3rem 0 0 0.3rem;
-  background-color: #1CAF37;
-  border-color: transparent;
-  color: #fff;
+.product-detail .product-detail-container .row .card-information .button-to-cart {
+  width: 100%;
+  border-radius: 0;
 }
-.invoice .container .row .card .card-body .invoice-container {
-  padding: 1rem;
+.product-detail .product-detail-container .row .card-information .section {
+  width: 100%;
+  margin-left: -15px;
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #f8f9f9;
+}
+.product-detail .product-detail-container .row .card-information .section div {
+  width: 100%;
+  display: inline-flex;
+}
+.product-detail .product-detail-container .row .card-information .section div input {
   margin: 0;
-  font: 400 0.875rem "Open Sans", sans-serif;
-  color: #fff;
-  background: #1A233A;
-  position: relative;
-  height: 100%;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-header .logo-address-brand .logo-brand img {
-  max-width: 130px;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-header .logo-address-brand .address-brand address {
-  font-size: 0.8rem;
-  color: #fff;
-  margin: 0;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-header .client-invoice-infor .invoice-details {
-  margin: 1rem 0 0 0;
-  padding: 1rem;
-  line-height: 180%;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-header .client-invoice-infor .invoice-details .invoice-num {
-  text-align: right;
-  font-size: 0.8rem;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-body {
-  padding: 1rem 0 0 0;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-body .row .table-responsive .custom-table thead {
-  background: #009f4d;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-body .row .table-responsive .custom-table thead th {
-  border: 0;
-  color: #fff;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-body .row .table-responsive .custom-table tbody tr:hover {
-  background: #172033;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-body .row .table-responsive .table {
-  color: #fff;
-  font-size: 0.75rem;
-}
-.invoice .container .row .card .card-body .invoice-container .invoice-footer {
+  padding-left: 5px;
+  font-size: 10px;
+  padding-right: 5px;
+  max-width: 18%;
   text-align: center;
-  font-size: 0.7rem;
-  margin: 10px 0 0px 0;
 }
-@media (max-width: 767px) {
-  .invoice-container {
-    padding: 1rem;
+.product-detail .product-detail-container .row .card-information .section .title-attr {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: black;
+}
+.product-detail .product-detail-container .row .card-information .section .btn-minus {
+  cursor: pointer;
+  font-size: 7px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  border-right: 0;
+}
+.product-detail .product-detail-container .row .card-information .section .btn-plus {
+  cursor: pointer;
+  font-size: 7px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  border-left: 0;
+}
+.product-detail .product-detail-container .row .card-information .section .attr {
+  cursor: pointer;
+  margin-right: 5px;
+  height: 20px;
+  font-size: 10px;
+  padding: 2px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+.product-detail .product-detail-container .row .card-information .section .attr.active {
+  border: 1px solid orange;
+}
+.product-detail .product-detail-container .row .card-information .section .attr2 {
+  cursor: pointer;
+  margin-right: 5px;
+  height: 20px;
+  font-size: 10px;
+  padding: 2px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+.product-detail .product-detail-container .row .card-information .section .attr2.active {
+  border: 1px solid orange;
+}
+.product-detail .product-detail-container .row .card-information .title-price {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: black;
+}
+.product-detail .product-detail-container .row .bottom-product-detail .menu-items {
+  list-style-type: none;
+  font-size: 11px;
+  display: inline-flex;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+.product-detail .product-detail-container .row .bottom-product-detail .content-bottom-product-detail {
+  width: 100%;
+  border-top: 1px solid silver;
+}
+.product-detail .product-detail-container .row .bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail {
+  padding-top: 20px;
+}
+
+@media (max-width: 426px) {
+  .product-detail-container {
+    margin-top: 0px !important;
+  }
+  .product-detail-container .row {
+    padding: 0 !important;
+  }
+  .product-detail-container .row .col-xs-12.col-sm-5 {
+    padding-right: 0;
+  }
+  .product-detail-container .row .col-xs-12.col-sm-9 div p {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .product-detail-container .row .col-xs-12.col-sm-9 div ul {
+    padding-left: 10px !important;
+  }
+  .section {
+    width: 104%;
+  }
+  .menu-items {
+    padding-left: 0;
   }
 }
