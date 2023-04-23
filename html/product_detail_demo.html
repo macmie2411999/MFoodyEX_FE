@@ -63,77 +63,122 @@
     <main class="product-detail">
         <div class="product-detail-container">
             <div class="row">
-                <div class="col-xs-5 item-photo">
-                    <img style="max-width:90%;" class="img-fluid mx-auto d-block image"
-                        src="../image/products/Vegetable_Avovado_3.webp" />
-                </div>
-                <div class="col-xs-5 card-information">
-
-                    <h3>Name Product</h3>
-                    <h5 style="color:#337ab7">Product Brand<a href="#">Perestok</a> · <small style="color:#337ab7">(5054
-                            Comments)</small></h5>
-
-                    <h6 class="title-price"><small>Price</small></h6>
-                    <h3 style="margin-top:0px;">150$</h3>
-
-                    <div class="section">
-                        <h6 class="title-attr" style="margin-top:15px;"><small>COLOR</small></h6>
-                        <div>
-                            <div class="attr" style="width:25px;background:#5a5a5a;"></div>
-                            <div class="attr" style="width:25px;background:white;"></div>
-                        </div>
-                    </div>
-                    <div class="section" style="padding-bottom:5px;">
-                        <h6 class="title-attr"><small>CAPACIDAD</small></h6>
-                        <div>
-                            <div class="attr2">16 GB</div>
-                            <div class="attr2">32 GB</div>
-                        </div>
-                    </div>
-                    <div class="section" style="padding-bottom:20px;">
-                        <h6 class="title-attr"><small>CANTIDAD</small></h6>
-                        <div>
-                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                            <input class="quantity-product" value="1" />
-                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
-                        </div>
-                    </div>
-
-                    <!-- Botones de compra -->
-                    <div class="section" style="padding-bottom:20px;">
-                        <button class="btn btn-success button-to-cart"><span style="margin-right:20px"
-                                class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> To Cart</button>
-                        <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span>
-                                Add to favorite List</a></h6>
-                    </div>
+                <div class="col-xs-6 item-photo">
+                    <img style="max-width:90%;" class="img-fluid mx-auto d-block image img-zoomable"
+                        src="../image/products/Vegetable_Avovado_3.webp" id="product-image" />
+                    <div class="magnifier" id="magnifier"></div>
                 </div>
 
-                <div class="col-xs-10 bottom-product-detail">
+                <div class="col-xs-6 card-information">
+                    <div class="header-card part-of-card">
+                        <span class="name-product">Name Product</span>
+                        <div class="rating-comments row">
+                            <div class="col-xs-5 rating">
+                                <span class="text-in-card-information">Rating: </span>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="col-xs-4 comments">
+                                <span class="text-in-card-information">Comments: 5054 </span>
+                            </div>
+                            <div class="col-xs-3 id-product">
+                                <span class="text-in-card-information">ID: 92834</span>
+                            </div>
+                        </div>
+                        
+                        <div class="container-button-in-card">
+                            <button class="brand-button button-in-card">
+                                <a href="#" class="name-brand link-button-in-card">Perestok</a>
+                            </button>
+    
+                            <button class="category-button button-in-card">
+                                <a href="#" class="name-category link-button-in-card">Vegetable</a>
+                            </button>
+
+                            <button class="mark-button button-in-card">
+                                <a href="#" class="name-category link-button-in-card">New Product</a>
+                            </button>
+                        </div>
+                        
+                    </div>
+
+                    <div class="body-card part-of-card">
+                        <div class="row price-cart-favorite">
+                            <div class="col-xs-6 price-container">
+                                <h4 class="sale-price">150$</h4>
+                                <span class="full-price">170$</span>
+                            </div>
+
+                            <div class="col-xs-6 button-container">
+                                <div class="section">
+                                    <button class="btn button-to-cart"><span 
+                                            class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to
+                                        Cart</button>
+                                </div>
+
+                                <div class="section">
+                                    <button class="btn button-to-favorite-list"><span 
+                                            class="glyphicon glyphicon-heart-empty"
+                                            aria-hidden="true"></span>
+                                        Add to Favorite List</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-card part-of-card">
+                        <div class="section" style="padding-bottom:5px;">
+                            <h4 class="title-description">Description</h4>
+                            <div class="content-description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolores cumque iure,
+                                perferendis assumenda vero amet, temporibus architecto magnam velit soluta quaerat. Odio
+                                rerum hic tempore mollitia sint deserunt maiores!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-information part-of-card">
+                        <div class="section" style="padding-bottom:5px;">
+                            <h4 class="title-description">Description</h4>
+                            <div class="content-description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolores cumque iure,
+                                perferendis assumenda vero amet, temporibus architecto magnam velit soluta quaerat. Odio
+                                rerum hic tempore mollitia sint deserunt maiores!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 bottom-product-detail">
                     <ul class="menu-items">
-                      <li class="active" data-content="comments-and-rating">Comments and Rating</li>
-                      <li data-content="brand">Brand</li>
-                      <li data-content="more-information">More Information</li>
-                      <li data-content="similar-products">Similar Products</li>
-                      <li data-content="leave-your-opinion">Leave Your Opinion</li>
+                        <li class="active" data-content="comments-and-rating">Comments and Rating</li>
+                        <li data-content="brand">Brand</li>
+                        <li data-content="more-information">More Information</li>
+                        <li data-content="similar-products">Similar Products</li>
+                        <li data-content="leave-your-opinion">Leave Your Opinion</li>
                     </ul>
                     <div class="content-bottom-product-detail">
-                      <div class="active container-content-bottom-product-detail" id="comments-and-rating">
-                        Your Comments and Rating Content Here
-                      </div>
-                      <div class="container-content-bottom-product-detail" id="brand">
-                        Your Brand Content Here
-                      </div>
-                      <div class="container-content-bottom-product-detail" id="more-information">
-                        Your More Information Content Here
-                      </div>
-                      <div class="container-content-bottom-product-detail" id="similar-products">
-                        Your Similar Products Content Here
-                      </div>
-                      <div class="container-content-bottom-product-detail" id="leave-your-opinion">
-                        Your Leave Your Opinion Content Here
-                      </div>
+                        <div class="active container-content-bottom-product-detail" id="comments-and-rating">
+                            Your Comments and Rating Content Here
+                        </div>
+                        <div class="container-content-bottom-product-detail" id="brand">
+                            Your Brand Content Here
+                        </div>
+                        <div class="container-content-bottom-product-detail" id="more-information">
+                            Your More Information Content Here
+                        </div>
+                        <div class="container-content-bottom-product-detail" id="similar-products">
+                            Your Similar Products Content Here
+                        </div>
+                        <div class="container-content-bottom-product-detail" id="leave-your-opinion">
+                            Your Leave Your Opinion Content Here
+                        </div>
                     </div>
-                  </div>
+                </div>
+
 
             </div>
         </div>

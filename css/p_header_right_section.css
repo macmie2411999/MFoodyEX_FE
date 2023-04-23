@@ -452,7 +452,7 @@ body {
   opacity: 0.8;
 }
 .footer .footer_embrace .footer_container {
-  max-width: 1600px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -969,7 +969,7 @@ body {
   opacity: 0.8;
 }
 .footer .footer_embrace .footer_container {
-  max-width: 1600px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -1273,6 +1273,9 @@ body {
   color: #fff;
   display: flex;
   margin: 0 !important;
+}
+.header_right_section .container_header_right_section .toolbar li {
+  list-style-type: none !important;
 }
 .header_right_section .container_header_right_section .toolbar li:first-child a, .header_right_section .container_header_right_section .toolbar li:first-child svg {
   border-radius: 0.5em 0 0 0.5em;

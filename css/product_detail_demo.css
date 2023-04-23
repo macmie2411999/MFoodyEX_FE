@@ -451,7 +451,7 @@ body {
   opacity: 0.8;
 }
 .footer .footer_embrace .footer_container {
-  max-width: 1600px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -968,7 +968,7 @@ body {
   opacity: 0.8;
 }
 .footer .footer_embrace .footer_container {
-  max-width: 1600px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -1226,6 +1226,7 @@ body {
   }
 }
 .product-detail {
+  margin-top: 50px;
   margin-bottom: 50px;
   max-width: 1200px;
   margin-right: auto;
@@ -1244,89 +1245,108 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid #f6f6f6;
+  border: 2px solid #F8F8F8;
+  border-radius: 5px;
 }
-.product-detail .product-detail-container .row .card-information .button-to-cart {
+.product-detail .product-detail-container .row .item-photo .image-container {
+  position: relative;
+}
+.product-detail .product-detail-container .row .item-photo #product-image {
   width: 100%;
-  border-radius: 0;
+  display: block;
+  cursor: none;
 }
-.product-detail .product-detail-container .row .card-information .section {
-  width: 100%;
-  margin-left: -15px;
-  padding: 2px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background: #f8f9f9;
+.product-detail .product-detail-container .row .item-photo .magnifier {
+  position: absolute;
+  display: none;
+  border: none;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  cursor: none;
 }
-.product-detail .product-detail-container .row .card-information .section div {
-  width: 100%;
-  display: inline-flex;
+.product-detail .product-detail-container .row .card-information .part-of-card {
+  margin-top: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
-.product-detail .product-detail-container .row .card-information .section div input {
-  margin: 0;
-  padding-left: 5px;
-  font-size: 10px;
-  padding-right: 5px;
-  max-width: 18%;
-  text-align: center;
-}
-.product-detail .product-detail-container .row .card-information .section .title-attr {
+.product-detail .product-detail-container .row .card-information .header-card {
+  padding: 10px;
   margin-top: 0;
-  margin-bottom: 0;
-  color: black;
 }
-.product-detail .product-detail-container .row .card-information .section .btn-minus {
-  cursor: pointer;
-  font-size: 7px;
-  display: flex;
-  align-items: center;
+.product-detail .product-detail-container .row .card-information .header-card .name-product {
+  font-size: 25px;
+  color: #000;
+}
+.product-detail .product-detail-container .row .card-information .header-card .rating-comments .rating .fa-star {
+  color: gray;
+}
+.product-detail .product-detail-container .row .card-information .header-card .rating-comments .rating .yellow {
+  color: gold;
+}
+.product-detail .product-detail-container .row .card-information .header-card .rating-comments .text-in-card-information {
+  color: #000;
+  opacity: 0.5;
+}
+.product-detail .product-detail-container .row .card-information .header-card .container-button-in-card .button-in-card {
+  margin-top: 10px;
   padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid gray;
-  border-radius: 2px;
-  border-right: 0;
+  border-radius: 5px;
+  border: 1px solid #F2F3F5;
+  background-color: #fff;
+  transition: all 0.3s ease;
 }
-.product-detail .product-detail-container .row .card-information .section .btn-plus {
-  cursor: pointer;
-  font-size: 7px;
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid gray;
-  border-radius: 2px;
-  border-left: 0;
+.product-detail .product-detail-container .row .card-information .header-card .container-button-in-card .button-in-card .link-button-in-card {
+  text-decoration: none;
+  color: #1CAF37;
+  transition: all 0.3s ease;
 }
-.product-detail .product-detail-container .row .card-information .section .attr {
-  cursor: pointer;
-  margin-right: 5px;
-  height: 20px;
-  font-size: 10px;
-  padding: 2px;
-  border: 1px solid gray;
-  border-radius: 2px;
+.product-detail .product-detail-container .row .card-information .header-card .container-button-in-card .button-in-card:hover {
+  background-color: #1CAF37;
 }
-.product-detail .product-detail-container .row .card-information .section .attr.active {
-  border: 1px solid orange;
+.product-detail .product-detail-container .row .card-information .header-card .container-button-in-card .button-in-card:hover .link-button-in-card {
+  text-decoration: none;
+  color: #fff;
 }
-.product-detail .product-detail-container .row .card-information .section .attr2 {
-  cursor: pointer;
-  margin-right: 5px;
-  height: 20px;
-  font-size: 10px;
-  padding: 2px;
-  border: 1px solid gray;
-  border-radius: 2px;
+.product-detail .product-detail-container .row .card-information .body-card {
+  padding: 10px;
 }
-.product-detail .product-detail-container .row .card-information .section .attr2.active {
-  border: 1px solid orange;
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .price-container {
+  text-align: left;
 }
-.product-detail .product-detail-container .row .card-information .title-price {
-  margin-top: 30px;
-  margin-bottom: 0;
-  color: black;
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .price-container .sale-price {
+  padding-left: 20px;
+  font-size: 25px;
+  color: #000;
+}
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .price-container .full-price {
+  padding-left: 20px;
+}
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .button-container .section .btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #F2F3F5;
+  background-color: #fff;
+  text-align: left;
+}
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .button-container .section .btn .glyphicon {
+  font-size: 12px;
+  text-decoration-line: none;
+  margin-right: 20px;
+}
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .button-container .section .button-to-favorite-list {
+  margin-top: 5px;
+}
+.product-detail .product-detail-container .row .card-information .bottom-card {
+  padding: 10px;
 }
 .product-detail .product-detail-container .row .bottom-product-detail .menu-items {
   list-style-type: none;

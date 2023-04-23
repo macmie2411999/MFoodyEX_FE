@@ -29,3 +29,4 @@ faqToggles.forEach(function(toggle) {
     }
   });
 });
+

@@ -48,7 +48,7 @@ $text-c10-grey: #172033;
   z-index: 10;
 
   .container_navbar_top_header {
-    max-width: 1400px;
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     width: 100%;
@@ -112,6 +112,12 @@ $text-c10-grey: #172033;
       }
     }
   }
+
+  
+}
+
+.scrolled {
+  border-bottom: 5px solid $text-c8-grey;
 }
 
 .wrap-sliders {

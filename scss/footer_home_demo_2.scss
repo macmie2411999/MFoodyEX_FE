@@ -8,6 +8,7 @@ $text-c4-primary:#015A28;
 
 // Footer Style
 .footer {
+    scale: 0.8;
 
     // format sundries
     a:hover {
@@ -31,10 +32,11 @@ $text-c4-primary:#015A28;
 
     // format content of footer
     .footer_embrace {
-
+        // scale: 0.8;
         .footer_container {
+            
             // format general footer_container
-            max-width: 1600px;
+            max-width: 1200px;
             margin-right: auto;
             margin-left: auto;
             width: 100%;
