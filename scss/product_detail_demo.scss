@@ -8,6 +8,7 @@
 
 // Card
 @import '../scss/p_product_card.scss';
+// @import '../scss/p_slide_product_card_demo.scss';
 
 $text-c1-primary:#AAE640;
 $text-c2-primary: #1CAF37;
@@ -33,7 +34,6 @@ $text-c9-grey: #1A233A;
 $text-c10-grey: #172033;
 
 // Main Style
-
 .product-detail {
     // margin-top: 220px;
     margin-top: 50px;
@@ -42,6 +42,10 @@ $text-c10-grey: #172033;
     margin-right: auto;
     margin-left: auto;
     align-items: center;
+
+    span {
+        font-size: 12px;
+    }
 
     ul {
         li {
@@ -57,6 +61,8 @@ $text-c10-grey: #172033;
 
     .product-detail-container {
         .row {
+
+            // border-right: 2px solid $text-c2-grey;
             .item-photo {
                 display: flex;
                 justify-content: center;
@@ -91,9 +97,6 @@ $text-c10-grey: #172033;
             }
 
             .card-information {
-                // margin-left: 20px;
-                // border: 2px solid $text-c1-grey;
-                // border-radius: 5px;
 
                 .part-of-card {
                     margin-top: 15px;
@@ -114,6 +117,9 @@ $text-c10-grey: #172033;
                     }
 
                     .rating-comments {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+
                         .rating {
 
                             .fa-star {
@@ -167,16 +173,33 @@ $text-c10-grey: #172033;
                     .price-cart-favorite {
                         .price-container {
                             text-align: left;
+                            margin-top: auto !important;
+                            margin-bottom: auto !important;
 
                             .sale-price {
                                 padding-left: 20px;
-                                font-size: 25px;
-                                color: #000;
+                                font-size: 30px;
+                                color: $text-c3-yellow;
                             }
 
                             .full-price {
-                                padding-left: 20px;
+                                padding-left: 5px;
+                                color: #000;
+                                opacity: 0.5;
+                                text-decoration: line-through;
+                                text-decoration-color: rgba(0, 0, 0, 0.5);
+                                text-decoration-thickness: 2px;
+                                font-size: 16px;
                             }
+
+                            .in-stock {
+                                padding-left: 20px;
+                                font-size: 15px;
+                                color: $text-c2-yellow;
+                                opacity: 0.7;
+
+                            }
+
                         }
 
                         .button-container {
@@ -189,18 +212,31 @@ $text-c10-grey: #172033;
                                     background-color: #fff;
                                     text-align: left;
 
-
                                     .glyphicon {
                                         font-size: 12px;
                                         text-decoration-line: none;
                                         margin-right: 20px;
                                     }
+
+                                    .button-content {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
                                 }
 
-                                .button-to-cart {}
+                                .button-to-cart {
+                                    &:hover {
+                                        color: $text-c2-primary
+                                    }
+                                }
 
                                 .button-to-favorite-list {
                                     margin-top: 5px;
+
+                                    &:hover {
+                                        color: $text-c3-yellow
+                                    }
                                 }
                             }
                         }
@@ -214,30 +250,449 @@ $text-c10-grey: #172033;
                     .section {
                         .title-description {}
 
-                        .content-description {}
+                        .content-description {
+                            font-size: 12px;
+                        }
                     }
+                }
+
+                .delivery-information {
+
+                    .section {
+                        // padding-bottom: 5px;
+
+                        .title-delivery-information {
+                            margin-left: 10px;
+                        }
+
+                        .content-delivery-information {
+                            margin-left: 3px;
+                            font-size: 12px;
+
+                            svg {
+                                margin-right: 10px;
+                                color: #000;
+                                opacity: 0.5;
+                            }
+
+                            .title-si {
+                                font-size: 1.2em;
+                                display: flex;
+                                align-items: center;
+                            }
+
+                            .status-si {
+                                font-size: 1.1em;
+                                font-weight: 500;
+                                color: $text-c2-primary;
+                                opacity: 0.8;
+                            }
+
+                            .table-user-information {
+                                margin: -8px !important;
+
+                                .table {
+                                    margin-top: 20px;
+                                    border-collapse: separate;
+                                    border-spacing: 0;
+                                    border-radius: 10px;
+                                    overflow: hidden;
+
+                                    thead {
+                                        th {
+                                            font-weight: bold;
+                                            background-color: #f5f5f5;
+                                        }
+                                    }
+
+                                    tbody {
+                                        tr {
+                                            td {
+                                                vertical-align: middle;
+                                                color: #000;
+                                                opacity: 0.6;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+
+    }
+
+    .bottom-product-detail {
+        padding: 0px !important;
+
+        .container-bottom-product-detail {
+            padding: 0px !important;
+            border-radius: 5px;
+
+            .menu-items {
+                margin-bottom: 0;
+                margin-top: 20px;
+                display: flex;
+                background-color: rgb(247, 247, 247);
+                padding: 4px;
+                border-radius: 12px;
+                list-style-type: none;
+                text-align: center;
+                transition: all 0.3s ease;
+
+                li {
+                    width: 100%;
+                    background-color: rgb(247, 247, 247);
+                    color: rgb(120, 124, 135);
+                    font-weight: 600;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 20px;
+                    height: auto;
+                    padding: 8px 12px;
+                    margin: 0px 4px;
+                    border-bottom: none;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+                .active {
+                    background-color: #fff;
+                    color: #000;
                 }
             }
 
-            .bottom-product-detail {
-                .menu-items {
-                    list-style-type: none;
-                    font-size: 11px;
-                    display: inline-flex;
-                    margin-bottom: 0;
-                    margin-top: 20px;
-                }
+            .content-bottom-product-detail {
+                margin-bottom: 20px;
+                width: 100%;
+                font-size: 15px;
+                // border-top: 1px solid silver;
 
-                .content-bottom-product-detail {
-                    width: 100%;
-                    border-top: 1px solid silver;
+                .container-content-bottom-product-detail {
+                    padding-top: 20px;
 
-                    .container-content-bottom-product-detail {
-                        padding-top: 20px;
+                    .container-comments-and-rating {
+                        .detail-rattings {
+
+                            .container-detail-rattings {
+
+                                .product-review {
+                                    // padding: 10px !important;
+                                    padding: 0 !important;
+                                    margin: 0 !important;
+
+                                    .top-container-product-review {
+                                        margin-bottom: 15px;
+                                        padding-bottom: 10px;
+                                        background-color: #F7F7F7;
+                                        border-radius: 5px;
+
+                                        .product-review-title {
+                                            font-size: 18px;
+                                            margin: 10px !important;
+                                        }
+
+                                        .ratting-general {
+                                            align-items: center;
+                                            text-align: center;
+
+                                            .rating {
+                                                svg {
+                                                    color: gold;
+                                                    font-size: 25px;
+                                                }
+
+                                                .number-rattings {
+                                                    .content-number-rattings {
+                                                        font-size: 15px;
+                                                        color: #000;
+                                                        opacity: 0.5;
+                                                        margin-left: 20px;
+                                                    }
+
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .bottom-container-product-review {
+
+                                        background-color: #F7F7F7;
+                                        border-radius: 5px;
+
+                                        .product-review-title {
+                                            margin: 10px !important;
+                                        }
+
+                                        .ratting-product-review {
+                                            .container-ratting-product-review {
+                                                .element-ratting {
+                                                    padding: 0 !important;
+                                                    margin-bottom: 5px;
+
+                                                    .rating {
+                                                        svg {
+                                                            color: gold;
+                                                        }
+
+                                                        .number-rattings {}
+
+                                                        .number-start {}
+                                                    }
+
+                                                    .progress-ratting {
+                                                        height: 22.5px;
+                                                        padding-top: 7px !important;
+                                                        margin: 0 !important;
+
+                                                        .progress {
+                                                            height: 8px !important;
+
+                                                            .progress-bar {
+                                                                background-color: gold !important;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .detail-comments {
+                            .container-detail-comments {
+                                .row {
+                                    // border: 1px solid #F7F7F7;
+
+                                    .row-container {
+                                        ul {
+                                            li {
+                                                position: relative;
+                                                border: 1px solid #F7F7F7;
+                                                background-color: #F7F7F7;
+                                                border-radius: 5px;
+                                                padding: 10px;
+                                                margin-right: 0 !important;
+
+                                                .media-body {
+                                                    .top-media-body {
+                                                        .user-name {
+                                                            font-size: 17px;
+                                                            font-weight: 400;
+                                                        }
+
+                                                        .float-end {
+                                                            position: absolute;
+                                                            top: 10px;
+                                                            right: 10px;
+
+                                                            .ratting-general {
+                                                                .ratting {
+                                                                    svg {
+                                                                        color: gold;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .bottom-media-body {
+                                                        margin-top: 10px;
+
+                                                        .user-comment-content {
+                                                            font-size: 15px;
+                                                            font-weight: 400;
+                                                            opacity: 0.7;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                    .container-more-information {
+                        .ele-more-infor {
+                            .title-ele-more-infor {
+                                font-size: 20px;
+                                font-weight: 400px;
+                                opacity: 0.9;
+                            }
+
+                            .container-ele-more-infor {
+                                .all-attributes {
+                                    .row {
+                                        .col-6 {
+
+                                            .attribute-product {
+                                                border: none !important;
+                                                text-align: left;
+                                                font-size: 15px;
+                                                opacity: 0.7;
+
+                                                span {
+                                                    font-size: 15px;
+                                                    opacity: 0.7;
+                                                    display: inline-block;
+                                                }
+
+                                                .title-attribute {
+                                                    // margin-left: 30px;
+                                                }
+
+                                                .space-between {
+                                                    padding-top: 5px;
+                                                }
+
+                                                .value-attribute {}
+
+                                                .category-attribute {
+                                                    color: $text-c2-primary
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .brand-detail {
+
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        justify-content: center;
+                                        // background-color: $text-c1-grey;
+                                        border-radius: 5px;
+                                        background: #151421;
+                                        background: linear-gradient(to right, $text-c2-primary, $text-c1-primary) no-repeat 0 0 / cover;
+
+                                        .container-brand-detail {
+                                            scale: 0.7;
+                                            max-width: 800px;
+                                            text-align: center;
+
+                                            .title-brand-detail {
+                                                font-size: 36px;
+                                                font-weight: bold;
+                                                margin-bottom: 20px;
+                                                color: #fff;
+                                                opacity: 0.9;
+                                            }
+
+                                            .content-brand-detail {
+                                                font-size: 20px;
+                                                line-height: 1.5;
+                                                margin-bottom: 30px;
+                                                color: #fff;
+                                                opacity: 0.8;
+                                            }
+
+                                            .button-brand-detail {
+                                                font-size: 20px;
+                                                padding: 12px 24px;
+                                                background-color: #f8c301;
+                                                border: none;
+                                                color: #000;
+                                                border-radius: 50px;
+                                                cursor: pointer;
+                                                transition: all 0.2s ease;
+
+                                                &:hover {
+                                                    color: #fff;
+                                                    // color: $text-c2-primary;
+                                                }
+                                            }
+                                        }
+
+
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    .container-leave-your-opinion {
+
+                        .card {
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                            padding: 10px;
+                            .card-body {
+                                .rating-form {
+                                    label {
+                                        font-size: 18px !important;
+                                        opacity: 0.8;
+                                    }
+
+                                    .stars {
+                                        display: flex;
+                                        justify-content: center;
+                                        font-size: 24px;
+
+                                        .star {
+                                            cursor: pointer;
+                                            color: #ccc;
+                                            margin: 0 2px;
+                                            font-size: 25px !important;
+                                        }
+                                    }
+
+                                    .form-group {
+                                        .form-control {
+                                            width: 100%;
+                                            // background: #f8f9fa;
+                                            color: $text-c7-grey;
+                                            font-size: 18px;
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            padding: 0px 25px;
+                                            border: 1px solid #eee;
+                                            outline: none;
+                                            height: 150px;
+                                            display: inline-block;
+                                            line-height: 50px;
+                                            box-shadow: none;
+                                            overflow: visible;
+                                            border-radius: 8px;
+                                        }
+                                    }
+
+                                    .button-send-comment {
+                                        padding: 10px 20px;
+                                        font-size: 16px;
+                                        line-height: 18px;
+                                        font-weight: 600;
+                                        border-radius: 8px;
+                                        cursor: pointer !important;
+                                        color: #fff;
+                                        background-color: #009f4d;
+                                        border-color: #1caf37;
+                                    }
+                                }
+
+                            }
+                        }
+
+
+                        .star:hover,
+                        .star:hover~.star {
+                            color: gold;
+                        }
                     }
                 }
             }
         }
+
     }
 }
 
@@ -269,11 +724,16 @@ $text-c10-grey: #172033;
 
     .section {
         width: 104%;
+
+        // .btn{
+        //     font-size: 0;
+        // }
     }
 
     .menu-items {
         padding-left: 0;
     }
 }
+
 
 // Main Style End

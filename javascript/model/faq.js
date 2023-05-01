@@ -8,5 +8,4 @@ export class FAQ  {
         console.log('Question: ',this.question);
         console.log('Answer: ', this.answer);
     }
-
 }

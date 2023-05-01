@@ -1233,6 +1233,9 @@ body {
   margin-left: auto;
   align-items: center;
 }
+.product-detail span {
+  font-size: 12px;
+}
 .product-detail ul li {
   margin-right: 25px;
   font-weight: lighter;
@@ -1285,6 +1288,10 @@ body {
   font-size: 25px;
   color: #000;
 }
+.product-detail .product-detail-container .row .card-information .header-card .rating-comments {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .product-detail .product-detail-container .row .card-information .header-card .rating-comments .rating .fa-star {
   color: gray;
 }
@@ -1320,14 +1327,28 @@ body {
 }
 .product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .price-container {
   text-align: left;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 .product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .price-container .sale-price {
   padding-left: 20px;
-  font-size: 25px;
-  color: #000;
+  font-size: 30px;
+  color: #C31A24;
 }
 .product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .price-container .full-price {
+  padding-left: 5px;
+  color: #000;
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-color: rgba(0, 0, 0, 0.5);
+  text-decoration-thickness: 2px;
+  font-size: 16px;
+}
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .price-container .in-stock {
   padding-left: 20px;
+  font-size: 15px;
+  color: #F67E3C;
+  opacity: 0.7;
 }
 .product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .button-container .section .btn {
   width: 100%;
@@ -1342,25 +1363,306 @@ body {
   text-decoration-line: none;
   margin-right: 20px;
 }
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .button-container .section .btn .button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .button-container .section .button-to-cart:hover {
+  color: #1CAF37;
+}
 .product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .button-container .section .button-to-favorite-list {
   margin-top: 5px;
+}
+.product-detail .product-detail-container .row .card-information .body-card .price-cart-favorite .button-container .section .button-to-favorite-list:hover {
+  color: #C31A24;
 }
 .product-detail .product-detail-container .row .card-information .bottom-card {
   padding: 10px;
 }
-.product-detail .product-detail-container .row .bottom-product-detail .menu-items {
-  list-style-type: none;
-  font-size: 11px;
-  display: inline-flex;
+.product-detail .product-detail-container .row .card-information .bottom-card .section .content-description {
+  font-size: 12px;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .title-delivery-information {
+  margin-left: 10px;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .content-delivery-information {
+  margin-left: 3px;
+  font-size: 12px;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .content-delivery-information svg {
+  margin-right: 10px;
+  color: #000;
+  opacity: 0.5;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .content-delivery-information .title-si {
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .content-delivery-information .status-si {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #1CAF37;
+  opacity: 0.8;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .content-delivery-information .table-user-information {
+  margin: -8px !important;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .content-delivery-information .table-user-information .table {
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .content-delivery-information .table-user-information .table thead th {
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+.product-detail .product-detail-container .row .card-information .delivery-information .section .content-delivery-information .table-user-information .table tbody tr td {
+  vertical-align: middle;
+  color: #000;
+  opacity: 0.6;
+}
+.product-detail .bottom-product-detail {
+  padding: 0px !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail {
+  padding: 0px !important;
+  border-radius: 5px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .menu-items {
   margin-bottom: 0;
   margin-top: 20px;
+  display: flex;
+  background-color: rgb(247, 247, 247);
+  padding: 4px;
+  border-radius: 12px;
+  list-style-type: none;
+  text-align: center;
+  transition: all 0.3s ease;
 }
-.product-detail .product-detail-container .row .bottom-product-detail .content-bottom-product-detail {
+.product-detail .bottom-product-detail .container-bottom-product-detail .menu-items li {
   width: 100%;
-  border-top: 1px solid silver;
+  background-color: rgb(247, 247, 247);
+  color: rgb(120, 124, 135);
+  font-weight: 600;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 20px;
+  height: auto;
+  padding: 8px 12px;
+  margin: 0px 4px;
+  border-bottom: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-.product-detail .product-detail-container .row .bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail {
+.product-detail .bottom-product-detail .container-bottom-product-detail .menu-items .active {
+  background-color: #fff;
+  color: #000;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail {
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 15px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail {
   padding-top: 20px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review .product-review-title {
+  font-size: 18px;
+  margin: 10px !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review .ratting-general {
+  align-items: center;
+  text-align: center;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review .ratting-general .rating svg {
+  color: gold;
+  font-size: 25px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review .ratting-general .rating .number-rattings .content-number-rattings {
+  font-size: 15px;
+  color: #000;
+  opacity: 0.5;
+  margin-left: 20px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review {
+  background-color: #F7F7F7;
+  border-radius: 5px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .product-review-title {
+  margin: 10px !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting {
+  padding: 0 !important;
+  margin-bottom: 5px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting .rating svg {
+  color: gold;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting .progress-ratting {
+  height: 22.5px;
+  padding-top: 7px !important;
+  margin: 0 !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting .progress-ratting .progress {
+  height: 8px !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting .progress-ratting .progress .progress-bar {
+  background-color: gold !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li {
+  position: relative;
+  border: 1px solid #F7F7F7;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 0 !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .top-media-body .user-name {
+  font-size: 17px;
+  font-weight: 400;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .top-media-body .float-end {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .top-media-body .float-end .ratting-general .ratting svg {
+  color: gold;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .bottom-media-body {
+  margin-top: 10px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .bottom-media-body .user-comment-content {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .title-ele-more-infor {
+  font-size: 20px;
+  font-weight: 400px;
+  opacity: 0.9;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .row .col-6 .attribute-product {
+  border: none !important;
+  text-align: left;
+  font-size: 15px;
+  opacity: 0.7;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .row .col-6 .attribute-product span {
+  font-size: 15px;
+  opacity: 0.7;
+  display: inline-block;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .row .col-6 .attribute-product .space-between {
+  padding-top: 5px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .row .col-6 .attribute-product .category-attribute {
+  color: #1CAF37;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #151421;
+  background: linear-gradient(to right, #1CAF37, #AAE640) no-repeat 0 0/cover;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail {
+  scale: 0.7;
+  max-width: 800px;
+  text-align: center;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail .title-brand-detail {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  opacity: 0.9;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail .content-brand-detail {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #fff;
+  opacity: 0.8;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail .button-brand-detail {
+  font-size: 20px;
+  padding: 12px 24px;
+  background-color: #f8c301;
+  border: none;
+  color: #000;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail .button-brand-detail:hover {
+  color: #fff;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form label {
+  font-size: 18px !important;
+  opacity: 0.8;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form .stars {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form .stars .star {
+  cursor: pointer;
+  color: #ccc;
+  margin: 0 2px;
+  font-size: 25px !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form .form-group .form-control {
+  width: 100%;
+  color: #838384;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  padding: 0px 25px;
+  border: 1px solid #eee;
+  outline: none;
+  height: 150px;
+  display: inline-block;
+  line-height: 50px;
+  box-shadow: none;
+  overflow: visible;
+  border-radius: 8px;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form .button-send-comment {
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer !important;
+  color: #fff;
+  background-color: #009f4d;
+  border-color: #1caf37;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .star:hover,
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .star:hover ~ .star {
+  color: gold;
 }
 
 @media (max-width: 426px) {

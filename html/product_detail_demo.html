@@ -55,6 +55,9 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+
 </head>
 
 <body>
@@ -63,17 +66,17 @@
     <main class="product-detail">
         <div class="product-detail-container">
             <div class="row">
-                <div class="col-xs-6 item-photo">
+                <div class="col-xs-12 col-sm-6 item-photo">
                     <img style="max-width:90%;" class="img-fluid mx-auto d-block image img-zoomable"
                         src="../image/products/Vegetable_Avovado_3.webp" id="product-image" />
                     <div class="magnifier" id="magnifier"></div>
                 </div>
 
-                <div class="col-xs-6 card-information">
+                <div class="col-xs-12 col-sm-6 card-information">
                     <div class="header-card part-of-card">
                         <span class="name-product">Name Product</span>
                         <div class="rating-comments row">
-                            <div class="col-xs-5 rating">
+                            <div class="col-xs-5 col-sm-4 rating">
                                 <span class="text-in-card-information">Rating: </span>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -81,19 +84,19 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <div class="col-xs-4 comments">
+                            <div class="col-xs-4 col-sm-4 comments">
                                 <span class="text-in-card-information">Comments: 5054 </span>
                             </div>
-                            <div class="col-xs-3 id-product">
+                            <div class="col-xs-3 col-sm-4 id-product">
                                 <span class="text-in-card-information">ID: 92834</span>
                             </div>
                         </div>
-                        
+
                         <div class="container-button-in-card">
                             <button class="brand-button button-in-card">
                                 <a href="#" class="name-brand link-button-in-card">Perestok</a>
                             </button>
-    
+
                             <button class="category-button button-in-card">
                                 <a href="#" class="name-category link-button-in-card">Vegetable</a>
                             </button>
@@ -102,28 +105,33 @@
                                 <a href="#" class="name-category link-button-in-card">New Product</a>
                             </button>
                         </div>
-                        
+
                     </div>
 
                     <div class="body-card part-of-card">
                         <div class="row price-cart-favorite">
-                            <div class="col-xs-6 price-container">
-                                <h4 class="sale-price">150$</h4>
-                                <span class="full-price">170$</span>
+                            <div class="col-xs-12 col-sm-6 price-container">
+                                <h4 class="sale-price">150$/Kg <span class="full-price">170$/Kg</span></h4>
+                                <span class="in-stock">150 Kg in Stock</span>
                             </div>
 
-                            <div class="col-xs-6 button-container">
+                            <div class="col-xs-12 col-sm-6 button-container">
                                 <div class="section">
-                                    <button class="btn button-to-cart"><span 
-                                            class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to
-                                        Cart</button>
+                                    <button class="btn button-to-cart">
+                                        <span class="button-content">
+                                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                            Add to Cart
+                                        </span>
+                                    </button>
                                 </div>
 
                                 <div class="section">
-                                    <button class="btn button-to-favorite-list"><span 
-                                            class="glyphicon glyphicon-heart-empty"
-                                            aria-hidden="true"></span>
-                                        Add to Favorite List</button>
+                                    <button class="btn button-to-favorite-list">
+                                        <span class="button-content">
+                                            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                                            Add to Favorite List
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -142,46 +150,393 @@
 
                     <div class="delivery-information part-of-card">
                         <div class="section" style="padding-bottom:5px;">
-                            <h4 class="title-description">Description</h4>
-                            <div class="content-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolores cumque iure,
-                                perferendis assumenda vero amet, temporibus architecto magnam velit soluta quaerat. Odio
-                                rerum hic tempore mollitia sint deserunt maiores!
+                            <h4 class="title-delivery-information">Shipping Information</h4>
+                            <div class="content-delivery-information row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <span class="address-store title-si"> <i class="fa-solid fa-location-dot"></i>
+                                        MFoody Store</span>
+                                    <span class="status-si">Available today</span>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <span class="address-store title-si"> <i class="fa-solid fa-truck-fast"></i> Express
+                                        delivery</span>
+                                    <span class="status-si">Available today </span>
+                                </div>
+
+                                <div class="table-user-information">
+                                    <table class="table table-bordered table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Phone Number</th>
+                                                <th>Address</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>User 1</td>
+                                                <td>0123456789</td>
+                                                <td>123 Street, City, Country</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-xs-12 bottom-product-detail">
-                    <ul class="menu-items">
-                        <li class="active" data-content="comments-and-rating">Comments and Rating</li>
-                        <li data-content="brand">Brand</li>
-                        <li data-content="more-information">More Information</li>
-                        <li data-content="similar-products">Similar Products</li>
-                        <li data-content="leave-your-opinion">Leave Your Opinion</li>
-                    </ul>
-                    <div class="content-bottom-product-detail">
-                        <div class="active container-content-bottom-product-detail" id="comments-and-rating">
-                            Your Comments and Rating Content Here
-                        </div>
-                        <div class="container-content-bottom-product-detail" id="brand">
-                            Your Brand Content Here
-                        </div>
-                        <div class="container-content-bottom-product-detail" id="more-information">
-                            Your More Information Content Here
-                        </div>
-                        <div class="container-content-bottom-product-detail" id="similar-products">
-                            Your Similar Products Content Here
-                        </div>
-                        <div class="container-content-bottom-product-detail" id="leave-your-opinion">
-                            Your Leave Your Opinion Content Here
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
         </div>
+
+        <div class="bottom-product-detail">
+            <div class="col-xs-12 container-bottom-product-detail">
+                <ul class="menu-items">
+                    <li class="active" data-content="comments-and-rating">Comments and Rating</li>
+                    <li data-content="more-information">More Information</li>
+                    <li data-content="leave-your-opinion">Leave Your Opinion</li>
+                    
+                </ul>
+                <div class="content-bottom-product-detail">
+                    <div class="active container-content-bottom-product-detail" id="comments-and-rating">
+                        <div class="row container-comments-and-rating">
+                            <div class="detail-rattings col-md-5">
+                                <div class="container-detail-rattings">
+                                    <div class="row product-review">
+                                        <div class="col-xs-12 top-container-product-review">
+
+                                            <h2 class="product-review-title">Ratting of Product</h2>
+
+                                            <div class="ratting-general">
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span class="number-rattings">
+                                                        <span class="content-number-rattings">Ratting: 5054 </span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-12 bottom-container-product-review">
+
+                                            <h4 class="product-review-title">Detail Ratting Stars</h4>
+                                            <div class="ratting-product-review">
+                                                <div class="container-ratting-product-review">
+                                                    <div class="col-xs-12 element-ratting">
+                                                        <div class="col-xs-4 rating ">
+                                                            <span class="number-start">5</span>
+                                                            <i class="fas fa-star" style="margin-right: 5px;"></i>
+                                                            <span class="number-rattings"> 5054 Votes</span>
+                                                        </div>
+
+                                                        <div class="col-xs-8 progress-ratting">
+                                                            <span class="progress">
+                                                                <span class="progress-bar progress-bar-danger"
+                                                                    role="progressbar" aria-valuenow="40"
+                                                                    aria-valuemin="0" aria-valuemax="100"
+                                                                    style="width: 40%"> </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-12 element-ratting">
+                                                        <div class="col-xs-4 rating ">
+                                                            <span class="number-start">4</span>
+                                                            <i class="fas fa-star" style="margin-right: 5px;"></i>
+                                                            <span class="number-rattings"> 5054 Votes</span>
+                                                        </div>
+
+                                                        <div class="col-xs-8 progress-ratting">
+                                                            <span class="progress">
+                                                                <span class="progress-bar progress-bar-danger"
+                                                                    role="progressbar" aria-valuenow="40"
+                                                                    aria-valuemin="0" aria-valuemax="100"
+                                                                    style="width: 40%"> </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-12 element-ratting">
+                                                        <div class="col-xs-4 rating ">
+                                                            <span class="number-start">3</span>
+                                                            <i class="fas fa-star" style="margin-right: 5px;"></i>
+                                                            <span class="number-rattings"> 5054 Votes</span>
+                                                        </div>
+
+                                                        <div class="col-xs-8 progress-ratting">
+                                                            <span class="progress">
+                                                                <span class="progress-bar progress-bar-danger"
+                                                                    role="progressbar" aria-valuenow="40"
+                                                                    aria-valuemin="0" aria-valuemax="100"
+                                                                    style="width: 40%"> </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-12 element-ratting">
+                                                        <div class="col-xs-4 rating ">
+                                                            <span class="number-start">2</span>
+                                                            <i class="fas fa-star" style="margin-right: 5px;"></i>
+                                                            <span class="number-rattings"> 5054 Votes</span>
+                                                        </div>
+
+                                                        <div class="col-xs-8 progress-ratting">
+                                                            <span class="progress">
+                                                                <span class="progress-bar progress-bar-danger"
+                                                                    role="progressbar" aria-valuenow="40"
+                                                                    aria-valuemin="0" aria-valuemax="100"
+                                                                    style="width: 40%"> </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-12 element-ratting">
+                                                        <div class="col-xs-4 rating ">
+                                                            <span class="number-start">1</span>
+                                                            <i class="fas fa-star" style="margin-right: 5px;"></i>
+                                                            <span class="number-rattings"> 5054 Votes</span>
+                                                        </div>
+
+                                                        <div class="col-xs-8 progress-ratting">
+                                                            <span class="progress">
+                                                                <span class="progress-bar progress-bar-danger"
+                                                                    role="progressbar" aria-valuenow="40"
+                                                                    aria-valuemin="0" aria-valuemax="100"
+                                                                    style="width: 40%"> </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="detail-comments col-md-7">
+                                <div class="container-detail-comments">
+                                    <div class="row">
+                                        <div class="col-12 row-container">
+                                            <ul class="list-unstyled">
+                                                <li class="media">
+                                                    <div class="media-body">
+                                                        <div class="top-media-body">
+                                                            <span
+                                                                class="d-inline-block text-start user-name">Guest</span>
+                                                            <div class="float-end">
+                                                                <div class="ratting-general">
+                                                                    <div class="ratting">
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bottom-media-body">
+                                                            <span class="user-comment-content">Lorem ipsum dolor sit
+                                                                amet, consectetur adipisicing elit. Odit, eius!
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="media">
+                                                    <div class="media-body">
+                                                        <div class="top-media-body">
+                                                            <span
+                                                                class="d-inline-block text-start user-name">Guest</span>
+                                                            <div class="float-end">
+                                                                <div class="ratting-general">
+                                                                    <div class="ratting">
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bottom-media-body">
+                                                            <span class="user-comment-content">Lorem ipsum dolor sit
+                                                                amet, consectetur adipisicing elit. Odit, eius!
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="media">
+                                                    <div class="media-body">
+                                                        <div class="top-media-body">
+                                                            <span
+                                                                class="d-inline-block text-start user-name">Guest</span>
+                                                            <div class="float-end">
+                                                                <div class="ratting-general">
+                                                                    <div class="ratting">
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bottom-media-body">
+                                                            <span class="user-comment-content">Lorem ipsum dolor sit
+                                                                amet, consectetur adipisicing elit. Odit, eius!
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-content-bottom-product-detail" id="more-information">
+                        <div class="row container-more-information">
+                            <div class="ele-more-infor col-md-12">
+                                <span class="title-ele-more-infor">Custom column padding</span>
+                                <div class="container-ele-more-infor">
+                                    <div class="container text-center all-attributes">
+                                        <div class="row g-2">
+                                            <div class="col-6 element">
+                                                <div
+                                                    class="row align-items-start p-3 border attribute-product attribute-1">
+                                                    <div class="col-3 title-attribute">
+                                                        Weight Product
+                                                    </div>
+                                                    <div class="col-6 space-between">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-3 value-attribute">
+                                                        Value 1
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 element">
+                                                <div
+                                                    class="row align-items-start p-3 border attribute-product attribute-1">
+                                                    <div class="col-3 title-attribute">
+                                                        Import Quantity
+                                                    </div>
+                                                    <div class="col-6 space-between">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-3 value-attribute">
+                                                        Value 2
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 element">
+                                                <div
+                                                    class="row align-items-start p-3 border attribute-product attribute-1">
+                                                    <div class="col-3 title-attribute">
+                                                        Import Date
+                                                    </div>
+                                                    <div class="col-6 space-between">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-3 value-attribute">
+                                                        Value 3
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 element">
+
+                                                <div
+                                                    class="row align-items-start p-3 border attribute-product attribute-1">
+                                                    <div class="col-3 title-attribute">
+                                                        Category Product
+
+                                                    </div>
+                                                    <div class="col-6 space-between">
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-3 value-attribute category-attribute">
+                                                        Value 4
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ele-more-infor col-md-12">
+                                <span class="title-ele-more-infor">Brand Name</span>
+                                <div class="container-ele-more-infor">
+                                    <div class="container text-center all-attributes">
+                                        <div>
+                                            <div class="brand-detail">
+                                                <div class="container-brand-detail">
+                                                    <img class="img-fluid mx-auto d-block image img-zoomable"
+                                                        src="../image/icon/icon_gfgl_fullGreen_2.png"
+                                                        id="brand-image" />
+                                                    <h3 class="title-brand-detail"> Title Brand</h3>
+                                                    <p class="content-brand-detail"> Description Brand</p>
+                                                    <button class="button-brand-detail">More products</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="container-content-bottom-product-detail" id="leave-your-opinion">
+                        <div class="row container-leave-your-opinion justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="rating-form" id="rating-form">
+                                            <label for="ratting-value">Your Ratting:</label>
+                                            <div class="stars mb-3">
+                                                <span class="star" data-rating="1"><i class="fas fa-star"></i></span>
+                                                <span class="star" data-rating="2"><i class="fas fa-star"></i></span>
+                                                <span class="star" data-rating="3"><i class="fas fa-star"></i></span>
+                                                <span class="star" data-rating="4"><i class="fas fa-star"></i></span>
+                                                <span class="star" data-rating="5"><i class="fas fa-star"></i></span>
+                                            </div>
+                                            <input type="hidden" id="rating" name="rating" value="">
+                                            <div class="form-group mb-3">
+                                                <label for="comment">Your Comment:</label>
+                                                <textarea id="comment" name="comment" class="form-control"
+                                                    rows="10"></textarea>
+                                            </div>
+                                            <div class="text-center d-flex justify-content-center">
+                                                <button type="submit" class="btn btn-primary button-send-comment">Send your comment</button>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
     </main>
 
     <!-- PRODUCT DETAIL PAGE END -->
@@ -202,10 +557,15 @@
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
         </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+
     <!-- Import JS -->
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script src="../javascript/catalog_show_element_in_ul.js"></script>
     <script src="../javascript/product_detail.js"></script>
+    <script type="module" src="../javascript/slide_product_card_demo.js"></script>
+    <script type="module" src="../javascript/leave_review_product_detail.js"></script>
 </body>
 
 </html>
