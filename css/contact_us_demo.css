@@ -553,16 +553,19 @@ body {
   margin-top: 140px;
 }
 .contact .contact-container {
+  margin-top: 50px !important;
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 .contact .contact-container .contact-title-content {
   max-width: 800px;
   margin: auto;
+  margin-top: -10px;
 }
 .contact .contact-container .contact-title-content .title {
   font-size: 35px;
@@ -586,6 +589,7 @@ body {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  padding-bottom: 15px;
 }
 .contact .contact-container .contact-info .contact-info-container .element-contact-info {
   display: grid;
@@ -635,11 +639,10 @@ body {
   background: #fff;
 }
 .map-contact .map-container {
-  max-width: 1200px;
+  max-width: 1230px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-  max-width: 1200px;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -659,8 +662,8 @@ body {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 30px 15px !important;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 .form-contact .form-contact-over .form-contact-container .form-content {
   margin: 0 auto;

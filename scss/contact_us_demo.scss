@@ -32,22 +32,25 @@ body {
 .contact {
     background: #fff;
     margin-top: 140px;
+    // padding: 30px 15px !important;
+    
     // zoom: 1;
 
     .contact-container {
-
+        margin-top: 50px !important;
         max-width: 1200px;
         margin-right: auto;
         margin-left: auto;
         width: 100%;
         padding-right: 15px;
         padding-left: 15px;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
         // background-color: $text-c1-primary;
 
         .contact-title-content {
             max-width: 800px;
             margin: auto;
-            
+            margin-top: -10px;
 
             .title {
                 font-size: 35px;
@@ -77,6 +80,7 @@ body {
                 flex-wrap: wrap;
                 margin-right: -15px;
                 margin-left: -15px;
+                padding-bottom: 15px;
 
                 .element-contact-info {
 
@@ -139,11 +143,10 @@ body {
     background: #fff;
 
     .map-container {
-        max-width: 1200px;
+        max-width: 1230px;
         margin-right: auto;
         margin-left: auto;
         width: 100%;
-        max-width: 1200px;
         padding-right: 15px;
         padding-left: 15px;
 
@@ -164,6 +167,7 @@ body {
     // background-repeat: no-repeat;
     // background-position: center;
 
+
     .form-contact-over {
 
         .form-contact-container {
@@ -171,8 +175,8 @@ body {
             margin-right: auto;
             margin-left: auto;
             width: 100%;
-            padding-right: 15px;
-            padding-left: 15px;
+            padding: 30px 15px !important;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
 
             .form-content {
                 margin: 0 auto;
