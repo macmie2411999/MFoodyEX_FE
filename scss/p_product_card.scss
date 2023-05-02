@@ -37,6 +37,13 @@ $text-c4-grey: #B6BAC2;
     line-height: $height;
 }
 
+@mixin processLongText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
 @mixin inlineBlocks() {
     display: flex;
     justify-content: center;
