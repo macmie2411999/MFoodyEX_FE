@@ -199,16 +199,16 @@ $text-c10-grey: #172033;
                 .header-card {
                     padding: 10px;
                     margin-top: 0;
+                    font-size: 1.5rem !important;
 
                     .name-product {
-                        font-size: 25px;
+                        font-size: 2.5rem;
                         color: #000;
                     }
 
                     .rating-comments {
                         margin-top: 5px;
                         margin-bottom: 5px;
-
                         .rating {
 
                             .fa-star {
@@ -223,6 +223,7 @@ $text-c10-grey: #172033;
                         .text-in-card-information {
                             color: #000;
                             opacity: 0.5;
+                            font-size: 1.5rem !important;
                             // font-size: 12px;
                         }
                     }
@@ -230,6 +231,7 @@ $text-c10-grey: #172033;
                     .container-button-in-card {
                         .button-in-card {
                             margin-top: 10px;
+                            margin-right: 5px;
                             padding: 5px;
                             border-radius: 5px;
                             border: 1px solid $text-c4-grey;
@@ -241,6 +243,7 @@ $text-c10-grey: #172033;
                                 text-decoration: none;
                                 color: $text-c2-primary;
                                 transition: all 0.3s ease;
+                                font-size: 1.3rem;
                             }
 
                             &:hover {
@@ -879,6 +882,8 @@ $text-c10-grey: #172033;
                                 }
 
                                 .card-body {
+                                    padding-bottom: 0px !important; 
+
                                     .rated-star {
                                         svg {
                                             color: $text-c1-yellow;
@@ -891,10 +896,10 @@ $text-c10-grey: #172033;
                                         @include fontAdjust(300, 1.3rem, 29px);
                                         color: #000;
                                         @include processLongText();
+                                        padding-bottom: 0 !important;
                                     }
 
                                     .card-text {
-
                                         @include fontAdjust(300, 1.3rem, 24px);
                                         color: #CBC9C9;
                                     }
@@ -920,6 +925,10 @@ $text-c10-grey: #172033;
                                         background: #fff !important;
                                         border: none !important;
                                         // height: 64px;
+                                        button{
+                                            padding-top: 0 !important;
+                                            padding-bottom: 0 !important;
+                                        }
 
                                         .tag-sale-price {
                                             background: #fff;
@@ -995,7 +1004,7 @@ $text-c10-grey: #172033;
                             margin: 2px !important;
                             border-radius: 2px;
                             font-size: 1.2rem !important;
-                            padding: 10px 20px !important;
+                            padding: 0 !important;
                         }
 
                         .page-btn {
@@ -1004,6 +1013,7 @@ $text-c10-grey: #172033;
                             border: none;
                             cursor: pointer;
                             font-weight: bold;
+                            padding: 10px 20px !important;
                         }
                         
                         .page-btn:hover {
@@ -1084,6 +1094,8 @@ $text-c10-grey: #172033;
                                 }
 
                                 .card-body {
+                                    padding-bottom: 0px !important; 
+
                                     .rated-star {
                                         svg {
                                             color: $text-c1-yellow;
@@ -1096,10 +1108,10 @@ $text-c10-grey: #172033;
                                         @include fontAdjust(300, 1.3rem, 29px);
                                         color: #000;
                                         @include processLongText();
+                                        padding-bottom: 0 !important;
                                     }
 
                                     .card-text {
-
                                         @include fontAdjust(300, 1.3rem, 24px);
                                         color: #CBC9C9;
                                     }
@@ -1125,6 +1137,10 @@ $text-c10-grey: #172033;
                                         background: #fff !important;
                                         border: none !important;
                                         // height: 64px;
+                                        button{
+                                            padding-top: 0 !important;
+                                            padding-bottom: 0 !important;
+                                        }
 
                                         .tag-sale-price {
                                             background: #fff;

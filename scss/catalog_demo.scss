@@ -7,17 +7,19 @@
 @import '../scss/footer_home_demo.scss';
 
 // Card
-@import '../scss/p_product_card.scss';
+// @import '../scss/p_product_card.scss';
 
 $text-c1-primary:#AAE640;
 $text-c2-primary: #1CAF37;
 $text-c3-primary:#009f4d;
 $text-c4-primary:#015A28;
 $text-c5-primary:#408A36;
+$text-c6-primary: #0FC44C;
 
 $text-c1-yellow: #FACF39;
 $text-c2-yellow: #F67E3C;
 $text-c3-yellow: #C31A24;
+$text-c4-yellow: #C31A24;
 
 $text-c1-grey: #F8F8F8;
 $text-c2-grey: #DFE0E2;
@@ -27,6 +29,8 @@ $text-c5-grey: #757575;
 $text-c6-grey: #F8F9FA;
 $text-c7-grey: #838384;
 $text-c8-grey: #eee;
+$text-c9-grey: #1A233A;
+$text-c10-grey: #172033;
 
 @mixin fontAdjust ($weight, $size, $height) {
     font-family: 'Inter';
@@ -34,6 +38,13 @@ $text-c8-grey: #eee;
     font-weight: $weight;
     font-size: $size;
     line-height: $height;
+}
+
+@mixin processLongText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 @mixin inlineBlocks() {
@@ -125,10 +136,12 @@ body {
             .has-sub-menu {
                 margin-bottom: 10px;
                 position: relative;
+                transition: all 0.5s ease-in-out !important;
 
                 .sub-menu {
                     margin-top: 5px;
                     padding-left: 10px;
+                    transition: all 0.5s ease-in-out !important;
                 }
 
                 button {
@@ -152,6 +165,7 @@ body {
             .category {
                 color: #000 !important;
                 opacity: 0.7 !important;
+                font-size: 1.2rem;
             }
 
             .category:hover {
@@ -163,8 +177,56 @@ body {
         .content {
             padding-bottom: 50px;
 
+            .title-area {
+                opacity: 0.5 !important;
+                text-align: left;
+                @include fontAdjust(400, 1.8rem, 48px);
+                color: #000;
+            }
+
+            .tags-product {
+                .container-tags-product {
+                    .tags_title {}
+
+                    .button-in-card {
+                        // margin-top: 10px;
+                        margin-right: 5px;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        border: 2px solid rgba(0, 0, 0, 0.1) !important;
+                        background-color: #fff !important;
+                        transition: all 0.3s ease !important;
+                        // box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+
+                        .link-button-in-card {
+                            text-decoration: none;
+                            color: $text-c2-primary !important;
+                            opacity: 1;
+                            transition: all 0.3s ease !important;
+                            font-size: 1.3rem !important;
+                        }
+
+                        &:hover {
+                            background-color: $text-c2-primary !important;
+
+                            .link-button-in-card {
+                                text-decoration: none;
+                                color: #fff !important;
+                            }
+                        }
+                    }
+                }
+            }
+
             .main_products {
                 // max-width: 1600px;
+                // margin: 20px auto 50px auto;
+                // width: 100%;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+
+                max-width: 1600px;
                 margin: 10px auto 30px auto;
                 width: 100%;
                 display: flex;
@@ -175,10 +237,7 @@ body {
                     width: 100%;
 
                     .products_title {
-                        text-align: left;
-                        @include leftRightTopBottom(476px, 351px, 16px, 0px);
-                        @include fontAdjust(400, 30px, 48px);
-                        color: #000;
+                        
                     }
 
                     .row {
@@ -187,10 +246,31 @@ body {
                         // margin-bottom: 5px !important;
                         .col {
                             .card {
+                                // scale: 0.9;
                                 width: 369;
                                 height: 334;
                                 background: #fff;
                                 position: relative;
+                                box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                                }
+
+                                .tag-product {
+                                    z-index: 2;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    font-size: 15px;
+                                    margin: 1rem;
+                                    color: #fff;
+                                    background-color: $text-c2-yellow;
+                                    padding: 3px 5px 3px 5px;
+                                    border-radius: 5px;
+                                    // cursor: pointer;
+                                }
 
                                 .heart-icon {
                                     z-index: 2;
@@ -214,16 +294,28 @@ body {
                                 }
 
                                 img {
-                                    scale: 0.9;
+                                    scale: 0.7;
                                 }
 
                                 .card-body {
+                                    padding-bottom: 0px !important; 
+                                    .rated-star {
+                                        svg {
+                                            color: $text-c1-yellow;
+                                            font-size: 1.3rem;
+                                        }
+                                    }
+
                                     .card-title {
-                                        @include fontAdjust(300, 24px, 29px);
+                                        padding-top: 10px;
+                                        @include fontAdjust(300, 1.2rem, 29px);
+                                        @include processLongText();
                                         color: #000;
+                                        padding-bottom: 0 !important;
                                     }
 
                                     .card-text {
+
                                         @include fontAdjust(300, 20px, 24px);
                                         color: #CBC9C9;
                                     }
@@ -238,8 +330,45 @@ body {
                                     background-color: #fff;
                                     display: flex;
 
-                                    .more-infor {
+                                    .tag-prices {
                                         width: 50%;
+                                        display: flex;
+                                        // flex-direction: row;
+                                        // justify-content: space-between;
+                                        flex-wrap: nowrap;
+                                        justify-content: center;
+                                        align-items: center;
+                                        background: #fff !important;
+                                        border: none !important;
+                                        // height: 64px;
+
+                                        button{
+                                            padding-top: 0 !important;
+                                            padding-bottom: 0 !important;
+                                        }
+
+                                        .tag-sale-price {
+                                            background: #fff;
+                                            border-color: transparent;
+                                            font-size: 28px;
+                                            padding-right: 5px;
+                                            color: $text-c3-yellow;
+                                        }
+
+                                        .tag-full-price {
+                                            font-size: 18px;
+                                            text-align: left;
+                                            color: $text-c7-grey;
+                                            text-decoration: line-through;
+                                            text-decoration-line: 5px;
+                                            text-decoration-color: $text-c7-grey;
+                                            text-decoration-thickness: 2px;
+                                        }
+                                    }
+
+
+                                    .more-infor {
+                                        width: 25%;
                                         height: 64px;
                                         background: #fff;
                                         border-color: transparent;
@@ -253,7 +382,7 @@ body {
                                     }
 
                                     .to-cart {
-                                        width: 50%;
+                                        width: 25%;
                                         height: 64px;
                                         background: #fff;
                                         @include fontAdjust(600, 24px, 29px);
@@ -266,7 +395,7 @@ body {
 
                                     svg {
                                         color: $text-c2-primary;
-                                        font-size: 2rem;
+                                        font-size: 1.5rem;
                                         transition: all 0.4s ease-in-out;
                                     }
 
@@ -280,6 +409,124 @@ body {
                     }
                 }
             }
+
+            // .main_products {
+            //     // max-width: 1600px;
+            //     margin: 10px auto 30px auto;
+            //     width: 100%;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+
+            //     .container_products {
+            //         width: 100%;
+
+            //         .products_title {
+            //             text-align: left;
+            //             @include leftRightTopBottom(476px, 351px, 16px, 0px);
+            //             @include fontAdjust(400, 30px, 48px);
+            //             color: #000;
+            //         }
+
+            //         .row {
+
+            //             // margin: 10px;
+            //             // margin-bottom: 5px !important;
+            //             .col {
+            //                 .card {
+            //                     width: 369;
+            //                     height: 334;
+            //                     background: #fff;
+            //                     position: relative;
+
+            //                     .heart-icon {
+            //                         z-index: 2;
+            //                         position: absolute;
+            //                         top: 0;
+            //                         right: 0;
+            //                         font-size: 1.8rem;
+            //                         margin: 1rem;
+            //                         cursor: pointer;
+
+            //                         svg {
+            //                             color: $text-c2-grey;
+            //                             border-radius: 50%;
+            //                             transition: color 0.3s ease-in-out;
+            //                         }
+
+            //                         svg:hover {
+            //                             color: $text-c1-primary;
+            //                             cursor: pointer;
+            //                         }
+            //                     }
+
+            //                     img {
+            //                         scale: 0.9;
+            //                     }
+
+            //                     .card-body {
+            //                         .card-title {
+            //                             @include fontAdjust(300, 24px, 29px);
+            //                             color: #000;
+            //                         }
+
+            //                         .card-text {
+            //                             @include fontAdjust(300, 20px, 24px);
+            //                             color: #CBC9C9;
+            //                         }
+            //                     }
+
+
+            //                     .card-footer {
+            //                         width: 369;
+            //                         padding-top: 0 !important;
+            //                         margin-top: 0 !important;
+            //                         border-top: transparent;
+            //                         background-color: #fff;
+            //                         display: flex;
+
+            //                         .more-infor {
+            //                             width: 50%;
+            //                             height: 64px;
+            //                             background: #fff;
+            //                             border-color: transparent;
+
+            //                             a {
+            //                                 text-decoration: none !important;
+            //                                 @include fontAdjust(200px, 24px, 29px);
+            //                                 color: #000;
+            //                             }
+
+            //                         }
+
+            //                         .to-cart {
+            //                             width: 50%;
+            //                             height: 64px;
+            //                             background: #fff;
+            //                             @include fontAdjust(600, 24px, 29px);
+            //                             text-align: center;
+            //                             color: #000;
+            //                             border-color: transparent;
+            //                             border-radius: 50%;
+
+            //                         }
+
+            //                         svg {
+            //                             color: $text-c2-primary;
+            //                             font-size: 2rem;
+            //                             transition: all 0.4s ease-in-out;
+            //                         }
+
+            //                         svg:hover {
+            //                             scale: 1.3;
+            //                             cursor: pointer;
+            //                         }
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
 }
@@ -289,5 +536,25 @@ body {
 @media (max-width: 768) {
     .sidebar {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .tag-full-price {
+        display: none;
+    }
+
+    .tag-sale-price {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 772px) {
+    .tag-full-price {
+        font-size: 15px;
+    }
+
+    .tag-sale-price {
+        font-size: 20px;
     }
 }

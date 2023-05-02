@@ -10,7 +10,6 @@ function createProductCard() {
         <div class="card-body">
             <span class="rated-star card-text"><i class="fa-solid fa-star"></i> 4.2 </span>
             <h5 class="card-title">Name Product </h5>
-            <p class="card-text">$Product Description</p>
         </div>
         <div class="card-footer">
             <button class="tag-prices">

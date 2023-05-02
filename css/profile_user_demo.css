@@ -1081,10 +1081,15 @@ body {
   color: #000;
 }
 .main_products .container_products .row .col .card {
-  width: 369;
+  width: 20%;
   height: 334;
   background: #fff;
   position: relative;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.main_products .container_products .row .col .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .main_products .container_products .row .col .card .tag-product {
   z-index: 2;
@@ -1120,7 +1125,7 @@ body {
   scale: 0.8;
 }
 .main_products .container_products .row .col .card .card-body .rated-star svg {
-  color: #FFD96C;
+  color: #C31A24;
   font-size: 1.3rem;
 }
 .main_products .container_products .row .col .card .card-body .card-title {
@@ -1167,7 +1172,7 @@ body {
 .main_products .container_products .row .col .card .card-footer .tag-prices .tag-full-price {
   font-size: 18px;
   text-align: left;
-  color: #B6BAC2;
+  color: #F2F3F5;
   text-decoration: line-through;
 }
 .main_products .container_products .row .col .card .card-footer .more-infor {
@@ -2308,10 +2313,15 @@ body {
   color: #000;
 }
 .main_products .container_products .row .col .card {
-  width: 369;
+  width: 20%;
   height: 334;
   background: #fff;
   position: relative;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.main_products .container_products .row .col .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .main_products .container_products .row .col .card .tag-product {
   z-index: 2;
@@ -2347,7 +2357,7 @@ body {
   scale: 0.8;
 }
 .main_products .container_products .row .col .card .card-body .rated-star svg {
-  color: #FFD96C;
+  color: #C31A24;
   font-size: 1.3rem;
 }
 .main_products .container_products .row .col .card .card-body .card-title {
@@ -2394,7 +2404,7 @@ body {
 .main_products .container_products .row .col .card .card-footer .tag-prices .tag-full-price {
   font-size: 18px;
   text-align: left;
-  color: #B6BAC2;
+  color: #F2F3F5;
   text-decoration: line-through;
 }
 .main_products .container_products .row .col .card .card-footer .more-infor {

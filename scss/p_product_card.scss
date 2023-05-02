@@ -12,16 +12,23 @@ $text-c2-primary: #1CAF37;
 $text-c3-primary:#009f4d;
 $text-c4-primary:#015A28;
 $text-c5-primary:#408A36;
+$text-c6-primary: #0FC44C;
 
 $text-c1-yellow: #FACF39;
 $text-c2-yellow: #F67E3C;
 $text-c3-yellow: #C31A24;
-$text-c4-yellow: #FFD96C;
+$text-c4-yellow: #C31A24;
 
 $text-c1-grey: #F8F8F8;
 $text-c2-grey: #DFE0E2;
 $text-c3-grey: #DEDDDC;
-$text-c4-grey: #B6BAC2;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
+$text-c9-grey: #1A233A;
+$text-c10-grey: #172033;
 
 
 // body {
@@ -92,10 +99,17 @@ $text-c4-grey: #B6BAC2;
             // margin-bottom: 5px !important;
             .col {
                 .card {
-                    width: 369;
+                    
+                    width: 20%;
                     height: 334;
                     background: #fff;
                     position: relative;
+                    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                    }
 
                     .tag-product {
                         z-index: 2;
@@ -180,7 +194,7 @@ $text-c4-grey: #B6BAC2;
 
                             .tag-sale-price {
 
-                                
+
                                 background: #fff;
                                 border-color: transparent;
                                 font-size: 28px;

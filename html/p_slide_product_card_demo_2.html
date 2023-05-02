@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/p_slide_product_card_demo_2.min.css">
+    <title>Slide Product Card MFoody - Grocery Store</title>
+    <link rel="icon" href="../image/icon/icon_gfgl_green_64.png">
+
+    <!-- Add jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5XnU+mxb+raROM+0p1LTT3mU3pMAFonWE3MFSs0cs"
+        crossorigin="anonymous"></script>
+
+    <!-- Add Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5XnU+mxb+raROM+0p1LTT3mU3pMAFonWE3MFSs0cs"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/5an7F4b9pzWmAo4Jsvyuvwxf1/4W5pKp7k8mP4"></script>
+
+
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--- Font Josh-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Jost:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="splide">
+                <div class="splide__track">
+                    <div class="splide__list ">
+                        <div class=" splide__slide ">
+                            <div class="product" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <div class="row container-product">
+                                    <div class="col-md-5 image-product">
+                                        <img class="img-fluid mx-auto d-block image"
+                                            src="../image/products/Vegetable_Avovado_3.webp">
+                                    </div>
+                                    <div class="col-md-7 infor-product">
+                                        <div class="row container-infor">
+                                            <div class="product-general">
+                                                <h4 href="#" class="name-product">Name Product </h4>
+                                                <div class="row product-star-and-sale">
+                                                    <span class="col tag-product"> New Product </span>
+                                                    <span class="col rated-star card-text"><i
+                                                            class="fa-solid fa-star"></i>
+                                                        4.5 </span>
+                                                </div>
+                                                <div class="row product-info">
+                                                    <div class="col tag-prices">
+                                                        <span class="tag-sale-price product-price">150$</span>
+                                                        <span class="tag-full-price">170$</span>
+                                                    </div>
+                                                    <div class="col button-infor">
+                                                        <button class="more-infor">
+                                                            <a href="../detail.html?idShoes=${shoes.id}"><i
+                                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                        <button class="to-cart"><i
+                                                                class="fa-solid fa-cart-plus"></i></button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calling jQuery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/6en8XCp+HHAAK5GSLf2xlYtvJ8U2Q4U+9cuEnJoa3"
+        crossorigin="anonymous"></script>
+
+    <!-- Calling Slick Library -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/5an7F4b9pzWmAo4Jsvyuvwxf1/4W5pKp7k8mP4"></script>
+
+
+    <!-- Import JS -->
+    <script type="module" src="../javascript/slide_product_card_demo_2.js"></script>
+
+    <!-- Call Modal -->
+    <!-- <script>
+        $(document).ready(function () {
+            $('.product').on('click', function () {
+                $('#productModal').modal('show');
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('closeModalButton').addEventListener('click', function () {
+            document.getElementById('productModal').style.display = 'none';
+        });
+    </script> -->
+
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered custom-modal-width ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Paste your product detail content here -->
+                    <div class="product-detail">
+                        <div class="product-detail-container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 item-photo">
+                                    <img style="max-width:90%;" class="img-fluid mx-auto d-block image img-zoomable"
+                                        src="../image/products/Vegetable_Avovado_3.webp" id="product-image" />
+                                    <div class="magnifier" id="magnifier"></div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 card-information">
+                                    <div class="header-card part-of-card">
+                                        <span class="name-product">Name Product</span>
+                                        <div class="rating-comments row">
+                                            <div class="col-xs-5 col-sm-4 rating">
+                                                <span class="text-in-card-information">Rating:
+                                                </span>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 comments">
+                                                <span class="text-in-card-information">Comments:
+                                                    5054 </span>
+                                            </div>
+                                            <div class="col-xs-3 col-sm-4 id-product">
+                                                <span class="text-in-card-information">ID:
+                                                    92834</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="container-button-in-card">
+                                            <button class="brand-button button-in-card">
+                                                <a href="#" class="name-brand link-button-in-card">
+                                                    <i class="fa-solid fa-tag"></i> Perestok</a>
+                                            </button>
+
+                                            <button class="category-button button-in-card">
+                                                <a href="#" class="name-category link-button-in-card">
+                                                    <i class="fa-solid fa-tag"></i> Vegetable</a>
+                                            </button>
+
+                                            <button class="mark-button button-in-card">
+                                                <a href="#" class="name-category link-button-in-card">
+                                                    <i class="fa-solid fa-tag"></i> New Product</a>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="body-card part-of-card">
+                                        <div class="row price-cart-favorite">
+                                            <div class="col-xs-12 col-sm-6 price-container">
+                                                <h4 class="sale-price">150$/Kg <span class="full-price">170$/Kg</span>
+                                                </h4>
+                                                <span class="in-stock">150 Kg in Stock</span>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-6 button-container">
+                                                <div class="section">
+                                                    <button class="btn button-to-cart">
+                                                        <span class="button-content">
+                                                            <span class="glyphicon glyphicon-shopping-cart"
+                                                                aria-hidden="true"></span>
+                                                            Add to Cart
+                                                        </span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="section">
+                                                    <button class="btn button-to-favorite-list">
+                                                        <span class="button-content">
+                                                            <span class="glyphicon glyphicon-heart-empty"
+                                                                aria-hidden="true"></span>
+                                                            Add to Favorite List
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bottom-card part-of-card">
+                                        <div class="section" style="padding-bottom:5px;">
+                                            <h4 class="title-description">Description</h4>
+                                            <div class="content-description">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                elit. Veritatis dolores cumque iure,
+                                                perferendis assumenda vero amet, temporibus
+                                                architecto magnam velit soluta quaerat. Odio
+                                                rerum hic tempore mollitia sint deserunt maiores!
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="delivery-information part-of-card">
+                                        <div class="section" style="padding-bottom:5px;">
+                                            <h4 class="title-delivery-information">Shipping
+                                                Information</h4>
+                                            <div class="content-delivery-information row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <span class="address-store title-si"> <i
+                                                            class="fa-solid fa-location-dot"></i>
+                                                        MFoody Store</span>
+                                                    <span class="status-si">Available today</span>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <span class="address-store title-si"> <i
+                                                            class="fa-solid fa-truck-fast"></i>
+                                                        Express
+                                                        delivery</span>
+                                                    <span class="status-si">Available today </span>
+                                                </div>
+
+                                                <div class="table-user-information">
+                                                    <table class="table table-bordered table-responsive-md">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Phone Number</th>
+                                                                <th>Address</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>User 1</td>
+                                                                <td>0123456789</td>
+                                                                <td>123 Street, City, Country</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog custom-modal-width modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                
+                <div class="modal-body">
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+
+</body>
+
+</html>
