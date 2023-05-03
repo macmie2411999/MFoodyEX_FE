@@ -1252,11 +1252,19 @@ body {
 .container .row .splide .splide__arrows .splide__arrow svg:hover {
   fill: #1CAF37;
 }
+.container .row .splide .splide__track .splide__list .splide__slide {
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
 .container .row .splide .splide__track .splide__list .splide__slide .card {
   zoom: 0.8;
   background: #fff;
   position: relative;
   margin: 5px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+.container .row .splide .splide__track .splide__list .splide__slide .card:hover {
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
 }
 .container .row .splide .splide__track .splide__list .splide__slide .card .tag-product {
   z-index: 2;

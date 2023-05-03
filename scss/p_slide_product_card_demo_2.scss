@@ -55,6 +55,49 @@ $text-c8-grey: #eee;
     }
 }
 
+.horizontal-line {
+    // border-bottom: 5px solid $text-c3-primary;
+    // margin: 20px 0;
+    // display: block;
+    // width: 100%;
+    // height: 3px;
+    // background-image: linear-gradient(to right, transparent, $text-c2-primary, transparent);
+    // margin: 20px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        height: 2px;
+        flex-grow: 1;
+        background-image: linear-gradient(transparent, $text-c3-grey, transparent);
+    }
+
+    &:before {
+        margin-right: 10px;
+    }
+
+    &:after {
+        margin-left: 10px;
+    }
+
+    .circle {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background-color: $text-c3-grey;
+        border-radius: 50%;
+    }
+
+}
+
 @mixin leftRightTopBottom($left, $right, $top, $bottom) {
     left: $left;
     right: $right;
@@ -100,20 +143,20 @@ $text-c8-grey: #eee;
             .splide__track {
                 .splide__list {
                     .splide__slide {
-                        padding: 5px;
+                        
+                        padding: 5px 5px 15px 5px;
 
                         .product {
                             padding-top: 5px;
                             padding-bottom: 5px;
                             display: flex;
                             align-items: center;
-                            // box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
-                            border: 2px solid mix($text-c5-grey, #fff, 10%);
+                            border: 1px solid $text-c2-grey !important;
                             border-radius: 5px;
                             box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
 
                             &:hover {
-                                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                                box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
                             }
 
                             .container-product {
@@ -327,6 +370,31 @@ $text-c8-grey: #eee;
     max-width: 1200px !important;
     max-height: 90vh !important;
     scale: 0.9;
+
+    .modal-content{
+        
+            position: relative;
+            height: 5%;
+
+            .btn-close {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                border-radius: 50%;
+                z-index: 2;
+                background-color: $text-c5-grey;
+                padding: 10px;
+                font-size: 1em;
+
+                &:hover{
+                    background-color: red;
+                    color: #fff !important;
+                    text-emphasis-color: #fff;
+                }
+            }
+        
+    }
+
     .product-detail {
         // margin-top: 220px;
         // margin-top: 10px;
@@ -342,48 +410,7 @@ $text-c8-grey: #eee;
             opacity: 0.9 !important;
         }
 
-        .horizontal-line {
-            // border-bottom: 5px solid $text-c3-primary;
-            // margin: 20px 0;
-            // display: block;
-            // width: 100%;
-            // height: 3px;
-            // background-image: linear-gradient(to right, transparent, $text-c2-primary, transparent);
-            // margin: 20px 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: auto;
-            margin: 15px 0;
-
-            &:before,
-            &:after {
-                content: "";
-                display: block;
-                height: 2px;
-                flex-grow: 1;
-                background-image: linear-gradient(transparent, $text-c3-grey, transparent);
-            }
-
-            &:before {
-                margin-right: 10px;
-            }
-
-            &:after {
-                margin-left: 10px;
-            }
-
-            .circle {
-                display: inline-block;
-                width: 15px;
-                height: 15px;
-                background-color: $text-c3-grey;
-                border-radius: 50%;
-            }
-
-        }
+        
 
         span {
             font-size: 12px;
@@ -674,15 +701,7 @@ $text-c8-grey: #eee;
     }
 }
 
-
 // Modal End
-
-
-// @media (min-width: 1200px) {
-//     .splide__slide {
-//         flex-basis: calc(100% / 4);
-//     }
-// }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     .splide__slide {

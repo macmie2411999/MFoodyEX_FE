@@ -100,13 +100,19 @@ $text-c8-grey: #eee;
             .splide__track {
                 .splide__list {
                     .splide__slide {
-
+                        padding-bottom: 15px;
+                        padding-top: 10px;
 
                         .card {
                             zoom: 0.8;
                             background: #fff;
                             position: relative;
                             margin: 5px;
+                            box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+
+                            &:hover {
+                                box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+                            }
 
                             .tag-product {
                                 z-index: 2;
