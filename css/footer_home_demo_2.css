@@ -6,7 +6,6 @@ body {
 }
 
 .footer {
-  scale: 0.8;
   background: #151421;
   border-top: 1px solid rgba(249, 249, 249, 0.1);
 }
@@ -28,14 +27,12 @@ body {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 .footer .footer_embrace .footer_container .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .footer .footer_embrace .footer_container .row .column_mfoody_infor .content_company {
   font-size: 18px;

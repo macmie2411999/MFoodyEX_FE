@@ -95,5 +95,17 @@ const productRating = 4.7;
 displayRating(productRating);
 // Rating Stars End
 
+// Scroll Button
+function scrollLeftSM() {
+    let scrollingContainer = document.querySelector(".scrolling-container");
+    scrollingContainer.scrollBy({ top: 0, left: -300, behavior: 'smooth' });
+    setTimeout(updateArrows, 300);
+}
+
+function scrollRightSM() {
+    let scrollingContainer = document.querySelector(".scrolling-container");
+    scrollingContainer.scrollBy({ top: 0, left: 300, behavior: 'smooth' });
+    setTimeout(updateArrows, 300);
+}
 
 

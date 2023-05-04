@@ -94,15 +94,18 @@
 
                         <div class="container-button-in-card">
                             <button class="brand-button button-in-card">
-                                <a href="#" class="name-brand link-button-in-card"> <i class="fa-solid fa-tag"></i> Perestok</a>
+                                <a href="#" class="name-brand link-button-in-card"> <i class="fa-solid fa-tag"></i>
+                                    Perestok</a>
                             </button>
 
                             <button class="category-button button-in-card">
-                                <a href="#" class="name-category link-button-in-card"> <i class="fa-solid fa-tag"></i> Vegetable</a>
+                                <a href="#" class="name-category link-button-in-card"> <i class="fa-solid fa-tag"></i>
+                                    Vegetable</a>
                             </button>
 
                             <button class="mark-button button-in-card">
-                                <a href="#" class="name-category link-button-in-card"> <i class="fa-solid fa-tag"></i> New Product</a>
+                                <a href="#" class="name-category link-button-in-card"> <i class="fa-solid fa-tag"></i>
+                                    New Product</a>
                             </button>
                         </div>
 
@@ -205,7 +208,7 @@
 
                 <div class="content-bottom-product-detail">
                     <div class="active container-content-bottom-product-detail" id="comments-and-rating">
-                        
+
                         <div class="row container-comments-and-rating">
                             <span class="title-area title-comments-and-rating">Product Overview</span>
                             <div class="detail-rattings col-md-5">
@@ -556,7 +559,9 @@
                 <div class="similar-products">
                     <span class="title-area title-similar-products">Similar Products</span>
                     <div class="container-similar-products">
+                        
                         <div class="scrolling-container">
+                            <button class="arrow-btn left-arrow" onclick="scrollLeftSM()"><i class="fa-solid fa-angle-left"></i></i></button>
                             <div class="scrolling-wrapper">
                                 <!-- List product cards -->
 
@@ -707,7 +712,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <button class="arrow-btn right-arrow" onclick="scrollRightSM()"><i class="fa-solid fa-angle-right"></i></button>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -715,21 +722,21 @@
                 <div class="horizontal-line">
                     <div class="circle"></div>
                 </div>
-                
+
                 <div class="more-products">
                     <span class="title-area title-more-products">More Products</span>
                     <div class="container-more-products">
-                        
-                            <div id="productList" class="row productList">
-                                <!-- Product cards will be appended here -->
+
+                        <div id="productList" class="row productList">
+                            <!-- Product cards will be appended here -->
+                        </div>
+                        <div class="pagination-container">
+                            <button id="prevBtn" class="pagination-btn">Prev</button>
+                            <div id="pagination" class="pagination">
+                                <!-- Pagination buttons will be appended here -->
                             </div>
-                            <div class="pagination-container">
-                                <button id="prevBtn" class="pagination-btn">Prev</button>
-                                <div id="pagination" class="pagination">
-                                    <!-- Pagination buttons will be appended here -->
-                                </div>
-                                <button id="nextBtn" class="pagination-btn">Next</button>
-                            </div>
+                            <button id="nextBtn" class="pagination-btn">Next</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -763,7 +770,7 @@
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script src="../javascript/catalog_show_element_in_ul.js"></script>
     <script src="../javascript/product_detail.js"></script>
-    <script type="module" src="../javascript/slide_product_card_demo.js"></script>
+    <!-- <script type="module" src="../javascript/slide_product_card_demo.js"></script> -->
     <script type="module" src="../javascript/leave_review_product_detail.js"></script>
     <script type="module" src="../javascript/list_products_15per.js"></script>
 </body>

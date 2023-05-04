@@ -54,7 +54,7 @@
     <!-- Slider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide"></script>
 
 
 </head>
@@ -62,93 +62,74 @@
 <body>
 
     <!-- HEADER -->
-    <header class="header" id="justHeader">
-        <div class="container_header py-md-4">
-            <!-- NAVBAR 1 -->
-            <nav class="top_container_header">
-                <div class="rol-1">
-                    <div class="container_logo_brand">
-                        <!-- LOGO -->
-                        <h1>
-                            <a class="brand_company">
-                                <img src="../image/icon/icon_gfgl_green_64.png" alt="Company Logo">
-                                <span class="logo">
-                                    MFoody
-                                </span>
+    <nav class="navbar navbar-expand-lg navbar_top_header">
+        <div class="container-fluid container_navbar_top_header">
+            <a class="navbar-brand" href="#"><img width="auto" height="60" class="img-navbar-brand"
+                    src="../image/icon/icon_logo_brand_updated1_crop.png" alt="Company Logo">
+            </a>
 
-                                <span class="content_logo">Vegetarian Grocery Store</span>
-                            </a>
-                        </h1>
-                    </div>
-                    <div class="container_search">
-                        <!-- Search -->
-                        <form class="search-form" action="" method="">
-                            <input class="input-search" type="search" placeholder="Search" aria-label="email"
-                                required="">
-                            <button class="btn btn-search" type="submit"><span class="fa fa-search"></span></button>
-                        </form>
-                        <!-- Search End -->
-                    </div>
-                    <div class="container_icons">
-                        <!-- Icons -->
-                        <span class="fa fa-searchsolid fa-heart" style="margin-right: 60px"></span>
-                        <span class="fa-solid fa-cart-shopping" style="margin-right: 60px"></span>
-                        <span class="fa-solid fa-user" style="margin-right: 60px"></span>
-                    </div>
-                </div>
-            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse selection_container" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 list_selection">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ'S</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            CATALOG
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">CTL1</a></li>
+                            <li><a class="dropdown-item" href="#">CTL2</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">CTL3</a></li>
+                        </ul>
+                    </li> -->
 
-            <div class="bottom_container_header">
-                <!-- NAVBAR 2-->
-                <nav class="navbar navbar-expand-lg bg-light bg-transparent">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                </ul>
 
-                        <div class="collapse navbar-collapse item-navbar" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="home_page.html">HOME</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about_page.html">PRODUCTS</a>
-                                </li>
+                <form class="header_right_section" action="#" method="GET">
 
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        PAGES
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="blog_posts_page.html">BLOG POSTS</a></li>
-                                        <li><a class="dropdown-item" href="404_page.html">404 PAGE</a></li>
-                                        <li><a class="dropdown-item" href="single_landing_page.html">LANDING PAGE</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="elements_page.html">ELEMENT PAGE</a></li>
-                                    </ul>
-                                </li> -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">BLOG</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">CONTACT</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about_page.html">ABOUT US</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">Faq's</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                    <fieldset class="container_header_right_section">
+
+                        <ul class="toolbar">
+                            <li><input type="search" id="search" placeholder="What are you looking for?"></li>
+                            <li><button type="submit" id="btn-search"><span class="fontawesome-search"></span></button>
+                            </li>
+                            <li><a href="#" class="fontawesome-heart"></a></li>
+                            <li><a href="#" class="fontawesome-user"></a></li>
+                            <li><a href="#" class="fontawesome-shopping-cart "></a></li>
+                        </ul>
+
+                    </fieldset>
+
+                </form>
+
             </div>
         </div>
-    </header>
+    </nav>
     <!-- HEADER END -->
 
     <!-- CATALOG PAGE -->
@@ -322,11 +303,99 @@
 
                         <!-- </div> -->
 
+                        <!-- Splider -->
                         <div class="container container-product-slider">
                             <div class="row">
-                                <div class="splide" id="splide">
+                                <div class="splide splide-slider-CD">
                                     <div class="splide__track">
                                         <div class="splide__list ">
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="mlem.html" class="name-product">Name
+                                                                        Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.9 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
                                             <div class=" splide__slide ">
                                                 <div class="product" data-bs-toggle="modal"
                                                     data-bs-target="#staticBackdrop">
@@ -388,6 +457,50 @@
                                                                         <span class="col rated-star card-text"><i
                                                                                 class="fa-solid fa-star"></i>
                                                                             4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="mlem.html" class="name-product">Name
+                                                                        Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.9 </span>
                                                                     </div>
                                                                     <div class="row product-info">
                                                                         <div class="col tag-prices">
@@ -461,9 +574,12 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Splider -->
                     </div>
                 </div>
                 <!-- List Products 1 End -->
+
+
 
                 <!-- Deviding Line -->
                 <div class="horizontal-line">
@@ -473,77 +589,279 @@
                 <div class="main_products">
                     <div class="container_products">
                         <p class="products_title title-area"> Top Rate </p>
-                        <div class="row row-cols-1 row-cols-md-4 g-4" id="product_features">
 
-                            <!-- List Elements -->
-                            <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-                                    <img src="../image/products/Vegetable_Avovado_3.webp" class="card-img-top"
-                                        alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name Product</h5>
-                                        <p class="card-text">$Product Description</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="more-infor"> <a href="../detail.html?idShoes=${shoes.id}"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                        <!-- Splider -->
+                        <div class="container container-product-slider">
+                            <div class="row">
+                                <div class="splide splide-slider-CD">
+                                    <div class="splide__track">
+                                        <div class="splide__list ">
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="mlem.html" class="name-product">Name
+                                                                        Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.9 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="mlem.html" class="name-product">Name
+                                                                        Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.9 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-                                    <img src="../image/products/Driedfruit_1.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name Product</h5>
-                                        <p class="card-text">$Product Description</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="more-infor"> <a href="../detail.html?idShoes=${shoes.id}"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-                                    <img src="../image/products/Mushroom_5.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name Product</h5>
-                                        <p class="card-text">$Product Description</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="more-infor"> <a href="../detail.html?idShoes=${shoes.id}"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-                                    <img src="../image/products/Vegetable_Zucchini_2.webp" class="card-img-top"
-                                        alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name Product</h5>
-                                        <p class="card-text">$Product Description</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="more-infor"> <a href="../detail.html?idShoes=${shoes.id}"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-
                         </div>
+                        <!-- Splider -->
                     </div>
                 </div>
                 <!-- List Products 2 End -->
@@ -557,97 +875,322 @@
                 <div class="main_products">
                     <div class="container_products">
                         <p class="products_title title-area"> New Products </p>
-                        <div class="row row-cols-1 row-cols-md-4 g-4" id="product_features">
+                        <!-- Splider -->
+                        <div class="container container-product-slider">
+                            <div class="row">
+                                <div class="splide splide-slider-CD">
+                                    <div class="splide__track">
+                                        <div class="splide__list ">
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
 
-                            <!-- List Elements -->
-                            <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-                                    <img src="../image/products/Vegetable_Avovado_3.webp" class="card-img-top"
-                                        alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name Product</h5>
-                                        <p class="card-text">$Product Description</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="more-infor"> <a href="../detail.html?idShoes=${shoes.id}"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="mlem.html" class="name-product">Name
+                                                                        Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.9 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="mlem.html" class="name-product">Name
+                                                                        Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.9 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class=" splide__slide ">
+                                                <div class="product" data-bs-toggle="modal"
+                                                    data-bs-target="#staticBackdrop">
+                                                    <div class="row container-product">
+                                                        <div class="col-md-5 image-product">
+                                                            <img class="img-fluid mx-auto d-block image"
+                                                                src="../image/products/Vegetable_Avovado_3.webp">
+                                                        </div>
+                                                        <div class="col-md-7 infor-product">
+                                                            <div class="row container-infor">
+                                                                <div class="product-general">
+                                                                    <h4 href="#" class="name-product">Name Product </h4>
+                                                                    <div class="row product-star-and-sale">
+                                                                        <span class="col tag-product"> New Product
+                                                                        </span>
+                                                                        <span class="col rated-star card-text"><i
+                                                                                class="fa-solid fa-star"></i>
+                                                                            4.5 </span>
+                                                                    </div>
+                                                                    <div class="row product-info">
+                                                                        <div class="col tag-prices">
+                                                                            <span
+                                                                                class="tag-sale-price product-price">150$</span>
+                                                                            <span class="tag-full-price">170$</span>
+                                                                        </div>
+                                                                        <div class="col button-infor">
+                                                                            <button class="more-infor">
+                                                                                <a
+                                                                                    href="../detail.html?idShoes=${shoes.id}"><i
+                                                                                        class="fa-solid fa-magnifying-glass"></i></a></button>
+                                                                            <button class="to-cart"><i
+                                                                                    class="fa-solid fa-cart-plus"></i></button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-                                    <img src="../image/products/Driedfruit_1.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name Product</h5>
-                                        <p class="card-text">$Product Description</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="more-infor"> <a href="../detail.html?idShoes=${shoes.id}"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-                                    <img src="../image/products/Mushroom_5.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name Product</h5>
-                                        <p class="card-text">$Product Description</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="more-infor"> <a href="../detail.html?idShoes=${shoes.id}"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-                                    <img src="../image/products/Vegetable_Zucchini_2.webp" class="card-img-top"
-                                        alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name Product</h5>
-                                        <p class="card-text">$Product Description</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button class="more-infor"> <a href="../detail.html?idShoes=${shoes.id}"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-
                         </div>
+                        <!-- Splider -->
                     </div>
                 </div>
                 <!-- List Products 3 End -->
+
+                <!-- Deviding Line -->
+                <div class="horizontal-line">
+                    <div class="circle"></div>
+                </div>
+                <!-- List Products 4 Start -->
+                <div class="more-products">
+                    <span class="title-area title-more-products">More Products</span>
+                    <div class="container-more-products">
+
+                        <div id="productList" class="row productList">
+                            <!-- Product cards will be appended here -->
+                        </div>
+                        <div class="pagination-container">
+                            <button id="prevBtn" class="pagination-btn">Prev</button>
+                            <div id="pagination" class="pagination">
+                                <!-- Pagination buttons will be appended here -->
+                            </div>
+                            <button id="nextBtn" class="pagination-btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- List Products 4 End -->
+
+                
             </div>
     </main>
     <!-- CATALOG PAGE END -->
+
+    
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer_embrace ">
             <div class="footer_container py-md-4">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 column_corp_vision">
+                    <div class="col-lg-4 col-md-6 column_mfoody_infor">
 
                         <div class="footer_logo mb-4">
-                            <a class="brand_company" href="home_page.html">
-                                <img src="../image/icon/icon_gfgl_green_64.png" alt="Company Logo">
-                                <span class="logo"> MFoody </span>
-
-                                <span class="content_logo"></span></a>
+                            <a class="navbar-brand" href="#"><img width="auto" height="90" src="../image/icon/icon_logo_brand_updated3_crop.png" alt="Company Logo">
+                            </a>
                         </div>
 
                         <p class="content_company"> <a>Mfoody is a company specializing in the sale of fresh and healthy
@@ -771,6 +1314,8 @@
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script src="../javascript/catalog_show_element_in_ul.js"></script>
     <script type="module" src="../javascript/slide_product_card_demo_2.js"></script>
+    <script type="module" src="../javascript/list_products_15per.js"></script>
+    <script type="module" src="../javascript/header_scroll_down.js"></script>
 
     <!-- Product Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"

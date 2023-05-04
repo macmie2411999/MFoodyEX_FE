@@ -8,7 +8,8 @@ $text-c4-primary:#015A28;
 
 // Footer Style
 .footer {
-    scale: 0.8;
+    // scale: 0.8;
+
 
     // format sundries
     a:hover {
@@ -32,7 +33,6 @@ $text-c4-primary:#015A28;
 
     // format content of footer
     .footer_embrace {
-        // scale: 0.8;
         .footer_container {
             
             // format general footer_container
@@ -40,15 +40,17 @@ $text-c4-primary:#015A28;
             margin-right: auto;
             margin-left: auto;
             width: 100%;
-            padding-right: 15px;
-            padding-left: 15px;
+            // padding-right: 15px;
+            // padding-left: 15px;
 
 
             .row {
                 display: flex;
                 flex-wrap: wrap;
-                margin-right: -15px;
-                margin-left: -15px;
+                margin: 0 !important;
+                padding: 0 !important;
+                // margin-right: -15px;
+                // margin-left: -15px;
 
                 // element 1
                 .column_mfoody_infor {

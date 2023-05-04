@@ -1723,6 +1723,7 @@ body {
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .similar-products {
   margin-bottom: 30px;
+  transform: all 0.3s ease;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .similar-products .title-similar-products {
   font-size: 20px;
@@ -1731,6 +1732,36 @@ body {
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .similar-products .container-similar-products {
   margin-top: 10px;
+  position: relative;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .similar-products .container-similar-products:hover .arrow-btn {
+  display: block;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .similar-products .container-similar-products .arrow-btn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  opacity: 2;
+  z-index: 2;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .similar-products .container-similar-products .arrow-btn:hover svg {
+  color: #009f4d;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .similar-products .container-similar-products .left-arrow {
+  left: 0;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .similar-products .container-similar-products .right-arrow {
+  right: 0;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .similar-products .container-similar-products .scrolling-container {
   display: flex;
@@ -2085,6 +2116,14 @@ body {
   border: none;
   cursor: pointer;
   font-weight: bold;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 20px !important;
+  margin: 2px !important;
+  border-radius: 2px;
+  font-size: 1.2rem !important;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .more-products .container-more-products .pagination-container .pagination-btn:hover {
   background-color: #ddd;

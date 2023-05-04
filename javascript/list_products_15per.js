@@ -3,7 +3,7 @@ let currentPage = 1;
 
 function createProductCard() {
     return `
-    <div class="card">
+    <div class="card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         <span class="tag-product"> New Product </span>
         <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
         <img src="../image/products/Vegetable_Avovado_3.webp" class="card-img-top" alt="...">
