@@ -2563,6 +2563,7 @@ body {
 .navbar_top_header {
   background-color: #fff !important;
   padding: 0 !important;
+  border-bottom: 5px solid #eee;
   position: fixed !important;
   top: 0;
   right: 0;
@@ -2583,11 +2584,14 @@ body {
   padding: 10px;
   background-color: #fff;
 }
+.navbar_top_header .container_navbar_top_header .navbar-brand .img-navbar-brand {
+  padding-left: 12px !important;
+}
 .navbar_top_header .container_navbar_top_header .selection_container .list_selection {
   margin-left: 30px;
 }
 .navbar_top_header .container_navbar_top_header .selection_container .list_selection .nav-item .nav-link {
-  transition: all 0.8s ease;
+  transition: all 0.3s ease;
   opacity: 0.8;
   display: inline;
 }
@@ -2612,6 +2616,38 @@ body {
 
 .scrolled {
   border-bottom: 5px solid #eee;
+  background-color: #1A233A !important;
+}
+.scrolled .container_navbar_top_header {
+  background-color: #1A233A !important;
+}
+.scrolled .container_navbar_top_header .img-navbar-brand {
+  opacity: 2 !important;
+}
+.scrolled .container_navbar_top_header .selection_container .list_selection {
+  margin-left: 30px;
+}
+.scrolled .container_navbar_top_header .selection_container .list_selection .nav-item .nav-link {
+  color: #fff !important;
+}
+.scrolled .container_navbar_top_header .selection_container .list_selection .nav-item:hover .nav-link {
+  color: #009f4d !important;
+}
+.scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar a {
+  color: #fff !important;
+  transition: all 0.3s ease !important;
+}
+.scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar a:hover {
+  background: transparent !important;
+  color: #1CAF37 !important;
+}
+.scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar .fontawesome-search {
+  color: #fff !important;
+  transition: all 0.3s ease !important;
+}
+.scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar .fontawesome-search:hover {
+  background: transparent !important;
+  color: #1CAF37 !important;
 }
 
 .wrap-sliders {

@@ -5,11 +5,31 @@ $text-c1-primary:#AAE640;
 $text-c2-primary: #1CAF37;
 $text-c3-primary:#009f4d;
 $text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+$text-c6-primary: #0FC44C;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+$text-c4-yellow: #C31A24;
+
+$text-c1-grey: #F8F8F8;
+$text-c2-grey: #DFE0E2;
+$text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
+$text-c9-grey: #1A233A;
+$text-c10-grey: #172033;
+$text-c11-grey: #151421;
 
 // Footer Style
 .footer {
     // scale: 0.8;
-
+    font-size: 80% !important;
+    // line-height: 80%;
 
     // format sundries
     a:hover {
@@ -28,17 +48,19 @@ $text-c4-primary:#015A28;
     }
 
     // format general footer
-    background: #151421;
+    background: $text-c9-grey;
+    // background: $text-c10-grey;
     border-top: 1px solid rgba(249, 249, 249, 0.1);
 
     // format content of footer
     .footer_embrace {
         .footer_container {
-            
+
             // format general footer_container
             max-width: 1200px;
             margin-right: auto;
             margin-left: auto;
+            padding-top: 0px !important;
             width: 100%;
             // padding-right: 15px;
             // padding-left: 15px;
@@ -68,12 +90,18 @@ $text-c4-primary:#015A28;
 
                     .footer_logo {
                         padding-top: 30px;
-                        text-align: left;
+                        margin-bottom: 10px !important;
+                        text-align: center;
 
-                        .navbar-brand{
+
+                        img {
+                            height: 80px;
+                        }
+
+                        .navbar-brand {
                             opacity: 0.9;
-                            
-                            &:hover{
+
+                            &:hover {
                                 opacity: 1;
                             }
                         }
@@ -140,7 +168,7 @@ $text-c4-primary:#015A28;
     .copyright {
         // format general copyright
         padding: 1.5em 0;
-        border-top: 1px solid rgba(249, 249, 249, 0.1);
+        border-top: 1px solid rgba(249, 249, 249, 0.2);
 
         .copyright_container {
             .content_copyright {

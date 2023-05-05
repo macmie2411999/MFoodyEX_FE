@@ -2599,6 +2599,7 @@ body {
 .navbar_top_header {
   background-color: #fff !important;
   padding: 0 !important;
+  border-bottom: 5px solid #eee;
   position: fixed !important;
   top: 0;
   right: 0;
@@ -2619,11 +2620,14 @@ body {
   padding: 10px;
   background-color: #fff;
 }
+.navbar_top_header .container_navbar_top_header .navbar-brand .img-navbar-brand {
+  padding-left: 12px !important;
+}
 .navbar_top_header .container_navbar_top_header .selection_container .list_selection {
   margin-left: 30px;
 }
 .navbar_top_header .container_navbar_top_header .selection_container .list_selection .nav-item .nav-link {
-  transition: all 0.8s ease;
+  transition: all 0.3s ease;
   opacity: 0.8;
   display: inline;
 }
@@ -2648,6 +2652,38 @@ body {
 
 .scrolled {
   border-bottom: 5px solid #eee;
+  background-color: #1A233A !important;
+}
+.scrolled .container_navbar_top_header {
+  background-color: #1A233A !important;
+}
+.scrolled .container_navbar_top_header .img-navbar-brand {
+  opacity: 2 !important;
+}
+.scrolled .container_navbar_top_header .selection_container .list_selection {
+  margin-left: 30px;
+}
+.scrolled .container_navbar_top_header .selection_container .list_selection .nav-item .nav-link {
+  color: #fff !important;
+}
+.scrolled .container_navbar_top_header .selection_container .list_selection .nav-item:hover .nav-link {
+  color: #009f4d !important;
+}
+.scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar a {
+  color: #fff !important;
+  transition: all 0.3s ease !important;
+}
+.scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar a:hover {
+  background: transparent !important;
+  color: #1CAF37 !important;
+}
+.scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar .fontawesome-search {
+  color: #fff !important;
+  transition: all 0.3s ease !important;
+}
+.scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar .fontawesome-search:hover {
+  background: transparent !important;
+  color: #1CAF37 !important;
 }
 
 .wrap-sliders {
@@ -2848,7 +2884,8 @@ body {
 }
 
 .footer {
-  background: #151421;
+  font-size: 80% !important;
+  background: #1A233A;
   border-top: 1px solid rgba(249, 249, 249, 0.1);
 }
 .footer a:hover {
@@ -2868,6 +2905,7 @@ body {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 0px !important;
   width: 100%;
 }
 .footer .footer_embrace .footer_container .row {
@@ -2888,7 +2926,11 @@ body {
 }
 .footer .footer_embrace .footer_container .row .column_mfoody_infor .footer_logo {
   padding-top: 30px;
-  text-align: left;
+  margin-bottom: 10px !important;
+  text-align: center;
+}
+.footer .footer_embrace .footer_container .row .column_mfoody_infor .footer_logo img {
+  height: 80px;
 }
 .footer .footer_embrace .footer_container .row .column_mfoody_infor .footer_logo .navbar-brand {
   opacity: 0.9;
@@ -2931,7 +2973,7 @@ body {
 }
 .footer .copyright {
   padding: 1.5em 0;
-  border-top: 1px solid rgba(249, 249, 249, 0.1);
+  border-top: 1px solid rgba(249, 249, 249, 0.2);
 }
 .footer .copyright .copyright_container .content_copyright {
   font-size: 18px;

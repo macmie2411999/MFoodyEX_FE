@@ -33,11 +33,13 @@ $text-c7-grey: #838384;
 $text-c8-grey: #eee;
 $text-c9-grey: #1A233A;
 $text-c10-grey: #172033;
+$text-c11-grey: #151421;
 
 .navbar_top_header {
   background-color: #fff !important;
   padding: 0 !important;
   // border-bottom: 5px solid $text-c8-grey;
+  border-bottom: 5px solid $text-c8-grey;
   position: fixed !important;
   top: 0;
   right: 0;
@@ -59,7 +61,9 @@ $text-c10-grey: #172033;
     background-color: #fff;
 
     .navbar-brand {
-      .img-navbar-brand {}
+      .img-navbar-brand {
+        padding-left: 12px !important;
+      }
     }
 
     .selection_container {
@@ -68,7 +72,7 @@ $text-c10-grey: #172033;
 
         .nav-item {
           .nav-link {
-            transition: all 0.8s ease;
+            transition: all 0.3s ease;
             opacity: 0.8;
             display: inline;
           }
@@ -112,12 +116,63 @@ $text-c10-grey: #172033;
       }
     }
   }
-
-  
 }
 
 .scrolled {
   border-bottom: 5px solid $text-c8-grey;
+  background-color: $text-c9-grey !important;
+
+  .container_navbar_top_header{
+    background-color: $text-c9-grey !important;
+
+    .img-navbar-brand{
+      opacity: 2 !important;
+    }
+
+    .selection_container {
+      .list_selection {
+        margin-left: 30px;
+
+        .nav-item {
+          .nav-link {
+            color: #fff !important;
+          }
+
+          &:hover {
+            .nav-link {
+              color: $text-c3-primary !important;
+            }
+          }
+        }
+      }
+
+      .header_right_section{
+        .container_header_right_section{
+          .toolbar{
+            a{
+              color: #fff !important;
+              transition: all 0.3s ease !important;
+
+              &:hover {
+                background: transparent !important;
+                color: $text-c2-primary !important;
+              }
+            }
+
+            .fontawesome-search{
+              color: #fff !important;
+              transition: all 0.3s ease !important;
+
+              &:hover {
+                background: transparent !important;
+                color: $text-c2-primary !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .wrap-sliders {

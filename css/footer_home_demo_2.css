@@ -6,7 +6,8 @@ body {
 }
 
 .footer {
-  background: #151421;
+  font-size: 80% !important;
+  background: #1A233A;
   border-top: 1px solid rgba(249, 249, 249, 0.1);
 }
 .footer a:hover {
@@ -26,6 +27,7 @@ body {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 0px !important;
   width: 100%;
 }
 .footer .footer_embrace .footer_container .row {
@@ -46,7 +48,11 @@ body {
 }
 .footer .footer_embrace .footer_container .row .column_mfoody_infor .footer_logo {
   padding-top: 30px;
-  text-align: left;
+  margin-bottom: 10px !important;
+  text-align: center;
+}
+.footer .footer_embrace .footer_container .row .column_mfoody_infor .footer_logo img {
+  height: 80px;
 }
 .footer .footer_embrace .footer_container .row .column_mfoody_infor .footer_logo .navbar-brand {
   opacity: 0.9;
@@ -89,7 +95,7 @@ body {
 }
 .footer .copyright {
   padding: 1.5em 0;
-  border-top: 1px solid rgba(249, 249, 249, 0.1);
+  border-top: 1px solid rgba(249, 249, 249, 0.2);
 }
 .footer .copyright .copyright_container .content_copyright {
   font-size: 18px;
