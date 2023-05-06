@@ -224,6 +224,8 @@ $text-c10-grey: #172033;
             }
 
             .tags-product {
+                // margin-bottom: 20px;
+                margin-top: 10px;
                 .container-tags-product {
                     .tags_title {}
 
@@ -1125,7 +1127,34 @@ $text-c10-grey: #172033;
 
 // More Product
 .more-products {
+    position: relative;
+
     .title-more-products {}
+
+    .filter-product {
+        position: absolute;
+        top: 0;
+        right: 0;
+    
+        .container-filter-product {
+          .filter-group {
+            display: inline-block;
+            width: auto;
+            text-align: right;
+    
+            .form-select {
+              display: inline-block;
+              width: auto;
+              padding: 5px 30px 5px 10px;
+              font-size: 1.2rem;
+              color: #000;
+              opacity: 0.5 !important;
+              font-weight: 400;
+              // Add any other styles for the select element
+            }
+          }
+        }
+      }
 
     .container-more-products {
 
@@ -1170,7 +1199,7 @@ $text-c10-grey: #172033;
             .card {
                 margin: 5px;
                 margin-bottom: 10px;
-                width: 19%;
+                width: 24%;
                 // width: 18%;
                 height: 334;
                 background: #fff;

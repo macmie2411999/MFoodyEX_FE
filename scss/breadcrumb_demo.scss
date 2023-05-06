@@ -31,15 +31,15 @@ $text-c8-grey: #eee;
         background-color: transparent !important;
         cursor: pointer !important;
         text-decoration: none !important;
-        font-size: 18px !important;
-        line-height: 28px !important;
-        color: $text-c7-grey !important;
+        font-size: 20px;
+        line-height: 30px;
+        color: $text-c7-grey ;
         opacity: 0.9;
         display: inline;
 
         a {
             text-decoration: none !important;
-            color: $text-c7-grey !important;
+            color: $text-c7-grey ;
         }
 
         a:hover {

@@ -21,8 +21,8 @@ body {
   background-color: transparent !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  font-size: 18px !important;
-  line-height: 28px !important;
+  font-size: 20px;
+  line-height: 30px;
   color: #838384 !important;
   opacity: 0.9;
   display: inline;
@@ -57,8 +57,8 @@ body {
   background-color: transparent !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  font-size: 18px !important;
-  line-height: 28px !important;
+  font-size: 20px;
+  line-height: 30px;
   color: #838384 !important;
   opacity: 0.9;
   display: inline;
@@ -1289,8 +1289,8 @@ body {
   background-color: transparent !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  font-size: 18px !important;
-  line-height: 28px !important;
+  font-size: 20px;
+  line-height: 30px;
   color: #838384 !important;
   opacity: 0.9;
   display: inline;
@@ -3120,6 +3120,7 @@ body {
 }
 .catalog-full-list .container-catalog-full-list .content .tags-product .container-tags-product .button-in-card {
   margin-right: 5px;
+  margin-bottom: 20px;
   padding: 5px 10px;
   border-radius: 5px;
   border: 2px solid rgba(0, 0, 0, 0.1) !important;

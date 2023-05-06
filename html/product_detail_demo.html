@@ -51,19 +51,95 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide"></script>
+
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
 
 </head>
 
 <body>
 
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar_top_header">
+        <div class="container-fluid container_navbar_top_header">
+            <a class="navbar-brand" href="#"><img width="auto" height="60" class="img-navbar-brand"
+                    src="../image/icon/icon_logo_brand_updated1_crop.png" alt="Company Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse selection_container" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 list_selection">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ'S</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            CATALOG
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">CTL1</a></li>
+                            <li><a class="dropdown-item" href="#">CTL2</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">CTL3</a></li>
+                        </ul>
+                    </li> -->
+
+                </ul>
+
+                <form class="header_right_section" action="#" method="GET">
+
+                    <fieldset class="container_header_right_section">
+
+                        <ul class="toolbar">
+                            <li><input type="search" id="search" placeholder="What are you looking for?"></li>
+                            <li><button type="submit" id="btn-search"><span class="fontawesome-search"></span></button>
+                            </li>
+                            <li><a href="#" class="fontawesome-heart"></a></li>
+                            <li><a href="#" class="fontawesome-user"></a></li>
+                            <li><a href="#" class="fontawesome-shopping-cart "></a></li>
+                        </ul>
+
+                    </fieldset>
+
+                </form>
+
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER END -->
+
     <!-- PRODUCT DETAIL PAGE -->
     <main class="product-detail">
+
         <div class="product-detail-container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 item-photo">
@@ -73,6 +149,17 @@
                 </div>
 
                 <div class="col-xs-12 col-sm-6 card-information">
+
+                    <!-- BreadCrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item li-normal"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item li-normal" aria-current="page"><a href="#">Catalog</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Search</li>
+                        </ol>
+                    </nav>
+                    <!-- BreadCrumb End -->
+
                     <div class="header-card part-of-card">
                         <span class="name-product">Name Product</span>
                         <div class="rating-comments row">
@@ -198,7 +285,6 @@
                     <li class="active" data-content="comments-and-rating">Comments and Rating</li>
                     <li data-content="more-information">More Information</li>
                     <li data-content="leave-your-opinion">Leave Your Comment</li>
-
                 </ul>
 
                 <!-- Deviding Line -->
@@ -210,7 +296,7 @@
                     <div class="active container-content-bottom-product-detail" id="comments-and-rating">
 
                         <div class="row container-comments-and-rating">
-                            <span class="title-area title-comments-and-rating">Product Overview</span>
+                            <!-- <span class="title-area title-comments-and-rating">Product Overview</span> -->
                             <div class="detail-rattings col-md-5">
                                 <div class="container-detail-rattings">
                                     <div class="row product-review">
@@ -238,14 +324,15 @@
                                             <h4 class="product-review-title">Detail Ratting Stars</h4>
                                             <div class="ratting-product-review">
                                                 <div class="container-ratting-product-review">
-                                                    <div class="col-xs-12 element-ratting">
-                                                        <div class="col-xs-4 rating ">
+
+                                                    <div class="row element-ratting">
+                                                        <div class="col-4 rating ">
                                                             <span class="number-start">5</span>
                                                             <i class="fas fa-star" style="margin-right: 5px;"></i>
                                                             <span class="number-rattings"> 5054 Votes</span>
                                                         </div>
 
-                                                        <div class="col-xs-8 progress-ratting">
+                                                        <div class="col-8 progress-ratting">
                                                             <span class="progress">
                                                                 <span class="progress-bar progress-bar-danger"
                                                                     role="progressbar" aria-valuenow="40"
@@ -255,14 +342,14 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xs-12 element-ratting">
-                                                        <div class="col-xs-4 rating ">
+                                                    <div class="row element-ratting">
+                                                        <div class="col-4 rating ">
                                                             <span class="number-start">4</span>
                                                             <i class="fas fa-star" style="margin-right: 5px;"></i>
                                                             <span class="number-rattings"> 5054 Votes</span>
                                                         </div>
 
-                                                        <div class="col-xs-8 progress-ratting">
+                                                        <div class="col-8 progress-ratting">
                                                             <span class="progress">
                                                                 <span class="progress-bar progress-bar-danger"
                                                                     role="progressbar" aria-valuenow="40"
@@ -272,14 +359,14 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xs-12 element-ratting">
-                                                        <div class="col-xs-4 rating ">
+                                                    <div class="row element-ratting">
+                                                        <div class="col-4 rating ">
                                                             <span class="number-start">3</span>
                                                             <i class="fas fa-star" style="margin-right: 5px;"></i>
                                                             <span class="number-rattings"> 5054 Votes</span>
                                                         </div>
 
-                                                        <div class="col-xs-8 progress-ratting">
+                                                        <div class="col-8 progress-ratting">
                                                             <span class="progress">
                                                                 <span class="progress-bar progress-bar-danger"
                                                                     role="progressbar" aria-valuenow="40"
@@ -289,14 +376,14 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xs-12 element-ratting">
-                                                        <div class="col-xs-4 rating ">
+                                                    <div class="row element-ratting">
+                                                        <div class="col-4 rating ">
                                                             <span class="number-start">2</span>
                                                             <i class="fas fa-star" style="margin-right: 5px;"></i>
                                                             <span class="number-rattings"> 5054 Votes</span>
                                                         </div>
 
-                                                        <div class="col-xs-8 progress-ratting">
+                                                        <div class="col-8 progress-ratting">
                                                             <span class="progress">
                                                                 <span class="progress-bar progress-bar-danger"
                                                                     role="progressbar" aria-valuenow="40"
@@ -306,14 +393,14 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xs-12 element-ratting">
-                                                        <div class="col-xs-4 rating ">
+                                                    <div class="row element-ratting">
+                                                        <div class="col-4 rating ">
                                                             <span class="number-start">1</span>
                                                             <i class="fas fa-star" style="margin-right: 5px;"></i>
                                                             <span class="number-rattings"> 5054 Votes</span>
                                                         </div>
 
-                                                        <div class="col-xs-8 progress-ratting">
+                                                        <div class="col-8 progress-ratting">
                                                             <span class="progress">
                                                                 <span class="progress-bar progress-bar-danger"
                                                                     role="progressbar" aria-valuenow="40"
@@ -322,7 +409,6 @@
                                                             </span>
                                                         </div>
                                                     </div>
-
 
                                                 </div>
                                             </div>
@@ -427,7 +513,7 @@
                                         <div class="row g-2">
                                             <div class="col-6 element">
                                                 <div
-                                                    class="row align-items-start p-3 border attribute-product attribute-1">
+                                                    class="row align-items-start p-1 border attribute-product attribute-1">
                                                     <div class="col-3 title-attribute">
                                                         Weight Product
                                                     </div>
@@ -441,7 +527,7 @@
                                             </div>
                                             <div class="col-6 element">
                                                 <div
-                                                    class="row align-items-start p-3 border attribute-product attribute-1">
+                                                    class="row align-items-start p-1 border attribute-product attribute-1">
                                                     <div class="col-3 title-attribute">
                                                         Import Quantity
                                                     </div>
@@ -455,7 +541,7 @@
                                             </div>
                                             <div class="col-6 element">
                                                 <div
-                                                    class="row align-items-start p-3 border attribute-product attribute-1">
+                                                    class="row align-items-start p-1 border attribute-product attribute-1">
                                                     <div class="col-3 title-attribute">
                                                         Import Date
                                                     </div>
@@ -470,7 +556,7 @@
                                             <div class="col-6 element">
 
                                                 <div
-                                                    class="row align-items-start p-3 border attribute-product attribute-1">
+                                                    class="row align-items-start p-1 border attribute-product attribute-1">
                                                     <div class="col-3 title-attribute">
                                                         Category Product
 
@@ -559,9 +645,10 @@
                 <div class="similar-products">
                     <span class="title-area title-similar-products">Similar Products</span>
                     <div class="container-similar-products">
-                        
+
                         <div class="scrolling-container">
-                            <button class="arrow-btn left-arrow" onclick="scrollLeftSM()"><i class="fa-solid fa-angle-left"></i></i></button>
+                            <button class="arrow-btn left-arrow" onclick="scrollLeftSM()"><i
+                                    class="fa-solid fa-angle-left"></i></i></button>
                             <div class="scrolling-wrapper">
                                 <!-- List product cards -->
 
@@ -712,9 +799,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="arrow-btn right-arrow" onclick="scrollRightSM()"><i class="fa-solid fa-angle-right"></i></button>
+                            <button class="arrow-btn right-arrow" onclick="scrollRightSM()"><i
+                                    class="fa-solid fa-angle-right"></i></button>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -744,12 +832,123 @@
 
 
     </main>
-
     <!-- PRODUCT DETAIL PAGE END -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer_embrace ">
+            <div class="footer_container py-md-4">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 column_mfoody_infor">
+
+                        <div class="footer_logo mb-4">
+                            <a class="navbar-brand" href="#"><img width="auto" height="90"
+                                    src="../image/icon/icon_logo_brand_updated3_crop.png" alt="Company Logo">
+                            </a>
+                        </div>
+
+                        <p class="content_company"> <a>Mfoody is a company specializing in the sale of fresh and healthy
+                                food items, including Vegetables, Cereals & Beans, Fruits, and more. With a commitment
+                                to
+                                quality and sustainability, Mfoody sources its products from trusted suppliers and
+                                delivers them
+                                straight to customers' doors, making it easier than ever to eat well and live well.</a>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 pr-lg-5 mt-md-0 mt-5 column_contact_info">
+                        <h6 class="name_column">Contact Infomation </h6>
+
+                        <p class="content_contact_info mb-2">
+                            Address : MFoody Store, Moscow, Russia </p>
+
+                        <p class="content_contact_info mb-2">Phone Number : <a href="tel:89653682225">
+                                +7(965) 368 22-25</a></p>
+
+                        <p class="content_contact_info mb-2">Email : <a href="mailto:caoducmanh2411999@gmail.com">
+                                mfoodystore@gmail.com</a></p>
+
+                        <p class="content_contact_info mb-2">Support : <a href="mailto:caoducmanh2411999@support.com">
+                                mfoodysupport@gmail.com</a></p>
+
+                        <p class="content_contact_info mb-2">
+                            Our working hours are from 9:00 AM to 5:00 PM from Monday to Friday. Contact us via email or
+                            leave a message for afterhours support. </p>
+
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 mt-lg-0 mt-5 column_categories">
+                        <div id="categories-4" class="widget_categories">
+                            <h6 class="name_column">Products</h6>
+                            <ul>
+                                <li class="cat-item cat-item-1"><a href="#">Spice & Condiments</a>
+                                </li>
+                                <li class="cat-item cat-item-2"><a href="#">Hard-shelled Nuts</a>
+                                </li>
+                                <li class="cat-item cat-item-3"><a href="#">Vegetables</a>
+                                </li>
+                                <li class="cat-item cat-item-4"><a href="#">Jam & Syrup</a>
+                                </li>
+                                <li class="cat-item cat-item-5"><a href="#">Cereals & Beans</a>
+                                </li>
+                                <li class="cat-item cat-item-6"><a href="#">Fresh & Dried Fruits</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 mt-lg-0 mt-5 column_follow_us">
+                        <div id="follow_us-4" class="widget_follow_us">
+                            <h6 class="name_column">Follow Us</h6>
+                            <div class="container_follow_us mt-md-4 mt-3">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/mie.mac.378" class="facebook">
+                                            <span class="fab fa-facebook-square fa-lg"></span>
+                                            <span style="padding-left: 5px">Facebook</span>
+                                        </a></li>
+                                    <li><a href="https://github.com/macmie2411999" class="github">
+                                            <span class="fab fa-github-square fa-lg"></span>
+                                            <span style="padding-left: 5px">Github</span>
+                                        </a></li>
+                                    <li><a href="https://twitter.com" class="twitter">
+                                            <span class="fab fa-twitter-square fa-lg"></span>
+                                            <span style="padding-left: 5px">Twitter</span>
+                                        </a></li>
+                                    <li><a href="https://instagram.com" class="instagram">
+                                            <span class="fab fa-instagram-square fa-lg"></span>
+                                            <span style="padding-left: 5px">Instagram</span>
+                                        </a></li>
+                                    <li><a href="https://in.linkedin.com" class="linkedin">
+                                            <span class="fab fa-linkedin-in fa-lg"></span>
+                                            <span style="padding-left: 5px">Linked In</span>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COPY RIGHT -->
+        <section class="copyright text-center">
+            <div class="copyright_container">
+                <p class="content_copyright">&copy; 2023 <a href="#">
+                        MFoody </a> All Rights Reserved
+                </p>
+            </div>
+        </section>
+
+    </footer>
+    <!-- FOOTER END -->
 
     <!-- Calling jQuery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
     <!-- Calling Slick Library -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -763,16 +962,17 @@
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
         </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <!-- Splider -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
 
     <!-- Import JS -->
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
+    <script type="module" src="../javascript/header_scroll_down.js"></script>
+    <script src="../javascript/p_header_right_section.js"></script>
     <script src="../javascript/catalog_show_element_in_ul.js"></script>
     <script src="../javascript/product_detail.js"></script>
-    <!-- <script type="module" src="../javascript/slide_product_card_demo.js"></script> -->
     <script type="module" src="../javascript/leave_review_product_detail.js"></script>
-    <script type="module" src="../javascript/list_products_15per.js"></script>
+    <script type="module" src="../javascript/list_products_10per.js"></script>
 </body>
 
 </html>

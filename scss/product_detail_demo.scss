@@ -3,11 +3,13 @@
 @import '../scss/breadcrumb_demo.scss';
 
 // Header and Footer Style
-@import '../scss/header_home_demo.scss';
-@import '../scss/footer_home_demo.scss';
+// @import '../scss/header_home_demo.scss';
+// @import '../scss/footer_home_demo.scss';
+@import '../scss/header_home_demo_2.scss';
+@import '../scss/footer_home_demo_2.scss';
 
 // Card
-@import '../scss/p_product_card.scss';
+// @import '../scss/p_product_card.scss';
 // @import '../scss/p_slide_product_card_demo.scss';
 
 $text-c1-primary:#AAE640;
@@ -32,6 +34,7 @@ $text-c7-grey: #838384;
 $text-c8-grey: #eee;
 $text-c9-grey: #1A233A;
 $text-c10-grey: #172033;
+$text-c11-grey: #151421;
 
 @mixin fontAdjust ($weight, $size, $height) {
     font-family: 'Inter';
@@ -76,9 +79,10 @@ $text-c10-grey: #172033;
 // Main Style
 .product-detail {
     // margin-top: 220px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 1200px;
+    scale: 0.9;
+    margin-top: -20px;
+    margin-bottom: -100px;
+    max-width: 1400px;
     margin-right: auto;
     margin-left: auto;
     align-items: center;
@@ -128,16 +132,34 @@ $text-c10-grey: #172033;
         font-size: 12px;
     }
 
-    ul {
-        li {
-            margin-right: 25px;
-            font-weight: lighter;
-            cursor: pointer;
-        }
-    }
+    // ul {
+    //     li {
+    //         margin-right: 25px;
+    //         font-weight: lighter;
+    //         cursor: pointer;
+    //     }
+    // }
 
-    li.active {
-        border-bottom: 3px solid silver;
+    // li.active {
+    //     border-bottom: 3px solid silver;
+    // }
+
+    .breadcrumb {
+        li {
+            font-size: 18px !important;
+        }
+
+        .li-normal {
+            a {
+                color: $text-c7-grey !important;
+                opacity: 0.5;
+            }
+
+            a:hover {
+                color: $text-c2-primary !important;
+                opacity: 1;
+            }
+        }
     }
 
     .product-detail-container {
@@ -194,21 +216,23 @@ $text-c10-grey: #172033;
                     font-size: 1.5rem !important;
 
                     .name-product {
-                        font-size: 2.5rem;
+                        font-size: 2rem;
                         color: #000;
                     }
 
                     .rating-comments {
-                        margin-top: 5px;
-                        margin-bottom: 5px;
+                        margin-top: -5px;
+                        // margin-bottom: 5px;
 
                         .rating {
 
                             .fa-star {
-                                color: gray;
+                                font-size: 0.9rem;
+                                color: gold;
                             }
 
                             .yellow {
+                                font-size: 0.9rem;
                                 color: gold;
                             }
                         }
@@ -216,7 +240,7 @@ $text-c10-grey: #172033;
                         .text-in-card-information {
                             color: #000;
                             opacity: 0.5;
-                            font-size: 1.5rem !important;
+                            font-size: 1rem !important;
                             // font-size: 12px;
                         }
                     }
@@ -225,7 +249,7 @@ $text-c10-grey: #172033;
                         .button-in-card {
                             margin-top: 10px;
                             margin-right: 5px;
-                            padding: 5px;
+                            // padding: 5px;
                             border-radius: 5px;
                             border: 1px solid $text-c4-grey;
                             background-color: #fff;
@@ -236,7 +260,7 @@ $text-c10-grey: #172033;
                                 text-decoration: none;
                                 color: $text-c2-primary;
                                 transition: all 0.3s ease;
-                                font-size: 1.3rem;
+                                font-size: 1rem;
                             }
 
                             &:hover {
@@ -381,6 +405,7 @@ $text-c10-grey: #172033;
                                     border-collapse: separate;
                                     border-spacing: 0;
                                     border-radius: 10px;
+                                    border-bottom: #009f4d !important;
                                     overflow: hidden;
 
                                     thead {
@@ -525,6 +550,8 @@ $text-c10-grey: #172033;
 
                                         .ratting-product-review {
                                             .container-ratting-product-review {
+                                                padding-bottom: 5px;
+
                                                 .element-ratting {
                                                     padding: 0 !important;
                                                     margin-bottom: 5px;
@@ -574,6 +601,7 @@ $text-c10-grey: #172033;
                                                 border-radius: 5px;
                                                 padding: 10px;
                                                 margin-right: 0 !important;
+                                                margin-bottom: 15px;
 
                                                 .media-body {
                                                     .top-media-body {
@@ -807,8 +835,8 @@ $text-c10-grey: #172033;
                     margin-top: 10px;
                     position: relative;
 
-                    &:hover{
-                        .arrow-btn{
+                    &:hover {
+                        .arrow-btn {
                             display: block;
                         }
                     }
@@ -830,8 +858,8 @@ $text-c10-grey: #172033;
                         opacity: 2;
                         z-index: 2;
 
-                        &:hover{
-                            svg{
+                        &:hover {
+                            svg {
                                 color: $text-c3-primary;
                             }
                         }
@@ -859,11 +887,13 @@ $text-c10-grey: #172033;
 
                             .card {
                                 margin-left: 10px;
-                                width: 228px;
+                                width: 268px;
+                                // width: 19%;
                                 height: 334;
                                 background: #fff;
                                 position: relative;
                                 border-radius: 5px;
+                                border: 1px solid $text-c2-grey !important;
                                 box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
                                 transition: all 0.3s ease-in-out;
 
@@ -880,8 +910,8 @@ $text-c10-grey: #172033;
                                     position: absolute;
                                     top: 0;
                                     left: 0;
-                                    font-size: 1.1rem;
-                                    margin: 1rem;
+                                    font-size: 0.8rem;
+                                    margin: 0.7rem;
                                     color: #fff;
                                     background-color: $text-c2-yellow;
                                     padding: 3px 5px 3px 5px;
@@ -894,8 +924,8 @@ $text-c10-grey: #172033;
                                     position: absolute;
                                     top: 0;
                                     right: 0;
-                                    font-size: 1.8rem;
-                                    margin: 1rem;
+                                    font-size: 1.5rem;
+                                    margin: 0.3rem 0.7rem 0.3rem !important;
                                     cursor: pointer;
 
                                     svg {
@@ -926,14 +956,15 @@ $text-c10-grey: #172033;
 
                                     .card-title {
                                         // padding-top: 5px;
-                                        @include fontAdjust(300, 1.3rem, 29px);
+                                        margin-top: 5px;
+                                        font-size: 1.1rem;
                                         color: #000;
                                         @include processLongText();
                                         padding-bottom: 0 !important;
                                     }
 
                                     .card-text {
-                                        @include fontAdjust(300, 1.3rem, 24px);
+                                        font-size: 1.1rem;
                                         color: #CBC9C9;
                                     }
                                 }
@@ -967,13 +998,14 @@ $text-c10-grey: #172033;
                                         .tag-sale-price {
                                             background: #fff;
                                             border-color: transparent;
-                                            font-size: 2rem;
-                                            padding-right: 5px;
+                                            font-size: 1.5rem;
+                                            padding-right: 0;
+                                            text-align: left !important;
                                             color: $text-c3-yellow;
                                         }
 
                                         .tag-full-price {
-                                            font-size: 1.5rem;
+                                            font-size: 0.9rem;
                                             text-align: left;
                                             color: $text-c2-grey;
                                             text-decoration: line-through;
@@ -989,7 +1021,7 @@ $text-c10-grey: #172033;
 
                                         a {
                                             text-decoration: none !important;
-                                            @include fontAdjust(200px, 24px, 29px);
+                                            @include fontAdjust(200px, 1.3rem, 29px);
                                             color: #000;
                                         }
 
@@ -999,7 +1031,7 @@ $text-c10-grey: #172033;
                                         width: 25%;
                                         height: 64px;
                                         background: #fff;
-                                        @include fontAdjust(600, 24px, 29px);
+                                        @include fontAdjust(600, 1.3rem, 29px);
                                         text-align: center;
                                         color: #000;
                                         border-color: transparent;
@@ -1009,7 +1041,7 @@ $text-c10-grey: #172033;
 
                                     svg {
                                         color: $text-c2-primary;
-                                        font-size: 1.8rem;
+                                        font-size: 1.2rem;
                                         transition: all 0.4s ease-in-out;
                                     }
 
@@ -1071,7 +1103,7 @@ $text-c10-grey: #172033;
                         .card {
                             margin: 5px;
                             margin-bottom: 10px;
-                            width: 228px;
+                            width: 19%;
                             // width: 18%;
                             height: 334;
                             background: #fff;
@@ -1093,8 +1125,8 @@ $text-c10-grey: #172033;
                                 position: absolute;
                                 top: 0;
                                 left: 0;
-                                font-size: 1.1rem;
-                                margin: 1rem;
+                                font-size: 0.8rem;
+                                margin: 0.7rem;
                                 color: #fff;
                                 background-color: $text-c2-yellow;
                                 padding: 3px 5px 3px 5px;
@@ -1107,8 +1139,8 @@ $text-c10-grey: #172033;
                                 position: absolute;
                                 top: 0;
                                 right: 0;
-                                font-size: 1.8rem;
-                                margin: 1rem;
+                                font-size: 1.5rem;
+                                margin: 0.3rem 0.7rem 0.3rem !important;
                                 cursor: pointer;
 
                                 svg {
@@ -1139,14 +1171,15 @@ $text-c10-grey: #172033;
 
                                 .card-title {
                                     // padding-top: 5px;
-                                    @include fontAdjust(300, 1.3rem, 29px);
+                                    margin-top: 5px;
+                                    font-size: 1.1rem;
                                     color: #000;
                                     @include processLongText();
                                     padding-bottom: 0 !important;
                                 }
 
                                 .card-text {
-                                    @include fontAdjust(300, 1.3rem, 24px);
+                                    font-size: 1.1rem;
                                     color: #CBC9C9;
                                 }
                             }
@@ -1180,13 +1213,14 @@ $text-c10-grey: #172033;
                                     .tag-sale-price {
                                         background: #fff;
                                         border-color: transparent;
-                                        font-size: 2rem;
-                                        padding-right: 5px;
+                                        font-size: 1.5rem;
+                                        padding-right: 0;
+                                        text-align: left !important;
                                         color: $text-c3-yellow;
                                     }
 
                                     .tag-full-price {
-                                        font-size: 1.5rem;
+                                        font-size: 0.9rem;
                                         text-align: left;
                                         color: $text-c2-grey;
                                         text-decoration: line-through;
@@ -1202,7 +1236,7 @@ $text-c10-grey: #172033;
 
                                     a {
                                         text-decoration: none !important;
-                                        @include fontAdjust(200px, 24px, 29px);
+                                        @include fontAdjust(200px, 1.3rem, 29px);
                                         color: #000;
                                     }
 
@@ -1212,7 +1246,7 @@ $text-c10-grey: #172033;
                                     width: 25%;
                                     height: 64px;
                                     background: #fff;
-                                    @include fontAdjust(600, 24px, 29px);
+                                    @include fontAdjust(600, 1.3rem, 29px);
                                     text-align: center;
                                     color: #000;
                                     border-color: transparent;
@@ -1222,7 +1256,7 @@ $text-c10-grey: #172033;
 
                                 svg {
                                     color: $text-c2-primary;
-                                    font-size: 1.8rem;
+                                    font-size: 1.2rem;
                                     transition: all 0.4s ease-in-out;
                                 }
 
@@ -1235,10 +1269,11 @@ $text-c10-grey: #172033;
                     }
 
                     .pagination-container {
+                        scale: 0.8;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        margin-top: 0px;
+                        margin-top: 10px;
 
                         .pagination-btn {
                             padding: 10px;
@@ -1314,6 +1349,5 @@ $text-c10-grey: #172033;
         padding-left: 0;
     }
 }
-
 
 // Main Style End
