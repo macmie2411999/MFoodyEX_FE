@@ -18,6 +18,7 @@ $text-c4-primary:#015A28;
 $text-c5-primary:#408A36;
 $text-c6-primary: #0FC44C;
 $text-c7-primary: #71c894;
+$text-c8-primary: #4DA56A;
 
 $text-c1-yellow: #FACF39;
 $text-c2-yellow: #F67E3C;
@@ -77,9 +78,48 @@ $text-c10-grey: #172033;
 
 // Main Style START
 .blog-page {
-    margin-top: 100px;
+    margin-top: 90px;
+
+    .horizontal-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        margin: 15px 0;
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            height: 2px;
+            flex-grow: 1;
+            background-image: linear-gradient(transparent, $text-c3-grey, transparent);
+        }
+
+        &:before {
+            margin-right: 10px;
+        }
+
+        &:after {
+            margin-left: 10px;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: $text-c3-grey;
+            border-radius: 50%;
+        }
+
+    }
 
     .container-blog-page {
+        .title-part {
+            color: $text-c8-primary !important;
+        }
+
         .header-blog-page {
             background-image: url(../image/pages/blog_background_header.png);
             background-size: cover;
@@ -93,7 +133,7 @@ $text-c10-grey: #172033;
                 margin: 0 auto;
 
                 .content-container-blog {
-                    padding: 10% 5%;
+                    padding: 5% 5%;
                     max-width: 850px;
                     position: relative;
                     margin: 0 auto;
@@ -111,7 +151,7 @@ $text-c10-grey: #172033;
 
                         img {
                             float: right;
-                            height: 100%;
+                            height: 96%;
                             width: auto;
                             display: block;
                             margin: 0 auto;
@@ -131,6 +171,11 @@ $text-c10-grey: #172033;
 
                             p {
                                 margin: 0;
+                            }
+
+                            i {
+                                font-size: 1rem;
+                                opacity: 0.8;
                             }
                         }
 
@@ -163,118 +208,455 @@ $text-c10-grey: #172033;
 
         .body-blog-page {
             background: #fff;
-            padding: 72px 0;
+            padding: 30px 0 0 0;
 
             .container-body-blog-page {
                 width: 100%;
                 padding: 0 24px;
-                max-width: 1072px;
 
-                .content-container-body-blog-page {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    margin: -12px;
-                    padding: 0;
-                    border: 0;
+                // List Blogs Start
+                .list-blogs {
 
-                    .link-card {
-                        opacity: 1;
-                        // transform: translateY(0);
-                        // transition-duration: 1s;
-                        
-                        transition-property: opacity, transform;
-                        text-align: center;
-                        display: block;
-                        text-decoration: none;
-                        min-height: 100%;
-                        // display: flex;
-                        flex-direction: column;
-                        width: 33.33333% !important;
-                        max-width: none;
-                        margin: 0;
-                        padding: 12px;
-                        transition: all 1 ease;
+                    .container-list-blogs {
 
-                        .image-link-card {
-                            height: 250px;
-                            width: 100%;
-                            position: relative;
-                            overflow: hidden;
-                            text-align: center;
-                            border-radius: 5px;
-                            transition: all 1 ease;
-                            opacity: 0.8;
+                        // max-width: 1200px;
+                        margin: 5px;
+                        // padding: 0 !important;
 
-                            img {
-                                display: block;
-                                object-fit: cover;
-                                max-width: none;
-                                height: 100%;
-                                width: 100%;
-                            }
+                        button {
+                            margin: 2px !important;
+                            border-radius: 2px;
+                            font-size: 1.2rem !important;
+                            padding: 0 !important;
                         }
 
-                        &:hover{
-                            .image-link-card {
-                                opacity: 1;
-                            }
+                        .page-btn {
+                            padding: 10px;
+                            background-color: #f1f1f1;
+                            border: none;
+                            cursor: pointer;
+                            font-weight: bold;
+                            padding: 10px 20px !important;
                         }
 
-                        .content-link-card {
-                            padding: 50px 10%;
-                            background: #ffffff;
-                            position: relative;
-                            margin: -36px 6% 0;
-                            flex-grow: 1;
+                        .page-btn:hover {
+                            background-color: #ddd;
+                        }
+
+                        .page-btn.active {
+                            background-color: $text-c3-primary;
+                            color: white;
+                        }
+
+                        .blogList {
+                            padding: 10px 0 !important;
+                            margin: 0 !important;
+                            box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
                             display: flex;
-                            flex-direction: column;
-                            justify-content: flex-start;
-                            border-radius: 5px;
+                            flex-wrap: wrap;
+                            justify-content: center;
 
-                            .title-link-card {
-                                min-height: 50px;
-                                font-size: 1.5rem;
-                                color: #000;
-                                opacity: 0.8;
-                            }
+                            .link-card {
+                                opacity: 1;
+                                // transform: translateY(0);
+                                // transition-duration: 1s;
 
-                            .text-link-card {
-                                color: #8c8c8c;
-                                flex-grow: 1 !important;
-
-                                p {
-                                    margin: 1rem 0 0;
-                                    min-height: 100px;
-                                }
-                            }
-
-                            .button-link-card {
-                                background: $text-c7-primary;
-                                border-radius: 5px;
-                                color: #ffffff;
-                                padding: 0.5em 1em;
-                                line-height: 1.125;
-                                transition: background-color 0.1s ease-out;
-                                margin: 1.5rem 0 0;
+                                transition-property: opacity, transform;
                                 text-align: center;
-                                position: relative;
+                                display: block;
+                                text-decoration: none;
+                                min-height: 100%;
+                                // display: flex;
+                                flex-direction: column;
+                                // width: 33.33333% !important;
+                                width: 25% !important;
+                                max-width: none;
+                                margin: 0;
+                                padding: 12px;
+                                transition: all 1 ease;
+
+                                .image-link-card {
+                                    height: 250px;
+                                    width: 100%;
+                                    position: relative;
+                                    overflow: hidden;
+                                    text-align: center;
+                                    border-radius: 5px;
+                                    transition: all 1 ease;
+                                    opacity: 0.9;
+
+                                    img {
+                                        display: block;
+                                        object-fit: cover;
+                                        max-width: none;
+                                        height: 100%;
+                                        width: 100%;
+                                    }
+                                }
+
+                                &:hover {
+                                    .image-link-card {
+                                        opacity: 1;
+                                    }
+                                }
+
+                                .content-link-card {
+                                    padding: 20px 10%;
+                                    background: #ffffff;
+                                    position: relative;
+                                    margin: -36px 6% 0;
+                                    flex-grow: 1;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    border-radius: 5px;
+
+                                    .title-link-card {
+                                        min-height: 50px;
+                                        font-size: 1.5rem;
+                                        color: #000;
+                                        opacity: 0.8;
+                                    }
+
+                                    .text-link-card {
+                                        color: #8c8c8c;
+                                        flex-grow: 1 !important;
+
+                                        p {
+                                            margin: 1rem 0 0;
+                                            min-height: 100px;
+                                        }
+                                    }
+
+                                    .button-link-card {
+                                        background: $text-c7-primary;
+                                        border-radius: 5px;
+                                        color: #ffffff;
+                                        padding: 0.5em 1em;
+                                        line-height: 1.125;
+                                        transition: background-color 0.1s ease-out;
+                                        margin: 1.5rem 0 0;
+                                        text-align: center;
+                                        position: relative;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex-wrap: nowrap;
+                                        // opacity: 0.8;
+
+                                        .text-button-link-card {
+                                            padding: 0 0.125em;
+                                        }
+
+                                        .icon-button-link-card {
+                                            padding: 0 0.5em;
+                                        }
+
+                                        &:hover {
+                                            // opacity: 1;
+                                            background: $text-c8-primary;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .pagination-container {
+                            scale: 0.8;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-top: 10px;
+
+                            .pagination-btn {
+                                padding: 10px;
+                                background-color: #f1f1f1;
+                                border: none;
+                                cursor: pointer;
+                                font-weight: bold;
+
+                                background-color: #f1f1f1;
+                                border: none;
+                                cursor: pointer;
+                                font-weight: bold;
+                                padding: 10px 20px !important;
+                                margin: 2px !important;
+                                border-radius: 2px;
+                                font-size: 1.2rem !important;
+
+                                &:hover {
+                                    background-color: #ddd;
+                                }
+                            }
+
+                            .pagination {
                                 display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex-wrap: nowrap;
-                                opacity: 0.8;
 
-                                .text-button-link-card {
-                                    padding: 0 0.125em;
+                            }
+
+
+                        }
+
+                    }
+                }
+
+                // List Blogs End
+            }
+        }
+
+        .bottom-blog-page {
+            background: #fff;
+            padding: 30px 0;
+
+            .container-bottom-blog-page {
+                width: 100%;
+                padding: 0 24px;
+
+                .title-bottom{
+                    .see-more-products{
+
+                        svg{
+                            margin-left: 15px;
+                            font-size: 24px;
+                            color: $text-c8-primary;
+                            transition: all 0.5s ease;
+
+                            &:hover{
+                                color: $text-c2-yellow;
+                            }
+                        }
+                    }
+                }
+
+                .similar-products {
+                    margin-bottom: 30px;
+                    transform: all 0.3s ease;
+    
+                    .title-similar-products {
+                        font-size: 20px;
+                        font-weight: 400px;
+                        opacity: 0.9;
+                    }
+    
+                    .container-similar-products {
+                        margin-top: 10px;
+                        position: relative;
+    
+                        &:hover {
+                            .arrow-btn {
+                                display: block;
+                            }
+                        }
+    
+                        .arrow-btn {
+                            display: none;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background-color: #fff;
+                            border: none;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            font-size: 24px;
+                            color: #333;
+                            cursor: pointer;
+                            box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                            opacity: 2;
+                            z-index: 2;
+    
+                            &:hover {
+                                svg {
+                                    color: $text-c3-primary;
                                 }
-
-                                .icon-button-link-card {
-                                    padding: 0 0.5em;
-                                }
-
-                                &:hover{
-                                    opacity: 1;
+                            }
+                        }
+    
+                        .left-arrow {
+                            left: 0;
+                        }
+    
+                        .right-arrow {
+                            right: 0;
+                        }
+    
+                        .scrolling-container {
+                            display: flex;
+                            overflow-x: scroll;
+                            max-width: 100%;
+                            box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+                            padding-bottom: 10px;
+    
+                            .scrolling-wrapper {
+                                display: flex;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+    
+                                .card {
+                                    margin-left: 10px;
+                                    width: 298px;
+                                    // width: 19%;
+                                    height: 334;
+                                    background: #fff;
+                                    position: relative;
+                                    border-radius: 5px;
+                                    border: 1px solid $text-c2-grey !important;
+                                    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+                                    transition: all 0.3s ease-in-out;
+    
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
+    
+                                    &:hover {
+                                        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                                    }
+    
+                                    .tag-product {
+                                        z-index: 2;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        font-size: 0.8rem;
+                                        margin: 0.7rem;
+                                        color: #fff;
+                                        background-color: $text-c2-yellow;
+                                        padding: 3px 5px 3px 5px;
+                                        border-radius: 5px;
+                                        // cursor: pointer;
+                                    }
+    
+                                    .heart-icon {
+                                        z-index: 2;
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        font-size: 1.5rem;
+                                        margin: 0.3rem 0.7rem 0.3rem !important;
+                                        cursor: pointer;
+    
+                                        svg {
+                                            color: $text-c2-grey;
+                                            border-radius: 50%;
+                                            transition: color 0.3s ease-in-out;
+                                        }
+    
+                                        svg:hover {
+                                            color: $text-c1-primary;
+                                            cursor: pointer;
+                                        }
+                                    }
+    
+                                    img {
+                                        scale: 0.8;
+                                    }
+    
+                                    .card-body {
+                                        padding-bottom: 0px !important;
+    
+                                        .rated-star {
+                                            svg {
+                                                color: $text-c1-yellow;
+                                                font-size: 1.3rem;
+                                            }
+                                        }
+    
+                                        .card-title {
+                                            // padding-top: 5px;
+                                            margin-top: 5px;
+                                            font-size: 1.1rem;
+                                            color: #000;
+                                            @include processLongText();
+                                            padding-bottom: 0 !important;
+                                        }
+    
+                                        .card-text {
+                                            font-size: 1.1rem;
+                                            color: #CBC9C9;
+                                        }
+                                    }
+    
+    
+                                    .card-footer {
+                                        width: 379;
+                                        padding-top: 0 !important;
+                                        margin-top: 0 !important;
+                                        border-top: transparent;
+                                        background-color: #fff;
+                                        display: flex;
+    
+                                        .tag-prices {
+                                            width: 50%;
+                                            display: flex;
+                                            // flex-direction: row;
+                                            // justify-content: space-between;
+                                            flex-wrap: nowrap;
+                                            justify-content: center;
+                                            align-items: center;
+                                            background: #fff !important;
+                                            border: none !important;
+    
+                                            // height: 64px;
+                                            button {
+                                                padding-top: 0 !important;
+                                                padding-bottom: 0 !important;
+                                            }
+    
+                                            .tag-sale-price {
+                                                background: #fff;
+                                                border-color: transparent;
+                                                font-size: 1.5rem;
+                                                padding-right: 0;
+                                                text-align: left !important;
+                                                color: $text-c3-yellow;
+                                            }
+    
+                                            .tag-full-price {
+                                                font-size: 0.9rem;
+                                                text-align: left;
+                                                color: $text-c2-grey;
+                                                text-decoration: line-through;
+                                            }
+                                        }
+    
+    
+                                        .more-infor {
+                                            width: 25%;
+                                            height: 64px;
+                                            background: #fff;
+                                            border-color: transparent;
+    
+                                            a {
+                                                text-decoration: none !important;
+                                                @include fontAdjust(200px, 1.3rem, 29px);
+                                                color: #000;
+                                            }
+                                        }
+    
+                                        .to-cart {
+                                            width: 25%;
+                                            height: 64px;
+                                            background: #fff;
+                                            @include fontAdjust(600, 1.3rem, 29px);
+                                            text-align: center;
+                                            color: #000;
+                                            border-color: transparent;
+                                            border-radius: 50%;
+    
+                                        }
+    
+                                        svg {
+                                            color: $text-c2-primary;
+                                            font-size: 1.2rem;
+                                            transition: all 0.4s ease-in-out;
+                                        }
+    
+                                        svg:hover {
+                                            scale: 1.3;
+                                            cursor: pointer;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -284,7 +666,6 @@ $text-c10-grey: #172033;
         }
     }
 }
-
 
 
 // Main Style END

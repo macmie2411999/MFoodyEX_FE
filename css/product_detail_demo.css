@@ -2621,6 +2621,7 @@ body {
   background-color: #fff;
 }
 .navbar_top_header .container_navbar_top_header .navbar-brand .img-navbar-brand {
+  transition: all 1 ease;
   padding-left: 12px !important;
 }
 .navbar_top_header .container_navbar_top_header .selection_container .list_selection {
@@ -2658,10 +2659,15 @@ body {
   background-color: #1A233A !important;
 }
 .scrolled .container_navbar_top_header .img-navbar-brand {
-  opacity: 2 !important;
+  transition: all 1 ease;
+  height: 0px;
+}
+.scrolled .container_navbar_top_header .selection_container {
+  transition: all 1 ease;
+  transform: translateX(-2%);
 }
 .scrolled .container_navbar_top_header .selection_container .list_selection {
-  margin-left: 30px;
+  margin-left: 0px;
 }
 .scrolled .container_navbar_top_header .selection_container .list_selection .nav-item .nav-link {
   color: #fff !important;
