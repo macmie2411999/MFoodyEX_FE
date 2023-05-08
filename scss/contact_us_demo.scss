@@ -31,13 +31,17 @@ body {
 
 .contact {
     background: #fff;
-    margin-top: 140px;
+    margin-top: 180px;
     // padding: 30px 15px !important;
     
     // zoom: 1;
 
+    .breadcrumb{
+        margin-left: 20%;
+    }
+
     .contact-container {
-        margin-top: 50px !important;
+        // margin-top: 20px !important;
         max-width: 1200px;
         margin-right: auto;
         margin-left: auto;
@@ -45,12 +49,14 @@ body {
         padding-right: 15px;
         padding-left: 15px;
         box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+        // background: linear-gradient(to right, $text-c2-primary, $text-c1-primary) no-repeat 0 0 / cover;
         // background-color: $text-c1-primary;
 
         .contact-title-content {
             max-width: 800px;
             margin: auto;
             margin-top: -10px;
+            
 
             .title {
                 font-size: 35px;

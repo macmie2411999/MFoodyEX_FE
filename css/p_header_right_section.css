@@ -23,13 +23,13 @@ body {
   text-decoration: none !important;
   font-size: 20px;
   line-height: 30px;
-  color: #838384 !important;
+  color: #838384;
   opacity: 0.9;
   display: inline;
 }
 .breadcrumb li a {
   text-decoration: none !important;
-  color: #838384 !important;
+  color: #838384;
 }
 .breadcrumb li a:hover {
   color: #1CAF37 !important;
