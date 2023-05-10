@@ -2621,7 +2621,7 @@ body {
   background-color: #fff;
 }
 .navbar_top_header .container_navbar_top_header .navbar-brand .img-navbar-brand {
-  transition: all 1 ease;
+  transition: all 1s ease;
   padding-left: 12px !important;
 }
 .navbar_top_header .container_navbar_top_header .selection_container .list_selection {
@@ -2659,12 +2659,12 @@ body {
   background-color: #1A233A !important;
 }
 .scrolled .container_navbar_top_header .img-navbar-brand {
-  transition: all 1 ease;
+  transition: all 0.4s ease;
   height: 0px;
 }
 .scrolled .container_navbar_top_header .selection_container {
-  transition: all 1 ease;
-  transform: translateX(-2%);
+  transition: all 1s ease;
+  transform: translateX(-3%);
 }
 .scrolled .container_navbar_top_header .selection_container .list_selection {
   margin-left: 0px;
@@ -3923,4 +3923,8 @@ body {
   .menu-items {
     padding-left: 0;
   }
+}
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s;
 }

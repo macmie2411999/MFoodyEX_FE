@@ -767,14 +767,12 @@ $text-c10-grey: #172033;
     z-index: 1040 !important;
 }
 
-
 .custom-modal-width {
     max-width: 1400px !important;
     // max-height: 100vh !important;
     // scale: 0.9;
 
     .modal-content {
-
         position: relative;
         height: 5%;
 
@@ -1376,3 +1374,9 @@ $text-c10-grey: #172033;
     }
 }
 // More Product End
+
+// Fade when switch page in List Products
+.fade-list-products {
+    opacity: 0;
+    transition: opacity 0.5s;
+}

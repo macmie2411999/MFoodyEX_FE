@@ -76,12 +76,13 @@ $text-c10-grey: #172033;
 
 // Main Style
 // body {
-    
+
 // }
 
 .catalog-full-list {
     zoom: 0.8;
     margin-top: 150px;
+
     // margin-bottom: 50px;
     // max-width: 1200px;
     // margin-right: auto;
@@ -226,6 +227,7 @@ $text-c10-grey: #172033;
             .tags-product {
                 // margin-bottom: 20px;
                 margin-top: 10px;
+
                 .container-tags-product {
                     .tags_title {}
 
@@ -451,6 +453,7 @@ $text-c10-grey: #172033;
 
                     .container {
                         box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+
                         .row {
                             margin-top: 10px;
 
@@ -771,7 +774,7 @@ $text-c10-grey: #172033;
 
 
 .custom-modal-width {
-    max-width: 1400px !important;
+    max-width: 1200px !important;
     // max-height: 100vh !important;
     // scale: 0.9;
 
@@ -1135,26 +1138,26 @@ $text-c10-grey: #172033;
         position: absolute;
         top: 0;
         right: 0;
-    
+
         .container-filter-product {
-          .filter-group {
-            display: inline-block;
-            width: auto;
-            text-align: right;
-    
-            .form-select {
-              display: inline-block;
-              width: auto;
-              padding: 5px 30px 5px 10px;
-              font-size: 1.2rem;
-              color: #000;
-              opacity: 0.5 !important;
-              font-weight: 400;
-              // Add any other styles for the select element
+            .filter-group {
+                display: inline-block;
+                width: auto;
+                text-align: right;
+
+                .form-select {
+                    display: inline-block;
+                    width: auto;
+                    padding: 5px 30px 5px 10px;
+                    font-size: 1.2rem;
+                    color: #000;
+                    opacity: 0.5 !important;
+                    font-weight: 400;
+                    // Add any other styles for the select element
+                }
             }
-          }
         }
-      }
+    }
 
     .container-more-products {
 
@@ -1406,3 +1409,9 @@ $text-c10-grey: #172033;
 }
 
 // More Product End
+
+// Fade when switch page in List Products
+.fade-list-products {
+    opacity: 0;
+    transition: opacity 0.5s;
+}

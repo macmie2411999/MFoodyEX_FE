@@ -150,17 +150,17 @@
             <nav id="sidebar" class="sidebar">
 
                 <ul class="list-unstyled components">
-                    <li class="active">
+                    <li>
                         <button>
                             <i class="fa-regular fa-address-card fa-2xl"></i>
                         </button>
-                        <a href="#" class="category">Information</a>
+                        <a href="profile_user_demo_2.html" class="category">Information</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <button>
                             <i class="fa-solid fa-receipt fa-2xl"></i>
                         </button>
-                        <a href="profile_user_demo_2_orders.html" class="category">Orders</a>
+                        <a href="#" class="category">Orders</a>
                     </li>
                     <li>
                         <button>
@@ -197,183 +197,155 @@
             </nav>
 
             <!-- Page Content  -->
-            <div id="content">
+            <div class="main-content">
                 <!-- p_general_profile_user -->
                 <section class="default-profile-user">
+
                     <div class="container py-5">
                         <!-- BreadCrumb -->
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Information</li>
+                                <li class="breadcrumb-item active" aria-current="page">Orders</li>
                             </ol>
                         </nav>
                         <!-- BreadCrumb End -->
 
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card card-avatar mb-4">
-                                    <div class="card-body text-center">
-                                        <img src="../image/pages/default_avatar.png" alt="avatar"
-                                            class="rounded-circle img-fluid">
-                                        <h5 class="my-3">John Smith</h5>
-                                        <div class="d-flex justify-content-center mb-2">
-                                            <button type="button" class="btn-upgrade-avatar">Upgrade Avatar</button>
+                        <!-- Deviding Line -->
+                        <div class="horizontal-line">
+                            <div class="circle"></div>
+                        </div>
+
+                        <div class="row list-orders">
+                            <h2 class="title-bottom title-part"> List Orders</h2>
+                            <div class="col-12 container-list-orders">
+
+                                <div class="filter-product">
+                                    <div class="container-filter-product">
+                                        <!-- Sort By Filter -->
+                                        <div class="filter-group">
+                                            <select class="form-select" id="sort-by">
+                                                <option value="date">Recently</option>
+                                                <option value="price price-high-to-low">Price: High to Low</option>
+                                                <option value="price price-low-to-high">Price: Low to High</option>
+                                                <option value="status status-canceled">Status: Canceled</option>
+                                                <option value="status status-processing">Status: Processing</option>
+                                                <option value="status status-received">Status: Received</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card card-id-and-role mb-4 mb-lg-0">
-                                    <div class="card-body p-0">
-                                        <ul class="list-group list-group-flush rounded-3">
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                                <p class="mb-0">ID User: 15678734</p>
-                                            </li>
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                                <p class="mb-0">Role User: Client</p>
-                                            </li>
-                                        </ul>
+                                <!-- list Order Start -->
+
+                                <div class="order-card">
+                                    <div class="header-order-card">
+                                        <div>
+                                            <p class="text-header date-order">Date Order: 10/05/2023</p>
+                                            <p class="text-header id-order">#12345</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-header price-order">Price: <span class="price-value">1000000$</span> </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="card card-general-information mb-4">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <p class="mb-0">Full Name</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted mb-0">Johnatan Smith</p>
-                                            </div>
+                                    <div class="body-order-card">
+                                        <div class="info">
+                                            <button class="text-body status-order">Processing</button>
+                                            <p class="text-body payment-method-order">Phương thức thanh toán:
+                                                Thẻ tín dụng</p>
+                                            <p class="text-body shipping-method-order">Phương thức giao hàng:
+                                                Giao hàng tiêu chuẩn</p>
                                         </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <p class="mb-0">Email</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted mb-0">example@example.com</p>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <p class="mb-0">Phone</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted mb-0">(097) 234-5678</p>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <p class="mb-0">Address</p>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-                                            </div>
+                                        <div class="images-order-card">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 1">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 2">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 3">
+                                            
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="card card-orders mb-4 mb-md-0">
-                                            <div class="card-body">
-                                                <p class="mb-1 title-ele-entity">
-                                                    <span class="ele-entity">Orders</span> <span
-                                                        class="general-ele-entity">2 Orders</span>
-                                                </p>
-
-                                                <ul class="list-entity">
-                                                    <li class="item-entity"><a href="#">First order: Potato</a>
-                                                    </li>
-                                                    <li class="item-entity"><a href="#">Second order: Potato</a>
-                                                    </li>
-                                                </ul>
-
-                                                <div class="d-flex justify-content-center">
-                                                    <button class="button-card-body"> <a href="#">See
-                                                            More...</a></button>
-                                                </div>
-                                            </div>
+                                <div class="order-card">
+                                    <div class="header-order-card">
+                                        <div>
+                                            <p class="text-header date-order">Date Order: 10/05/2023</p>
+                                            <p class="text-header id-order">#12345</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-header price-order">Price: <span class="price-value">1000000$</span> </p>
                                         </div>
                                     </div>
-
-                                    <div class="col-md-6">
-                                        <div class="card card-comments mb-4 mb-md-0">
-                                            <div class="card-body">
-                                                <p class="mb-1 title-ele-entity">
-                                                    <span class="ele-entity">Credit Cards</span> <span
-                                                        class="general-ele-entity">2 Credit Cards</span>
-                                                </p>
-
-                                                <ul class="list-entity">
-                                                    <li class="item-entity"><a href="#">First Card: 9835962184768234</a>
-                                                    </li>
-                                                    <li class="item-entity"><a href="#">Second Card:
-                                                            9835962184768234</a>
-                                                    </li>
-                                                </ul>
-
-                                                <div class="d-flex justify-content-center">
-                                                    <button class="button-card-body"> <a href="#">See
-                                                            More...</a></button>
-                                                </div>
-                                            </div>
+                                    <div class="body-order-card">
+                                        <div class="info">
+                                            <button class="text-body status-order">Processing</button>
+                                            <p class="text-body payment-method-order">Phương thức thanh toán:
+                                                Thẻ tín dụng</p>
+                                            <p class="text-body shipping-method-order">Phương thức giao hàng:
+                                                Giao hàng tiêu chuẩn</p>
                                         </div>
-                                    </div>
-
-                                    <div class="col-md-6 mt-4">
-                                        <div class="card card-credit-cards mb-4 mb-md-0">
-                                            <div class="card-body">
-                                                <p class="mb-1 title-ele-entity">
-                                                    <span class="ele-entity">Cart</span> <span
-                                                        class="general-ele-entity">16 products</span>
-                                                </p>
-
-                                                <ul class="list-entity">
-                                                    <li class="item-entity"><a href="#">Full Price: 160$</a>
-                                                    </li>
-                                                    <li class="item-entity"><a href="#">Sale Price: 150$</a>
-                                                    </li>
-                                                </ul>
-
-                                                <div class="d-flex justify-content-center">
-                                                    <button class="button-card-body"> <a href="#">See
-                                                            More...</a></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 mt-4">
-                                        <div class="card card-cart mb-4 mb-md-0">
-                                            <div class="card-body">
-                                                <p class="mb-1 title-ele-entity">
-                                                    <span class="ele-entity">Comments</span> <span
-                                                        class="general-ele-entity">20
-                                                        Comments</span>
-                                                </p>
-
-                                                <ul class="list-entity">
-                                                    <li class="item-entity"><a href="#">First Comment: Good</a>
-                                                    </li>
-                                                    <li class="item-entity"><a href="#">Second Comment: Good</a>
-                                                    </li>
-                                                </ul>
-
-                                                <div class="d-flex justify-content-center">
-                                                    <button class="button-card-body"> <a href="#">See
-                                                            More...</a></button>
-                                                </div>
-
-                                            </div>
+                                        <div class="images-order-card">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 1">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 2">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 3">
+                                            
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="order-card">
+                                    <div class="header-order-card">
+                                        <div>
+                                            <p class="text-header date-order">Date Order: 10/05/2023</p>
+                                            <p class="text-header id-order">#12345</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-header price-order">Price: <span class="price-value">1000000$</span> </p>
+                                        </div>
+                                    </div>
+                                    <div class="body-order-card">
+                                        <div class="info">
+                                            <button class="text-body status-order">Processing</button>
+                                            <p class="text-body payment-method-order">Phương thức thanh toán:
+                                                Thẻ tín dụng</p>
+                                            <p class="text-body shipping-method-order">Phương thức giao hàng:
+                                                Giao hàng tiêu chuẩn</p>
+                                        </div>
+                                        <div class="images-order-card">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 1">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 2">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 3">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="order-card">
+                                    <div class="header-order-card">
+                                        <div>
+                                            <p class="text-header date-order">Date Order: 10/05/2023</p>
+                                            <p class="text-header id-order">#12345</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-header price-order">Price: <span class="price-value">1000000$</span> </p>
+                                        </div>
+                                    </div>
+                                    <div class="body-order-card">
+                                        <div class="info">
+                                            <button class="text-body status-order">Processing</button>
+                                            <p class="text-body payment-method-order">Phương thức thanh toán:
+                                                Thẻ tín dụng</p>
+                                            <p class="text-body shipping-method-order">Phương thức giao hàng:
+                                                Giao hàng tiêu chuẩn</p>
+                                        </div>
+                                        <div class="images-order-card">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 1">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 2">
+                                            <img src="../image/products/Mushroom_5.webp" alt="product 3">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- list Order Start -->
+
                             </div>
                         </div>
                     </div>
@@ -392,7 +364,8 @@
                     <div class="col-lg-4 col-md-6 column_mfoody_infor">
 
                         <div class="footer_logo mb-4">
-                            <a class="navbar-brand" href="#"><img width="auto" height="90" src="../image/icon/icon_logo_brand_updated3_crop.png" alt="Company Logo">
+                            <a class="navbar-brand" href="#"><img width="auto" height="90"
+                                    src="../image/icon/icon_logo_brand_updated3_crop.png" alt="Company Logo">
                             </a>
                         </div>
 

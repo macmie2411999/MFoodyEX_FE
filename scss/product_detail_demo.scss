@@ -1349,5 +1349,10 @@ $text-c11-grey: #151421;
         padding-left: 0;
     }
 }
-
 // Main Style End
+
+// Fade when switch page in List Products
+.fade {
+    opacity: 0;
+    transition: opacity 0.5s;
+}

@@ -3470,3 +3470,8 @@ body {
   scale: 1.3;
   cursor: pointer;
 }
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s;
+}

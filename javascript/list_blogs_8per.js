@@ -36,17 +36,36 @@ function createBlogCard(blog) {
         </a> `;
 }
 
+// function showBlogs() {
+//     const blogList = $("#blogList");
+//     blogList.empty();
+
+//     const startIndex = (currentPage - 1) * blogsPerPage;
+//     const endIndex = Math.min(startIndex + blogsPerPage, blogsGeneral.length);
+
+//     for (let i = startIndex; i < endIndex; i++) {
+//         blogList.append(createBlogCard(blogsGeneral[i]));
+//     }
+// }
+
 function showBlogs() {
     const blogList = $("#blogList");
-    blogList.empty();
+    blogList.addClass("fade");
+    
+    setTimeout(() => {
+        blogList.empty();
 
-    const startIndex = (currentPage - 1) * blogsPerPage;
-    const endIndex = Math.min(startIndex + blogsPerPage, blogsGeneral.length);
+        const startIndex = (currentPage - 1) * blogsPerPage;
+        const endIndex = Math.min(startIndex + blogsPerPage, blogsGeneral.length);
 
-    for (let i = startIndex; i < endIndex; i++) {
-        blogList.append(createBlogCard(blogsGeneral[i]));
-    }
+        for (let i = startIndex; i < endIndex; i++) {
+            blogList.append(createBlogCard(blogsGeneral[i]));
+        }
+
+        blogList.removeClass("fade");
+    }, 500);
 }
+
 
 function updatePagination() {
     const pagination = $("#pagination");

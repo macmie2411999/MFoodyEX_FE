@@ -2621,7 +2621,7 @@ body {
   background-color: #fff;
 }
 .navbar_top_header .container_navbar_top_header .navbar-brand .img-navbar-brand {
-  transition: all 1 ease;
+  transition: all 1s ease;
   padding-left: 12px !important;
 }
 .navbar_top_header .container_navbar_top_header .selection_container .list_selection {
@@ -2659,12 +2659,12 @@ body {
   background-color: #1A233A !important;
 }
 .scrolled .container_navbar_top_header .img-navbar-brand {
-  transition: all 1 ease;
+  transition: all 0.4s ease;
   height: 0px;
 }
 .scrolled .container_navbar_top_header .selection_container {
-  transition: all 1 ease;
-  transform: translateX(-2%);
+  transition: all 1s ease;
+  transform: translateX(-3%);
 }
 .scrolled .container_navbar_top_header .selection_container .list_selection {
   margin-left: 0px;
@@ -3402,7 +3402,7 @@ body {
 }
 
 .custom-modal-width {
-  max-width: 1400px !important;
+  max-width: 1200px !important;
 }
 .custom-modal-width .modal-content {
   position: relative;
@@ -3867,4 +3867,9 @@ body {
 }
 .more-products .container-more-products .pagination-container .pagination {
   display: flex;
+}
+
+.fade-list-products {
+  opacity: 0;
+  transition: opacity 0.5s;
 }

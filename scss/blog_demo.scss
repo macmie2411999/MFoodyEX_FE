@@ -667,5 +667,10 @@ $text-c10-grey: #172033;
     }
 }
 
+// Fade when switch page in List Products
+.fade {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
 
 // Main Style END
