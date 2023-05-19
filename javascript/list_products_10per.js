@@ -9,7 +9,7 @@ function createProductCard() {
         <img src="../image/products/Vegetable_Avovado_3.webp" class="card-img-top" alt="...">
         <div class="card-body">
             <span class="rated-star card-text"><i class="fa-solid fa-star"></i> 4.2 </span>
-            <h5 class="card-title">Name Product </h5>
+            <h5 class="card-title">Name Product Name Product Name Product </h5>
         </div>
         <div class="card-footer">
             <button class="tag-prices">

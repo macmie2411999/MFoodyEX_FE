@@ -76,12 +76,13 @@ $text-c10-grey: #172033;
 
 // Main Style
 // body {
-    
+
 // }
 
 .catalog-full-list {
     zoom: 0.8;
     margin-top: 150px;
+
     // margin-bottom: 50px;
     // max-width: 1200px;
     // margin-right: auto;
@@ -449,6 +450,7 @@ $text-c10-grey: #172033;
 
                     .container {
                         box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+
                         .row {
                             margin-top: 10px;
 
@@ -494,7 +496,7 @@ $text-c10-grey: #172033;
                                 .splide__track {
                                     .splide__list {
                                         .splide__slide {
-
+                                            // width: 33.33333% !important;
                                             padding: 15px 10px 15px 5px;
 
                                             .product {
@@ -508,20 +510,29 @@ $text-c10-grey: #172033;
                                                 transition: all 0.2s ease;
 
                                                 &:hover {
-                                                    // box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
-                                                    // box-shadow: 0 0 10px $text-c3-primary;
                                                     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-                                                    // box-shadow: 7px 10px rgba(0, 0, 0, 0.1);
-                                                    // box-shadow: 0 0 10px $text-c5-grey;
                                                     margin-top: -5px;
                                                 }
 
                                                 .container-product {
                                                     padding: 0 !important;
                                                     margin: 0 !important;
+                                                    background-color: white;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+
 
                                                     .image-product {
-                                                        img {}
+                                                        // width: 114px !important;
+                                                        // height: auto !important;
+                                                        // overflow: hidden;
+
+                                                        img {
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            object-fit: contain;
+                                                        }
                                                     }
 
                                                     .infor-product {
@@ -540,10 +551,18 @@ $text-c10-grey: #172033;
                                                             .product-general {
                                                                 font-weight: 600;
                                                                 margin-left: 5px;
+                                                                // margin-left: 5px;
 
-                                                                h4 {
+                                                                .name-product {
+                                                                    // margin-left: 0 !important;
+                                                                    // padding-left: 0 !important;
                                                                     font-size: 1.1rem;
                                                                     margin-bottom: 0 !important;
+                                                                    // @include processLongText();
+                                                                    text-overflow: ellipsis;
+                                                                    white-space: nowrap;
+                                                                    overflow: hidden;
+                                                                    width: 200px;
                                                                 }
 
                                                                 .product-star-and-sale {
@@ -563,7 +582,7 @@ $text-c10-grey: #172033;
 
                                                                     .tag-product {
                                                                         z-index: 2;
-                                                                        font-size: 0.8rem;
+                                                                        font-size: 0.8rem !important;
                                                                         margin-top: 0.5rem;
                                                                         color: #fff;
                                                                         background-color: $text-c2-yellow;
@@ -1373,6 +1392,7 @@ $text-c10-grey: #172033;
 
     }
 }
+
 // More Product End
 
 // Fade when switch page in List Products
