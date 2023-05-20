@@ -400,6 +400,8 @@ $text-c10-grey: #172033;
                                                                     // white-space: nowrap;
                                                                     overflow: hidden;
                                                                     width: 200px;
+                                                                    font-weight: 400 !important;
+                                                                    opacity: 0.8;
 
                                                                     white-space: normal;
                                                                     display: -webkit-box;
@@ -419,17 +421,17 @@ $text-c10-grey: #172033;
                                                                         svg {
                                                                             font-size: 1.1rem;
                                                                             margin-top: 0.5rem !important;
-                                                                            
+
                                                                             &.active-rating {
                                                                                 color: $text-c1-yellow;
                                                                             }
-                                                                    
+
                                                                             &.inactive-rating {
                                                                                 color: gray;
                                                                             }
                                                                         }
                                                                     }
-                                                                    
+
 
                                                                     .tag-product {
                                                                         z-index: 2;
@@ -500,7 +502,7 @@ $text-c10-grey: #172033;
                                                                         justify-content: center;
                                                                         padding: 0 !important;
 
-                                                                        button{
+                                                                        button {
                                                                             padding: 0 !important;
                                                                         }
 
@@ -624,9 +626,17 @@ $text-c10-grey: #172033;
 // Main Style End
 
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes pulse {
@@ -722,8 +732,6 @@ $text-c10-grey: #172033;
             opacity: 0.9 !important;
         }
 
-
-
         span {
             font-size: 12px;
         }
@@ -794,19 +802,41 @@ $text-c10-grey: #172033;
                         font-size: 1.5rem !important;
 
                         .name-product {
-                            font-size: 2rem;
+                            font-size: 1.8rem;
                             color: #000;
+                            font-weight: 400 !important;
+                            opacity: 0.7;
                         }
 
                         .rating-comments {
-                            margin-top: 5px;
+                            // margin-top: 5px;
                             margin-bottom: 5px;
 
                             .rating {
 
-                                .fa-star {
-                                    font-size: 0.9rem;
-                                    color: gold;
+                                .star-rating {
+                                    position: relative;
+                                    display: inline-block;
+                                    font-size: 1rem;
+
+                                    svg {
+                                        // font-size: 0.9rem;
+                                        // color: gold;
+                                        position: relative;
+                                        z-index: 1;
+                                        color: $text-c2-grey;
+
+                                        &.active {
+                                            color: gold !important;
+                                        }
+
+                                        &::before {
+                                            content: "\f005";
+                                            position: absolute;
+                                            z-index: 0;
+                                            color: $text-c2-grey;
+                                        }
+                                    }
                                 }
                             }
 
@@ -822,18 +852,30 @@ $text-c10-grey: #172033;
                             .button-in-card {
                                 margin-top: 10px;
                                 margin-right: 5px;
-                                // padding: 5px;
+                                // padding-top: 0 !important;
+                                // padding: 5px 10px;
                                 border-radius: 5px;
                                 border: 1px solid $text-c4-grey;
                                 background-color: #fff;
                                 transition: all 0.3s ease;
+
                                 // box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
 
                                 .link-button-in-card {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
                                     text-decoration: none;
                                     color: $text-c2-primary;
                                     transition: all 0.3s ease;
                                     font-size: 1rem;
+                                    padding: 5px !important;
+                                    // padding-top: -10px !important;
+
+                                    svg{
+                                        margin-right: 10px !important;
+                                    }
+
                                 }
 
                                 &:hover {
@@ -904,21 +946,33 @@ $text-c10-grey: #172033;
                                             display: flex;
                                             justify-content: center;
                                             align-items: center;
+                                            font-size: 0.9rem;
+                                            opacity: 0.5;
+                                            color: #000;
+
+
                                         }
+
+                                        .button-to-cart-sp {
+                                            &:hover {
+                                                color: $text-c2-primary;
+                                                opacity: 1;
+                                            }
+                                        }
+
+                                        .button-to-favorite-list-sp {
+                                            &:hover {
+                                                color: $text-c3-yellow;
+                                                opacity: 1;
+                                            }
+                                        }
+
                                     }
 
-                                    .button-to-cart {
-                                        &:hover {
-                                            color: $text-c2-primary
-                                        }
-                                    }
+                                    .button-to-cart {}
 
                                     .button-to-favorite-list {
                                         margin-top: 5px;
-
-                                        &:hover {
-                                            color: $text-c3-yellow
-                                        }
                                     }
                                 }
                             }
@@ -930,10 +984,17 @@ $text-c10-grey: #172033;
                         padding: 10px;
 
                         .section {
-                            .title-description {}
+
+                            .title-description {
+                                font-weight: 400 !important;
+                                opacity: 0.8;
+                            }
 
                             .content-description {
-                                font-size: 12px;
+                                color: #000;
+                                opacity: 0.5;
+                                font-size: 1rem !important;
+
                             }
                         }
                     }
@@ -942,9 +1003,12 @@ $text-c10-grey: #172033;
 
                         .section {
                             // padding-bottom: 5px;
+                            padding-top: 5px;
 
                             .title-delivery-information {
                                 margin-left: 10px;
+                                font-weight: 400 !important;
+                                opacity: 0.8;
                             }
 
                             .content-delivery-information {
@@ -957,21 +1021,57 @@ $text-c10-grey: #172033;
                                     opacity: 0.5;
                                 }
 
-                                .title-si {
-                                    font-size: 1.2em;
-                                    display: flex;
-                                    align-items: center;
-                                }
+                                .shipping-information-top {
+                                    padding: 5px 15px;
 
-                                .status-si {
-                                    font-size: 1.1em;
-                                    font-weight: 500;
-                                    color: $text-c2-primary;
-                                    opacity: 0.8;
+                                    .container-shipping-information-top {
+                                        // margin-left: 8px !important;
+                                        margin-right: 8px !important;
+                                        padding: 5px !important;
+                                        border-radius: 5px;
+                                        border: 1px solid #f2f3f5;
+                                        background-color: #f5f5f5;
+
+                                        // display: flex;
+                                        // align-items: center;
+                                        // justify-content: center;
+                                        // flex-direction: column;
+
+                                        col {
+
+                                            // display: flex;
+                                            // flex-direction: column;
+                                            // align-items: center;
+                                            // justify-content: center;
+                                        }
+
+                                        .address-store {
+                                            font-weight: 400 !important;
+                                            color: #000;
+                                            opacity: 0.7;
+                                            font-size: 1rem !important;
+                                        }
+
+                                        .title-si {
+                                            // font-size: 1rem;
+                                            display: flex;
+                                            align-items: center;
+                                            line-height: 1.5rem !important;
+                                        }
+
+                                        .status-si {
+                                            font-size: 0.9rem;
+                                            font-weight: 400;
+                                            color: $text-c2-primary;
+                                            opacity: 0.9;
+                                            line-height: 1.5rem !important;
+                                        }
+                                    }
                                 }
 
                                 .table-user-information {
                                     margin: -8px !important;
+                                    font-size: 0.9rem !important;
 
                                     .table {
                                         margin-top: 20px;
@@ -983,6 +1083,8 @@ $text-c10-grey: #172033;
                                         thead {
                                             th {
                                                 font-weight: bold;
+                                                color: #000;
+                                                opacity: 0.8;
                                                 background-color: #f5f5f5;
                                             }
                                         }
@@ -992,7 +1094,7 @@ $text-c10-grey: #172033;
                                                 td {
                                                     vertical-align: middle;
                                                     color: #000;
-                                                    opacity: 0.6;
+                                                    opacity: 0.5;
                                                 }
                                             }
                                         }
@@ -1104,12 +1206,13 @@ $text-c10-grey: #172033;
                     top: 0;
                     left: 0;
                     font-size: 0.8rem;
-                    margin: 0.7rem;
+                    margin: 0.5rem;
                     color: #fff;
                     background-color: $text-c2-yellow;
-                    padding: 3px 5px 3px 5px;
+                    padding: 1px 1px;
                     border-radius: 5px;
                     // cursor: pointer;
+
                 }
 
                 .heart-icon {

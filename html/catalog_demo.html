@@ -843,7 +843,7 @@
                 <div class="horizontal-line">
                     <div class="circle"></div>
                 </div>
-                
+
                 <!-- List Products 4 Start -->
                 <div class="more-products">
                     <span class="title-area title-more-products">More Products</span>
@@ -979,44 +979,6 @@
     </footer>
     <!-- FOOTER END -->
 
-    <!-- Calling jQuery -->
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-    <!-- Calling Slick Library -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <!-- BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
-        </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
-        </script>
-
-    <!-- Splider -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
-
-    <!-- Call APIs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
-        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    <script type="module" src="../javascript/call_apis/catalog_demo_pp.js"></script>
-    <!-- <script type="module" src="../javascript/call_apis/logout.js"></script> -->
-    <script src="../javascript/call_apis/processProducts.js"></script>
-    <script src="../javascript/util/LocalStorageFunction.js"></script>
-    <script src="../javascript/call_apis/localStorageAndCookieProcess.js"></script>
-
-    <!-- Import JS -->
-    <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
-    <script type="module" src="../javascript/header_scroll_down.js"></script>
-    <script src="../javascript/p_header_right_section.js"></script>
-    <script src="../javascript/catalog_show_element_in_ul.js"></script>
-    <script type="module" src="../javascript/slide_product_card_demo_2.js"></script>
-    <script type="module" src="../javascript/list_products_10per.js"></script>
-
     <!-- Product Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -1040,21 +1002,23 @@
                                     <div class="header-card part-of-card">
                                         <span class="name-product">Name Product</span>
                                         <div class="rating-comments row">
+
                                             <div class="col-xs-5 col-sm-4 rating">
-                                                <span class="text-in-card-information">Rating:
-                                                </span>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="text-in-card-information">Rating:</span>
+                                                <div class="star-rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
                                             </div>
                                             <div class="col-xs-4 col-sm-4 comments">
                                                 <span class="text-in-card-information">Comments:
                                                     5054 </span>
                                             </div>
                                             <div class="col-xs-3 col-sm-4 id-product">
-                                                <span class="text-in-card-information">ID:
+                                                <span class="text-in-card-information id-product">ID:
                                                     92834</span>
                                             </div>
                                         </div>
@@ -1089,7 +1053,7 @@
                                             <div class="col-xs-12 col-sm-6 button-container">
                                                 <div class="section">
                                                     <button class="btn button-to-cart">
-                                                        <span class="button-content">
+                                                        <span class="button-content button-to-cart-sp">
                                                             <span class="glyphicon glyphicon-shopping-cart"
                                                                 aria-hidden="true"></span>
                                                             Add to Cart
@@ -1099,7 +1063,7 @@
 
                                                 <div class="section">
                                                     <button class="btn button-to-favorite-list">
-                                                        <span class="button-content">
+                                                        <span class="button-content button-to-favorite-list-sp">
                                                             <span class="glyphicon glyphicon-heart-empty"
                                                                 aria-hidden="true"></span>
                                                             Add to Favorite List
@@ -1128,20 +1092,27 @@
                                             <h4 class="title-delivery-information">Shipping
                                                 Information</h4>
                                             <div class="content-delivery-information row">
-                                                <div class="col-xs-12 col-sm-6">
-                                                    <span class="address-store title-si"> <i
-                                                            class="fa-solid fa-location-dot"></i>
-                                                        MFoody Store</span>
-                                                    <span class="status-si">Available today</span>
-                                                </div>
 
-                                                <div class="col-xs-12 col-sm-6">
-                                                    <span class="address-store title-si"> <i
-                                                            class="fa-solid fa-truck-fast"></i>
-                                                        Express
-                                                        delivery</span>
-                                                    <span class="status-si">Available today </span>
+                                                <div class="shipping-information-top">
+                                                    <div class="row container-shipping-information-top">
+                                                        <div class="col">
+                                                            <span class="address-store title-si"> <i
+                                                                    class="fa-solid fa-location-dot"></i>
+                                                                MFoody Store</span>
+                                                            <span class="status-si">Available today</span>
+                                                        </div>
+        
+                                                        <div class="col">
+                                                            <span class="address-store title-si"> <i
+                                                                    class="fa-solid fa-truck-fast"></i>
+                                                                Express
+                                                                delivery</span>
+                                                            <span class="status-si">Available today </span>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                
+                                                
 
                                                 <div class="table-user-information">
                                                     <table class="table table-bordered table-responsive-md">
@@ -1172,6 +1143,46 @@
             </div>
         </div>
     </div>
+
+    <!-- Calling jQuery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- Calling Slick Library -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+        </script>
+
+    <!-- Splider -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+
+    <!-- Call APIs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="../javascript/call_apis/catalog_demo_pp.js"></script>
+    <!-- <script type="module" src="../javascript/call_apis/logout.js"></script> -->
+    <script src="../javascript/call_apis/processProducts.js"></script>
+    <script src="../javascript/util/LocalStorageFunction.js"></script>
+    <script src="../javascript/call_apis/localStorageAndCookieProcess.js"></script>
+
+    <!-- Import JS -->
+    <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
+    <script type="module" src="../javascript/header_scroll_down.js"></script>
+    <script src="../javascript/p_header_right_section.js"></script>
+    <script src="../javascript/catalog_show_element_in_ul.js"></script>
+    <script type="module" src="../javascript/slide_product_card_demo_2.js"></script>
+    <script type="module" src="../javascript/list_products_10per.js"></script>
+
+
 </body>
 
 </html>

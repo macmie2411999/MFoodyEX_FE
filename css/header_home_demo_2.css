@@ -2617,10 +2617,10 @@ body {
 
 .scrolled {
   border-bottom: 5px solid #eee;
-  background-color: #1A233A !important;
+  background-color: #0b953a !important;
 }
 .scrolled .container_navbar_top_header {
-  background-color: #1A233A !important;
+  background-color: #0b953a !important;
 }
 .scrolled .container_navbar_top_header .img-navbar-brand {
   transition: all 0.4s ease;
@@ -2637,7 +2637,8 @@ body {
   color: #fff !important;
 }
 .scrolled .container_navbar_top_header .selection_container .list_selection .nav-item:hover .nav-link {
-  color: #009f4d !important;
+  color: gold !important;
+  opacity: 1;
 }
 .scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar a {
   color: #fff !important;
@@ -2645,7 +2646,7 @@ body {
 }
 .scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar a:hover {
   background: transparent !important;
-  color: #1CAF37 !important;
+  color: gold !important;
 }
 .scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar .fontawesome-search {
   color: #fff !important;
@@ -2653,7 +2654,7 @@ body {
 }
 .scrolled .container_navbar_top_header .selection_container .header_right_section .container_header_right_section .toolbar .fontawesome-search:hover {
   background: transparent !important;
-  color: #1CAF37 !important;
+  color: gold !important;
 }
 
 .wrap-sliders {

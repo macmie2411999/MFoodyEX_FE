@@ -122,10 +122,12 @@ $text-c11-grey: #151421;
 
 .scrolled {
   border-bottom: 5px solid $text-c8-grey;
-  background-color: $text-c9-grey !important;
+  // background-color: $text-c9-grey !important;
+  background-color: darken($text-c6-primary, 10%) !important;
 
   .container_navbar_top_header {
-    background-color: $text-c9-grey !important;
+    // background-color: $text-c9-grey !important;
+    background-color: darken($text-c6-primary, 10%) !important;
 
     .img-navbar-brand {
       transition: all 0.4s ease;
@@ -147,7 +149,9 @@ $text-c11-grey: #151421;
 
           &:hover {
             .nav-link {
-              color: $text-c3-primary !important;
+              // color: $text-c3-primary !important;
+              color: gold!important;
+              opacity: 1;
             }
           }
         }
@@ -162,7 +166,7 @@ $text-c11-grey: #151421;
 
               &:hover {
                 background: transparent !important;
-                color: $text-c2-primary !important;
+                color: gold !important;
               }
             }
 
@@ -172,7 +176,7 @@ $text-c11-grey: #151421;
 
               &:hover {
                 background: transparent !important;
-                color: $text-c2-primary !important;
+                color: gold !important;
               }
             }
           }
