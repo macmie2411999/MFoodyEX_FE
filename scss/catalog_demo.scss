@@ -279,174 +279,7 @@ $text-c10-grey: #172033;
 
                     .products_title {}
 
-                    .row {
-
-                        // margin: 10px;
-                        // margin-bottom: 5px !important;
-
-                        // .col {
-                        //     .card {
-                        //         // scale: 0.9;
-                        //         width: 369;
-                        //         height: 334;
-                        //         background: #fff;
-                        //         position: relative;
-                        //         box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
-                        //         transition: all 0.3s ease-in-out;
-
-                        //         &:hover {
-                        //             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-                        //         }
-
-                        //         .tag-product {
-                        //             z-index: 2;
-                        //             position: absolute;
-                        //             top: 0;
-                        //             left: 0;
-                        //             font-size: 15px;
-                        //             margin: 1rem;
-                        //             color: #fff;
-                        //             background-color: $text-c2-yellow;
-                        //             padding: 3px 5px 3px 5px;
-                        //             border-radius: 5px;
-                        //             // cursor: pointer;
-                        //         }
-
-                        //         .heart-icon {
-                        //             z-index: 2;
-                        //             position: absolute;
-                        //             top: 0;
-                        //             right: 0;
-                        //             font-size: 1.8rem;
-                        //             margin: 1rem;
-                        //             cursor: pointer;
-
-                        //             svg {
-                        //                 color: $text-c2-grey;
-                        //                 border-radius: 50%;
-                        //                 transition: color 0.3s ease-in-out;
-                        //             }
-
-                        //             svg:hover {
-                        //                 color: $text-c1-primary;
-                        //                 cursor: pointer;
-                        //             }
-                        //         }
-
-                        //         img {
-                        //             scale: 0.7;
-                        //         }
-
-                        //         .card-body {
-                        //             padding-bottom: 0px !important; 
-                        //             .rated-star {
-                        //                 svg {
-                        //                     color: $text-c1-yellow;
-                        //                     font-size: 1.3rem;
-                        //                 }
-                        //             }
-
-                        //             .card-title {
-                        //                 padding-top: 10px;
-                        //                 @include fontAdjust(300, 1.2rem, 29px);
-                        //                 @include processLongText();
-                        //                 color: #000;
-                        //                 padding-bottom: 0 !important;
-                        //             }
-
-                        //             .card-text {
-
-                        //                 @include fontAdjust(300, 20px, 24px);
-                        //                 color: #CBC9C9;
-                        //             }
-                        //         }
-
-
-                        //         .card-footer {
-                        //             width: 369;
-                        //             padding-top: 0 !important;
-                        //             margin-top: 0 !important;
-                        //             border-top: transparent;
-                        //             background-color: #fff;
-                        //             display: flex;
-
-                        //             .tag-prices {
-                        //                 width: 50%;
-                        //                 display: flex;
-                        //                 // flex-direction: row;
-                        //                 // justify-content: space-between;
-                        //                 flex-wrap: nowrap;
-                        //                 justify-content: center;
-                        //                 align-items: center;
-                        //                 background: #fff !important;
-                        //                 border: none !important;
-                        //                 // height: 64px;
-
-                        //                 button{
-                        //                     padding-top: 0 !important;
-                        //                     padding-bottom: 0 !important;
-                        //                 }
-
-                        //                 .tag-sale-price {
-                        //                     background: #fff;
-                        //                     border-color: transparent;
-                        //                     font-size: 28px;
-                        //                     padding-right: 5px;
-                        //                     color: $text-c3-yellow;
-                        //                 }
-
-                        //                 .tag-full-price {
-                        //                     font-size: 18px;
-                        //                     text-align: left;
-                        //                     color: $text-c7-grey;
-                        //                     text-decoration: line-through;
-                        //                     text-decoration-line: 5px;
-                        //                     text-decoration-color: $text-c7-grey;
-                        //                     text-decoration-thickness: 2px;
-                        //                 }
-                        //             }
-
-
-                        //             .more-infor {
-                        //                 width: 25%;
-                        //                 height: 64px;
-                        //                 background: #fff;
-                        //                 border-color: transparent;
-
-                        //                 a {
-                        //                     text-decoration: none !important;
-                        //                     @include fontAdjust(200px, 24px, 29px);
-                        //                     color: #000;
-                        //                 }
-
-                        //             }
-
-                        //             .to-cart {
-                        //                 width: 25%;
-                        //                 height: 64px;
-                        //                 background: #fff;
-                        //                 @include fontAdjust(600, 24px, 29px);
-                        //                 text-align: center;
-                        //                 color: #000;
-                        //                 border-color: transparent;
-                        //                 border-radius: 50%;
-
-                        //             }
-
-                        //             svg {
-                        //                 color: $text-c2-primary;
-                        //                 font-size: 1.5rem;
-                        //                 transition: all 0.4s ease-in-out;
-                        //             }
-
-                        //             svg:hover {
-                        //                 scale: 1.3;
-                        //                 cursor: pointer;
-                        //             }
-                        //         }
-                        //     }
-                        // }
-                    }
+                    .row {}
 
                     .container {
                         box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
@@ -539,8 +372,10 @@ $text-c10-grey: #172033;
                                                         display: flex;
                                                         justify-content: center;
                                                         align-items: center;
-                                                        padding-top: 1rem;
-                                                        padding-bottom: 1rem;
+                                                        padding-top: 0.6rem;
+                                                        padding-bottom: 0.6rem;
+                                                        padding-left: 0 !important;
+                                                        padding-right: 0 !important;
                                                         position: relative;
 
                                                         .container-infor {
@@ -557,57 +392,89 @@ $text-c10-grey: #172033;
                                                                     // margin-left: 0 !important;
                                                                     // padding-left: 0 !important;
                                                                     font-size: 1.1rem;
+                                                                    line-height: 1.2; // Adjust this to fit your design
+                                                                    height: 2.4em; // height = font-size * line-height * number of lines
                                                                     margin-bottom: 0 !important;
                                                                     // @include processLongText();
                                                                     text-overflow: ellipsis;
-                                                                    white-space: nowrap;
+                                                                    // white-space: nowrap;
                                                                     overflow: hidden;
                                                                     width: 200px;
+
+                                                                    white-space: normal;
+                                                                    display: -webkit-box;
+                                                                    -webkit-line-clamp: 2;
+                                                                    /* max lines to display */
+                                                                    -webkit-box-orient: vertical;
                                                                 }
 
                                                                 .product-star-and-sale {
                                                                     text-align: center;
                                                                     align-items: center;
-                                                                    padding-left: 10px;
+                                                                    padding-left: 0 !important;
                                                                     padding-top: 0 !important;
                                                                     margin-top: 0 !important;
 
                                                                     .rated-star {
                                                                         svg {
-                                                                            color: $text-c1-yellow;
                                                                             font-size: 1.1rem;
                                                                             margin-top: 0.5rem !important;
+                                                                            
+                                                                            &.active-rating {
+                                                                                color: $text-c1-yellow;
+                                                                            }
+                                                                    
+                                                                            &.inactive-rating {
+                                                                                color: gray;
+                                                                            }
                                                                         }
                                                                     }
+                                                                    
 
                                                                     .tag-product {
                                                                         z-index: 2;
-                                                                        font-size: 0.8rem !important;
-                                                                        margin-top: 0.5rem;
+                                                                        font-size: 1rem !important;
+                                                                        margin: 0.5rem;
                                                                         color: #fff;
                                                                         background-color: $text-c2-yellow;
-                                                                        padding: 1px 2px;
+                                                                        padding: 1px 1px;
                                                                         border-radius: 5px;
+                                                                        // animation: pulse 2s infinite;
+                                                                        // animation: blink 2s infinite;
+
+                                                                        &.new-product {
+                                                                            background-color: $text-c6-primary;
+                                                                        }
+
+                                                                        &.top-rate {
+                                                                            background-color: $text-c1-yellow;
+                                                                        }
+
+                                                                        &.sale-off {
+                                                                            background-color: $text-c2-yellow;
+                                                                        }
                                                                     }
                                                                 }
 
                                                                 .product-info {
                                                                     font-size: 1.1rem;
-                                                                    // margin-top: 15px;
+                                                                    margin-top: 0.2rem !important;
 
                                                                     .product-description {
                                                                         padding-right: 10px;
                                                                     }
 
                                                                     .tag-prices {
+                                                                        padding-right: 0 !important;
                                                                         width: 100% !important;
                                                                         display: flex;
                                                                         background: #fff !important;
                                                                         border: none !important;
-                                                                        margin-top: 0.7rem;
+                                                                        // margin-top: 0.7rem;
                                                                         align-items: center !important;
                                                                         text-align: right !important;
                                                                         justify-content: center;
+                                                                        // flex-wrap: wrap; // divide lines
 
                                                                         .tag-sale-price {
                                                                             border-color: transparent;
@@ -617,19 +484,25 @@ $text-c10-grey: #172033;
                                                                         }
 
                                                                         .tag-full-price {
-                                                                            font-size: 0.9rem;
+                                                                            font-size: 1rem;
                                                                             color: $text-c5-grey;
-                                                                            // margin-left: 5px;
+                                                                            margin-left: 10px;
                                                                             text-decoration: line-through;
                                                                             text-decoration-thickness: 2px;
+                                                                            text-decoration-color: rgba(131, 131, 131, 0.4);
                                                                         }
                                                                     }
 
                                                                     .button-infor {
-                                                                        margin-top: 0.7rem;
+                                                                        // margin-top: 0.7rem;
                                                                         align-items: center !important;
-                                                                        text-align: right !important;
+                                                                        text-align: center !important;
                                                                         justify-content: center;
+                                                                        padding: 0 !important;
+
+                                                                        button{
+                                                                            padding: 0 !important;
+                                                                        }
 
                                                                         .more-infor {
                                                                             width: 40%;
@@ -749,6 +622,26 @@ $text-c10-grey: #172033;
 }
 
 // Main Style End
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 @media (max-width: 768) {
     .sidebar {

@@ -3227,8 +3227,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   position: relative;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor {
@@ -3241,45 +3243,66 @@ body {
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .name-product {
   font-size: 1.1rem;
+  line-height: 1.2;
+  height: 2.4em;
   margin-bottom: 0 !important;
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
   width: 200px;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* max lines to display */
+  -webkit-box-orient: vertical;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale {
   text-align: center;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 0 !important;
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .rated-star svg {
-  color: #FACF39;
   font-size: 1.1rem;
   margin-top: 0.5rem !important;
 }
+.catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .rated-star svg.active-rating {
+  color: #FACF39;
+}
+.catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .rated-star svg.inactive-rating {
+  color: gray;
+}
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .tag-product {
   z-index: 2;
-  font-size: 0.8rem !important;
-  margin-top: 0.5rem;
+  font-size: 1rem !important;
+  margin: 0.5rem;
   color: #fff;
   background-color: #F67E3C;
-  padding: 1px 2px;
+  padding: 1px 1px;
   border-radius: 5px;
+}
+.catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .tag-product.new-product {
+  background-color: #0FC44C;
+}
+.catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .tag-product.top-rate {
+  background-color: #FACF39;
+}
+.catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .tag-product.sale-off {
+  background-color: #F67E3C;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-info {
   font-size: 1.1rem;
+  margin-top: 0.2rem !important;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-info .product-description {
   padding-right: 10px;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-info .tag-prices {
+  padding-right: 0 !important;
   width: 100% !important;
   display: flex;
   background: #fff !important;
   border: none !important;
-  margin-top: 0.7rem;
   align-items: center !important;
   text-align: right !important;
   justify-content: center;
@@ -3290,16 +3313,21 @@ body {
   color: #C31A24;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-info .tag-prices .tag-full-price {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #757575;
+  margin-left: 10px;
   text-decoration: line-through;
   text-decoration-thickness: 2px;
+  text-decoration-color: rgba(131, 131, 131, 0.4);
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-info .button-infor {
-  margin-top: 0.7rem;
   align-items: center !important;
-  text-align: right !important;
+  text-align: center !important;
   justify-content: center;
+  padding: 0 !important;
+}
+.catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-info .button-infor button {
+  padding: 0 !important;
 }
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-info .button-infor .more-infor {
   width: 40%;
@@ -3382,6 +3410,28 @@ body {
   scale: 1.2;
 }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @media (max-width: 768) {
   .sidebar {
     display: none;

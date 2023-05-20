@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
             type: 'loop',
             perPage: 3,
             rewind: true,
-            autoplay: true,
-            interval: 3000,
-            speed: 1000,
+            autoplay: false,
+            interval: 4000,
+            speed: 2000,
             pauseOnHover: false,
             pauseOnFocus: false,
         }).mount();
