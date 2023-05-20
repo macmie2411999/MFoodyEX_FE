@@ -421,14 +421,6 @@ $text-c10-grey: #172033;
                                                                         svg {
                                                                             font-size: 1.1rem;
                                                                             margin-top: 0.5rem !important;
-
-                                                                            &.active-rating {
-                                                                                color: $text-c1-yellow;
-                                                                            }
-
-                                                                            &.inactive-rating {
-                                                                                color: gray;
-                                                                            }
                                                                         }
                                                                     }
 
@@ -690,8 +682,8 @@ $text-c10-grey: #172033;
 }
 
 .custom-modal-width {
-    max-width: 1400px !important;
-    // max-height: 100vh !important;
+    max-width: 1200px !important;
+    // max-height: 90vh !important;
     // scale: 0.9;
 
     .modal-content {
@@ -872,7 +864,7 @@ $text-c10-grey: #172033;
                                     padding: 5px !important;
                                     // padding-top: -10px !important;
 
-                                    svg{
+                                    svg {
                                         margin-right: 10px !important;
                                     }
 
@@ -1200,19 +1192,38 @@ $text-c10-grey: #172033;
                     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
                 }
 
-                .tag-product {
-                    z-index: 2;
+                // .tag-product {
+                //     z-index: 2;
+                //     position: absolute;
+                //     top: 0;
+                //     left: 0;
+                //     font-size: 0.8rem;
+                //     margin: 0.5rem;
+                //     color: #fff;
+                //     background-color: $text-c2-yellow;
+                //     padding: 1px 3px !important;
+                //     border-radius: 5px;
+                // }
+
+                .tag-container {
                     position: absolute;
                     top: 0;
                     left: 0;
-                    font-size: 0.8rem;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
                     margin: 0.5rem;
-                    color: #fff;
-                    background-color: $text-c2-yellow;
-                    padding: 1px 1px;
-                    border-radius: 5px;
-                    // cursor: pointer;
 
+                    .tag-product {
+                        z-index: 2;
+                        font-size: 0.8rem;
+                        color: #fff;
+                        // background-color: map-get($tagColors, default);
+                        padding: 2px 4px !important;
+                        border-radius: 5px;
+                        margin-right: 5px;
+                        margin-bottom: 5px;
+                    }
                 }
 
                 .heart-icon {
@@ -1258,6 +1269,12 @@ $text-c10-grey: #172033;
                         color: #000;
                         @include processLongText();
                         padding-bottom: 0 !important;
+
+                        white-space: normal;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        /* max lines to display */
+                        -webkit-box-orient: vertical;
                     }
 
                     .card-text {
@@ -1395,4 +1412,31 @@ $text-c10-grey: #172033;
 .fade-list-products {
     opacity: 0;
     transition: opacity 0.5s;
+}
+
+// Css for all
+.tag-product {
+    &.New {
+        background-color: $text-c6-primary;
+    }
+
+    &.Best {
+        background-color: $text-c1-yellow;
+    }
+
+    &.Popular {
+        background-color: darken(#ADD8E6, 20%);
+    }
+
+    &.Discount {
+        background-color: $text-c2-yellow;
+    }
+}
+
+.active-rating {
+    color: $text-c1-yellow !important;
+}
+
+.inactive-rating {
+    color: rgb(223, 224, 226) !important;
 }

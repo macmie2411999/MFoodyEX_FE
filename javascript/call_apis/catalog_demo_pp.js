@@ -21,17 +21,20 @@ const token_user = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJpZFVzZXJcIjoyMTUyMzEsXCJ
 
 var arrayAllProducts = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllProducts");
 
-// Check arrays valid
+// Check arrays valid and Render
 if (arrayAllProducts === null || arrayAllProducts.length === 0) {
     console.log("MFoody - arrayAllProducts is not valid!");
     // Automatically call APIs when page is loaded
     getAllProductsApi();
     arrayAllProducts = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllProducts");
-} else {
-    renderProductsToTSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20), 'list_product_sale_off', "Sale Off");
-    renderProductsToTSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20), 'list_product_top_rate', "Top Rate");
-    renderProductsToTSplider(processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20), 'list_product_new_product', "New");
-    // processlistProducts.sortByPopularityDesc(arrayAllProducts);
+}
+renderProductsToSpliderss();
+
+// Render
+function renderProductsToSpliderss() {
+    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20), 'list_product_sale_off', "Sale Off");
+    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20), 'list_product_top_rate', "Top Rate");
+    renderProductsToSplider(processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20), 'list_product_new_product', "New");
 }
 
 // Call APIs
@@ -51,10 +54,6 @@ function getAllProductsApi() {
 
         // Save to Cookies
         customLocalStorage.saveItemToLocalStorage(res.data, "MFoody - arrayAllProducts");
-        // customLocalStorage.saveItemToLocalStorage(processlistProducts.sortByRatingDesc(res.data), "MFoody - arrayAllProducts - sortByRatingDesc");
-        // customLocalStorage.saveItemToLocalStorage(processlistProducts.getDiscountedlistProducts(res.data), "MFoody - arrayAllProducts - getDiscountedlistProducts");
-        // customLocalStorage.saveItemToLocalStorage(processlistProducts.sortByNewnessDesc(res.data), "MFoody - arrayAllProducts - sortByNewnessDesc");
-        // customLocalStorage.saveItemToLocalStorage(processlistProducts.sortByPopularityDesc(res.data), "MFoody - arrayAllProducts - sortByPopularityDesc");
     })
 
     promise.catch(function (err) {
@@ -63,72 +62,7 @@ function getAllProductsApi() {
     })
 };
 
-// function renderProductsToTSplider(arrayProducts, idElementListProducts, tagProduct) {
-//     console.log("Render.");
-//     let contentHTML = '';
-//     for (let product of arrayProducts) {
-
-//         // Process Present Tag Of Products
-//         let tagClass = "";
-//         if (tagProduct === "New") {
-//             tagClass = "new-product";
-//         } else if (tagProduct === "Top Rate") {
-//             tagClass = "top-rate";
-//         } else if (tagProduct === "Sale Off") {
-//             tagClass = "sale-off";
-//         }
-
-//         // Process Present Ratting Of Products
-//         let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
-
-//         contentHTML += `
-//         <div class=" splide__slide ">
-//             <div class="product" data-bs-toggle="modal"
-//                 data-bs-target="#staticBackdrop">
-//                 <div class="row container-product">
-//                     <div class="col-md-5 image-product">
-//                         <img class="img-fluid mx-auto d-block image"
-//                             src="../image/products/${product.albumProduct}.webp">
-//                     </div>
-//                     <div class="col-md-7 infor-product">
-//                         <div class="row container-infor">
-//                             <div class="product-general">
-//                                 <h4 href="#" class="name-product">${product.nameProduct}</h4>
-//                                 <div class="row product-star-and-sale">
-//                                     <span class="col tag-product ${tagClass}"> ${tagProduct}
-//                                     </span>
-//                                     <span class="col rated-star card-text"><i
-//                                             class="fa-solid fa-star ${ratingClass}"></i>
-//                                             ${product.ratingProduct} </span>
-//                                 </div>
-//                                 <div class="row product-info">
-//                                     <div class="col tag-prices">
-//                                         <span
-//                                             class="col tag-sale-price product-price">${product.salePriceProduct}₽</span>
-//                                         <span class="col tag-full-price">${product.fullPriceProduct}₽</span>
-//                                     </div>
-//                                     <div class="col button-infor">
-//                                         <button class="more-infor">
-//                                             <a
-//                                                 href="../detail.html?idShoes=${product.idProduct}"><i
-//                                                     class="fa-solid fa-magnifying-glass"></i></a></button>
-//                                         <button class="to-cart"><i
-//                                                 class="fa-solid fa-cart-plus"></i></button>
-//                                     </div>
-
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//             `;
-//     }
-//     document.getElementById(idElementListProducts).innerHTML = contentHTML;
-// }
-
-function renderProductsToTSplider(arrayProducts, idElementListProducts, tagProduct) {
+function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduct) {
     console.log("Render.");
     let contentHTML = '';
     for (let product of arrayProducts) {
@@ -160,8 +94,7 @@ function renderProductsToTSplider(arrayProducts, idElementListProducts, tagProdu
                             <div class="product-general">
                                 <h4 href="#" class="name-product">${product.nameProduct}</h4>
                                 <div class="row product-star-and-sale">
-                                    <span class="col tag-product ${tagClass}"> ${tagProduct}
-                                    </span>
+                                    <span class="col tag-product ${tagClass}"> ${tagProduct}</span>
                                     <span class="col rated-star card-text"><i
                                             class="fa-solid fa-star ${ratingClass}"></i>
                                             ${product.ratingProduct} </span>
@@ -192,6 +125,7 @@ function renderProductsToTSplider(arrayProducts, idElementListProducts, tagProdu
     document.getElementById(idElementListProducts).innerHTML = contentHTML;
 }
 
+// Process Modal
 document.getElementById('staticBackdrop').addEventListener('show.bs.modal', function (event) {
     // Button that triggered the modal
     var button = event.relatedTarget;
@@ -240,7 +174,6 @@ function updateModal(product) {
             fullPriceElement.textContent = product.fullPriceProduct + "₽/Kg";
         }
     }
-
 
     // update the full price
     modal.querySelector('.in-stock').textContent = product.storehouseQuantityProduct + " Products in Stock";

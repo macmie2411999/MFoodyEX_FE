@@ -3269,12 +3269,6 @@ body {
   font-size: 1.1rem;
   margin-top: 0.5rem !important;
 }
-.catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .rated-star svg.active-rating {
-  color: #FACF39;
-}
-.catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .rated-star svg.inactive-rating {
-  color: gray;
-}
 .catalog-full-list .container-catalog-full-list .content .main_products .container_products .container .row .splide .splide__track .splide__list .splide__slide .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .tag-product {
   z-index: 2;
   font-size: 1rem !important;
@@ -3466,7 +3460,7 @@ body {
 }
 
 .custom-modal-width {
-  max-width: 1400px !important;
+  max-width: 1200px !important;
 }
 .custom-modal-width .modal-content {
   position: relative;
@@ -3814,17 +3808,23 @@ body {
 .more-products .container-more-products .productList .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-.more-products .container-more-products .productList .card .tag-product {
-  z-index: 2;
+.more-products .container-more-products .productList .card .tag-container {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 0.5rem;
+}
+.more-products .container-more-products .productList .card .tag-container .tag-product {
+  z-index: 2;
+  font-size: 0.8rem;
   color: #fff;
-  background-color: #F67E3C;
-  padding: 1px 1px;
+  padding: 2px 4px !important;
   border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 .more-products .container-more-products .productList .card .heart-icon {
   z-index: 2;
@@ -3863,6 +3863,11 @@ body {
   text-overflow: ellipsis;
   max-width: 100%;
   padding-bottom: 0 !important;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* max lines to display */
+  -webkit-box-orient: vertical;
 }
 .more-products .container-more-products .productList .card .card-body .card-text {
   font-size: 1.1rem;
@@ -3973,4 +3978,25 @@ body {
 .fade-list-products {
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.tag-product.New {
+  background-color: #0FC44C;
+}
+.tag-product.Best {
+  background-color: #FACF39;
+}
+.tag-product.Popular {
+  background-color: #5fb3ce;
+}
+.tag-product.Discount {
+  background-color: #F67E3C;
+}
+
+.active-rating {
+  color: #FACF39 !important;
+}
+
+.inactive-rating {
+  color: rgb(223, 224, 226) !important;
 }
