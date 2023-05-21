@@ -1,4 +1,3 @@
-
 // -byMacMie
 
 var processlistProducts = {
@@ -107,7 +106,7 @@ var processlistProducts = {
         if (productDate >= baseDate) {
             tags.push("New");
         }
-        console.log(tags);
+
         return tags;
     },
 

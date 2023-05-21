@@ -1,89 +1,77 @@
 // -by Mac Mie
 // Import class User
 
-// import { token_admin, token_user } from './default_tokens';
+import { token_admin, token_user } from './default_tokens.js';
 import { product_getAll_local, product_deleteByID_local } from './default_apis.js';
+import { getAllComments, getAllCommentsApi, countTotalNumberCommentsApi } from './comments_apis.js';
+import { getAllProducts, getAllProductsApi, countTotalNumberProductsApi } from './products_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
-
-// Get current user's token
-// const token_current_admin = customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser");
-
-// var arrayAllProducts = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllProducts");
-// if(arrayAllProducts.length > 0) {
-//     renderProductsToTableProducts(arrayAllProducts);
-// }
+const productsPerPage = 10;
+let currentPage = 1;
+let productsGeneral = [];
+let arrayAllProducts = [];
+let arrayAllComments = [];
 
 // **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
 
-const token_user = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJpZFVzZXJcIjoyMTUyMzEsXCJlbWFpbFVzZXJcIjpcInJvYmluc29uaGFua0BnbWFpbC5jb21cIixcInBhc3N3b3JkVXNlclwiOlwiJDJhJDEyJGlYUGthTjBFeS5MRmhQTGJEZGcwU3VvMDdNQ3lEazlGNEFhQk1DWXNFWVRVdzZIRGV0UURtXCIsXCJuYW1lVXNlclwiOlwiUm9iaW5zb24gSGFua1wiLFwicGhvbmVOdW1iZXJVc2VyXCI6XCI4OTM0MTE4MzAwNVwiLFwiYWRkcmVzc1VzZXJcIjpcIlRleGFzLCBVU0FcIixcInJvbGVVc2VyXCI6XCJBRE1JTlwiLFwibGlzdENyZWRpdENhcmRzXCI6W3tcImlkQ2FyZFwiOjQzMDcxMSxcIm5hbWVVc2VyQ2FyZFwiOlwiUm9iaW5zb24gSGFua1wiLFwibnVtYmVyQ2FyZFwiOlwiNjU4OTY1MjM0MzU0ODg5NlwiLFwiZXhwaXJhdGlvbkNhcmRcIjpcIjAxLzAxLzIzXCIsXCJzZWN1cml0eUNvZGVDYXJkXCI6XCI3MTRcIn1dLFwibGlzdENhcnRzXCI6W3tcImlkQ2FydFwiOjM1MDA2MCxcInF1YW50aXR5QWxsUHJvZHVjdHNJbkNhcnRcIjoxLFwidG90YWxTYWxlUHJpY2VDYXJ0XCI6NTAuMCxcInRvdGFsRnVsbFByaWNlQ2FydFwiOjUwLjAsXCJsaXN0RGV0YWlsUHJvZHVjdENhcnRzXCI6W3tcImlkRGV0YWlsUHJvZHVjdENhcnRNRm9vZHlcIjp7XCJpZENhcnRcIjozNTAwNjAsXCJpZFByb2R1Y3RcIjo1MzAwMjJ9LFwicXVhbnRpdHlEZXRhaWxQcm9kdWN0Q2FydFwiOjEsXCJzYWxlUHJpY2VEZXRhaWxQcm9kdWN0Q2FydFwiOjUwLjAsXCJmdWxsUHJpY2VEZXRhaWxQcm9kdWN0Q2FydFwiOjUwLjB9XX1dLFwibGlzdENvbW1lbnRzXCI6W3tcImlkQ29tbWVudFwiOjYwODc1MSxcInJhdGluZ0NvbW1lbnRcIjo0LFwiY29udGVudENvbW1lbnRcIjpcIlRoZSBwcm9kdWN0cyBpcyBPS0FZXCJ9LHtcImlkQ29tbWVudFwiOjYwODc1NCxcInJhdGluZ0NvbW1lbnRcIjozLFwiY29udGVudENvbW1lbnRcIjpcIlRoZSBwcm9kdWN0IGlzIG9rYXksIGJ1dCBJIGV4cGVjdGVkIGJldHRlciBxdWFsaXR5IGZvciB0aGUgcHJpY2UuXCJ9LHtcImlkQ29tbWVudFwiOjYwODgwMixcInJhdGluZ0NvbW1lbnRcIjo1LFwiY29udGVudENvbW1lbnRcIjpcIkknbSBpbXByZXNzZWQgd2l0aCB0aGUgdmFyaWV0eSBvZiB2ZWdhbiBvcHRpb25zIGF2YWlsYWJsZS4gVGhlIHF1YWxpdHkgaXMgdG9wLW5vdGNoLlwifSx7XCJpZENvbW1lbnRcIjo2MDg5MjYsXCJyYXRpbmdDb21tZW50XCI6MyxcImNvbnRlbnRDb21tZW50XCI6XCJUaGUgZ29vZHMgYXJlIHNhdGlzZmFjdG9yeS4gVGhleSBtZWV0IG15IGJhc2ljIG5lZWRzLlwifV19IiwiaWF0IjoxNjg0NTMwMzY2LCJleHAiOjE2ODQ1NTkxNjZ9.Ryjzx1p1qojsDJ0_XVi2thacIbSzZo3zBwFRsZSling";
+async function run() {
+    arrayAllProducts = await getAllProducts(); // Add await here
+    arrayAllComments = await getAllComments(); // Assuming getAllComments is also async
+    
+    productsGeneral = processlistProducts.getRandomProducts(processlistProducts.getRemainingProducts(
+        arrayAllProducts, processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
+        processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
+        processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20)), 100);
 
-var arrayAllProducts = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllProducts");
-
-// Check arrays valid and Render
-if (arrayAllProducts === null || arrayAllProducts.length === 0) {
-    console.log("MFoody - arrayAllProducts is not valid!");
-    // Automatically call APIs when page is loaded
-    getAllProductsApi();
-    arrayAllProducts = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllProducts");
+    renderProductsToSpliderss();
+    showProducts();
+    updatePagination();
 }
-renderProductsToSpliderss();
+
+run();
+
 
 // Render
 function renderProductsToSpliderss() {
-    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20), 'list_product_sale_off', "Sale Off");
-    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20), 'list_product_top_rate', "Top Rate");
+    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20), 'list_product_sale_off', "Discount");
+    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20), 'list_product_top_rate', "Best");
     renderProductsToSplider(processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20), 'list_product_new_product', "New");
 }
 
 // Call APIs
-function getAllProductsApi() {
-    let promise = axios({
-        url: product_getAll_local,
-        method: 'GET',
-        headers: {
-            // 'Authorization': 'Bearer ' + token_current_admin
-            'Authorization': 'Bearer ' + token_user
-        }
-    })
-
-    promise.then(function (res) {
-        // Handle if successfully get data
-        console.log(res.data);
-
-        // Save to Cookies
-        customLocalStorage.saveItemToLocalStorage(res.data, "MFoody - arrayAllProducts");
-    })
-
-    promise.catch(function (err) {
-        // Handle if failed
-        console.log(err);
-    })
-};
-
 function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduct) {
-    console.log("Render.");
+    console.log("Render renderProductsToSplider");
     let contentHTML = '';
+    let tempPrice = '';
     for (let product of arrayProducts) {
 
         // Process Present Tag Of Products
-        let tagClass = "";
-        if (tagProduct === "New") {
-            tagClass = "new-product";
-        } else if (tagProduct === "Top Rate") {
-            tagClass = "top-rate";
-        } else if (tagProduct === "Sale Off") {
-            tagClass = "sale-off";
-        }
+        // let tagClass = "";
+        // if (tagProduct === "New") {
+        //     tagClass = "new-product";
+        // } else if (tagProduct === "Top Rate") {
+        //     tagClass = "top-rate";
+        // } else if (tagProduct === "Sale Off") {
+        //     tagClass = "sale-off";
+        // }
 
         // Process Present Ratting Of Products
         let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
 
+        // Process Price
+        if (product.salePriceProduct === product.fullPriceProduct) {
+            tempPrice = `<span class="col tag-sale-price product-price product-not-sale">${product.salePriceProduct}₽</span>`
+        } else {
+            tempPrice = `<span class="col tag-sale-price product-price">${product.salePriceProduct}₽</span>
+                         <span class="col tag-full-price">${product.fullPriceProduct}₽</span>`
+        }
+
         contentHTML += `
-        <div class=" splide__slide " data-product-id="${product.idProduct}">
+        <div class=" splide__slide " >
             <div class="product" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
+                data-bs-target="#staticBackdrop" data-product-id="${product.idProduct}">
                 <div class="row container-product">
                     <div class="col-md-5 image-product">
                         <img class="img-fluid mx-auto d-block image"
@@ -94,16 +82,14 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
                             <div class="product-general">
                                 <h4 href="#" class="name-product">${product.nameProduct}</h4>
                                 <div class="row product-star-and-sale">
-                                    <span class="col tag-product ${tagClass}"> ${tagProduct}</span>
+                                    <span class="col tag-product ${tagProduct}"> ${tagProduct}</span>
                                     <span class="col rated-star card-text"><i
                                             class="fa-solid fa-star ${ratingClass}"></i>
                                             ${product.ratingProduct} </span>
                                 </div>
                                 <div class="row product-info">
                                     <div class="col tag-prices">
-                                        <span
-                                            class="col tag-sale-price product-price">${product.salePriceProduct}₽</span>
-                                        <span class="col tag-full-price">${product.fullPriceProduct}₽</span>
+                                        ${tempPrice}
                                     </div>
                                     <div class="col button-infor">
                                         <button class="more-infor">
@@ -127,21 +113,30 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
 
 // Process Modal
 document.getElementById('staticBackdrop').addEventListener('show.bs.modal', function (event) {
+
     // Button that triggered the modal
-    var button = event.relatedTarget;
+    let button = event.relatedTarget;
+
+    // Move up the DOM to the parent element with 'product' or 'card' class
+    let parentElement = button.closest('.product, .card');
+
     // Extract product id from data-* attribute
-    var productId = button.parentElement.getAttribute('data-product-id');
+    let productId = parentElement.getAttribute('data-product-id');
 
     // find the product in arrayAllProducts
-    var product = arrayAllProducts.find(item => item.idProduct == productId);
+    let product = arrayAllProducts.find(item => item.idProduct == productId);
+    console.log(productId)
 
     // update modal content
     updateModal(product);
 });
 
+
 function updateModal(product) {
+
+    console.log(product)
     // find the modal
-    var modal = document.getElementById('staticBackdrop');
+    let modal = document.getElementById('staticBackdrop');
 
     // update the product image
     modal.querySelector('#product-image').src = "../image/products/" + product.albumProduct + ".webp";
@@ -150,7 +145,7 @@ function updateModal(product) {
     modal.querySelector('.name-product').textContent = product.nameProduct;
 
     // update the product rating
-    var ratingElement = modal.querySelector('.star-rating');
+    let ratingElement = modal.querySelector('.star-rating');
     ratingElement.innerHTML = createRatingStars(product.ratingProduct);
 
 
@@ -164,12 +159,12 @@ function updateModal(product) {
     modal.querySelector('.name-category').innerHTML = `<i class="fa-solid fa-tag"></i> ${product.categoryProduct}`;
 
     // update the sale price
-    modal.querySelector('.sale-price').textContent = product.salePriceProduct + "₽/Kg";
+    modal.querySelector('.sale-price').textContent = product.salePriceProduct + "₽/" + product.weightProduct;
 
     // update the full price
-    var priceElement = modal.querySelector('.sale-price');
+    let priceElement = modal.querySelector('.sale-price');
     if (priceElement) {
-        var fullPriceElement = priceElement.querySelector('.full-price');
+        let fullPriceElement = priceElement.querySelector('.full-price');
         if (fullPriceElement) {
             fullPriceElement.textContent = product.fullPriceProduct + "₽/Kg";
         }
@@ -205,6 +200,105 @@ function createRatingStars(rating) {
 
     return starsHTML;
 }
+
+function createProductCard(product) {
+    let tempPrice = '';
+
+    // Process Present Rating Of Products
+    let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
+
+    // Create tags for the product
+    let tags = processlistProducts.generateProductTags(product, 4, 1, 40, '22/04/2023');
+    let tagsHtml = tags.map(tag => `<span class="tag-product ${tag}"> ${tag} </span>`).join('');
+
+    // Process Price
+    if (product.salePriceProduct === product.fullPriceProduct) {
+        tempPrice = `<span class="tag-sale-price product-not-sale">${product.salePriceProduct}₽</span>`
+    } else {
+        tempPrice = `<span class="tag-sale-price">${product.salePriceProduct}₽</span>
+                     <span class="tag-full-price">${product.fullPriceProduct}₽</span>`
+    }
+
+    return `
+        <div class="card" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-product-id="${product.idProduct}">
+            <div class="tag-container">
+                ${tagsHtml}
+            </div>
+            <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
+            <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <span class="rated-star card-text"><i class="fa-solid fa-star ${ratingClass}"></i> ${product.ratingProduct} </span>
+                <h5 class="card-title">${product.nameProduct}</h5>
+            </div>
+            <div class="card-footer">
+                <button class="tag-prices">
+                    ${tempPrice}
+                </button>
+                <button class="more-infor"> <a href="../detail.html?idProduct=1"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+                <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+        </div>`;
+
+}
+
+function showProducts() {
+    const productList = $("#productList");
+    productList.addClass("fade");
+
+    setTimeout(() => {
+        productList.empty();
+
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = Math.min(startIndex + productsPerPage, productsGeneral.length);
+
+        for (let i = startIndex; i < endIndex; i++) {
+            productList.append(createProductCard(productsGeneral[i]));
+        }
+
+        productList.removeClass("fade");
+    }, 500);
+}
+
+function updatePagination() {
+    const pagination = $("#pagination");
+    pagination.empty();
+
+    const totalPages = Math.ceil(productsGeneral.length / productsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = $(`<button class="page-btn">${i}</button>`);
+        btn.click(() => {
+            currentPage = i;
+            showProducts();
+            updatePagination();
+        });
+
+        if (i === currentPage) {
+            btn.addClass("active");
+        }
+
+        pagination.append(btn);
+    }
+}
+
+$("#prevBtn").click(() => {
+    if (currentPage > 1) {
+        currentPage--;
+        showProducts();
+        updatePagination();
+    }
+});
+
+$("#nextBtn").click(() => {
+    const totalPages = Math.ceil(productsGeneral.length / productsPerPage);
+
+    if (currentPage < totalPages) {
+        currentPage++;
+        showProducts();
+        updatePagination();
+    }
+});
+
 
 
 

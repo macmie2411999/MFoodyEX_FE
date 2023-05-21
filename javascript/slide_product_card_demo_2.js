@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             type: 'loop',
             perPage: 3,
             rewind: true,
-            autoplay: true,
+            autoplay: false,
             interval: 4000,
             speed: 2000,
             pauseOnHover: false,

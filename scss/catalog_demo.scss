@@ -430,23 +430,23 @@ $text-c10-grey: #172033;
                                                                         font-size: 1rem !important;
                                                                         margin: 0.5rem;
                                                                         color: #fff;
-                                                                        background-color: $text-c2-yellow;
+                                                                        // background-color: $text-c2-yellow;
                                                                         padding: 1px 1px;
                                                                         border-radius: 5px;
                                                                         // animation: pulse 2s infinite;
                                                                         // animation: blink 2s infinite;
 
-                                                                        &.new-product {
-                                                                            background-color: $text-c6-primary;
-                                                                        }
+                                                                        // &.new-product {
+                                                                        //     background-color: $text-c6-primary;
+                                                                        // }
 
-                                                                        &.top-rate {
-                                                                            background-color: $text-c1-yellow;
-                                                                        }
+                                                                        // &.top-rate {
+                                                                        //     background-color: $text-c1-yellow;
+                                                                        // }
 
-                                                                        &.sale-off {
-                                                                            background-color: $text-c2-yellow;
-                                                                        }
+                                                                        // &.sale-off {
+                                                                        //     background-color: $text-c2-yellow;
+                                                                        // }
                                                                     }
                                                                 }
 
@@ -466,7 +466,7 @@ $text-c10-grey: #172033;
                                                                         border: none !important;
                                                                         // margin-top: 0.7rem;
                                                                         align-items: center !important;
-                                                                        text-align: right !important;
+                                                                        text-align: left !important;
                                                                         justify-content: center;
                                                                         // flex-wrap: wrap; // divide lines
 
@@ -501,8 +501,9 @@ $text-c10-grey: #172033;
                                                                         .more-infor {
                                                                             width: 40%;
                                                                             height: 30px;
-                                                                            background: #fff;
-                                                                            border-color: transparent;
+                                                                            background: transparent;
+                                                                            border: none;
+                                                                            // border-color: transparent;
 
                                                                             a {
                                                                                 text-decoration: none !important;
@@ -515,12 +516,13 @@ $text-c10-grey: #172033;
                                                                         .to-cart {
                                                                             width: 40%;
                                                                             height: 30px;
-                                                                            background: #fff;
+                                                                            background: transparent;
                                                                             @include fontAdjust(600, 1.3rem, 29px);
                                                                             text-align: center;
                                                                             color: #000;
-                                                                            border-color: transparent;
-                                                                            border-radius: 50%;
+                                                                            border: none;
+                                                                            // border-color: transparent;
+                                                                            // border-radius: 50%;
                                                                         }
 
                                                                         svg {
@@ -1145,7 +1147,6 @@ $text-c10-grey: #172033;
         }
 
         .page-btn {
-            padding: 10px;
             background-color: #f1f1f1;
             border: none;
             cursor: pointer;
@@ -1319,10 +1320,13 @@ $text-c10-grey: #172033;
                         }
 
                         .tag-full-price {
+                            margin-left: 10px;
                             font-size: 0.9rem;
                             text-align: left;
-                            color: $text-c2-grey;
+                            color: #757575;
                             text-decoration: line-through;
+                            text-decoration-thickness: 2px;
+                            text-decoration-color: rgba(131,131,131,.4);
                         }
                     }
 
@@ -1375,16 +1379,11 @@ $text-c10-grey: #172033;
             margin-top: 10px;
 
             .pagination-btn {
-                padding: 10px;
                 background-color: #f1f1f1;
                 border: none;
                 cursor: pointer;
                 font-weight: bold;
 
-                background-color: #f1f1f1;
-                border: none;
-                cursor: pointer;
-                font-weight: bold;
                 padding: 10px 20px !important;
                 margin: 2px !important;
                 border-radius: 2px;
@@ -1397,12 +1396,8 @@ $text-c10-grey: #172033;
 
             .pagination {
                 display: flex;
-
             }
-
-
         }
-
     }
 }
 
@@ -1417,19 +1412,19 @@ $text-c10-grey: #172033;
 // Css for all
 .tag-product {
     &.New {
-        background-color: $text-c6-primary;
+        background-color: $text-c6-primary !important;
     }
 
     &.Best {
-        background-color: $text-c1-yellow;
+        background-color: $text-c1-yellow !important;
     }
 
     &.Popular {
-        background-color: darken(#ADD8E6, 20%);
+        background-color: darken(#ADD8E6, 20%) !important;
     }
 
     &.Discount {
-        background-color: $text-c2-yellow;
+        background-color: $text-c2-yellow !important;
     }
 }
 
@@ -1439,4 +1434,11 @@ $text-c10-grey: #172033;
 
 .inactive-rating {
     color: rgb(223, 224, 226) !important;
+}
+
+.tag-prices {
+    .product-not-sale {
+        color: $text-c6-primary !important;
+        margin-left: 0 !important;
+    }
 }

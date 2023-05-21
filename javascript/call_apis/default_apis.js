@@ -35,6 +35,7 @@ export const feedback_deleteByID_local = "http://localhost:8080/feedback/delete/
 
 // CommentMfoody
 export const comment_getAll_local = "http://localhost:8080/comment/getAll";
+export const comment_countTotalNumber_local = "http://localhost:8080/comment/countTotal";
 
 // Application
 export const application_login_local = "http://localhost:8080/applicationMfoody/login";
