@@ -1,6 +1,9 @@
 import { token_admin, token_user } from './default_tokens.js';
 import { product_countTotalNumber_local, product_getAll_local } from './default_apis.js';
 
+// Get current user's token
+const token_current_user = customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser");
+
 export async function getAllProducts() {
     let arrayAllProducts = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllProducts");
 
@@ -26,7 +29,7 @@ export async function getAllProductsApi() {
             method: 'GET',
             headers: {
                 // 'Authorization': 'Bearer ' + token_current_admin
-                'Authorization': 'Bearer ' + token_user
+                'Authorization': 'Bearer ' + token_current_user
             }
         });
 

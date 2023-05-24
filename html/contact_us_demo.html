@@ -53,220 +53,211 @@
 <body>
 
     <!-- HEADER -->
-    <header class="header" id="justHeader">
-        <div class="container_header py-md-4">
-            <!-- NAVBAR 1 -->
-            <nav class="top_container_header">
-                <div class="rol-1">
-                    <div class="container_logo_brand">
-                        <!-- LOGO -->
-                        <h1>
-                            <a class="brand_company">
-                                <img src="../image/icon/icon_gfgl_green_64.png" alt="Company Logo">
-                                <span class="logo">
-                                    MFoody
-                                </span>
+    <nav class="navbar navbar-expand-lg navbar_top_header">
+        <div class="container-fluid container_navbar_top_header">
+            <a class="navbar-brand" href="#">
+                <img width="auto" height="50" class="img-navbar-brand"
+                    src="../image/icon/icon_logo_brand_updated1_crop.png" alt="Company Logo">
+            </a>
 
-                                <span class="content_logo">Vegetarian Grocery Store</span>
-                            </a>
-                        </h1>
-                    </div>
-                    <div class="container_search">
-                        <!-- Search -->
-                        <form class="search-form" action="" method="">
-                            <input class="input-search" type="search" placeholder="Search" aria-label="email"
-                                required="">
-                            <button class="btn btn-search" type="submit"><span class="fa fa-search"></span></button>
-                        </form>
-                        <!-- Search End -->
-                    </div>
-                    <div class="container_icons">
-                        <!-- Icons -->
-                        <span class="fa fa-searchsolid fa-heart" style="margin-right: 60px"></span>
-                        <span class="fa-solid fa-cart-shopping" style="margin-right: 60px"></span>
-                        <span class="fa-solid fa-user" style="margin-right: 60px"></span>
-                    </div>
-                </div>
-            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse selection_container" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 list_selection">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ'S</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            CATALOG
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">CTL1</a></li>
+                            <li><a class="dropdown-item" href="#">CTL2</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">CTL3</a></li>
+                        </ul>
+                    </li> -->
 
-            <div class="bottom_container_header">
-                <!-- NAVBAR 2-->
-                <nav class="navbar navbar-expand-lg bg-light bg-transparent">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                </ul>
 
-                        <div class="collapse navbar-collapse item-navbar" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="home_page.html">HOME</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about_page.html">PRODUCTS</a>
-                                </li>
+                <form class="header_right_section" action="#" method="GET">
 
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        PAGES
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="blog_posts_page.html">BLOG POSTS</a></li>
-                                        <li><a class="dropdown-item" href="404_page.html">404 PAGE</a></li>
-                                        <li><a class="dropdown-item" href="single_landing_page.html">LANDING PAGE</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="elements_page.html">ELEMENT PAGE</a></li>
-                                    </ul>
-                                </li> -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">BLOG</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">CONTACT</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about_page.html">ABOUT US</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">Faq's</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                    <fieldset class="container_header_right_section">
+
+                        <ul class="toolbar">
+                            <li><input type="search" id="search" placeholder="What are you looking for?"></li>
+                            <li><button type="submit" id="btn-search"><span class="fontawesome-search"></span></button>
+                            </li>
+                            <li><a href="#" class="fontawesome-heart"></a></li>
+                            <li><a href="#" class="fontawesome-user"></a></li>
+                            <li><a href="#" class="fontawesome-shopping-cart "></a></li>
+                        </ul>
+
+                    </fieldset>
+
+                </form>
+
             </div>
         </div>
-    </header>
+    </nav>
     <!-- HEADER END -->
 
     <!-- CONTACT US PAGE -->
-    <section class="contact py-4">
-        <!-- BreadCrumb -->
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Contact</li>
-            </ol>
-        </nav>
-        <br>
-        <!-- BreadCrumb End -->
-        <div class="contact-container pt-lg-5 pt-md-3">
+    <div class="contact-general">
 
-            <div class="contact-title-content text-center mb-md-5 mb-4">
-                <h3 class="title mx-lg-5">MFoody Contact Information</h3>
-                <p class="title-content mt-2">Contact us with any questions, comments, or concerns you may have. We're
-                    here to help!</p>
-            </div>
+        <section class="contact-breadcrumb py-4">
+            <!-- BreadCrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+            <br>
+            <!-- BreadCrumb End -->
+        </section>
 
-            <div class="contact-info">
-                <div class="row contact-info-container justify-content-center">
+        <section class="contact py-4">
 
-                    <div class="first-element col-lg-4 col-md-6">
-                        <div class="element-contact-info">
-                            <div class="icon-element fa-2x">
-                                <span class="fa fa-compass"></span>
-                            </div>
-                            <div class="text-element">
-                                <h3 class="mb-2">Location</h3>
-                                <p>MFoody Store, Moscow, Russia.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="contact-container pt-lg-5 pt-md-3">
 
-                    <div class="second-element col-lg-4 col-md-6 mt-md-0 mt-4">
-                        <div class="element-contact-info">
-                            <div class="icon-element fa-2x">
-                                <span class="fa fa-phone"></span>
-                            </div>
-                            <div class="text-element">
-                                <h3 class="mb-2">Phone Number</h3>
-                                <p><a href="tel:89653682225">
-                                        +7 (965) 368 22-25</a></p>
-                                <p><a href="tel:89654251122">
-                                        +7 (965) 425 11-22</a></p>
+                <div class="contact-title-content text-center mb-md-5 mb-4">
+                    <h3 class="title mx-lg-5">MFoody Contact Information</h3>
+                    <p class="title-content mt-2">Contact us with any questions, comments, or concerns you may have.
+                        We're
+                        here to help!</p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="row contact-info-container justify-content-center">
+
+                        <div class="first-element col-lg-4 col-md-6">
+                            <div class="element-contact-info">
+                                <div class="icon-element fa-2x">
+                                    <span class="fa fa-compass"></span>
+                                </div>
+                                <div class="text-element">
+                                    <h3 class="mb-2">Location</h3>
+                                    <p>MFoody Store, Moscow, Russia.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="third-element col-lg-4 col-md-6 mt-lg-0 mt-4">
-                        <div class="element-contact-info">
-                            <div class="icon-element">
-                                <span class="fa fa-envelope fa-2x"></span>
+                        <div class="second-element col-lg-4 col-md-6 mt-md-0 mt-4">
+                            <div class="element-contact-info">
+                                <div class="icon-element fa-2x">
+                                    <span class="fa fa-phone"></span>
+                                </div>
+                                <div class="text-element">
+                                    <h3 class="mb-2">Phone Number</h3>
+                                    <p><a href="tel:89653682225">
+                                            +7 (965) 368 22-25</a></p>
+                                    <p><a href="tel:89654251122">
+                                            +7 (965) 425 11-22</a></p>
+                                </div>
                             </div>
-                            <div class="text-element">
-                                <h3 class="mb-2">Contact Email</h3>
-                                <p> <a href="mailto:caoducmanh2411999@gmail.com">
-                                        mfoodystore@gmail.com</a></p>
-                                <p> <a href="mailto:caoducmanh2411999@gmail.com">
-                                        mfoodysupport@gmail.com</a></p>
+                        </div>
+
+                        <div class="third-element col-lg-4 col-md-6 mt-lg-0 mt-4">
+                            <div class="element-contact-info">
+                                <div class="icon-element">
+                                    <span class="fa fa-envelope fa-2x"></span>
+                                </div>
+                                <div class="text-element">
+                                    <h3 class="mb-2">Contact Email</h3>
+                                    <p> <a href="mailto:caoducmanh2411999@gmail.com">
+                                            mfoodystore@gmail.com</a></p>
+                                    <p> <a href="mailto:caoducmanh2411999@gmail.com">
+                                            mfoodysupport@gmail.com</a></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- Map -->
-    <section class="map-contact" id="contact">
-        <div class="map-container">
-            <div class="map pt-lg-3">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.284438846266!2d37.61872166566613!3d55.75356094940135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5755bf392d%3A0xcf78004a0c9a79cd!2sKrasnaya%20ploshchad&#39;%2C%20Moskva%2C%20109012!5e0!3m2!1sen!2sru!4v1678696473718!5m2!1sen!2sru"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- Map -->
+        <section class="map-contact" id="contact">
+            <div class="map-container">
+                <div class="map pt-lg-3">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.284438846266!2d37.61872166566613!3d55.75356094940135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5755bf392d%3A0xcf78004a0c9a79cd!2sKrasnaya%20ploshchad&#39;%2C%20Moskva%2C%20109012!5e0!3m2!1sen!2sru!4v1678696473718!5m2!1sen!2sru"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- Map End -->
+        </section>
+        <!-- Map End -->
 
-    <!-- Form Contact -->
-    <!-- Deviding Line -->
-    <div class="horizontal-line">
-        <div class="circle"></div>
+        <!-- Form Contact -->
+        <!-- Deviding Line -->
+        <div class="horizontal-line">
+            <div class="circle"></div>
+        </div>
+        <section class="form-contact">
+            <div class="form-contact-over py-5">
+                <div class="form-contact-container py-lg-3">
+                    <div class="form-content">
+                        <div class="form-content-container">
+                            <form action="" method="">
+                                <div class="form-title-content">
+                                    <h3 class="title text-center mb-2">Let’s talk about your experience!</h3>
+                                    <p class="title-form mb-lg-5 mb-4 text-center">Whether you have a question or
+                                        concern,
+                                        we'd love to hear from you. Use the form below to get in touch!</p>
+                                    <div class="form-top">
+                                        <div class="basic-infor">
+                                            <input type="text" name="Name" id="Name" placeholder="Name" required="">
+                                            <input type="email" name="Email" id="Email" placeholder="Email" required="">
+                                        </div>
+                                        <br>
+                                        <div class="form-top-right">
+                                            <input name="Title" id="Title" placeholder="Title" required=""></input>
+                                        </div>
+                                        <br>
+                                        <div class="form-bottom-right">
+                                            <textarea name="Message" id="Message" placeholder="Message"
+                                                required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="submit text-center">
+                                        <button type="submit" class="btn btn-style btn-primary">
+                                            Submit Now</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Form Contact End -->
     </div>
-    <section class="form-contact">
-        <div class="form-contact-over py-5">
-            <div class="form-contact-container py-lg-3">
-                <div class="form-content">
-                    <div class="form-content-container">
-                        <form action="" method="">
-                            <div class="form-title-content">
-                                <h3 class="title text-center mb-2">Let’s talk about your experience!</h3>
-                                <p class="title-form mb-lg-5 mb-4 text-center">Whether you have a question or concern,
-                                    we'd love to hear from you. Use the form below to get in touch!</p>
-                                <div class="form-top">
-                                    <div class="basic-infor">
-                                        <input type="text" name="Name" id="Name" placeholder="Name" required="">
-                                        <input type="email" name="Email" id="Email" placeholder="Email" required="">
-                                    </div>
-                                    <br>
-                                    <div class="form-top-right">
-                                        <input name="Title" id="Title" placeholder="Title" required=""></input>
-                                    </div>
-                                    <br>
-                                    <div class="form-bottom-right">
-                                        <textarea name="Message" id="Message" placeholder="Message"
-                                            required=""></textarea>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="submit text-center">
-                                    <button type="submit" class="btn btn-style btn-primary">
-                                        Submit Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Form Contact End -->
     <!-- CONTACT US PAGE END -->
 
     <!-- FOOTER -->
@@ -401,7 +392,8 @@
         </script>
 
     <!-- Import JS -->
-    <!-- <script type="module" src="../javascript/slick_carousel_header_home.js"></script> -->
+    <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
+    <script type="module" src="../javascript/header_scroll_down.js"></script>
 </body>
 
 </html>

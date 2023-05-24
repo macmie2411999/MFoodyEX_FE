@@ -130,9 +130,11 @@ $text-c11-grey: #151421;
     background-color: darken($text-c6-primary, 10%) !important;
 
     .img-navbar-brand {
-      transition: all 0.4s ease;
-      // transform: translateX(-100%);
-      height: 0px;
+      // transition: all 0.4s ease;
+      // transform: translateX(-200%);
+      // height: 0px;
+      height: 20px;
+      opacity: 0;
     }
 
     .selection_container {

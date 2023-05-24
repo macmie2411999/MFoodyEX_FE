@@ -45,8 +45,11 @@ var customLocalStorage = {
         // Check if localStorage have any Array whose name matches with nameArrayProvided
 
         var stringItemProvided = localStorage.getItem(nameItemProvided);
+        if(stringItemProvided === 'undefined'){
+            return null;
+        }
+        
         resultArray = JSON.parse(stringItemProvided);
-
         return resultArray;
     },
     /**

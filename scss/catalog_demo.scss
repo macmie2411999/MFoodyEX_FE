@@ -7,6 +7,8 @@
 // @import '../scss/footer_home_demo.scss';
 @import '../scss/header_home_demo_2.scss';
 @import '../scss/footer_home_demo_2.scss';
+@import '../scss/splider_and_modal.scss';
+@import '../scss/table_products.scss';
 
 // Card
 // @import '../scss/p_product_card.scss';
@@ -75,10 +77,6 @@ $text-c10-grey: #172033;
 }
 
 // Main Style
-// body {
-
-// }
-
 .catalog-full-list {
     zoom: 0.8;
     margin-top: 150px;
@@ -287,1158 +285,311 @@ $text-c10-grey: #172033;
                         .row {
                             margin-top: 10px;
 
-                            .splide {
-                                &:hover {
-                                    .splide__arrows {
-                                        display: block;
-                                    }
-                                }
-
-                                .splide__arrows {
-                                    display: none;
-
-                                    .splide__arrow--prev {
-                                        width: 40px;
-                                        height: 40px;
-                                        background-color: #fff !important;
-                                        left: -5px;
-                                        box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
-                                        opacity: 2;
-                                    }
-
-                                    .splide__arrow--next {
-                                        width: 40px;
-                                        height: 40px;
-                                        background-color: #fff !important;
-                                        right: -5px;
-                                        box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
-                                        opacity: 2;
-                                    }
-
-                                    .splide__arrow svg {
-                                        transition: all 0.2s ease;
-                                    }
-
-                                    .splide__arrow svg:hover {
-                                        fill: $text-c2-primary;
-                                    }
-
-
-                                }
-
-                                .splide__track {
-                                    .splide__list {
-                                        .splide__slide {
-                                            // width: 33.33333% !important;
-                                            padding: 15px 10px 15px 5px;
-
-                                            .product {
-                                                padding-top: 5px;
-                                                padding-bottom: 5px;
-                                                display: flex;
-                                                align-items: center;
-                                                border: 1px solid $text-c2-grey !important;
-                                                border-radius: 5px;
-                                                box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
-                                                transition: all 0.2s ease;
-
-                                                &:hover {
-                                                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-                                                    margin-top: -5px;
-                                                }
-
-                                                .container-product {
-                                                    padding: 0 !important;
-                                                    margin: 0 !important;
-                                                    background-color: white;
-                                                    display: flex;
-                                                    justify-content: center;
-                                                    align-items: center;
-
-
-                                                    .image-product {
-                                                        // width: 114px !important;
-                                                        // height: auto !important;
-                                                        // overflow: hidden;
-
-                                                        img {
-                                                            width: 100%;
-                                                            height: 100%;
-                                                            object-fit: contain;
-                                                        }
-                                                    }
-
-                                                    .infor-product {
-                                                        display: flex;
-                                                        justify-content: center;
-                                                        align-items: center;
-                                                        padding-top: 0.6rem;
-                                                        padding-bottom: 0.6rem;
-                                                        padding-left: 0 !important;
-                                                        padding-right: 0 !important;
-                                                        position: relative;
-
-                                                        .container-infor {
-                                                            padding-top: 0px;
-                                                            // padding-right: 10px;
-                                                            text-align: left;
-
-                                                            .product-general {
-                                                                font-weight: 600;
-                                                                margin-left: 5px;
-                                                                // margin-left: 5px;
-
-                                                                .name-product {
-                                                                    // margin-left: 0 !important;
-                                                                    // padding-left: 0 !important;
-                                                                    font-size: 1.1rem;
-                                                                    line-height: 1.2; // Adjust this to fit your design
-                                                                    height: 2.4em; // height = font-size * line-height * number of lines
-                                                                    margin-bottom: 0 !important;
-                                                                    // @include processLongText();
-                                                                    text-overflow: ellipsis;
-                                                                    // white-space: nowrap;
-                                                                    overflow: hidden;
-                                                                    width: 200px;
-                                                                    font-weight: 400 !important;
-                                                                    opacity: 0.8;
-
-                                                                    white-space: normal;
-                                                                    display: -webkit-box;
-                                                                    -webkit-line-clamp: 2;
-                                                                    /* max lines to display */
-                                                                    -webkit-box-orient: vertical;
-                                                                }
-
-                                                                .product-star-and-sale {
-                                                                    text-align: center;
-                                                                    align-items: center;
-                                                                    padding-left: 0 !important;
-                                                                    padding-top: 0 !important;
-                                                                    margin-top: 0 !important;
-
-                                                                    .rated-star {
-                                                                        svg {
-                                                                            font-size: 1.1rem;
-                                                                            margin-top: 0.5rem !important;
-                                                                        }
-                                                                    }
-
-
-                                                                    .tag-product {
-                                                                        z-index: 2;
-                                                                        font-size: 1rem !important;
-                                                                        margin: 0.5rem;
-                                                                        color: #fff;
-                                                                        // background-color: $text-c2-yellow;
-                                                                        padding: 1px 1px;
-                                                                        border-radius: 5px;
-                                                                        // animation: pulse 2s infinite;
-                                                                        // animation: blink 2s infinite;
-
-                                                                        // &.new-product {
-                                                                        //     background-color: $text-c6-primary;
-                                                                        // }
-
-                                                                        // &.top-rate {
-                                                                        //     background-color: $text-c1-yellow;
-                                                                        // }
-
-                                                                        // &.sale-off {
-                                                                        //     background-color: $text-c2-yellow;
-                                                                        // }
-                                                                    }
-                                                                }
-
-                                                                .product-info {
-                                                                    font-size: 1.1rem;
-                                                                    margin-top: 0.2rem !important;
-
-                                                                    .product-description {
-                                                                        padding-right: 10px;
-                                                                    }
-
-                                                                    .tag-prices {
-                                                                        padding-right: 0 !important;
-                                                                        width: 100% !important;
-                                                                        display: flex;
-                                                                        background: #fff !important;
-                                                                        border: none !important;
-                                                                        // margin-top: 0.7rem;
-                                                                        align-items: center !important;
-                                                                        text-align: left !important;
-                                                                        justify-content: center;
-                                                                        // flex-wrap: wrap; // divide lines
-
-                                                                        .tag-sale-price {
-                                                                            border-color: transparent;
-                                                                            font-size: 1.5rem;
-                                                                            // padding-right: 5px;
-                                                                            color: $text-c3-yellow;
-                                                                        }
-
-                                                                        .tag-full-price {
-                                                                            font-size: 1rem;
-                                                                            color: $text-c5-grey;
-                                                                            margin-left: 10px;
-                                                                            text-decoration: line-through;
-                                                                            text-decoration-thickness: 2px;
-                                                                            text-decoration-color: rgba(131, 131, 131, 0.4);
-                                                                        }
-                                                                    }
-
-                                                                    .button-infor {
-                                                                        // margin-top: 0.7rem;
-                                                                        align-items: center !important;
-                                                                        text-align: center !important;
-                                                                        justify-content: center;
-                                                                        padding: 0 !important;
-
-                                                                        button {
-                                                                            padding: 0 !important;
-                                                                        }
-
-                                                                        .more-infor {
-                                                                            width: 40%;
-                                                                            height: 30px;
-                                                                            background: transparent;
-                                                                            border: none;
-                                                                            // border-color: transparent;
-
-                                                                            a {
-                                                                                text-decoration: none !important;
-                                                                                @include fontAdjust(200px, 1.3rem, 29px);
-                                                                                color: #000;
-                                                                            }
-
-                                                                        }
-
-                                                                        .to-cart {
-                                                                            width: 40%;
-                                                                            height: 30px;
-                                                                            background: transparent;
-                                                                            @include fontAdjust(600, 1.3rem, 29px);
-                                                                            text-align: center;
-                                                                            color: #000;
-                                                                            border: none;
-                                                                            // border-color: transparent;
-                                                                            // border-radius: 50%;
-                                                                        }
-
-                                                                        svg {
-                                                                            color: $text-c2-primary;
-                                                                            font-size: 1.2rem;
-                                                                            transition: all 0.4s ease-in-out;
-                                                                        }
-
-                                                                        svg:hover {
-                                                                            scale: 1.3;
-                                                                            cursor: pointer;
-                                                                        }
-                                                                    }
-
-
-                                                                }
-                                                            }
-
-                                                            .adjust-product-quantity {
-                                                                .price-general {
-                                                                    position: absolute;
-                                                                    bottom: 0;
-                                                                    right: 0;
-                                                                    margin-bottom: 0px;
-                                                                    margin-right: 15px;
-
-                                                                    .container-price-general {
-                                                                        background-color: $text-c6-primary;
-                                                                        border-radius: 5px;
-
-                                                                        .product-line-price {
-                                                                            font-size: 25px;
-                                                                            color: #fff;
-                                                                        }
-                                                                    }
-                                                                }
-
-                                                                .quantity-general {
-                                                                    position: absolute;
-                                                                    top: 0;
-                                                                    right: 0;
-
-                                                                    .quantity {
-                                                                        .quantity-input {
-                                                                            margin: auto;
-                                                                            width: 80px;
-                                                                        }
-                                                                    }
-
-                                                                    .product-removal {
-                                                                        padding-left: 20px;
-
-                                                                        .remove-product {
-                                                                            border: none;
-                                                                            height: 32px;
-                                                                            width: 32px;
-                                                                            border-radius: 5px;
-                                                                            background-color: $text-c3-yellow;
-                                                                            transition: all 0.7 ease;
-
-                                                                            svg {
-                                                                                color: #fff;
-                                                                                transition: all 0.7 ease !important;
-                                                                            }
-
-                                                                            &:hover {
-                                                                                svg {
-                                                                                    scale: 1.2;
-                                                                                }
-                                                                            }
-
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-
-                                        }
-                                    }
-                                }
-                            }
+                            // Splide SCSS Start
+                            
+                            // Splide SCSS End
                         }
                     }
                 }
             }
-
-
         }
     }
 }
-
 // Main Style End
 
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
+// -------------------------------------------------- FOR ALL --------------------------------------------------
 
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
+// Side bar RES Start
 @media (max-width: 768) {
     .sidebar {
         display: none;
     }
 }
-
-@media only screen and (max-width: 768px) {
-    .tag-full-price {
-        display: none;
-    }
-
-    .tag-sale-price {
-        font-size: 18px;
-    }
-}
-
-@media only screen and (max-width: 772px) {
-    .tag-full-price {
-        font-size: 15px;
-    }
-
-    .tag-sale-price {
-        font-size: 20px;
-    }
-}
-
-// Modal Start
-.modal-backdrop {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 1040 !important;
-}
-
-.custom-modal-width {
-    max-width: 1200px !important;
-    // max-height: 90vh !important;
-    // scale: 0.9;
-
-    .modal-content {
-        position: relative;
-        height: 5%;
-
-        .btn-close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            border-radius: 50%;
-            z-index: 2;
-            background-color: $text-c5-grey;
-            padding: 10px;
-            font-size: 1em;
-
-            &:hover {
-                background-color: red;
-                color: #fff !important;
-                text-emphasis-color: #fff;
-            }
-        }
-
-    }
-
-    .product-detail {
-        // margin-top: 220px;
-        // margin-top: 10px;
-        // margin-bottom: 10px;
-        max-width: 1400px;
-        margin-right: auto;
-        margin-left: auto;
-        align-items: center;
-
-        .title-area {
-            font-size: 20px !important;
-            font-weight: 400px !important;
-            opacity: 0.9 !important;
-        }
-
-        span {
-            font-size: 12px;
-        }
-
-        ul {
-            li {
-                margin-right: 25px;
-                font-weight: lighter;
-                cursor: pointer;
-            }
-        }
-
-        li.active {
-            border-bottom: 3px solid silver;
-        }
-
-        .product-detail-container {
-            .row {
-
-                // border-right: 2px solid $text-c2-grey;
-                .item-photo {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border: 2px solid $text-c1-grey;
-                    border-radius: 5px;
-
-                    .image-container {
-                        position: relative;
-                    }
-
-                    #product-image {
-                        width: 100%;
-                        display: block;
-                        cursor: none;
-                    }
-
-                    .magnifier {
-                        position: absolute;
-                        display: none;
-                        border: none;
-                        border-radius: 50%;
-                        width: 120px;
-                        height: 120px;
-                        overflow: hidden;
-                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-                        background-repeat: no-repeat;
-                        pointer-events: none;
-                        cursor: none;
-                    }
-
-                }
-
-                .card-information {
-
-                    .part-of-card {
-                        margin-top: 15px;
-                        padding: 5px;
-                        border-radius: 5px;
-                        border: none;
-                        background-color: #fff;
-                        box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
-                    }
-
-                    .header-card {
-                        padding: 10px;
-                        margin-top: 0;
-                        font-size: 1.5rem !important;
-
-                        .name-product {
-                            font-size: 1.8rem;
-                            color: #000;
-                            font-weight: 400 !important;
-                            opacity: 0.7;
-                        }
-
-                        .rating-comments {
-                            // margin-top: 5px;
-                            margin-bottom: 5px;
-
-                            .rating {
-
-                                .star-rating {
-                                    position: relative;
-                                    display: inline-block;
-                                    font-size: 1rem;
-
-                                    svg {
-                                        // font-size: 0.9rem;
-                                        // color: gold;
-                                        position: relative;
-                                        z-index: 1;
-                                        color: $text-c2-grey;
-
-                                        &.active {
-                                            color: gold !important;
-                                        }
-
-                                        &::before {
-                                            content: "\f005";
-                                            position: absolute;
-                                            z-index: 0;
-                                            color: $text-c2-grey;
-                                        }
-                                    }
-                                }
-                            }
-
-                            .text-in-card-information {
-                                color: #000;
-                                opacity: 0.5;
-                                font-size: 1rem !important;
-                                // font-size: 12px;
-                            }
-                        }
-
-                        .container-button-in-card {
-                            .button-in-card {
-                                margin-top: 10px;
-                                margin-right: 5px;
-                                // padding-top: 0 !important;
-                                // padding: 5px 10px;
-                                border-radius: 5px;
-                                border: 1px solid $text-c4-grey;
-                                background-color: #fff;
-                                transition: all 0.3s ease;
-
-                                // box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
-
-                                .link-button-in-card {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    text-decoration: none;
-                                    color: $text-c2-primary;
-                                    transition: all 0.3s ease;
-                                    font-size: 1rem;
-                                    padding: 5px !important;
-                                    // padding-top: -10px !important;
-
-                                    svg {
-                                        margin-right: 10px !important;
-                                    }
-
-                                }
-
-                                &:hover {
-                                    background-color: $text-c2-primary;
-
-                                    .link-button-in-card {
-                                        text-decoration: none;
-                                        color: #fff;
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-
-                    .body-card {
-                        padding: 10px;
-
-                        .price-cart-favorite {
-                            .price-container {
-                                text-align: left;
-                                margin-top: auto !important;
-                                margin-bottom: auto !important;
-
-                                .sale-price {
-                                    padding-left: 20px;
-                                    font-size: 30px;
-                                    color: $text-c3-yellow;
-                                }
-
-                                .full-price {
-                                    padding-left: 5px;
-                                    color: #000;
-                                    opacity: 0.5;
-                                    text-decoration: line-through;
-                                    text-decoration-color: rgba(0, 0, 0, 0.5);
-                                    text-decoration-thickness: 2px;
-                                    font-size: 16px;
-                                }
-
-                                .in-stock {
-                                    padding-left: 20px;
-                                    font-size: 15px;
-                                    color: $text-c2-yellow;
-                                    opacity: 0.7;
-
-                                }
-
-                            }
-
-                            .button-container {
-                                .section {
-                                    .btn {
-                                        width: 100%;
-                                        padding: 10px;
-                                        border-radius: 5px;
-                                        border: 1px solid $text-c4-grey;
-                                        background-color: #fff;
-                                        text-align: left;
-
-                                        .glyphicon {
-                                            font-size: 12px;
-                                            text-decoration-line: none;
-                                            margin-right: 20px;
-                                        }
-
-                                        .button-content {
-                                            display: flex;
-                                            justify-content: center;
-                                            align-items: center;
-                                            font-size: 0.9rem;
-                                            opacity: 0.5;
-                                            color: #000;
-
-
-                                        }
-
-                                        .button-to-cart-sp {
-                                            &:hover {
-                                                color: $text-c2-primary;
-                                                opacity: 1;
-                                            }
-                                        }
-
-                                        .button-to-favorite-list-sp {
-                                            &:hover {
-                                                color: $text-c3-yellow;
-                                                opacity: 1;
-                                            }
-                                        }
-
-                                    }
-
-                                    .button-to-cart {}
-
-                                    .button-to-favorite-list {
-                                        margin-top: 5px;
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-
-                    .bottom-card {
-                        padding: 10px;
-
-                        .section {
-
-                            .title-description {
-                                font-weight: 400 !important;
-                                opacity: 0.8;
-                            }
-
-                            .content-description {
-                                color: #000;
-                                opacity: 0.5;
-                                font-size: 1rem !important;
-
-                            }
-                        }
-                    }
-
-                    .delivery-information {
-
-                        .section {
-                            // padding-bottom: 5px;
-                            padding-top: 5px;
-
-                            .title-delivery-information {
-                                margin-left: 10px;
-                                font-weight: 400 !important;
-                                opacity: 0.8;
-                            }
-
-                            .content-delivery-information {
-                                margin-left: 3px;
-                                font-size: 12px;
-
-                                svg {
-                                    margin-right: 10px;
-                                    color: #000;
-                                    opacity: 0.5;
-                                }
-
-                                .shipping-information-top {
-                                    padding: 5px 15px;
-
-                                    .container-shipping-information-top {
-                                        // margin-left: 8px !important;
-                                        margin-right: 8px !important;
-                                        padding: 5px !important;
-                                        border-radius: 5px;
-                                        border: 1px solid #f2f3f5;
-                                        background-color: #f5f5f5;
-
-                                        // display: flex;
-                                        // align-items: center;
-                                        // justify-content: center;
-                                        // flex-direction: column;
-
-                                        col {
-
-                                            // display: flex;
-                                            // flex-direction: column;
-                                            // align-items: center;
-                                            // justify-content: center;
-                                        }
-
-                                        .address-store {
-                                            font-weight: 400 !important;
-                                            color: #000;
-                                            opacity: 0.7;
-                                            font-size: 1rem !important;
-                                        }
-
-                                        .title-si {
-                                            // font-size: 1rem;
-                                            display: flex;
-                                            align-items: center;
-                                            line-height: 1.5rem !important;
-                                        }
-
-                                        .status-si {
-                                            font-size: 0.9rem;
-                                            font-weight: 400;
-                                            color: $text-c2-primary;
-                                            opacity: 0.9;
-                                            line-height: 1.5rem !important;
-                                        }
-                                    }
-                                }
-
-                                .table-user-information {
-                                    margin: -8px !important;
-                                    font-size: 0.9rem !important;
-
-                                    .table {
-                                        margin-top: 20px;
-                                        border-collapse: separate;
-                                        border-spacing: 0;
-                                        border-radius: 10px;
-                                        overflow: hidden;
-
-                                        thead {
-                                            th {
-                                                font-weight: bold;
-                                                color: #000;
-                                                opacity: 0.8;
-                                                background-color: #f5f5f5;
-                                            }
-                                        }
-
-                                        tbody {
-                                            tr {
-                                                td {
-                                                    vertical-align: middle;
-                                                    color: #000;
-                                                    opacity: 0.5;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                            }
-                        }
-
-                    }
-
-                }
-            }
-
-
-        }
-
-    }
-}
-
-// Modal End
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .splide__slide {
-        flex-basis: calc(100% / 2);
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .splide__slide {
-        flex-basis: calc(100% / 2);
-    }
-}
-
-@media (min-width: 20px) and (max-width: 767px) {
-    .splide__slide {
-        flex-basis: calc(100% / 2);
-    }
-}
-
-// More Product
-.more-products {
-    .title-more-products {}
-
-    .container-more-products {
-
-        // max-width: 1200px;
-        margin: 5px;
-        // padding: 0 !important;
-
-        button {
-            margin: 2px !important;
-            border-radius: 2px;
-            font-size: 1.2rem !important;
-            padding: 0 !important;
-        }
-
-        .page-btn {
-            background-color: #f1f1f1;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            padding: 10px 20px !important;
-        }
-
-        .page-btn:hover {
-            background-color: #ddd;
-        }
-
-        .page-btn.active {
-            background-color: $text-c3-primary;
-            color: white;
-        }
-
-        .productList {
-            padding: 10px 0 !important;
-            margin: 0 !important;
-            box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
-            display: flex;
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            .card {
-                margin: 5px;
-                margin-bottom: 10px;
-                width: 19%;
-                // width: 18%;
-                height: 334;
-                background: #fff;
-                position: relative;
-                border-radius: 5px;
-                border: 1px solid $text-c2-grey !important;
-                box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease-in-out;
-
-                // &:last-child {
-                //     margin-right: 0;
-                // }
-
-                &:hover {
-                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-                }
-
-                // .tag-product {
-                //     z-index: 2;
-                //     position: absolute;
-                //     top: 0;
-                //     left: 0;
-                //     font-size: 0.8rem;
-                //     margin: 0.5rem;
-                //     color: #fff;
-                //     background-color: $text-c2-yellow;
-                //     padding: 1px 3px !important;
-                //     border-radius: 5px;
-                // }
-
-                .tag-container {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    margin: 0.5rem;
-
-                    .tag-product {
-                        z-index: 2;
-                        font-size: 0.8rem;
-                        color: #fff;
-                        // background-color: map-get($tagColors, default);
-                        padding: 2px 4px !important;
-                        border-radius: 5px;
-                        margin-right: 5px;
-                        margin-bottom: 5px;
-                    }
-                }
-
-                .heart-icon {
-                    z-index: 2;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    font-size: 1.5rem;
-                    margin: 0.3rem 0.7rem 0.3rem !important;
-
-                    cursor: pointer;
-
-                    svg {
-                        color: $text-c2-grey;
-                        border-radius: 50%;
-                        transition: color 0.3s ease-in-out;
-                    }
-
-                    svg:hover {
-                        color: $text-c1-primary;
-                        cursor: pointer;
-                    }
-                }
-
-                img {
-                    scale: 0.8;
-                }
-
-                .card-body {
-                    padding: 0px !important;
-
-                    .rated-star {
-                        svg {
-                            color: $text-c1-yellow;
-                            font-size: 1.3rem;
-                        }
-                    }
-
-                    .card-title {
-                        // padding-top: 5px;
-                        margin-top: 5px;
-                        font-size: 1.1rem;
-                        color: #000;
-                        @include processLongText();
-                        padding-bottom: 0 !important;
-
-                        white-space: normal;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        /* max lines to display */
-                        -webkit-box-orient: vertical;
-                    }
-
-                    .card-text {
-                        font-size: 1.1rem;
-                        color: #CBC9C9;
-                    }
-                }
-
-
-                .card-footer {
-                    width: 379;
-                    padding: 0 !important;
-                    margin-top: 0 !important;
-                    border-top: transparent;
-                    background-color: #fff;
-                    display: flex;
-
-                    .tag-prices {
-                        width: 50%;
-                        display: flex;
-                        // flex-direction: row;
-                        // justify-content: space-between;
-                        flex-wrap: nowrap;
-                        justify-content: center;
-                        align-items: center;
-                        background: #fff !important;
-                        border: none !important;
-
-                        // height: 64px;
-                        button {
-                            padding-top: 0 !important;
-                            padding-bottom: 0 !important;
-                        }
-
-                        .tag-sale-price {
-                            background: #fff;
-                            border-color: transparent;
-                            font-size: 1.5rem;
-                            padding-right: 0;
-                            text-align: left !important;
-                            color: $text-c3-yellow;
-                        }
-
-                        .tag-full-price {
-                            margin-left: 10px;
-                            font-size: 0.9rem;
-                            text-align: left;
-                            color: #757575;
-                            text-decoration: line-through;
-                            text-decoration-thickness: 2px;
-                            text-decoration-color: rgba(131,131,131,.4);
-                        }
-                    }
-
-
-                    .more-infor {
-                        width: 25%;
-                        height: 64px;
-                        background: #fff;
-                        border-color: transparent;
-
-                        a {
-                            text-decoration: none !important;
-                            @include fontAdjust(200px, 1.3rem, 29px);
-                            color: #000;
-                        }
-
-                    }
-
-                    .to-cart {
-                        width: 25%;
-                        height: 64px;
-                        background: #fff;
-                        @include fontAdjust(600, 1.3rem, 29px);
-                        text-align: center;
-                        color: #000;
-                        border-color: transparent;
-                        border-radius: 50%;
-
-                    }
-
-                    svg {
-                        color: $text-c2-primary;
-                        font-size: 1.2rem;
-                        transition: all 0.4s ease-in-out;
-                    }
-
-                    svg:hover {
-                        scale: 1.3;
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-
-        .pagination-container {
-            scale: 0.8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-
-            .pagination-btn {
-                background-color: #f1f1f1;
-                border: none;
-                cursor: pointer;
-                font-weight: bold;
-
-                padding: 10px 20px !important;
-                margin: 2px !important;
-                border-radius: 2px;
-                font-size: 1.2rem !important;
-
-                &:hover {
-                    background-color: #ddd;
-                }
-            }
-
-            .pagination {
-                display: flex;
-            }
-        }
-    }
-}
-
+// Side bar RES End
+
+// More Product (10 products per table)
+// .more-products {
+//     position: relative;
+
+//     .filter-product {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+
+//         .container-filter-product {
+//             .filter-group {
+//                 display: inline-block;
+//                 width: auto;
+//                 text-align: right;
+
+//                 .form-select {
+//                     display: inline-block;
+//                     width: auto;
+//                     padding: 5px 30px 5px 10px;
+//                     font-size: 1.2rem;
+//                     color: #000;
+//                     opacity: 0.5 !important;
+//                     font-weight: 400;
+//                     // Add any other styles for the select element
+//                 }
+//             }
+//         }
+//     }
+
+//     .title-more-products {}
+
+//     .container-more-products {
+
+//         // max-width: 1200px;
+//         margin: 5px;
+//         // padding: 0 !important;
+
+//         button {
+//             margin: 2px !important;
+//             border-radius: 2px;
+//             font-size: 1.2rem !important;
+//             padding: 0 !important;
+//         }
+
+//         .page-btn {
+//             background-color: #f1f1f1;
+//             border: none;
+//             cursor: pointer;
+//             font-weight: bold;
+//             padding: 10px 20px !important;
+//         }
+
+//         .page-btn:hover {
+//             background-color: #ddd;
+//         }
+
+//         .page-btn.active {
+//             background-color: $text-c3-primary;
+//             color: white;
+//         }
+
+//         .productList {
+//             padding: 10px 0 !important;
+//             margin: 0 !important;
+//             box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+//             display: flex;
+//             flex-wrap: wrap;
+
+//             justify-content: center;
+
+//             .card {
+//                 margin: 5px;
+//                 margin-bottom: 10px;
+//                 width: 19%;
+//                 // width: 18%;
+//                 height: 334;
+//                 background: #fff;
+//                 position: relative;
+//                 border-radius: 5px;
+//                 border: 1px solid $text-c2-grey !important;
+//                 box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+//                 transition: all 0.3s ease-in-out;
+
+//                 // &:last-child {
+//                 //     margin-right: 0;
+//                 // }
+
+//                 &:hover {
+//                     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+//                 }
+
+//                 .tag-container {
+//                     position: absolute;
+//                     top: 0;
+//                     left: 0;
+//                     display: flex;
+//                     flex-direction: row;
+//                     flex-wrap: wrap;
+//                     margin: 0.5rem;
+
+//                     .tag-product {
+//                         z-index: 2;
+//                         font-size: 0.8rem;
+//                         color: #fff;
+//                         // background-color: map-get($tagColors, default);
+//                         padding: 2px 4px !important;
+//                         border-radius: 5px;
+//                         margin-right: 5px;
+//                         margin-bottom: 5px;
+//                     }
+//                 }
+
+//                 .heart-icon {
+//                     z-index: 2;
+//                     position: absolute;
+//                     top: 0;
+//                     right: 0;
+//                     font-size: 1.5rem;
+//                     margin: 0.3rem 0.7rem 0.3rem !important;
+
+//                     cursor: pointer;
+
+//                     svg {
+//                         color: $text-c2-grey;
+//                         border-radius: 50%;
+//                         transition: color 0.3s ease-in-out;
+//                     }
+
+//                     svg:hover {
+//                         color: $text-c1-primary;
+//                         cursor: pointer;
+//                     }
+//                 }
+
+//                 img {
+//                     scale: 0.8;
+//                 }
+
+//                 .card-body {
+//                     padding: 0px !important;
+
+//                     .rated-star {
+//                         svg {
+//                             color: $text-c1-yellow;
+//                             font-size: 1.3rem;
+//                         }
+//                     }
+
+//                     .card-title {
+//                         // padding-top: 5px;
+//                         margin-top: 5px;
+//                         font-size: 1.1rem;
+//                         color: #000;
+//                         @include processLongText();
+//                         padding-bottom: 0 !important;
+
+//                         white-space: normal;
+//                         display: -webkit-box;
+//                         -webkit-line-clamp: 2;
+//                         /* max lines to display */
+//                         -webkit-box-orient: vertical;
+//                     }
+
+//                     .card-text {
+//                         font-size: 1.1rem;
+//                         color: #CBC9C9;
+//                     }
+//                 }
+
+
+//                 .card-footer {
+//                     width: 379;
+//                     padding: 0 !important;
+//                     margin-top: 0 !important;
+//                     border-top: transparent;
+//                     background-color: #fff;
+//                     display: flex;
+
+//                     .tag-prices {
+//                         width: 50%;
+//                         display: flex;
+//                         // flex-direction: row;
+//                         // justify-content: space-between;
+//                         flex-wrap: nowrap;
+//                         justify-content: center;
+//                         align-items: center;
+//                         background: #fff !important;
+//                         border: none !important;
+
+//                         // height: 64px;
+//                         button {
+//                             padding-top: 0 !important;
+//                             padding-bottom: 0 !important;
+//                         }
+
+//                         .tag-sale-price {
+//                             background: #fff;
+//                             border-color: transparent;
+//                             font-size: 1.5rem;
+//                             padding-right: 0;
+//                             text-align: left !important;
+//                             color: $text-c3-yellow;
+//                         }
+
+//                         .tag-full-price {
+//                             margin-left: 10px;
+//                             font-size: 0.9rem;
+//                             text-align: left;
+//                             color: #757575;
+//                             text-decoration: line-through;
+//                             text-decoration-thickness: 2px;
+//                             text-decoration-color: rgba(131,131,131,.4);
+//                         }
+//                     }
+
+
+//                     .more-infor {
+//                         width: 25%;
+//                         height: 64px;
+//                         background: #fff;
+//                         border-color: transparent;
+
+//                         a {
+//                             text-decoration: none !important;
+//                             @include fontAdjust(200px, 1.3rem, 29px);
+//                             color: #000;
+//                         }
+
+//                     }
+
+//                     .to-cart {
+//                         width: 25%;
+//                         height: 64px;
+//                         background: #fff;
+//                         @include fontAdjust(600, 1.3rem, 29px);
+//                         text-align: center;
+//                         color: #000;
+//                         border-color: transparent;
+//                         border-radius: 50%;
+
+//                     }
+
+//                     svg {
+//                         color: $text-c2-primary;
+//                         font-size: 1.2rem;
+//                         transition: all 0.4s ease-in-out;
+//                     }
+
+//                     svg:hover {
+//                         scale: 1.3;
+//                         cursor: pointer;
+//                     }
+//                 }
+//             }
+//         }
+
+//         .pagination-container {
+//             scale: 0.8;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             margin-top: 10px;
+
+//             .pagination-btn {
+//                 background-color: #f1f1f1;
+//                 border: none;
+//                 cursor: pointer;
+//                 font-weight: bold;
+
+//                 padding: 10px 20px !important;
+//                 margin: 2px !important;
+//                 border-radius: 2px;
+//                 font-size: 1.2rem !important;
+
+//                 &:hover {
+//                     background-color: #ddd;
+//                 }
+//             }
+
+//             .pagination {
+//                 display: flex;
+//             }
+//         }
+//     }
+// }
 // More Product End
-
-// Fade when switch page in List Products
-.fade-list-products {
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-// Css for all
-.tag-product {
-    &.New {
-        background-color: $text-c6-primary !important;
-    }
-
-    &.Best {
-        background-color: $text-c1-yellow !important;
-    }
-
-    &.Popular {
-        background-color: darken(#ADD8E6, 20%) !important;
-    }
-
-    &.Discount {
-        background-color: $text-c2-yellow !important;
-    }
-}
-
-.active-rating {
-    color: $text-c1-yellow !important;
-}
-
-.inactive-rating {
-    color: rgb(223, 224, 226) !important;
-}
-
-.tag-prices {
-    .product-not-sale {
-        color: $text-c6-primary !important;
-        margin-left: 0 !important;
-    }
-}

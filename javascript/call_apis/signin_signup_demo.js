@@ -2,9 +2,8 @@
 // Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
-import { index_page_local , signin_signup_page_local} from './default_urls_page.js';
+import { index_page_local , signin_signup_page_local, catalog_page_local} from './default_urls_page.js';
 import { application_login_local, user_getByID_local, user_getByEmail_local } from './default_apis.js';
-// import jwtDecode from "./jwt-decode.js";
 
 const signInButton = document.getElementById('button-signin');
 
@@ -82,9 +81,9 @@ function getUserByEmailApi(tokenLogin, userName) {
         console.log(currentUser);
         customLocalStorage.saveItemToLocalStorage(currentUser, "MFoody - currentUser");
 
-        if (currentUser.roleUser === "ADMIN") {
+        if (currentUser.roleUser === "USER") {
             // Direct to admin main page
-            window.location.href = index_page_local;
+            window.location.href = catalog_page_local;
         }
 
     })
