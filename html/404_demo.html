@@ -58,95 +58,63 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
-    <header class="header" id="justHeader">
-        <div class="container_header py-md-4">
-            <!-- NAVBAR 1 -->
-            <nav class="top_container_header">
-                <div class="rol-1">
-                    <div class="container_logo_brand">
-                        <!-- LOGO -->
-                        <h1>
-                            <a class="brand_company">
-                                <img src="../image/icon/icon_gfgl_green_64.png" alt="Company Logo">
-                                <span class="logo">
-                                    MFoody
-                                </span>
+    <nav class="navbar navbar-expand-lg navbar_top_header">
+        <div class="container-fluid container_navbar_top_header">
+            <a class="navbar-brand" href="#"><img width="auto" height="60" class="img-navbar-brand"
+                    src="../image/icon/icon_logo_brand_updated1_crop.png" alt="Company Logo">
+            </a>
 
-                                <span class="content_logo">Vegetarian Grocery Store</span>
-                            </a>
-                        </h1>
-                    </div>
-                    <div class="container_search">
-                        <!-- Search -->
-                        <form class="search-form" action="" method="">
-                            <input class="input-search" type="search" placeholder="Search" aria-label="email"
-                                required="">
-                            <button class="btn btn-search" type="submit"><span class="fa fa-search"></span></button>
-                        </form>
-                        <!-- Search End -->
-                    </div>
-                    <div class="container_icons">
-                        <!-- Icons -->
-                        <span class="fa fa-searchsolid fa-heart" style="margin-right: 60px"></span>
-                        <span class="fa-solid fa-cart-shopping" style="margin-right: 60px"></span>
-                        <span class="fa-solid fa-user" style="margin-right: 60px"></span>
-                    </div>
-                </div>
-            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse selection_container" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 list_selection">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="header_demo_2.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog_demo.html">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact_us_demo.html">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us_demo.html">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog_demo.html">BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq_demo.html">FAQ'S</a>
+                    </li>
+                </ul>
 
-            <div class="bottom_container_header">
-                <!-- NAVBAR 2-->
-                <nav class="navbar navbar-expand-lg bg-light bg-transparent">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                <form class="header_right_section" action="#" method="GET">
 
-                        <div class="collapse navbar-collapse item-navbar" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="home_page.html">HOME</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about_page.html">PRODUCTS</a>
-                                </li>
+                    <fieldset class="container_header_right_section">
 
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        PAGES
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="blog_posts_page.html">BLOG POSTS</a></li>
-                                        <li><a class="dropdown-item" href="404_page.html">404 PAGE</a></li>
-                                        <li><a class="dropdown-item" href="single_landing_page.html">LANDING PAGE</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="elements_page.html">ELEMENT PAGE</a></li>
-                                    </ul>
-                                </li> -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">BLOG</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">CONTACT</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about_page.html">ABOUT US</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_page.html">Faq's</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                        <ul class="toolbar">
+                            <li class="container-search"><input type="search" id="search" placeholder="What are you looking for?"></li>
+                            <li class="li-search">
+                                <button type="submit" id="btn-search">
+                                    <span class="fa-solid fa-search" id="span-search"></span>
+                                </button>
+                            </li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-heart"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-user"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
+                        </ul>
+
+                    </fieldset>
+
+                </form>
+
             </div>
         </div>
-    </header>
+    </nav>
     <!-- HEADER END -->
 
     <!-- 404 PAGE -->
@@ -156,13 +124,13 @@
 
             <div class="container-page-not-found py-lg-5 py-md-4 ">
                 <!-- BreadCrumb -->
-                <nav aria-label="breadcrumb">
+                <!-- <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">404</li>
                     </ol>
                 </nav>
-                <br>
+                <br> -->
                 <!-- BreadCrumb End -->
                 <div class="content-page-not-found align-items-center">
                     <div class="row">
@@ -201,14 +169,12 @@
         <div class="footer_embrace ">
             <div class="footer_container py-md-4">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 column_corp_vision">
+                    <div class="col-lg-4 col-md-6 column_mfoody_infor">
 
                         <div class="footer_logo mb-4">
-                            <a class="brand_company" href="home_page.html">
-                                <img src="../image/icon/icon_gfgl_green_64.png" alt="Company Logo">
-                                <span class="logo"> MFoody </span>
-
-                                <span class="content_logo"></span></a>
+                            <a class="navbar-brand" href="#"><img width="auto" height="90"
+                                    src="../image/icon/icon_logo_brand_updated3_crop.png" alt="Company Logo">
+                            </a>
                         </div>
 
                         <p class="content_company"> <a>Mfoody is a company specializing in the sale of fresh and healthy
@@ -222,7 +188,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 pr-lg-5 mt-md-0 mt-5 column_contact_info">
-                        <h6 class="name_column">Contact Infomation </h6>
+                        <h6 class="name_column">Contact Us </h6>
 
                         <p class="content_contact_info mb-2">
                             Address : MFoody Store, Moscow, Russia </p>
@@ -266,7 +232,7 @@
                     <div class="col-lg-2 col-md-6 col-sm-5 col-6 mt-lg-0 mt-5 column_follow_us">
                         <div id="follow_us-4" class="widget_follow_us">
                             <h6 class="name_column">Follow Us</h6>
-                            <div class="container_follow_us mt-md-4 mt-3">
+                            <div class="container_follow_us">
                                 <ul>
                                     <li><a href="https://www.facebook.com/mie.mac.378" class="facebook">
                                             <span class="fab fa-facebook-square fa-lg"></span>

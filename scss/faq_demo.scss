@@ -31,71 +31,6 @@ $text-c7-grey: #838384;
 $text-c8-grey: #eee;
 
 // Main Style
-// body {
-//     zoom: 0.8;
-// }
-
-// .faq-page {
-//     margin-top: 200px;
-
-//     .faq-container {
-//         max-width: 1600px;
-//         margin-right: auto;
-//         margin-left: auto;
-//         width: 100%;
-//         padding-right: 15px;
-//         padding-left: 0px;
-
-//         .faq-questions-container {
-//             .faq-ele {
-//                 margin-bottom: 20px;
-//                 border: 1px solid #ccc;
-//                 border-radius: 5px;
-//                 overflow: hidden;
-
-//                 .faq-question {
-//                     display: flex;
-//                     justify-content: space-between;
-//                     align-items: center;
-//                     padding: 15px;
-//                     cursor: pointer;
-
-//                     h4 {
-//                         margin: 0;
-//                     }
-
-//                     .faq-toggle {
-//                         border: none;
-//                         background: transparent;
-//                         font-size: 24px;
-//                         cursor: pointer;
-//                         transition: transform 0.5s ease;
-//                     }
-//                 }
-
-//                 .faq-answer {
-//                     max-height: 0;
-//                     overflow: hidden;
-//                     transition: max-height 0.5s ease;
-//                     padding: 0px 15px 15px 15px;
-
-//                     p {
-//                         margin: 0;
-//                     }
-//                 }
-//             }
-//             .faq-ele.active {
-//                 .faq-toggle {
-//                     transform: rotate(180deg);
-//                 }
-//                 .faq-answer {
-//                     max-height: 1000px;
-//                 }
-//             }
-//         }
-//     }
-// }
-
 .faq-page {
     margin-top: 150px;
     margin-bottom: 50px;
@@ -131,7 +66,7 @@ $text-c8-grey: #eee;
                 margin: 0;
                 padding: 0;
                 display: flex;
-                font-size: 30px;
+                font-size: 2em;
 
                 .nav-item {
                     text-align: center;
@@ -159,20 +94,21 @@ $text-c8-grey: #eee;
             margin-top: -100px;
 
             .title {
-                font-size: 35px;
-                line-height: 45px;
-                font-weight: 700;
+                font-size: 2.5em;
+                line-height: 2em;
+                font-weight: 400;
                 margin: 0;
                 padding: 0;
                 color: #000;
             }
 
             .title-content {
-                font-size: 25px;
-                line-height: 28px;
+                font-size: 1.6em;
+                line-height: 1.5em;
                 // color: #fff;
                 // opacity: 0.5;
                 color: #000;
+                opacity: 0.5;
                 margin: 0;
                 padding: 0;
             }
@@ -205,13 +141,15 @@ $text-c8-grey: #eee;
                         margin: 0;
                         padding: 0 10px 0 10px;
                         color: #000;
+                        // color: $text-c2-yellow;
                         opacity: 0.8;
+                        font-size: 1.5em;
                     }
 
                     .faq-toggle {
                         border: none;
                         background: transparent;
-                        font-size: 24px;
+                        font-size: 1.5em;
                         cursor: pointer;
                         transition: transform 0.5s ease;
                         // padding-right: 10px;
@@ -227,7 +165,7 @@ $text-c8-grey: #eee;
                     p {
                         padding: 15px;
                         margin: 0;
-                        font-size: 23px;
+                        font-size: 1.5em;
                         // color: $text-c4-primary;
                         color: #000;
                         opacity: 0.7;
@@ -266,7 +204,7 @@ $text-c8-grey: #eee;
                 text-align: center;
 
                 .title-faq-questions-email {
-                    font-size: 36px;
+                    font-size: 2.5em;
                     font-weight: bold;
                     margin-bottom: 20px;
                     color: #fff;
@@ -274,7 +212,7 @@ $text-c8-grey: #eee;
                 }
 
                 .content-faq-questions-email {
-                    font-size: 20px;
+                    font-size: 1.8em;
                     line-height: 1.5;
                     margin-bottom: 30px;
                     color: #fff;
@@ -282,11 +220,11 @@ $text-c8-grey: #eee;
                 }
 
                 .button-faq-questions-email {
-                    font-size: 20px;
+                    font-size: 1.5em;
                     padding: 12px 24px;
                     background-color: #f8c301;
                     border: none;
-                    color: #000;
+                    color: $text-c4-primary;
                     border-radius: 50px;
                     cursor: pointer;
                     transition: all 0.2s ease;

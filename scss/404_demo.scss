@@ -3,18 +3,24 @@
 @import '../scss/breadcrumb_demo.scss';
 
 // Header and Footer Style
-@import '../scss/header_home_demo.scss';
-@import '../scss/footer_home_demo.scss';
+// @import '../scss/header_home_demo.scss';
+// @import '../scss/footer_home_demo.scss';
+@import '../scss/header_home_demo_2.scss';
+@import '../scss/footer_home_demo_2.scss';
+@import '../scss/splider_and_modal.scss';
+@import '../scss/table_products.scss';
 
 $text-c1-primary:#AAE640;
 $text-c2-primary: #1CAF37;
 $text-c3-primary:#009f4d;
 $text-c4-primary:#015A28;
 $text-c5-primary:#408A36;
+$text-c6-primary: #0FC44C;
 
 $text-c1-yellow: #FACF39;
 $text-c2-yellow: #F67E3C;
 $text-c3-yellow: #C31A24;
+$text-c4-yellow: #C31A24;
 
 $text-c1-grey: #F8F8F8;
 $text-c2-grey: #DFE0E2;
@@ -24,15 +30,16 @@ $text-c5-grey: #757575;
 $text-c6-grey: #F8F9FA;
 $text-c7-grey: #838384;
 $text-c8-grey: #eee;
+$text-c9-grey: #1A233A;
+$text-c10-grey: #172033;
 
-body {
-    zoom: 0.8;
-}
+body {}
 
 // Main Style
 .main-page-not-found {
     // position: absolute;
-    margin-top: 115px;
+    margin-top: 100px;
+    zoom: 0.8;
 
     .page-not-found {
         background: #fff;
@@ -55,6 +62,10 @@ body {
                 .title-and-search {
                     flex: 0 0 50%;
                     max-width: 50%;
+                    // background-color: $text-c1-yellow;
+                    // background-image: url('../image/pages/404bg.jpeg');
+                    // background-size: cover;
+                    // background-position: center;
 
                     .pnf-text {
                         font-size: 100px;
@@ -70,13 +81,6 @@ body {
                     }
 
                     .pnf-content {
-                        // font-size: 30px;
-                        // font-weight: 600;
-                        // text-transform: capitalize;
-                        // line-height: 36px;
-                        // margin: 16px 0 18px 0;
-                        // padding: 0;
-
                         padding-top: 20px !important;
                         font-size: 32px;
                         line-height: 45px;
@@ -98,7 +102,7 @@ body {
                         text-align: justify;
                         // font-family: 'Montserrat', sans-serif;
                         // font-weight: 500;
-                        
+
                     }
 
                     .re-direction {
@@ -112,32 +116,25 @@ body {
                         .btn-go-back-home,
                         .btn-contact-us {
                             text-decoration: none;
-                            background-color: #fff;
-                            border: 0px solid #ccc;
+                            background-color: $text-c3-primary;
+                            border: 1px solid #ccc;
                             border-radius: 5px;
-                            color: $text-c3-primary;
+                            color: #fff;
                             font-weight: bold;
                             cursor: pointer;
                             display: inline-block;
                             padding: 10px 20px;
                             text-align: center;
                             width: 150px;
-                        }
-
-                        .btn-go-back-home {
                             margin-right: 10px;
                             font-size: 20px !important;
+                            opacity: 0.9;
                         }
 
-                        .btn-contact-us {
-                            margin-left: 10px;
-                            font-size: 20px !important;
-                        }
 
                         .btn-go-back-home:hover,
                         .btn-contact-us:hover {
-                            background-color: $text-c3-primary;
-                            color: #fff;
+                            opacity: 1;
                         }
 
                     }

@@ -28,8 +28,6 @@ $text-c11-grey: #151421;
 // Footer Style
 .footer {
     // scale: 0.8;
-    font-size: 80% !important;
-    // line-height: 80%;
 
     // format sundries
     a:hover {
@@ -41,8 +39,8 @@ $text-c11-grey: #151421;
         background-color: transparent;
         cursor: pointer !important;
         text-decoration: none;
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 1em;
+        line-height: 1.5em;
         color: #97a1a9;
         opacity: .8;
     }
@@ -62,8 +60,6 @@ $text-c11-grey: #151421;
             margin-left: auto;
             padding-top: 0px !important;
             width: 100%;
-            // padding-right: 15px;
-            // padding-left: 15px;
 
 
             .row {
@@ -71,15 +67,13 @@ $text-c11-grey: #151421;
                 flex-wrap: wrap;
                 margin: 0 !important;
                 padding: 0 !important;
-                // margin-right: -15px;
-                // margin-left: -15px;
 
                 // element 1
                 .column_mfoody_infor {
 
                     .content_company {
-                        font-size: 18px;
-                        line-height: 28px;
+                        font-size: 1em;
+                        line-height: 1.5em;
                         color: #97a1a9;
                         margin: 0;
                         padding: 0;
@@ -99,17 +93,20 @@ $text-c11-grey: #151421;
                         }
 
                         .navbar-brand {
-                            opacity: 0.9;
 
-                            &:hover {
-                                opacity: 1;
-                            }
+                            opacity: 1;
+
+                            // &:hover {
+                            //     opacity: 1;
+                            // }
                         }
                     }
 
                     .content_company {
                         a:hover {
-                            color: $text-c2-primary;
+                            // color: $text-c2-primary;
+                            // color: #fff;
+                            color: $text-c1-primary;
                             opacity: 1;
                         }
                     }
@@ -118,21 +115,21 @@ $text-c11-grey: #151421;
 
                 // format name_column in all columns
                 .name_column {
-                    font-size: 22px;
-                    line-height: 28px;
-                    margin-bottom: 25px;
+                    font-size: 1.6em;
+                    line-height: 1.5em;
+                    margin-bottom: 10px !important;
                     font-weight: 400;
                     position: relative;
                     color: #fff;
                     letter-spacing: .5px;
-                    padding-top: 35px;
+                    // padding-top: 35px;
                 }
 
                 // element 2
                 .column_contact_info {
                     .content_contact_info {
-                        font-size: 18px;
-                        line-height: 28px;
+                        font-size: 1em;
+                        line-height: 1.5em;
                         color: #97a1a9;
                         margin: 0;
                         padding: 0;
@@ -172,8 +169,8 @@ $text-c11-grey: #151421;
 
         .copyright_container {
             .content_copyright {
-                font-size: 18px;
-                line-height: 28px;
+                font-size: 0.9em;
+                line-height: 1.5em;
                 color: #97a1a9;
                 margin: 0;
                 padding: 0;
@@ -183,7 +180,7 @@ $text-c11-grey: #151421;
                 a {
                     color: $text-c1-primary;
                     font-family: 'Homemade Apple', cursive;
-                    font-size: 20px;
+                    font-size: 1.3em;
                 }
 
                 a:hover {

@@ -3,8 +3,10 @@
 @import '../scss/breadcrumb_demo.scss';
 
 // Header and Footer Style
-@import '../scss/header_home_demo.scss';
-@import '../scss/footer_home_demo.scss';
+// @import '../scss/header_home_demo.scss';
+// @import '../scss/footer_home_demo.scss';
+// @import '../scss/header_home_demo_2.scss';
+// @import '../scss/footer_home_demo_2.scss';
 
 // Card
 @import '../scss/p_product_card.scss';
@@ -33,8 +35,13 @@ $text-c10-grey: #172033;
 
 
 /* ---------- FONTAWESOME ---------- */
-@import url(https://weloveiconfonts.com/api/?family=fontawesome);
-
+// @import url(https://weloveiconfonts.com/api/?family=fontawesome);
+body {
+  padding: 0.5rem;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif !important;
+}
 
 /* ---------- GENERAL ---------- */
 
@@ -48,8 +55,8 @@ $text-c10-grey: #172033;
   // place-items: center;
   // box-sizing: border-box;
 
-  a[class*=fontawesome-]:before,
-  span[class*=fontawesome-]:before {
+  a[class*=fa-solid]:before,
+  span[class*=fa-solid]:before {
     display: block;
     font-family: "FontAwesome", sans-serif;
   }
