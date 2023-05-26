@@ -1,4 +1,4 @@
-// import { index_page_local , signin_signup_page_local} from './default_urls_page.js'
+// import { index_page_local , signin_signup_page_local, catalog_page_local} from './default_urls_page.js'
 
 var localStorageCookiesProcess = {
 
@@ -10,7 +10,7 @@ var localStorageCookiesProcess = {
 
     checkTokenAndUserInformation: function () {
         if (customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser") === null || customLocalStorage.getItemFromLocalStorage("MFoody - currentUser") === null) {
-            window.location.href = "http://127.0.0.1:5501/signin_signup_demo.html";
+            window.location.href = "http://127.0.0.1:5501/html/signin_signup_demo.html";
         }
     },
 
@@ -19,14 +19,16 @@ var localStorageCookiesProcess = {
         if(customLocalStorage.getItemFromLocalStorage("MFoody - currentUser") === null){
             checkCurrentUser = false;
         } else {
-            if(customLocalStorage.getItemFromLocalStorage("MFoody - currentUser").roleUser !== "ADMIN"){
+            if(customLocalStorage.getItemFromLocalStorage("MFoody - currentUser").roleUser !== "USER"){
                 checkCurrentUser = false;
+            } else{
+                // window.location.href = "http://127.0.0.1:5501/html/catalog_demo.html";
             }
         }
         
         if (checkCurrentUser && customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser") !== null) {
             console.log(customLocalStorage.getItemFromLocalStorage("MFoody - currentUser").roleUser)
-            window.location.href = "http://127.0.0.1:5501/index.html";
+            window.location.href = "http://127.0.0.1:5501/html/catalog_demo.html";
         } 
     },
 
@@ -35,7 +37,7 @@ var localStorageCookiesProcess = {
         if(customLocalStorage.getItemFromLocalStorage("MFoody - currentUser") === null){
             checkCurrentUser = false;
         } else {
-            if(customLocalStorage.getItemFromLocalStorage("MFoody - currentUser").roleUser !== "ADMIN"){
+            if(customLocalStorage.getItemFromLocalStorage("MFoody - currentUser").roleUser !== "USER"){
                 checkCurrentUser = false;
             }
         }
@@ -44,7 +46,7 @@ var localStorageCookiesProcess = {
             console.log(customLocalStorage.getItemFromLocalStorage("MFoody - currentUser").roleUser)
             // window.location.href = "http://127.0.0.1:5501/index.html";
         } else {
-            window.location.href = "http://127.0.0.1:5501/signin_signup_demo.html";
+            window.location.href = "http://127.0.0.1:5501/html/signin_signup_demo.html";
         }
     },
 

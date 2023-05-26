@@ -6,4 +6,4 @@ export const product_table_page_local = "http://127.0.0.1:5501/product_table.htm
 export const order_table_page_local = "http://127.0.0.1:5501/order_table.html";
 
 // Client Mfoody
-export const catalog_page_local = "http://127.0.0.1:5500/html/catalog_demo.html";
+export const catalog_page_local = "http://127.0.0.1:5501/html/catalog_demo.html";

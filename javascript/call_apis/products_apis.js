@@ -50,7 +50,7 @@ export async function countTotalNumberProductsApi() {
             url: product_countTotalNumber_local,
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + token_user
+                'Authorization': 'Bearer ' + token_current_user
             }
         });
 

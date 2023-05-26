@@ -1,5 +1,5 @@
 import { token_admin, token_user } from './default_tokens.js';
-import { comment_countTotalNumber_local, comment_getAll_local } from './default_apis.js';
+import { commentUrls } from './default_apis.js';
 
 // Get current user's token
 const token_current_user = customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser");
@@ -24,7 +24,7 @@ export async function getAllCommentsApi() {
     console.log('Call getAllCommentsApi');
     try {
         const res = await axios({
-            url: comment_getAll_local,
+            url: commentUrls.comment_getAll_local,
             method: 'GET',
             headers: {
                 // 'Authorization': 'Bearer ' + token_current_admin
@@ -46,7 +46,7 @@ export async function countTotalNumberCommentsApi() {
     console.log('Call countTotalNumberCommentsApi');
     try {
         const res = await axios({
-            url: comment_countTotalNumber_local,
+            url: commentUrls.comment_countTotalNumber_local,
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + token_user
