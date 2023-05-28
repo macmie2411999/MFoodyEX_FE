@@ -18,55 +18,55 @@ $(document).ready(function () {
 });
 
 // Zoom Image Start
-const productImage = document.getElementById("product-image");
-const magnifier = document.getElementById("magnifier");
+// const productImage = document.getElementById("product-image");
+// const magnifier = document.getElementById("magnifier");
 
-productImage.addEventListener("mousemove", (e) => {
-    magnifier.style.display = "block";
-    const rect = productImage.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+// productImage.addEventListener("mousemove", (e) => {
+//     magnifier.style.display = "block";
+//     const rect = productImage.getBoundingClientRect();
+//     const x = e.clientX - rect.left;
+//     const y = e.clientY - rect.top;
 
-    const zoomLevel = 0.5;
-    const scaleX = productImage.naturalWidth / productImage.clientWidth * zoomLevel;
-    const scaleY = productImage.naturalHeight / productImage.clientHeight * zoomLevel;
+//     const zoomLevel = 0.5;
+//     const scaleX = productImage.naturalWidth / productImage.clientWidth * zoomLevel;
+//     const scaleY = productImage.naturalHeight / productImage.clientHeight * zoomLevel;
 
-    magnifier.style.backgroundImage = `url('${productImage.src}')`;
-    magnifier.style.backgroundSize = `${productImage.clientWidth * scaleX}px ${productImage.clientHeight * scaleY}px`;
-    magnifier.style.backgroundPosition = `-${x * scaleX - 10}px -${y * scaleY - 10}px`;
+//     magnifier.style.backgroundImage = `url('${productImage.src}')`;
+//     magnifier.style.backgroundSize = `${productImage.clientWidth * scaleX}px ${productImage.clientHeight * scaleY}px`;
+//     magnifier.style.backgroundPosition = `-${x * scaleX - 10}px -${y * scaleY - 10}px`;
 
-    magnifier.style.left = `${x - 10}px`;
-    magnifier.style.top = `${y - 10}px`;
-});
+//     magnifier.style.left = `${x - 10}px`;
+//     magnifier.style.top = `${y - 10}px`;
+// });
 
-productImage.addEventListener("mouseout", () => {
-    magnifier.style.display = "none";
-});
+// productImage.addEventListener("mouseout", () => {
+//     magnifier.style.display = "none";
+// });
 
-productImage.style.cursor = "none";
+// productImage.style.cursor = "none";
 
 // Zoom Image End
 
 // Rating Stars Start
-function displayRating(rating) {
-    const ratingStars = document.querySelectorAll('.rating .fa-star');
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = (rating - fullStars) >= 0.5;
+// function displayRating(rating) {
+//     const ratingStars = document.querySelectorAll('.rating .fa-star');
+//     const fullStars = Math.floor(rating);
+//     const hasHalfStar = (rating - fullStars) >= 0.5;
 
-    for (let i = 0; i < ratingStars.length; i++) {
-        if (i < fullStars) {
-            ratingStars[i].classList.add('yellow');
-        } else if (i === fullStars && hasHalfStar) {
-            ratingStars[i].classList.add('fas', 'fa-star-half-alt', 'yellow');
-        } else {
-            ratingStars[i].classList.add('gray');
-        }
-    }
-}
+//     for (let i = 0; i < ratingStars.length; i++) {
+//         if (i < fullStars) {
+//             ratingStars[i].classList.add('yellow');
+//         } else if (i === fullStars && hasHalfStar) {
+//             ratingStars[i].classList.add('fas', 'fa-star-half-alt', 'yellow');
+//         } else {
+//             ratingStars[i].classList.add('gray');
+//         }
+//     }
+// }
 
 // Thay đổi giá trị này để kiểm tra chức năng với các rating khác nhau
-const productRating = 4.7;
-displayRating(productRating);
+// const productRating = 4.7;
+// displayRating(productRating);
 // Rating Stars End
 
 // Scroll Button

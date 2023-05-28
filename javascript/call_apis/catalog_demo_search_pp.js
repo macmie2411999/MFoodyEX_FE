@@ -108,7 +108,7 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
                                     <div class="col button-infor">
                                         <button class="more-infor">
                                             <a
-                                                href="../detail.html?idShoes=${product.idProduct}"><i
+                                                href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i
                                                     class="fa-solid fa-magnifying-glass"></i></a></button>
                                         <button class="to-cart"><i
                                                 class="fa-solid fa-cart-plus"></i></button>
@@ -187,6 +187,8 @@ function updateModal(product) {
     // update the full price
     modal.querySelector('.in-stock').textContent = product.storehouseQuantityProduct + " Products in Stock";
 
+    // update the product detail href
+    modal.querySelector('#buttonDetailProductModal').href=`../../html/product_detail_demo.html?idProduct=${product.idProduct}`;
 
     // update the product description
     modal.querySelector('.content-description').textContent = product.descriptionProduct;
@@ -248,7 +250,7 @@ function createProductCard(product) {
                 <button class="tag-prices">
                     ${tempPrice}
                 </button>
-                <button class="more-infor"> <a href="../detail.html?idProduct=1"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+                <button class="more-infor"> <a href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i class="fa-solid fa-magnifying-glass"></i></a></button>
                 <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
         </div>`;

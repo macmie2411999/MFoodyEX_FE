@@ -19,6 +19,19 @@ var processlistProducts = {
         return listProducts.filter(product => product.brandProduct === brandName);
     },
 
+    filterByCategory: function (listProducts, categoryName) {
+        return listProducts.filter(product => product.categoryProduct === categoryName);
+    },
+
+    removeProductById(listProducts, idProduct) {
+        // const productId = parseInt(idProduct, 10); // Chuyển đổi idProduct thành kiểu int
+
+        // filter
+        const filteredProducts = listProducts.filter(product => product.idProduct !== idProduct);
+
+        return filteredProducts;
+    },
+
     sortByNewnessDesc: function (listProducts) {
         return listProducts.sort((a, b) => {
             // Day to milisecond
@@ -34,6 +47,10 @@ var processlistProducts = {
             }
             return 0;
         });
+    },
+
+    getProductById: function (listProducts, productId) {
+        return listProducts.find(product => product.idProduct === productId);
     },
 
     /**
@@ -89,7 +106,7 @@ var processlistProducts = {
         // Parse dates
         const [baseDay, baseMonth, baseYear] = baseImportDateProduct.split("/");
         const baseDate = new Date(parseInt(baseYear), parseInt(baseMonth) - 1, parseInt(baseDay));
-        
+
         const [productDay, productMonth, productYear] = product.importDateProduct.split("/");
         const productDate = new Date(parseInt(productYear), parseInt(productMonth) - 1, parseInt(productDay));
 

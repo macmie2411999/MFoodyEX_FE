@@ -1,0 +1,304 @@
+// Reg Color
+$text-c1-primary:#AAE640;
+$text-c2-primary: #1CAF37;
+$text-c3-primary:#009f4d;
+$text-c4-primary:#015A28;
+$text-c5-primary:#408A36;
+$text-c6-primary: #0FC44C;
+
+$text-c1-yellow: #FACF39;
+$text-c2-yellow: #F67E3C;
+$text-c3-yellow: #C31A24;
+$text-c4-yellow: #C31A24;
+
+$text-c1-grey: #F8F8F8;
+$text-c2-grey: #DFE0E2;
+$text-c3-grey: #DEDDDC;
+$text-c4-grey: #F2F3F5;
+$text-c5-grey: #757575;
+$text-c6-grey: #F8F9FA;
+$text-c7-grey: #838384;
+$text-c8-grey: #eee;
+$text-c9-grey: #1A233A;
+$text-c10-grey: #172033;
+
+@mixin fontAdjust ($weight, $size, $height) {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+@mixin processLongText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+@mixin inlineBlocks() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin handleURL() {
+    a {
+        text-decoration: none !important;
+        color: #F6F6F6;
+        border: 1px solid #000000;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        width: 90px;
+        height: 32px;
+        top: 15px;
+    }
+}
+
+@mixin leftRightTopBottom($left, $right, $top, $bottom) {
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+}
+
+.scrolling-container {
+    display: flex;
+    overflow-x: scroll;
+    max-width: 100%;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    padding-bottom: 10px;
+
+    .scrolling-wrapper {
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .card {
+            margin-left: 10px;
+            width: 268px;
+            // width: 24%;
+            height: auto;
+            background: #fff;
+            position: relative;
+            border-radius: 5px;
+            border: 1px solid $text-c2-grey !important;
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            .tag-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 0.5rem;
+
+                .tag-product {
+                    z-index: 2;
+                    // position: absolute;
+                    // top: 0;
+                    // left: 0;
+                    font-size: 0.8rem;
+                    margin-right: 5px;
+                    margin-bottom: 5px;
+                    color: #fff;
+                    background-color: $text-c2-yellow;
+                    padding: 2px 4px;
+                    border-radius: 5px;
+                    // cursor: pointer;
+
+                }
+
+            }
+
+            .heart-icon {
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 1.5rem;
+                margin: 0.3rem 0.7rem 0.3rem !important;
+                cursor: pointer;
+
+                svg {
+                    color: $text-c2-grey;
+                    border-radius: 50%;
+                    transition: color 0.3s ease-in-out;
+                }
+
+                svg:hover {
+                    color: $text-c1-primary;
+                    cursor: pointer;
+                }
+            }
+
+            img {
+                scale: 0.8;
+            }
+
+            .card-body {
+                padding-bottom: 0px !important;
+
+                .rated-star {
+                    svg {
+                        color: $text-c1-yellow;
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .card-title {
+                    // padding-top: 5px;
+                    margin-top: 5px;
+                    font-size: 1.1rem;
+                    color: #000;
+                    // @include processLongText();
+                    padding-bottom: 0 !important;
+                    line-height: 1.2; // Adjust
+                    height: 2.4em; // height = font-size * line-height * number of lines
+                    text-overflow: ellipsis;
+                    // white-space: nowrap;
+                    overflow: hidden;
+                    // width: 200px;
+                    font-weight: 400 !important;
+                    opacity: 0.8;
+                    white-space: normal;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    /* max lines to display */
+                    -webkit-box-orient: vertical;
+                }
+
+                .card-text {
+                    font-size: 1.1rem;
+                    color: #CBC9C9;
+                }
+            }
+
+
+            .card-footer {
+                width: 379;
+                padding-top: 0 !important;
+                margin-top: 0 !important;
+                border-top: transparent;
+                background-color: #fff;
+                display: flex;
+
+                .tag-prices {
+                    width: 50%;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    background: #fff !important;
+                    border: none !important;
+
+                    // height: 64px;
+                    button {
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                    }
+
+                    .tag-sale-price {
+                        background: #fff;
+                        border-color: transparent;
+                        font-size: 1.5rem;
+                        padding-right: 0;
+                        text-align: left !important;
+                        color: $text-c3-yellow;
+                    }
+
+                    .tag-full-price {
+                        text-align: left;
+                        font-size: 1rem;
+                        color: $text-c5-grey;
+                        margin-left: 10px;
+                        text-decoration: line-through;
+                        text-decoration-thickness: 2px;
+                        text-decoration-color: rgba(131, 131, 131, 0.4);
+                    }
+                }
+
+
+                .more-infor {
+                    width: 25%;
+                    height: 64px;
+                    background: #fff;
+                    border-color: transparent;
+
+                    a {
+                        text-decoration: none !important;
+                        @include fontAdjust(200px, 1.3rem, 29px);
+                        color: #000;
+                    }
+                }
+
+                .to-cart {
+                    width: 25%;
+                    height: 64px;
+                    background: #fff;
+                    @include fontAdjust(600, 1.3rem, 29px);
+                    text-align: center;
+                    color: #000;
+                    border-color: transparent;
+                    border-radius: 50%;
+
+                }
+
+                svg {
+                    color: $text-c2-primary;
+                    font-size: 1.2rem;
+                    transition: all 0.4s ease-in-out;
+                }
+
+                svg:hover {
+                    scale: 1.3;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Css for all
+.tag-product {
+    &.New {
+        background-color: $text-c6-primary !important;
+    }
+
+    &.Best {
+        background-color: $text-c1-yellow !important;
+    }
+
+    &.Popular {
+        background-color: darken(#ADD8E6, 20%) !important;
+    }
+
+    &.Discount {
+        background-color: $text-c2-yellow !important;
+    }
+}
+
+.active-rating {
+    color: $text-c1-yellow !important;
+}
+
+.inactive-rating {
+    color: rgb(223, 224, 226) !important;
+}
+
+.tag-prices {
+    .product-not-sale {
+        color: $text-c6-primary !important;
+        margin-left: 0 !important;
+    }
+}
