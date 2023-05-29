@@ -1,6 +1,6 @@
 // -byMacMie
 
-var processlistProducts = {
+let processlistProducts = {
 
     sortByRatingDesc: function (listProducts) {
         return listProducts.sort((a, b) => b.ratingProduct - a.ratingProduct);

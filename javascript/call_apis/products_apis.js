@@ -29,7 +29,7 @@ export async function getAllProductsApi() {
             method: 'GET',
             headers: {
                 // 'Authorization': 'Bearer ' + token_current_admin
-                'Authorization': 'Bearer ' + token_current_user
+                // 'Authorization': 'Bearer ' + token_current_user
             }
         });
 

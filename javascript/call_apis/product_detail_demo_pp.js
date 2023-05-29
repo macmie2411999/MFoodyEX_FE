@@ -3,7 +3,7 @@
 
 import { token_admin, token_user } from './default_tokens.js';
 import { product_getAll_local, product_deleteByID_local } from './default_apis.js';
-import { getAllComments, getAllCommentsApi, countTotalNumberCommentsApi } from './comments_apis.js';
+import { getAllCommentsByIdProduct } from './comments_apis.js';
 import { getAllProducts, getAllProductsApi, countTotalNumberProductsApi } from './products_apis.js';
 
 // Process LocalStorage and Check Cookies
@@ -13,7 +13,7 @@ let currentPage = 1;
 let productsGeneral = [];
 let similarProducts = [];
 let arrayAllProducts = [];
-let arrayAllComments = [];
+let arrayAllCommentsByIdProduct = [];
 let choosenProduct = [];
 
 // Get key from URL
@@ -31,9 +31,16 @@ async function run() {
     // Check searchValue != null and Search and display products
     if (searchValue) {
         choosenProduct = processlistProducts.getProductById(arrayAllProducts, parseInt(searchValue));
+        // arrayAllCommentsByIdProduct = choosenProduct.listComments;
+
         renderDetailProduct(choosenProduct);
         similarProducts = processlistProducts.filterByCategory(arrayAllProducts, choosenProduct.categoryProduct);
         renderProductsToScrollList(processlistProducts.removeProductById(similarProducts, choosenProduct.idProduct));
+        renderMoreInformationPart1(choosenProduct);
+        renderMoreInformationPart2(choosenProduct);
+        renderCommentsAndRatingPart1(choosenProduct);
+        renderCommentsAndRatingPart2(choosenProduct.listComments);
+        renderCommentsAndRatingPart3(choosenProduct.listComments);
     } else {
         window.location.href = "http://127.0.0.1:5501/html/catalog_demo.html";
     }
@@ -51,10 +58,10 @@ run();
 function renderDetailProduct(product) {
     console.log("Render rederDetailProduct");
     let contentHTML = '';
-    let rattingStar = '';
+    let ratingStar = '';
     let tempPrice = '';
 
-    // Process Present Ratting Of Products
+    // Process Present rating Of Products
     let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
 
     // Process Price
@@ -65,8 +72,8 @@ function renderDetailProduct(product) {
                          <span class="col tag-full-price">${product.fullPriceProduct}₽</span>`
     }
 
-    // Process Ratting Star
-    rattingStar = createRatingStars(product.ratingProduct);
+    // Process rating Star
+    ratingStar = createRatingStars(product.ratingProduct);
 
     contentHTML += `
     <div class="row">
@@ -94,11 +101,11 @@ function renderDetailProduct(product) {
                     <div class="col-xs-5 col-sm-4 rating rating-comments-ele">
                         <span class="text-in-card-information">Rating: </span>
                         <div class="star-rating">
-                            ${rattingStar}
+                            ${ratingStar}
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 comments rating-comments-ele">
-                        <span class="text-in-card-information">Comments: 5054 </span>
+                        <span class="text-in-card-information">Comments: ${product.listComments.length} </span>
                     </div>
                     <div class="col-xs-3 col-sm-4 id-product rating-comments-ele">
                         <span class="text-in-card-information">ID: ${product.idProduct}</span>
@@ -261,6 +268,183 @@ function renderProductsToScrollList(arrayProducts) {
         `
     }
     document.getElementById("listScrollCard").innerHTML = contentHTML;
+}
+
+function renderCommentsAndRatingPart1(product) {
+    // Process rating Star
+    let ratingStar = createRatingStars(product.ratingProduct);
+    let contentHTML = '';
+    contentHTML += `
+    
+    <div class="rating">
+        <div class="star-rating">
+            ${ratingStar}
+        </div>
+        <span class="number-ratings">
+            <span class="content-number-ratings">Total Rating: ${product.listComments.length} </span>
+        </span>
+    </div>
+    `;
+
+    document.getElementById("commentsAndRatingPart1").innerHTML = contentHTML;
+}
+
+function renderCommentsAndRatingPart2(arrayComments) {
+    let contentHTML = '';
+  
+    for (let i = 5; i >= 1; i--) {
+        const commentsWithRating = arrayComments.filter(comment => comment.ratingComment === i);
+        const progressPercentage = (commentsWithRating.length / arrayComments.length) * 100;
+      
+        contentHTML += `
+        <div class="row element-rating">
+            <div class="col-4 rating">
+                <span class="number-start">${i}</span>
+                <i class="fas fa-star" style="margin-right: 5px;"></i>
+                <span class="number-ratings">${commentsWithRating.length} Votes</span>
+            </div>
+            <div class="col-8 progress-rating">
+                <span class="progress">
+                    <span class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="${progressPercentage}" aria-valuemin="0" aria-valuemax="100" style="width: ${progressPercentage}%"></span>
+                </span>
+            </div>
+        </div>
+        `;
+    }
+  
+    document.getElementById("commentsAndRatingPart2").innerHTML = contentHTML;
+}
+
+
+function renderCommentsAndRatingPart3(arrayComments) {
+    console.log("Render renderCommentsAndRatingPart3");
+    let contentHTML = '';
+    let ratingStar = '';
+    for (let comment of arrayComments) {
+        // Process rating Star
+        ratingStar = createRatingStars(comment.ratingComment);
+
+        contentHTML += `
+        <li class="media">
+            <div class="media-body">
+                <div class="top-media-body">
+                    <span
+                        class="d-inline-block text-start user-name">Guest - (ID: ${comment.idComment})</span>
+                    <div class="float-end">
+                        <div class="rating-general">
+                            <div class="star-rating">
+                                ${ratingStar}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-media-body">
+                    <span class="user-comment-content">
+                        ${comment.contentComment}
+                    </span>
+                </div>
+            </div>
+        </li>
+        `;
+    }
+    document.getElementById("commentsAndRatingPart3").innerHTML = contentHTML;
+}
+
+function renderMoreInformationPart1(product) {
+    console.log("Render renderMoreInformationPart1");
+    let contentHTML = '';
+    contentHTML += `
+    <div class="row g-2">
+        <div class="col-6 element">
+            <div
+                class="row align-items-start p-1 border attribute-product attribute-1">
+                <div class="col-3 title-attribute">
+                    Weight Product
+                </div>
+                <div class="col-6 space-between">
+                    <hr>
+                </div>
+                <div class="col-3 value-attribute">
+                    ${product.weightProduct}
+                </div>
+            </div>
+        </div>
+        <div class="col-6 element">
+            <div
+                class="row align-items-start p-1 border attribute-product attribute-1">
+                <div class="col-3 title-attribute">
+                    Import Quantity
+                </div>
+                <div class="col-6 space-between">
+                    <hr>
+                </div>
+                <div class="col-3 value-attribute">
+                    ${product.importQuantityProduct}
+                </div>
+            </div>
+        </div>
+        <div class="col-6 element">
+            <div
+                class="row align-items-start p-1 border attribute-product attribute-1">
+                <div class="col-3 title-attribute">
+                    Import Date
+                </div>
+                <div class="col-6 space-between">
+                    <hr>
+                </div>
+                <div class="col-3 value-attribute">
+                    ${product.importDateProduct}
+                </div>
+            </div>
+        </div>
+        <div class="col-6 element">
+
+            <div
+                class="row align-items-start p-1 border attribute-product attribute-1">
+                <div class="col-3 title-attribute">
+                    Category Product
+
+                </div>
+                <div class="col-6 space-between">
+                    <hr>
+                </div>
+                <div class="col-3 value-attribute category-attribute">
+                    ${product.categoryProduct}
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+
+    document.getElementById("moreInformationPart1").innerHTML = contentHTML;
+}
+
+function renderMoreInformationPart2(product) {
+    console.log("Render renderMoreInformationPart2");
+    let contentHTML = '';
+    contentHTML += `
+        <span class="title-area title-ele-more-infor">${product.brandProduct}</span>
+        <div class="container-ele-more-infor">
+            <div class="container text-center all-attributes">
+                <div>
+                    <div class="brand-detail">
+                        <div class="container-brand-detail">
+                            
+                            <h3 class="title-brand-detail"> Nourish your body, embrace the green revolution! </h3>
+                            <p class="content-brand-detail"> 
+                                Indulge in the goodness of our plant-based, organic delights. 
+                                Discover a world of flavors that nourish your body and uplift your spirit. Experience the vibrant 
+                                taste of health and sustainability with our thoughtfully crafted vegetarian offerings. Join us 
+                                on a journey to embrace a greener, healthier lifestyle.</p>
+                            <a class="button-brand-detail">More products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("moreInformationPart2").innerHTML = contentHTML;
 }
 
 // Helper function to create HTML for rating stars

@@ -4,27 +4,27 @@ import { commentUrls } from './default_apis.js';
 // Get current user's token
 const token_current_user = customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser");
 
-export async function getAllComments() {
-    let arrayAllComments = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllComments");
+export async function getAllCommentsByIdProduct(product) {
+    let arrayAllCommentsByIdProduct = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllCommentsByIdProduct" + product.idProduct);
 
     // Check arrays valid
-    if (arrayAllComments === null || arrayAllComments.length === 0) {
-        console.log("MFoody - arrayAllComments is not valid!");
-        arrayAllComments = await getAllCommentsApi();
+    if (arrayAllCommentsByIdProduct === null) {
+        console.log("MFoody - arrayAllComments" + product.idProduct + " is not valid!");
+        arrayAllCommentsByIdProduct = await getAllCommentsByIdProductApi(product.idProduct);
 
         // Save to LocalStorage
-        customLocalStorage.saveItemToLocalStorage(arrayAllComments, "MFoody - arrayAllComments");
+        customLocalStorage.saveItemToLocalStorage(arrayAllCommentsByIdProduct, "MFoody - arrayAllCommentsByIdProduct" + product.idProduct);
     }
 
-    return arrayAllComments;
+    return arrayAllCommentsByIdProduct;
 }
 
 // Call APIs
-export async function getAllCommentsApi() {
+export async function getAllCommentsByIdProductApi(idProduct) {
     console.log('Call getAllCommentsApi');
     try {
         const res = await axios({
-            url: commentUrls.comment_getAll_local,
+            url: commentUrls.comment_getAllByIDProduct_local + idProduct,
             method: 'GET',
             headers: {
                 // 'Authorization': 'Bearer ' + token_current_admin
@@ -49,7 +49,7 @@ export async function countTotalNumberCommentsApi() {
             url: commentUrls.comment_countTotalNumber_local,
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + token_user
+                'Authorization': 'Bearer ' + token_current_user 
             }
         });
 

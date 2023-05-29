@@ -3,7 +3,6 @@
 
 import { token_admin, token_user } from './default_tokens.js';
 import { product_getAll_local, product_deleteByID_local } from './default_apis.js';
-import { getAllComments, getAllCommentsApi, countTotalNumberCommentsApi } from './comments_apis.js';
 import { getAllProducts, getAllProductsApi, countTotalNumberProductsApi } from './products_apis.js';
 
 // Process LocalStorage and Check Cookies
@@ -23,7 +22,7 @@ let foundProductsMatchs = true;
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    arrayAllComments = await getAllComments(); // Assuming getAllComments is also async
+    // arrayAllComments = await getAllComments(); // Assuming getAllComments is also async
     renderProductsToSpliderss();
 
     // Check searchValue != null and Search and display products
@@ -157,6 +156,9 @@ function updateModal(product) {
 
     // update the product name
     modal.querySelector('.name-product').textContent = product.nameProduct;
+
+    // update the product comment
+    modal.querySelector('.comments').innerHTML = `<span class="text-in-card-information">Comments: ${product.listComments.length} </span>`;
 
     // update the product rating
     let ratingElement = modal.querySelector('.star-rating');

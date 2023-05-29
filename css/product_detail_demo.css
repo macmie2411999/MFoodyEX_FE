@@ -2222,9 +2222,10 @@ body {
   align-items: center;
 }
 .product-detail .title-area {
-  font-size: 20px !important;
-  font-weight: 400px !important;
+  font-size: 2rem !important;
+  font-weight: 600px !important;
   opacity: 0.9 !important;
+  color: #4da56a !important;
 }
 .product-detail .horizontal-line {
   display: flex;
@@ -2513,12 +2514,11 @@ body {
   background-color: rgb(247, 247, 247);
   color: rgb(120, 124, 135);
   font-weight: 600;
-  font-size: 15px !important;
+  font-size: 1.2rem !important;
   border-radius: 12px;
-  font-size: 12px;
   line-height: 20px;
   height: auto;
-  padding: 8px 12px;
+  padding: 10px 12px;
   margin: 0px 4px;
   border-bottom: none;
   cursor: pointer;
@@ -2542,60 +2542,69 @@ body {
   opacity: 0.9;
   padding-bottom: 10px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review {
   padding: 0 !important;
   margin: 0 !important;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .top-container-product-review {
   margin-bottom: 15px;
   padding-bottom: 10px;
   background-color: #F7F7F7;
   border-radius: 5px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review .product-review-title {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .top-container-product-review .product-review-title {
   font-size: 18px;
   margin: 10px !important;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review .ratting-general {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .top-container-product-review .rating-general {
   align-items: center;
   text-align: center;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review .ratting-general .rating svg {
-  color: gold;
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .top-container-product-review .rating-general .rating svg {
   font-size: 25px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .top-container-product-review .ratting-general .rating .number-rattings .content-number-rattings {
-  font-size: 15px;
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .top-container-product-review .rating-general .rating .number-ratings .content-number-ratings {
+  font-size: 1rem;
   color: #000;
   opacity: 0.5;
   margin-left: 20px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review {
   background-color: #F7F7F7;
   border-radius: 5px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .product-review-title {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .product-review-title {
+  font-size: 18px;
   margin: 10px !important;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review {
   padding-bottom: 5px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review .element-rating {
   padding: 0 !important;
   margin-bottom: 5px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting .rating svg {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review .element-rating .rating svg {
   color: gold;
+  font-size: 0.9rem;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting .progress-ratting {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review .element-rating .rating .number-ratings {
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review .element-rating .rating .number-start {
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review .element-rating .progress-rating {
   height: 22.5px;
   padding-top: 7px !important;
   margin: 0 !important;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting .progress-ratting .progress {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review .element-rating .progress-rating .progress {
   height: 8px !important;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-rattings .container-detail-rattings .product-review .bottom-container-product-review .ratting-product-review .container-ratting-product-review .element-ratting .progress-ratting .progress .progress-bar {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review .element-rating .progress-rating .progress .progress-bar {
   background-color: gold !important;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li {
@@ -2616,14 +2625,11 @@ body {
   top: 10px;
   right: 10px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .top-media-body .float-end .ratting-general .ratting svg {
-  color: gold;
-}
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .bottom-media-body {
   margin-top: 10px;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .bottom-media-body .user-comment-content {
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 400;
   opacity: 0.7;
 }
@@ -2638,11 +2644,11 @@ body {
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .row .col-6 .attribute-product {
   border: none !important;
   text-align: left;
-  font-size: 15px;
+  font-size: 1.1rem;
   opacity: 0.7;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .row .col-6 .attribute-product span {
-  font-size: 15px;
+  font-size: 1.1rem;
   opacity: 0.7;
   display: inline-block;
 }
@@ -2663,32 +2669,34 @@ body {
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail {
   scale: 0.7;
-  max-width: 800px;
-  text-align: center;
+  max-width: 1200px;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail .title-brand-detail {
-  font-size: 36px;
-  font-weight: bold;
+  font-size: 2.2rem;
+  font-weight: 600;
   margin-bottom: 20px;
   color: #fff;
   opacity: 0.9;
+  text-align: justify;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail .content-brand-detail {
-  font-size: 20px;
+  font-size: 1.4rem;
   line-height: 1.5;
   margin-bottom: 30px;
   color: #fff;
   opacity: 0.8;
+  text-align: justify;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail .button-brand-detail {
-  font-size: 20px;
-  padding: 12px 24px;
+  font-size: 1.5rem;
+  padding: 12px 30px;
   background-color: #f8c301;
   border: none;
-  color: #000;
+  color: #757575;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-more-information .ele-more-infor .container-ele-more-infor .all-attributes .brand-detail .container-brand-detail .button-brand-detail:hover {
   color: #fff;
@@ -2703,8 +2711,8 @@ body {
   padding: 10px;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form label {
-  font-size: 16px !important;
-  opacity: 0.8;
+  font-size: 1.2rem !important;
+  opacity: 0.6;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form .stars {
   display: flex;
@@ -2720,7 +2728,7 @@ body {
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form .form-group .form-control {
   width: 100%;
   color: #838384;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: normal;
   font-style: normal;
   padding: 0px 25px;
@@ -2732,17 +2740,22 @@ body {
   box-shadow: none;
   overflow: visible;
   border-radius: 8px;
+  opacity: 1 !important;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form .button-send-comment {
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 18px;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer !important;
   color: #fff;
   background-color: #009f4d;
-  border-color: #1caf37;
+  border-color: #009f4d;
+  opacity: 0.8;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .card .card-body .rating-form .button-send-comment:hover {
+  opacity: 1;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .star:hover,
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-leave-your-opinion .star:hover ~ .star {
@@ -2822,6 +2835,26 @@ body {
     padding-left: 0;
   }
 }
+.star-rating {
+  position: relative;
+  display: inline-block;
+  font-size: 1.1rem;
+}
+.star-rating svg {
+  position: relative;
+  z-index: 1;
+  color: #DFE0E2;
+}
+.star-rating svg.active {
+  color: gold !important;
+}
+.star-rating svg::before {
+  content: "\f005";
+  position: absolute;
+  z-index: 0;
+  color: #DFE0E2;
+}
+
 .fade {
   opacity: 0;
   transition: opacity 0.5s;

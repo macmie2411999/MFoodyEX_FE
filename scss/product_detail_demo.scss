@@ -90,9 +90,10 @@ $text-c11-grey: #151421;
     align-items: center;
 
     .title-area {
-        font-size: 20px !important;
-        font-weight: 400px !important;
+        font-size: 2rem !important;
+        font-weight: 600px !important;
         opacity: 0.9 !important;
+        color: #4da56a !important;
     }
 
     .horizontal-line {
@@ -528,12 +529,11 @@ $text-c11-grey: #151421;
                     background-color: rgb(247, 247, 247);
                     color: rgb(120, 124, 135);
                     font-weight: 600;
-                    font-size: 15px !important;
+                    font-size: 1.2rem !important;
                     border-radius: 12px;
-                    font-size: 12px;
                     line-height: 20px;
                     height: auto;
-                    padding: 8px 12px;
+                    padding: 10px 12px;
                     margin: 0px 4px;
                     border-bottom: none;
                     cursor: pointer;
@@ -563,9 +563,9 @@ $text-c11-grey: #151421;
                             padding-bottom: 10px;
                         }
 
-                        .detail-rattings {
+                        .detail-ratings {
 
-                            .container-detail-rattings {
+                            .container-detail-ratings {
 
                                 .product-review {
                                     // padding: 10px !important;
@@ -583,19 +583,19 @@ $text-c11-grey: #151421;
                                             margin: 10px !important;
                                         }
 
-                                        .ratting-general {
+                                        .rating-general {
                                             align-items: center;
                                             text-align: center;
 
                                             .rating {
                                                 svg {
-                                                    color: gold;
+                                                    // color: gold;
                                                     font-size: 25px;
                                                 }
 
-                                                .number-rattings {
-                                                    .content-number-rattings {
-                                                        font-size: 15px;
+                                                .number-ratings {
+                                                    .content-number-ratings {
+                                                        font-size: 1rem;
                                                         color: #000;
                                                         opacity: 0.5;
                                                         margin-left: 20px;
@@ -612,28 +612,36 @@ $text-c11-grey: #151421;
                                         border-radius: 5px;
 
                                         .product-review-title {
+                                            font-size: 18px;
                                             margin: 10px !important;
                                         }
 
-                                        .ratting-product-review {
-                                            .container-ratting-product-review {
+                                        .rating-product-review {
+                                            .container-rating-product-review {
                                                 padding-bottom: 5px;
 
-                                                .element-ratting {
+                                                .element-rating {
                                                     padding: 0 !important;
                                                     margin-bottom: 5px;
 
                                                     .rating {
                                                         svg {
                                                             color: gold;
+                                                            font-size: 0.9rem;
                                                         }
 
-                                                        .number-rattings {}
+                                                        .number-ratings {
+                                                            font-size: 0.9rem;
+                                                            opacity: 0.5;
+                                                        }
 
-                                                        .number-start {}
+                                                        .number-start {
+                                                            font-size: 0.9rem;
+                                                            opacity: 0.5;
+                                                        }
                                                     }
 
-                                                    .progress-ratting {
+                                                    .progress-rating {
                                                         height: 22.5px;
                                                         padding-top: 7px !important;
                                                         margin: 0 !important;
@@ -682,12 +690,12 @@ $text-c11-grey: #151421;
                                                             top: 10px;
                                                             right: 10px;
 
-                                                            .ratting-general {
-                                                                .ratting {
-                                                                    svg {
-                                                                        color: gold;
-                                                                    }
-                                                                }
+                                                            .rating-general {
+                                                                // .rating {
+                                                                //     svg {
+                                                                //         color: gold;
+                                                                //     }
+                                                                // }
                                                             }
                                                         }
                                                     }
@@ -696,7 +704,7 @@ $text-c11-grey: #151421;
                                                         margin-top: 10px;
 
                                                         .user-comment-content {
-                                                            font-size: 15px;
+                                                            font-size: 1rem;
                                                             font-weight: 400;
                                                             opacity: 0.7;
                                                         }
@@ -729,11 +737,11 @@ $text-c11-grey: #151421;
                                             .attribute-product {
                                                 border: none !important;
                                                 text-align: left;
-                                                font-size: 15px;
+                                                font-size: 1.1rem;
                                                 opacity: 0.7;
 
                                                 span {
-                                                    font-size: 15px;
+                                                    font-size: 1.1rem;
                                                     opacity: 0.7;
                                                     display: inline-block;
                                                 }
@@ -768,34 +776,37 @@ $text-c11-grey: #151421;
 
                                         .container-brand-detail {
                                             scale: 0.7;
-                                            max-width: 800px;
-                                            text-align: center;
+                                            max-width: 1200px;
+                                            
 
                                             .title-brand-detail {
-                                                font-size: 36px;
-                                                font-weight: bold;
+                                                font-size: 2.2rem;
+                                                font-weight: 600;
                                                 margin-bottom: 20px;
                                                 color: #fff;
                                                 opacity: 0.9;
+                                                text-align: justify;
                                             }
 
                                             .content-brand-detail {
-                                                font-size: 20px;
+                                                font-size: 1.4rem;
                                                 line-height: 1.5;
                                                 margin-bottom: 30px;
                                                 color: #fff;
                                                 opacity: 0.8;
+                                                text-align: justify;
                                             }
 
                                             .button-brand-detail {
-                                                font-size: 20px;
-                                                padding: 12px 24px;
+                                                font-size: 1.5rem;
+                                                padding: 12px 30px;
                                                 background-color: #f8c301;
                                                 border: none;
-                                                color: #000;
+                                                color: $text-c5-grey;
                                                 border-radius: 50px;
                                                 cursor: pointer;
                                                 transition: all 0.2s ease;
+                                                text-decoration: none;
 
                                                 &:hover {
                                                     color: #fff;
@@ -826,8 +837,8 @@ $text-c11-grey: #151421;
                             .card-body {
                                 .rating-form {
                                     label {
-                                        font-size: 16px !important;
-                                        opacity: 0.8;
+                                        font-size: 1.2rem !important;
+                                        opacity: 0.6;
                                     }
 
                                     .stars {
@@ -848,7 +859,7 @@ $text-c11-grey: #151421;
                                             width: 100%;
                                             // background: #f8f9fa;
                                             color: $text-c7-grey;
-                                            font-size: 18px;
+                                            font-size: 1.2rem;
                                             font-weight: normal;
                                             font-style: normal;
                                             padding: 0px 25px;
@@ -860,19 +871,25 @@ $text-c11-grey: #151421;
                                             box-shadow: none;
                                             overflow: visible;
                                             border-radius: 8px;
+                                            opacity: 1 !important;
                                         }
                                     }
 
                                     .button-send-comment {
                                         padding: 10px 20px;
-                                        font-size: 15px;
+                                        font-size: 1rem;
                                         line-height: 18px;
                                         font-weight: 600;
                                         border-radius: 8px;
                                         cursor: pointer !important;
                                         color: #fff;
                                         background-color: #009f4d;
-                                        border-color: #1caf37;
+                                        border-color: #009f4d;
+                                        opacity: 0.8;
+
+                                        &:hover{
+                                            opacity: 1;
+                                        }
                                     }
                                 }
 
@@ -1421,6 +1438,31 @@ $text-c11-grey: #151421;
 }
 
 // Main Style End
+
+.star-rating {
+    position: relative;
+    display: inline-block;
+    font-size: 1.1rem;
+
+    svg {
+        // font-size: 0.9rem;
+        // color: gold;
+        position: relative;
+        z-index: 1;
+        color: $text-c2-grey;
+
+        &.active {
+            color: gold !important;
+        }
+
+        &::before {
+            content: "\f005";
+            position: absolute;
+            z-index: 0;
+            color: $text-c2-grey;
+        }
+    }
+}
 
 // Fade when switch page in List Products
 .fade {
