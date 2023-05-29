@@ -2738,14 +2738,11 @@ body {
   padding-bottom: 10px;
 }
 .catalog-full-list .container-catalog-full-list .content .title-area {
-  opacity: 0.5 !important;
   text-align: left;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.8rem;
-  line-height: 48px;
-  color: #000;
+  font-size: 2rem;
+  opacity: 0.9;
+  color: #4da56a !important;
+  font-family: "Jost", sans-serif !important;
 }
 .catalog-full-list .container-catalog-full-list .content .tags-product .container-tags-product .button-in-card {
   margin-right: 5px;

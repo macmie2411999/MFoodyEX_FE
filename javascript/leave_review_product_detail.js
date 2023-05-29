@@ -14,19 +14,19 @@ stars.forEach((star) => {
     });
 });
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const rating = ratingInput.value;
-    const comment = commentInput.value.trim();
+// form.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     const rating = ratingInput.value;
+//     const comment = commentInput.value.trim();
 
-    if (!rating || !comment) {
-        alert('Please provide full review information!');
-        return;
-    }
+//     if (!rating || !comment) {
+//         alert('Please provide full review information!');
+//         return;
+//     }
 
-    console.log(`Rating: ${rating}, Comment: ${comment}`);
-    // Gửi thông tin đánh giá sản phẩm tại đây
-});
+//     console.log(`Rating: ${rating}, Comment: ${comment}`);
+//     // Gửi thông tin đánh giá sản phẩm tại đây
+// });
 
 function fillStars(rating) {
     stars.forEach((star, index) => {

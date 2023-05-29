@@ -5,10 +5,11 @@ import { product_countTotalNumber_local, product_getAll_local } from './default_
 const token_current_user = customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser");
 
 export async function getAllProducts() {
+    console.log("getAllProducts")
     let arrayAllProducts = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllProducts");
 
     // Check arrays valid
-    if (arrayAllProducts === null || arrayAllProducts.length === 0) {
+    if (arrayAllProducts === null || arrayAllProducts.length === 0 || !Array.isArray(arrayAllProducts)) {
         console.log("MFoody - arrayAllProducts is not valid!");
         
         arrayAllProducts = await getAllProductsApi();

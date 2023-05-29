@@ -668,51 +668,69 @@ $text-c11-grey: #151421;
                                     // border: 1px solid #F7F7F7;
 
                                     .row-container {
-                                        ul {
-                                            li {
-                                                position: relative;
-                                                border: 1px solid #F7F7F7;
-                                                background-color: #F7F7F7;
-                                                border-radius: 5px;
-                                                padding: 10px;
-                                                margin-right: 0 !important;
-                                                margin-bottom: 15px;
+                                        .comment-list-scroll {
+                                            max-height: 280px;
+                                            overflow-y: scroll;
+                                            width: 100%;
 
-                                                .media-body {
-                                                    .top-media-body {
-                                                        .user-name {
-                                                            font-size: 17px;
-                                                            font-weight: 400;
-                                                        }
+                                            ul {
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                justify-content: flex-start;
+                                                padding-left: 0 !important;
+                                                // gap: 15px;
 
-                                                        .float-end {
-                                                            position: absolute;
-                                                            top: 10px;
-                                                            right: 10px;
+                                                li {
+                                                    position: relative;
+                                                    border: 1px solid #F7F7F7;
+                                                    background-color: #F7F7F7;
+                                                    border-radius: 5px;
+                                                    padding: 10px;
+                                                    margin-right: 0 !important;
+                                                    width: 100%;
+                                                    list-style-type: none; // Bỏ dấu chấm tròn
+                                                    // flex-basis: calc(33.33% - 15px);
+                                                    margin-bottom: 15px;
 
-                                                            .rating-general {
-                                                                // .rating {
-                                                                //     svg {
-                                                                //         color: gold;
-                                                                //     }
-                                                                // }
+
+                                                    .media-body {
+                                                        .top-media-body {
+                                                            .user-name {
+                                                                font-size: 17px;
+                                                                font-weight: 400;
+                                                            }
+
+                                                            .float-end {
+                                                                position: absolute;
+                                                                top: 10px;
+                                                                right: 10px;
+
+                                                                .rating-general {
+                                                                    // .rating {
+                                                                    //     svg {
+                                                                    //         color: gold;
+                                                                    //     }
+                                                                    // }
+                                                                }
                                                             }
                                                         }
-                                                    }
 
-                                                    .bottom-media-body {
-                                                        margin-top: 10px;
+                                                        .bottom-media-body {
+                                                            margin-top: 10px;
 
-                                                        .user-comment-content {
-                                                            font-size: 1rem;
-                                                            font-weight: 400;
-                                                            opacity: 0.7;
+                                                            .user-comment-content {
+                                                                font-size: 1rem;
+                                                                font-weight: 400;
+                                                                opacity: 0.7;
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
+
                                     }
+
                                 }
                             }
                         }
@@ -777,7 +795,7 @@ $text-c11-grey: #151421;
                                         .container-brand-detail {
                                             scale: 0.7;
                                             max-width: 1200px;
-                                            
+
 
                                             .title-brand-detail {
                                                 font-size: 2.2rem;
@@ -887,7 +905,7 @@ $text-c11-grey: #151421;
                                         border-color: #009f4d;
                                         opacity: 0.8;
 
-                                        &:hover{
+                                        &:hover {
                                             opacity: 1;
                                         }
                                     }

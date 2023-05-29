@@ -2607,28 +2607,41 @@ body {
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-ratings .container-detail-ratings .product-review .bottom-container-product-review .rating-product-review .container-rating-product-review .element-rating .progress-rating .progress .progress-bar {
   background-color: gold !important;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container .comment-list-scroll {
+  max-height: 280px;
+  overflow-y: scroll;
+  width: 100%;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container .comment-list-scroll ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 0 !important;
+}
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container .comment-list-scroll ul li {
   position: relative;
   border: 1px solid #F7F7F7;
   background-color: #F7F7F7;
   border-radius: 5px;
   padding: 10px;
   margin-right: 0 !important;
+  width: 100%;
+  list-style-type: none;
   margin-bottom: 15px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .top-media-body .user-name {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container .comment-list-scroll ul li .media-body .top-media-body .user-name {
   font-size: 17px;
   font-weight: 400;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .top-media-body .float-end {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container .comment-list-scroll ul li .media-body .top-media-body .float-end {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .bottom-media-body {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container .comment-list-scroll ul li .media-body .bottom-media-body {
   margin-top: 10px;
 }
-.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container ul li .media-body .bottom-media-body .user-comment-content {
+.product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail .container-content-bottom-product-detail .container-comments-and-rating .detail-comments .container-detail-comments .row .row-container .comment-list-scroll ul li .media-body .bottom-media-body .user-comment-content {
   font-size: 1rem;
   font-weight: 400;
   opacity: 0.7;

@@ -216,10 +216,11 @@ $text-c10-grey: #172033;
             padding-bottom: 10px;
 
             .title-area {
-                opacity: 0.5 !important;
                 text-align: left;
-                @include fontAdjust(400, 1.8rem, 48px);
-                color: #000;
+                font-size: 2rem;;
+                opacity: 0.9;
+                color: #4da56a !important;
+                font-family: "Jost",sans-serif !important;
             }
 
             .tags-product {

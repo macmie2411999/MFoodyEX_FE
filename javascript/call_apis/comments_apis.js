@@ -8,7 +8,7 @@ export async function getAllCommentsByIdProduct(product) {
     let arrayAllCommentsByIdProduct = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllCommentsByIdProduct" + product.idProduct);
 
     // Check arrays valid
-    if (arrayAllCommentsByIdProduct === null) {
+    if (arrayAllCommentsByIdProduct === null || !Array.isArray(arrayAllCommentsByIdProduct)) {
         console.log("MFoody - arrayAllComments" + product.idProduct + " is not valid!");
         arrayAllCommentsByIdProduct = await getAllCommentsByIdProductApi(product.idProduct);
 
@@ -21,7 +21,7 @@ export async function getAllCommentsByIdProduct(product) {
 
 // Call APIs
 export async function getAllCommentsByIdProductApi(idProduct) {
-    console.log('Call getAllCommentsApi');
+    // console.log('Call getAllCommentsApi');
     try {
         const res = await axios({
             url: commentUrls.comment_getAllByIDProduct_local + idProduct,

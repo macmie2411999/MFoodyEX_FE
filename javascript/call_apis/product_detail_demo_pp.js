@@ -2,19 +2,21 @@
 // Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
-import { product_getAll_local, product_deleteByID_local } from './default_apis.js';
+import { commentUrls } from './default_apis.js';
 import { getAllCommentsByIdProduct } from './comments_apis.js';
 import { getAllProducts, getAllProductsApi, countTotalNumberProductsApi } from './products_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
 const productsPerPage = 10;
+const form = document.getElementById('add_new_comment_form');
 let currentPage = 1;
 let productsGeneral = [];
 let similarProducts = [];
 let arrayAllProducts = [];
 let arrayAllCommentsByIdProduct = [];
 let choosenProduct = [];
+let catalogPage = "http://127.0.0.1:5501/html/catalog_demo.html"
 
 // Get key from URL
 const searchParams = new URLSearchParams(window.location.search);
@@ -31,7 +33,7 @@ async function run() {
     // Check searchValue != null and Search and display products
     if (searchValue) {
         choosenProduct = processlistProducts.getProductById(arrayAllProducts, parseInt(searchValue));
-        // arrayAllCommentsByIdProduct = choosenProduct.listComments;
+        // customLocalStorage.saveItemToLocalStorage(choosenProduct, "MFoody - tokenChoosenProduct");
 
         renderDetailProduct(choosenProduct);
         similarProducts = processlistProducts.filterByCategory(arrayAllProducts, choosenProduct.categoryProduct);
@@ -42,7 +44,7 @@ async function run() {
         renderCommentsAndRatingPart2(choosenProduct.listComments);
         renderCommentsAndRatingPart3(choosenProduct.listComments);
     } else {
-        window.location.href = "http://127.0.0.1:5501/html/catalog_demo.html";
+        window.location.href = catalogPage;
     }
 
     // Render Table Products
@@ -53,13 +55,110 @@ async function run() {
 
 run();
 
+// Add new comment
+// Add new comment
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let checkUserRole = localStorageCookiesProcess.checkUserRole();
+    // customLocalStorage.getItemFromLocalStorage("MFoody - currentUser")
+
+    if (checkUserRole) {
+        let token_curent_user = customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser");
+        let curent_user = customLocalStorage.getItemFromLocalStorage("MFoody - currentUser");
+        $('#add_new_comment_form').validate({
+            rules: {
+                rating: {
+                    required: true
+                },
+                comment: {
+                    required: true,
+                    minlength: 6
+                }
+            },
+            messages: {
+                rating: {
+                    required: "Please select a rating."
+                },
+                comment: {
+                    required: "Please enter your comment.",
+                    minlength: "Your comment must be at least 6 characters long."
+                }
+            },
+            submitHandler: function () {
+                let rating = $('#rating').val();
+                let comment = $('#comment').val();
+
+
+                let newComment = {
+                    ratingComment: rating,
+                    contentComment: comment,
+                    idUser: curent_user.idUser,
+                    idProduct: choosenProduct.idProduct
+                };
+                console.log(newComment);
+                let promise = axios({
+                    url: commentUrls.comment_add_local,
+                    method: 'POST',
+                    data: newComment,
+                    headers: {
+                        // "Content-Type": "application/json",
+                        'Authorization': 'Bearer ' + token_curent_user
+                    },
+                })
+                    .then(function (response) {
+                        console.log(response);
+                        alert('Comment added successfully!');
+
+                        // Save to LocalStorage new value
+                        arrayAllProducts = getAllProductsApi();
+                        customLocalStorage.saveItemToLocalStorage(arrayAllProducts, "MFoody - arrayAllProducts");
+                        
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        alert('Failed to add comment.');
+                    });
+            }
+        });
+    }
+});
+
+
+
 
 // Render
 function renderDetailProduct(product) {
     console.log("Render rederDetailProduct");
     let contentHTML = '';
+    let userShippingInforHTML = '';
     let ratingStar = '';
     let tempPrice = '';
+    let checkUserRole = localStorageCookiesProcess.checkUserRole();
+
+    if (checkUserRole) {
+        let curent_user = customLocalStorage.getItemFromLocalStorage("MFoody - currentUser");
+        userShippingInforHTML+=`
+        <div class="table-user-information">
+            <table class="table table-bordered table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>${curent_user.nameUser}</td>
+                        <td>${curent_user.phoneNumberUser}</td>
+                        <td>${curent_user.addressUser}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        `
+    
+    }
 
     // Process Present rating Of Products
     let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
@@ -88,8 +187,8 @@ function renderDetailProduct(product) {
             <!-- BreadCrumb -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item li-normal"><a href="http://127.0.0.1:5501/html/header_demo_2.html">Home</a></li>
-                    <li class="breadcrumb-item li-normal" aria-current="page"><a href="http://127.0.0.1:5501/html/catalog_demo_search.html">Catalog</a></li>
+                    <li class="breadcrumb-item li-normal"><a href="header_demo_2.html">Home</a></li>
+                    <li class="breadcrumb-item li-normal" aria-current="page"><a href="catalog_demo_search.html">Catalog</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Product Details</li>
                 </ol>
             </nav>
@@ -193,24 +292,8 @@ function renderDetailProduct(product) {
                             </div>
                         </div>
 
-                        <div class="table-user-information">
-                            <table class="table table-bordered table-responsive-md">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Phone Number</th>
-                                        <th>Address</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>User 1</td>
-                                        <td>0123456789</td>
-                                        <td>123 Street, City, Country</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        ${userShippingInforHTML}
+
                     </div>
                 </div>
             </div>
@@ -291,11 +374,11 @@ function renderCommentsAndRatingPart1(product) {
 
 function renderCommentsAndRatingPart2(arrayComments) {
     let contentHTML = '';
-  
+
     for (let i = 5; i >= 1; i--) {
         const commentsWithRating = arrayComments.filter(comment => comment.ratingComment === i);
         const progressPercentage = (commentsWithRating.length / arrayComments.length) * 100;
-      
+
         contentHTML += `
         <div class="row element-rating">
             <div class="col-4 rating">
@@ -311,10 +394,9 @@ function renderCommentsAndRatingPart2(arrayComments) {
         </div>
         `;
     }
-  
+
     document.getElementById("commentsAndRatingPart2").innerHTML = contentHTML;
 }
-
 
 function renderCommentsAndRatingPart3(arrayComments) {
     console.log("Render renderCommentsAndRatingPart3");
@@ -359,12 +441,12 @@ function renderMoreInformationPart1(product) {
             <div
                 class="row align-items-start p-1 border attribute-product attribute-1">
                 <div class="col-3 title-attribute">
-                    Weight Product
+                    Weight
                 </div>
-                <div class="col-6 space-between">
+                <div class="col-5 space-between">
                     <hr>
                 </div>
-                <div class="col-3 value-attribute">
+                <div class="col-4 value-attribute">
                     ${product.weightProduct}
                 </div>
             </div>
@@ -373,13 +455,13 @@ function renderMoreInformationPart1(product) {
             <div
                 class="row align-items-start p-1 border attribute-product attribute-1">
                 <div class="col-3 title-attribute">
-                    Import Quantity
+                    In Stock
                 </div>
-                <div class="col-6 space-between">
+                <div class="col-5 space-between">
                     <hr>
                 </div>
-                <div class="col-3 value-attribute">
-                    ${product.importQuantityProduct}
+                <div class="col-4 value-attribute">
+                    ${product.storehouseQuantityProduct}
                 </div>
             </div>
         </div>
@@ -389,26 +471,53 @@ function renderMoreInformationPart1(product) {
                 <div class="col-3 title-attribute">
                     Import Date
                 </div>
-                <div class="col-6 space-between">
+                <div class="col-5 space-between">
                     <hr>
                 </div>
-                <div class="col-3 value-attribute">
+                <div class="col-4 value-attribute">
                     ${product.importDateProduct}
                 </div>
             </div>
         </div>
         <div class="col-6 element">
-
             <div
                 class="row align-items-start p-1 border attribute-product attribute-1">
                 <div class="col-3 title-attribute">
-                    Category Product
-
+                    Import Quantity
                 </div>
-                <div class="col-6 space-between">
+                <div class="col-5 space-between">
                     <hr>
                 </div>
-                <div class="col-3 value-attribute category-attribute">
+                <div class="col-4 value-attribute">
+                    ${product.importQuantityProduct}
+                </div>
+            </div>
+        </div>
+        <div class="col-6 element">
+            <div
+                class="row align-items-start p-1 border attribute-product attribute-1">
+                <div class="col-3 title-attribute">
+                    Brand
+                </div>
+                <div class="col-5 space-between">
+                    <hr>
+                </div>
+                <div class="col-4 value-attribute category-attribute">
+                    ${product.brandProduct}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 element">
+            <div
+                class="row align-items-start p-1 border attribute-product attribute-1">
+                <div class="col-3 title-attribute">
+                    Category
+                </div>
+                <div class="col-5 space-between">
+                    <hr>
+                </div>
+                <div class="col-4 value-attribute category-attribute">
                     ${product.categoryProduct}
                 </div>
             </div>
@@ -423,7 +532,7 @@ function renderMoreInformationPart2(product) {
     console.log("Render renderMoreInformationPart2");
     let contentHTML = '';
     contentHTML += `
-        <span class="title-area title-ele-more-infor">${product.brandProduct}</span>
+        <span class="title-area title-ele-more-infor">Brand ${product.brandProduct}</span>
         <div class="container-ele-more-infor">
             <div class="container text-center all-attributes">
                 <div>
@@ -490,7 +599,7 @@ function createProductCard(product) {
     }
 
     return `
-        <div class="card" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-product-id="${product.idProduct}">
+        <div class="card"  data-product-id="${product.idProduct}">
             <div class="tag-container">
                 ${tagsHtml}
             </div>
