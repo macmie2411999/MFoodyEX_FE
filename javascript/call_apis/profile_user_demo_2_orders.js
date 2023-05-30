@@ -2,16 +2,12 @@
 // Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
-import { getAllCreditCardsOfCurrentUser } from './credit_cards_apis.js';
-import { getAllOrdersOfCurrentUser } from './orders_apis.js';
-import { getCartOfCurrentUser } from './cart_apis.js';
-import { getAllCommentsOfCurrentUser } from './comments_apis.js';
+import { getAllComments } from './comments_apis.js';
+import { getAllCreditCardsOfCurrentUser} from './credit_cards_apis.js';
 
 // Sundries variables
 let arrayAllCreditCardsOfCurrentUser = [];
-let arrayAllOrdersOfCurrentUser = [];
-let cartOfCurrentUser = [];
-let arrayAllCommentsOfCurrentUser = [];
+let arrayAllComments = [];
 
 // Process LocalStorage and Check Cookies
 localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -24,15 +20,8 @@ renderSecondPartOfInforUser(current_user);
 
 async function run() {
     arrayAllCreditCardsOfCurrentUser = await getAllCreditCardsOfCurrentUser(); // Add await here
-    arrayAllOrdersOfCurrentUser = await getAllOrdersOfCurrentUser(); // Add await here
-    cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
-    arrayAllCommentsOfCurrentUser = await getAllCommentsOfCurrentUser(); // Add await here
-
+    arrayAllComments = await getAllComments(); // Assuming getAllComments is also async
     renderCreditCardsOfUser(arrayAllCreditCardsOfCurrentUser);
-    renderOrdersOfUser(arrayAllOrdersOfCurrentUser);
-    renderDetailProductCartsOfUser(cartOfCurrentUser);
-    renderCommentsOfUser(arrayAllCommentsOfCurrentUser);
-
 }
 
 run();
@@ -134,7 +123,7 @@ function renderCreditCardsOfUser(arrayAllCreditCardsOfCurrentUser) {
                 <ul class="list-entity">
     `;
 
-    arrayAllCreditCardsOfCurrentUser.splice(0, 2).forEach((card, index) => {
+    arrayAllCreditCardsOfCurrentUser.forEach((card, index) => {
         contentHTML += `
             <li class="item-entity"><a href="#">Card ${index + 1}: ${card.numberCard}</a></li>
         `;
@@ -152,92 +141,4 @@ function renderCreditCardsOfUser(arrayAllCreditCardsOfCurrentUser) {
 
     document.getElementById("creditCardPart").innerHTML = contentHTML;
 }
-
-function renderOrdersOfUser(arrayAllOrdersOfCurrentUser) {
-    console.log("Render renderOrdersOfUser");
-    let contentHTML = `
-            <div class="card card-orders mb-4 mb-md-0">
-                <div class="card-body">
-                    <p class="mb-1 title-ele-entity">
-                        <span class="ele-entity">Orders</span> <span class="general-ele-entity">${arrayAllOrdersOfCurrentUser.length}</span>
-                    </p>
-
-                    <ul class="list-entity">
-    `;
-
-    arrayAllOrdersOfCurrentUser.splice(0, 2).forEach((order, index) => {
-        contentHTML += `
-            <li class="item-entity"><a href="#">Order ${index + 1}: ${order.idOrder}</a></li>
-        `;
-    });
-
-    contentHTML += `
-                    </ul>
-
-                    <div class="d-flex justify-content-center">
-                        <button class="button-card-body"> <a href="#">See More...</a></button>
-                    </div>
-                </div>
-            </div>
-        
-    `;
-
-    document.getElementById("orderPart").innerHTML = contentHTML;
-}
-
-function renderDetailProductCartsOfUser(cartOfCurrentUser) {
-    console.log("Render renderCartsOfUser");
-    let contentHTML = `
-        <div class="card-body">
-            <p class="mb-1 title-ele-entity">
-                <span class="ele-entity">Cart</span>
-            </p>
-
-            <ul class="list-entity">
-                <li class="item-entity"><a href="#">Total Products: ${cartOfCurrentUser.quantityAllProductsInCart}</a></li>
-                <li class="item-entity"><a href="#">Full Price: ${cartOfCurrentUser.totalFullPriceCart}₽</a></li>
-                <li class="item-entity"><a href="#">Sale Price: ${cartOfCurrentUser.totalSalePriceCart}₽</a></li>
-            </ul>
-
-            <div class="d-flex justify-content-center">
-                <button class="button-card-body"> <a href="#">See More...</a></button>
-            </div>
-        </div>
-    `;
-
-    document.getElementById("cartPart").innerHTML = contentHTML;
-}
-
-function renderCommentsOfUser(arrayAllCommentsOfCurrentUser) {
-    console.log("Render renderCommentsOfUser");
-    let contentHTML = `
-        <div class="card card-cart mb-4 mb-md-0" id="commentPart">
-            <div class="card-body">
-                <p class="mb-1 title-ele-entity">
-                    <span class="ele-entity">Comments</span> <span class="general-ele-entity">${arrayAllCommentsOfCurrentUser.length}</span>
-                </p>
-
-                <ul class="list-entity">
-    `;
-
-    arrayAllCommentsOfCurrentUser.splice(0, 3).forEach((comment, index) => {
-        contentHTML += `
-            <li class="item-entity"><a href="#">Comment ${index + 1}: ${comment.idComment}</a></li>
-        `;
-    });
-
-    contentHTML += `
-                </ul>
-
-                <div class="d-flex justify-content-center">
-                    <button class="button-card-body"> <a href="#">See More...</a></button>
-                </div>
-            </div>
-        </div>
-    `;
-
-    document.getElementById("commentPart").innerHTML = contentHTML;
-}
-
-
 

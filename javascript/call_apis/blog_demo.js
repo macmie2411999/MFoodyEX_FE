@@ -2,7 +2,7 @@
 // Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
-import { getAllProducts, getAllProductsApi, countTotalNumberProductsApi } from './products_apis.js';
+import { getAllProducts} from './products_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();

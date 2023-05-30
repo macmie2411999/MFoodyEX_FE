@@ -101,7 +101,7 @@
                                 </button>
                             </li>
                             <li class="not-search"><a href="#" class="fa-solid fa-heart"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-user"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
                         </ul>
 
@@ -293,6 +293,13 @@
 
     </footer>
     <!-- FOOTER END -->
+
+    <!-- Redirect -->
+    <script>
+        function redirectToProfile() {
+            window.location.href = "profile_user_demo_2.html";
+        }
+    </script>
 
     <!-- Calling jQuery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

@@ -1,32 +1,32 @@
 import { token_admin, token_user } from './default_tokens.js';
-import { cartUrls } from './default_apis.js';
+import { orderUrls } from './default_apis.js';
 
 // Get current user's token
 const token_current_user = customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser");
 const current_user = customLocalStorage.getItemFromLocalStorage("MFoody - currentUser");
 
-export async function getCartOfCurrentUser() {
-    let arrayCartOfCurrentUser = customLocalStorage.getItemFromLocalStorage("MFoody - arrayCartOfCurrentUser");
+export async function getAllOrdersOfCurrentUser() {
+    let arrayOrdersOfCurrentUser = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllOrdersOfCurrentUser");
 
     // Check arrays valid
-    if (arrayCartOfCurrentUser === null || !Array.isArray(arrayCartOfCurrentUser)) {
-        console.log("MFoody - arrayCartOfCurrentUser is not valid!");
+    if (arrayOrdersOfCurrentUser === null || !Array.isArray(arrayOrdersOfCurrentUser)) {
+        console.log("MFoody - arrayAllOrdersOfCurrentUser is not valid!");
         
-        arrayCartOfCurrentUser = await getCartOfCurrentUserApi();
+        arrayOrdersOfCurrentUser = await getAllOrdersOfCurrentUserApi();
 
         // Save to LocalStorage
-        customLocalStorage.saveItemToLocalStorage(arrayCartOfCurrentUser, "MFoody - arrayCartOfCurrentUser");
+        customLocalStorage.saveItemToLocalStorage(arrayOrdersOfCurrentUser, "MFoody - arrayAllOrdersOfCurrentUser");
     }
 
-    return arrayCartOfCurrentUser;
+    return arrayOrdersOfCurrentUser;
 }
 
 // Call APIs
-export async function getCartOfCurrentUserApi() {
-    console.log('Call getCartOfCurrentUserApi');
+export async function getAllOrdersOfCurrentUserApi() {
+    console.log('Call getAllOrdersOfCurrentUserApi');
     try {
         const res = await axios({
-            url: cartUrls.cart_getAllByIDUser_local + current_user.idUser,
+            url: orderUrls.order_getAllByIDUser_local + current_user.idUser,
             method: 'GET',
             headers: {
                 // 'Authorization': 'Bearer ' + token_current_admin

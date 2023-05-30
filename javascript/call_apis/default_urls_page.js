@@ -1,9 +1,7 @@
-// Admin Mfoody
-export const index_page_local = "http://127.0.0.1:5501/index.html";
-export const signin_signup_page_local = "http://127.0.0.1:5501/signin_signup_demo.html";
-export const user_table_page_local = "http://127.0.0.1:5501/user_table.html";
-export const product_table_page_local = "http://127.0.0.1:5501/product_table.html";
-export const order_table_page_local = "http://127.0.0.1:5501/order_table.html";
+const baseURL = "http://127.0.0.1:5501/html/";
 
 // Client Mfoody
-export const catalog_page_local = "http://127.0.0.1:5501/html/catalog_demo.html";
+export const pageUrls = {
+    signin_signup_page_local: baseURL + "signin_signup_demo.html",
+    catalog_page_local: baseURL + "catalog_demo.html"
+  };

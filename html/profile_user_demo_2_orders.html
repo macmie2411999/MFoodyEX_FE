@@ -117,7 +117,7 @@
                                 </button>
                             </li>
                             <li class="not-search"><a href="#" class="fa-solid fa-heart"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-user"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
                         </ul>
 
@@ -133,6 +133,7 @@
     <!-- SIDEBAR PAGE -->
     <main class="profile-full-list">
         <div class="container-profile-full-list">
+
             <!-- Sidebar  -->
             <nav id="sidebar" class="sidebar">
 
@@ -147,14 +148,25 @@
                         <button>
                             <i class="fa-solid fa-receipt fa-2xl"></i>
                         </button>
-                        <a href="#" class="category">Orders</a>
+                        <a href="profile_user_demo_2_orders.html" class="category">Orders</a>
                     </li>
                     <li>
                         <button>
                             <i class="fa-solid fa-credit-card fa-2xl"></i>
                         </button>
-                        <a href="#" class="category">Cards</a>
-
+                        <a href="#" class="category">Credit Cards</a>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category">Cart</a>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-bookmark fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category">Favorites</a>
                     </li>
                     <li>
                         <button>
@@ -162,24 +174,24 @@
                         </button>
                         <a href="#" class="category">Comments</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <button>
                             <i class="fa-solid fa-gear fa-2xl"></i>
                         </button>
                         <a href="#" class="category">Setting</a>
-                    </li>
+                    </li> -->
                     <li>
                         <button>
                             <i class="icon-log-out fa-solid fa-right-from-bracket fa-2xl"></i>
                         </button>
                         <a href="#" class="category a-log-out">Log Out</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <button>
                             <i class="icon-delete-account fa-solid fa-user-minus fa-2xl"></i>
                         </button>
                         <a href="#" class="category a-delete-account">Delete Account</a>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
 
@@ -453,6 +465,13 @@
 
     </footer>
     <!-- FOOTER END -->
+
+    <!-- Redirect -->
+    <script>
+        function redirectToProfile() {
+            window.location.href = "profile_user_demo_2.html";
+        }
+    </script>
 
     <!-- Calling jQuery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

@@ -3,32 +3,34 @@ import { commentUrls } from './default_apis.js';
 
 // Get current user's token
 const token_current_user = customLocalStorage.getItemFromLocalStorage("MFoody - tokenCurrentUser");
+const current_user = customLocalStorage.getItemFromLocalStorage("MFoody - currentUser");
 
-export async function getAllCommentsByIdProduct(product) {
-    let arrayAllCommentsByIdProduct = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllCommentsByIdProduct" + product.idProduct);
+export async function getAllCommentsOfCurrentUser() {
+    let arrayCommentsOfCurrentUser = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllCommentsOfCurrentUser");
 
     // Check arrays valid
-    if (arrayAllCommentsByIdProduct === null || !Array.isArray(arrayAllCommentsByIdProduct)) {
-        console.log("MFoody - arrayAllComments" + product.idProduct + " is not valid!");
-        arrayAllCommentsByIdProduct = await getAllCommentsByIdProductApi(product.idProduct);
+    if (arrayCommentsOfCurrentUser === null || !Array.isArray(arrayCommentsOfCurrentUser)) {
+        console.log("MFoody - arrayAllCommentsOfCurrentUser is not valid!");
+        
+        arrayCommentsOfCurrentUser = await getAllCommentsOfCurrentUserApi();
 
         // Save to LocalStorage
-        customLocalStorage.saveItemToLocalStorage(arrayAllCommentsByIdProduct, "MFoody - arrayAllCommentsByIdProduct" + product.idProduct);
+        customLocalStorage.saveItemToLocalStorage(arrayCommentsOfCurrentUser, "MFoody - arrayAllCommentsOfCurrentUser");
     }
 
-    return arrayAllCommentsByIdProduct;
+    return arrayCommentsOfCurrentUser;
 }
 
 // Call APIs
-export async function getAllCommentsByIdProductApi(idProduct) {
-    // console.log('Call getAllCommentsApi');
+export async function getAllCommentsOfCurrentUserApi() {
+    console.log('Call getAllCommentsOfCurrentUserApi');
     try {
         const res = await axios({
-            url: commentUrls.comment_getAllByIDProduct_local + idProduct,
+            url: commentUrls.comment_getAllByIDUser_local + current_user.idUser,
             method: 'GET',
             headers: {
                 // 'Authorization': 'Bearer ' + token_current_admin
-                'Authorization': 'Bearer ' + token_current_user 
+                'Authorization': 'Bearer ' + token_current_user
             }
         });
 
@@ -42,24 +44,24 @@ export async function getAllCommentsByIdProductApi(idProduct) {
     }
 }
 
-export async function countTotalNumberCommentsApi() {
-    console.log('Call countTotalNumberCommentsApi');
-    try {
-        const res = await axios({
-            url: commentUrls.comment_countTotalNumber_local,
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + token_current_user 
-            }
-        });
+// export async function countTotalNumberProductsApi() {
+//     console.log('Call countTotalNumberProductsApi');
+//     try {
+//         const res = await axios({
+//             url: product_countTotalNumber_local,
+//             method: 'GET',
+//             headers: {
+//                 'Authorization': 'Bearer ' + token_user
+//             }
+//         });
 
-        // Handle if successfully get data
-        console.log(res.data);
-        return res.data;
+//         // Handle if successfully get data
+//         console.log(res.data);
+//         return res.data;
 
-    } catch (err) {
-        // Handle if failed
-        console.log(err);
-        return null;
-    }
-}
+//     } catch (err) {
+//         // Handle if failed
+//         console.log(err);
+//         return null;
+//     }
+// }

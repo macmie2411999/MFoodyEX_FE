@@ -1,73 +1,79 @@
+const baseURL = "http://localhost:8080/";
+
 // UserMfoody
-export const user_add_local = "http://localhost:8080/user/add";
-export const user_countTotalNumber_local = "http://localhost:8080/user/countTotal";
-export const user_getAll_local = "http://localhost:8080/user/getAll";
-export const user_getByID_local =  "http://localhost:8080/user/get/";
-export const user_edit_local =  "http://localhost:8080/user/edit";
-export const user_deleteByID_local = "http://localhost:8080/user/delete/";
-export const user_getByEmail_local = "http://localhost:8080/user/getByEmail/";
+export const userUrls = {
+  user_add_local: baseURL + "user/add",
+  user_countTotalNumber_local: baseURL + "user/countTotal",
+  user_getAll_local: baseURL + "user/getAll",
+  user_getByID_local: baseURL + "user/get/",
+  user_edit_local: baseURL + "user/edit",
+  user_deleteByID_local: baseURL + "user/delete/",
+  user_getByEmail_local: baseURL + "user/getByEmail/"
+};
 
 // ProductMfoody
-export const product_add_local = "http://localhost:8080/product/add";
-export const product_countTotalNumber_local = "http://localhost:8080/product/countTotal";
-export const product_getAll_local = "http://localhost:8080/product/getAll";
-export const product_getByID_local =  "http://localhost:8080/product/get/";
-export const product_edit_local =  "http://localhost:8080/product/edit";
-export const product_deleteByID_local = "http://localhost:8080/product/delete/";
+export const productUrls = {
+  product_add_local: baseURL + "product/add",
+  product_countTotalNumber_local: baseURL + "product/countTotal",
+  product_getAll_local: baseURL + "product/getAll",
+  product_getByID_local: baseURL + "product/get/",
+  product_edit_local: baseURL + "product/edit",
+  product_deleteByID_local: baseURL + "product/delete/"
+};
 
 // OrderMfoody
-export const order_add_local = "http://localhost:8080/order/add";
-export const order_countTotalNumber_local = "http://localhost:8080/order/countTotal";
-export const order_getAll_local = "http://localhost:8080/order/getAll";
-export const order_getAllByIDUser_local = "http://localhost:8080/order/getByIdUser/"
-export const order_getByID_local =  "http://localhost:8080/order/get/";
-export const order_edit_local =  "http://localhost:8080/order/edit";
-export const order_deleteByID_local = "http://localhost:8080/order/delete/";
-export const order_deleteByIDUser_local = "http://localhost:8080/order/deleteByIdUser/";
+export const orderUrls = {
+  order_add_local: baseURL + "order/add",
+  order_countTotalNumber_local: baseURL + "order/countTotal",
+  order_getAll_local: baseURL + "order/getAll",
+  order_getAllByIDUser_local: baseURL + "order/getByIdUser/",
+  order_getByID_local: baseURL + "order/get/",
+  order_edit_local: baseURL + "order/edit",
+  order_deleteByID_local: baseURL + "order/delete/",
+  order_deleteByIDUser_local: baseURL + "order/deleteByIdUser/"
+};
+
+// CartMfoody
+export const cartUrls = {
+  cart_getAllByIDUser_local: baseURL + "cart/getByIdUser/",
+  cart_getByID_local: baseURL + "cart/get/",
+};
 
 // CreditCardMfoody
-// export const credit_card_add_local = "http://localhost:8080/creditcard/add";
-// export const credit_card_edit_local =  "http://localhost:8080/creditcard/edit";
-// export const credit_card_getByID_local =  "http://localhost:8080/creditcard/get/";
-// export const credit_card_getAllByIDUser_local = "http://localhost:8080/creditcard/getByIdUser/"
-// export const credit_card_deleteByID_local = "http://localhost:8080/creditcard/delete/";
-
 export const creditCardUrls = {
-    credit_card_add_local: "http://localhost:8080/creditcard/add",
-    credit_card_edit_local: "http://localhost:8080/creditcard/edit",
-    credit_card_getByID_local: "http://localhost:8080/creditcard/get/",
-    credit_card_getAllByIDUser_local: "http://localhost:8080/creditcard/getByIdUser/",
-    credit_card_deleteByID_local: "http://localhost:8080/creditcard/delete/"
-  };
-  
-
-// export const credit_card_countTotalNumber_local = "http://localhost:8080/creditcard/countTotal";
-// export const credit_card_getAll_local = "http://localhost:8080/creditcard/getAll";
-// export const credit_card_deleteByIDUser_local = "http://localhost:8080/creditcard/deleteByIdUser/";
+  credit_card_add_local: baseURL + "creditcard/add",
+  credit_card_edit_local: baseURL + "creditcard/edit",
+  credit_card_getByID_local: baseURL + "creditcard/get/",
+  credit_card_getAllByIDUser_local: baseURL + "creditcard/getByIdUser/",
+  credit_card_deleteByID_local: baseURL + "creditcard/delete/"
+};
 
 // Feedback
-export const feedback_add_local = "http://localhost:8080/feedback/add";
-export const feedback_countTotalNumber_local = "http://localhost:8080/feedback/countTotal";
-export const feedback_getAll_local = "http://localhost:8080/feedback/getAll";
-export const feedback_getByID_local =  "http://localhost:8080/feedback/get/";
-export const feedback_edit_local =  "http://localhost:8080/feedback/edit";
-export const feedback_deleteByID_local = "http://localhost:8080/feedback/delete/";
+export const feedbackUrls = {
+  feedback_add_local: baseURL + "feedback/add",
+  feedback_countTotalNumber_local: baseURL + "feedback/countTotal",
+  feedback_getAll_local: baseURL + "feedback/getAll",
+  feedback_getByID_local: baseURL + "feedback/get/",
+  feedback_edit_local: baseURL + "feedback/edit",
+  feedback_deleteByID_local: baseURL + "feedback/delete/"
+};
 
 // CommentMfoody
 export const commentUrls = {
-    comment_add_local: "http://localhost:8080/comment/add",
-    comment_edit_local: "http://localhost:8080/comment/edit",
-    comment_getByID_local: "http://localhost:8080/comment/get/",
-    comment_getAllByIDUser_local: "http://localhost:8080/comment/getByIdUser/",
-    comment_getAllByIDProduct_local: "http://localhost:8080/comment/getByIdProduct/",
-    comment_getAll_local: "http://localhost:8080/comment/getAll",
-    comment_countTotalNumber_local: "http://localhost:8080/comment/countTotal",
-    comment_deleteByID_local: "http://localhost:8080/comment/delete/",
-    comment_deleteAllByIDUser_local: "http://localhost:8080/comment/deleteByIdUser/",
-    comment_deleteAllByIDProduct_local: "http://localhost:8080/comment/deleteByIdProduct/"
-  };
+  comment_add_local: baseURL + "comment/add",
+  comment_edit_local: baseURL + "comment/edit",
+  comment_getByID_local: baseURL + "comment/get/",
+  comment_getAllByIDUser_local: baseURL + "comment/getByIdUser/",
+  comment_getAllByIDProduct_local: baseURL + "comment/getByIdProduct/",
+  comment_getAll_local: baseURL + "comment/getAll",
+  comment_countTotalNumber_local: baseURL + "comment/countTotal",
+  comment_deleteByID_local: baseURL + "comment/delete/",
+  comment_deleteAllByIDUser_local: baseURL + "comment/deleteByIdUser/",
+  comment_deleteAllByIDProduct_local: baseURL + "comment/deleteByIdProduct/"
+};
   
-
 // Application
-export const application_login_local = "http://localhost:8080/applicationMfoody/login";
-export const application_logout_local = "http://localhost:8080/applicationMfoody/logout";
+export const applicationUrls = {
+  application_login_local: baseURL + "applicationMfoody/login",
+  application_logout_local: baseURL + "applicationMfoody/logout"
+};

@@ -9,7 +9,7 @@ export async function getAllCreditCardsOfCurrentUser() {
     let arrayCreditCardsOfCurrentUser = customLocalStorage.getItemFromLocalStorage("MFoody - arrayAllCreditCardsOfCurrentUser");
 
     // Check arrays valid
-    if (arrayCreditCardsOfCurrentUser === null || arrayCreditCardsOfCurrentUser.length === 0) {
+    if (arrayCreditCardsOfCurrentUser === null || !Array.isArray(arrayCreditCardsOfCurrentUser)) {
         console.log("MFoody - arrayAllCreditCardsOfCurrentUser is not valid!");
         
         arrayCreditCardsOfCurrentUser = await getAllCreditCardsOfCurrentUserApi();
@@ -35,7 +35,7 @@ export async function getAllCreditCardsOfCurrentUserApi() {
         });
 
         // Handle if successfully get data
-        console.log(res.data);
+        // console.log(res.data);
         return res.data;
 
     } catch (err) {

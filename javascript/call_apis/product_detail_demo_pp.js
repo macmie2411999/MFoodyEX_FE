@@ -3,7 +3,6 @@
 
 import { token_admin, token_user } from './default_tokens.js';
 import { commentUrls } from './default_apis.js';
-import { getAllCommentsByIdProduct } from './comments_apis.js';
 import { getAllProducts, getAllProductsApi, countTotalNumberProductsApi } from './products_apis.js';
 
 // Process LocalStorage and Check Cookies

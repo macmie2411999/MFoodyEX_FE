@@ -72,6 +72,23 @@ $text-c8-grey: #eee;
                 border: 1px solid $text-c8-grey;
                 box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
 
+                a {
+                    font-size: 1rem !important;
+                    text-decoration: none;
+                    color: #000;
+                    opacity: 0.5;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+
+                ul {
+                    padding-left: 5px !important;
+                    width: 100%;
+
+                }
+
                 .card-body {
                     .title-ele-entity {
                         position: relative;
@@ -92,34 +109,13 @@ $text-c8-grey: #eee;
                     }
 
                     .list-entity {
-                        margin: 15px 0 15px 0 !important;
-
-                        a {
-                            text-decoration: none;
-                            color: black;
-                            opacity: 0.8;
-
-                            &:hover {
-                                color: #000;
-
-                            }
-                        }
+                        margin: 10px 0 10px 0 !important;
+                        list-style: none !important;
                     }
 
                     .button-card-body {
                         border: none !important;
                         background-color: transparent !important;
-
-                        a {
-                            text-decoration: none;
-                            color: #000;
-                            opacity: 0.5;
-
-                            &:hover {
-                                color: #000;
-                                opacity: 0.7;
-                            }
-                        }
                     }
 
                     .btn-upgrade-avatar {
@@ -133,7 +129,7 @@ $text-c8-grey: #eee;
                         display: inline-block;
                         padding: 10px 20px;
 
-                        &:hover{
+                        &:hover {
                             background-color: $text-c1-grey
                         }
                     }

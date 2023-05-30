@@ -107,7 +107,7 @@
                                 </button>
                             </li>
                             <li class="not-search"><a href="#" class="fa-solid fa-heart"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-user"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
                         </ul>
 
@@ -132,7 +132,7 @@
                         <button>
                             <i class="fa-regular fa-address-card fa-2xl"></i>
                         </button>
-                        <a href="#" class="category">Information</a>
+                        <a href="profile_user_demo_2.html" class="category">Information</a>
                     </li>
                     <li>
                         <button>
@@ -144,8 +144,19 @@
                         <button>
                             <i class="fa-solid fa-credit-card fa-2xl"></i>
                         </button>
-                        <a href="#" class="category">Cards</a>
-
+                        <a href="#" class="category">Credit Cards</a>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category">Cart</a>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-bookmark fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category">Favorites</a>
                     </li>
                     <li>
                         <button>
@@ -153,24 +164,24 @@
                         </button>
                         <a href="#" class="category">Comments</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <button>
                             <i class="fa-solid fa-gear fa-2xl"></i>
                         </button>
                         <a href="#" class="category">Setting</a>
-                    </li>
+                    </li> -->
                     <li>
                         <button>
                             <i class="icon-log-out fa-solid fa-right-from-bracket fa-2xl"></i>
                         </button>
                         <a href="#" class="category a-log-out">Log Out</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <button>
                             <i class="icon-delete-account fa-solid fa-user-minus fa-2xl"></i>
                         </button>
                         <a href="#" class="category a-delete-account">Delete Account</a>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
 
@@ -262,7 +273,7 @@
                                 </div>
 
                                 <div class="row" id="orderCartCommentCreditCardOfUser">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" id="orderPart">
                                         <div class="card card-orders mb-4 mb-md-0">
                                             <div class="card-body">
                                                 <p class="mb-1 title-ele-entity">
@@ -310,7 +321,7 @@
                                     </div>
 
                                     <div class="col-md-6 mt-4">
-                                        <div class="card card-credit-cards mb-4 mb-md-0">
+                                        <div class="card card-credit-cards mb-4 mb-md-0" id="cartPart">
                                             <div class="card-body">
                                                 <p class="mb-1 title-ele-entity">
                                                     <span class="ele-entity">Cart</span> <span
@@ -333,7 +344,7 @@
                                     </div>
 
                                     <div class="col-md-6 mt-4">
-                                        <div class="card card-cart mb-4 mb-md-0">
+                                        <div class="card card-cart mb-4 mb-md-0" id="commentPart">
                                             <div class="card-body">
                                                 <p class="mb-1 title-ele-entity">
                                                     <span class="ele-entity">Comments</span> <span
@@ -477,6 +488,13 @@
 
     </footer>
     <!-- FOOTER END -->
+
+    <!-- Redirect -->
+    <script>
+        function redirectToProfile() {
+            window.location.href = "profile_user_demo_2.html";
+        }
+    </script>
 
     <!-- Calling jQuery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

@@ -3567,6 +3567,19 @@ body {
   border: 1px solid #eee;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
+.default-profile-user .container .row .card a {
+  font-size: 1rem !important;
+  text-decoration: none;
+  color: #000;
+  opacity: 0.5;
+}
+.default-profile-user .container .row .card a:hover {
+  opacity: 0.7;
+}
+.default-profile-user .container .row .card ul {
+  padding-left: 5px !important;
+  width: 100%;
+}
 .default-profile-user .container .row .card .card-body .title-ele-entity {
   position: relative;
 }
@@ -3583,28 +3596,12 @@ body {
   top: 0;
 }
 .default-profile-user .container .row .card .card-body .list-entity {
-  margin: 15px 0 15px 0 !important;
-}
-.default-profile-user .container .row .card .card-body .list-entity a {
-  text-decoration: none;
-  color: black;
-  opacity: 0.8;
-}
-.default-profile-user .container .row .card .card-body .list-entity a:hover {
-  color: #000;
+  margin: 10px 0 10px 0 !important;
+  list-style: none !important;
 }
 .default-profile-user .container .row .card .card-body .button-card-body {
   border: none !important;
   background-color: transparent !important;
-}
-.default-profile-user .container .row .card .card-body .button-card-body a {
-  text-decoration: none;
-  color: #000;
-  opacity: 0.5;
-}
-.default-profile-user .container .row .card .card-body .button-card-body a:hover {
-  color: #000;
-  opacity: 0.7;
 }
 .default-profile-user .container .row .card .card-body .btn-upgrade-avatar {
   text-decoration: none;
@@ -3696,7 +3693,7 @@ body {
   list-style: disc;
 }
 .profile-full-list .container-profile-full-list #sidebar ul li {
-  list-style: none;
+  list-style: none !important;
   margin-bottom: 5px;
   margin-right: 15px !important;
   transition: all 0.5s ease;

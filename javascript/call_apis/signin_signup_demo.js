@@ -2,8 +2,8 @@
 // Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
-import { index_page_local , signin_signup_page_local, catalog_page_local} from './default_urls_page.js';
-import { application_login_local, user_getByID_local, user_getByEmail_local } from './default_apis.js';
+import { pageUrls} from './default_urls_page.js';
+import { applicationUrls, userUrls} from './default_apis.js';
 
 const signInButton = document.getElementById('button-signin');
 
@@ -38,7 +38,7 @@ $(document).ready(function () {
             console.log(JSON.stringify({ userName, userPassword }));
 
             let promise = axios({
-                url: application_login_local,
+                url: applicationUrls.application_login_local,
                 method: 'POST',
                 data: JSON.stringify({ userName, userPassword }),
                 headers: {
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
 function getUserByEmailApi(tokenLogin, userName) {
     let promise = axios({
-        url: user_getByEmail_local + userName,
+        url: userUrls.user_getByEmail_local + userName,
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + tokenLogin
@@ -83,7 +83,7 @@ function getUserByEmailApi(tokenLogin, userName) {
 
         if (currentUser.roleUser === "USER") {
             // Direct to admin main page
-            window.location.href = catalog_page_local;
+            window.location.href = pageUrls.catalog_page_local;
         }
 
     })
