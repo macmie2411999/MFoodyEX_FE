@@ -58,9 +58,9 @@
 
     <!-- Sidebar Part-->
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
     <!-- Bootstrap JS -->
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
@@ -110,14 +110,16 @@
                     <fieldset class="container_header_right_section">
 
                         <ul class="toolbar">
-                            <li class="container-search"><input type="search" id="search" placeholder="What are you looking for?"></li>
+                            <li class="container-search"><input type="search" id="search"
+                                    placeholder="What are you looking for?"></li>
                             <li class="li-search">
                                 <button type="submit" id="btn-search">
                                     <span class="fa-solid fa-search" id="span-search"></span>
                                 </button>
                             </li>
                             <li class="not-search"><a href="#" class="fa-solid fa-heart"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-user"
+                                    onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
                         </ul>
 
@@ -234,115 +236,122 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <!-- list Order Start -->
+                                <div class="list-order-cards" id="listOrderCards">
 
-                                <div class="order-card">
-                                    <div class="header-order-card">
-                                        <div>
-                                            <p class="text-header date-order">Date Order: 10/05/2023</p>
-                                            <p class="text-header id-order">#12345</p>
+                                    <div class="order-card">
+                                        <div class="header-order-card">
+                                            <div>
+                                                <p class="text-header date-order">Date Order: 10/05/2023</p>
+                                                <p class="text-header id-order">#12345</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-header price-order">Price: <span
+                                                        class="price-value">1000000$</span> </p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p class="text-header price-order">Price: <span class="price-value">1000000$</span> </p>
+                                        <div class="body-order-card">
+                                            <div class="info">
+                                                <button class="text-body status-order">Processing</button>
+                                                <p class="text-body payment-method-order">Phương thức thanh toán:
+                                                    Thẻ tín dụng</p>
+                                                <p class="text-body shipping-method-order">Phương thức giao hàng:
+                                                    Giao hàng tiêu chuẩn</p>
+                                            </div>
+                                            <div class="images-order-card">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 1">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 2">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 3">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="body-order-card">
-                                        <div class="info">
-                                            <button class="text-body status-order">Processing</button>
-                                            <p class="text-body payment-method-order">Phương thức thanh toán:
-                                                Thẻ tín dụng</p>
-                                            <p class="text-body shipping-method-order">Phương thức giao hàng:
-                                                Giao hàng tiêu chuẩn</p>
+
+                                    <div class="order-card">
+                                        <div class="header-order-card">
+                                            <div>
+                                                <p class="text-header date-order">Date Order: 10/05/2023</p>
+                                                <p class="text-header id-order">#12345</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-header price-order">Price: <span
+                                                        class="price-value">1000000$</span> </p>
+                                            </div>
                                         </div>
-                                        <div class="images-order-card">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 1">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 2">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 3">
-                                            
+                                        <div class="body-order-card">
+                                            <div class="info">
+                                                <button class="text-body status-order">Processing</button>
+                                                <p class="text-body payment-method-order">Phương thức thanh toán:
+                                                    Thẻ tín dụng</p>
+                                                <p class="text-body shipping-method-order">Phương thức giao hàng:
+                                                    Giao hàng tiêu chuẩn</p>
+                                            </div>
+                                            <div class="images-order-card">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 1">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 2">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 3">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="order-card">
+                                        <div class="header-order-card">
+                                            <div>
+                                                <p class="text-header date-order">Date Order: 10/05/2023</p>
+                                                <p class="text-header id-order">#12345</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-header price-order">Price: <span
+                                                        class="price-value">1000000$</span> </p>
+                                            </div>
+                                        </div>
+                                        <div class="body-order-card">
+                                            <div class="info">
+                                                <button class="text-body status-order">Processing</button>
+                                                <p class="text-body payment-method-order">Phương thức thanh toán:
+                                                    Thẻ tín dụng</p>
+                                                <p class="text-body shipping-method-order">Phương thức giao hàng:
+                                                    Giao hàng tiêu chuẩn</p>
+                                            </div>
+                                            <div class="images-order-card">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 1">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 2">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 3">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="order-card">
+                                        <div class="header-order-card">
+                                            <div>
+                                                <p class="text-header date-order">Date Order: 10/05/2023</p>
+                                                <p class="text-header id-order">#12345</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-header price-order">Price: <span
+                                                        class="price-value">1000000$</span> </p>
+                                            </div>
+                                        </div>
+                                        <div class="body-order-card">
+                                            <div class="info">
+                                                <button class="text-body status-order">Processing</button>
+                                                <p class="text-body payment-method-order">Phương thức thanh toán:
+                                                    Thẻ tín dụng</p>
+                                                <p class="text-body shipping-method-order">Phương thức giao hàng:
+                                                    Giao hàng tiêu chuẩn</p>
+                                            </div>
+                                            <div class="images-order-card">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 1">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 2">
+                                                <img src="../image/products/Mushroom_5.webp" alt="product 3">
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="order-card">
-                                    <div class="header-order-card">
-                                        <div>
-                                            <p class="text-header date-order">Date Order: 10/05/2023</p>
-                                            <p class="text-header id-order">#12345</p>
-                                        </div>
-                                        <div>
-                                            <p class="text-header price-order">Price: <span class="price-value">1000000$</span> </p>
-                                        </div>
-                                    </div>
-                                    <div class="body-order-card">
-                                        <div class="info">
-                                            <button class="text-body status-order">Processing</button>
-                                            <p class="text-body payment-method-order">Phương thức thanh toán:
-                                                Thẻ tín dụng</p>
-                                            <p class="text-body shipping-method-order">Phương thức giao hàng:
-                                                Giao hàng tiêu chuẩn</p>
-                                        </div>
-                                        <div class="images-order-card">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 1">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 2">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 3">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="order-card">
-                                    <div class="header-order-card">
-                                        <div>
-                                            <p class="text-header date-order">Date Order: 10/05/2023</p>
-                                            <p class="text-header id-order">#12345</p>
-                                        </div>
-                                        <div>
-                                            <p class="text-header price-order">Price: <span class="price-value">1000000$</span> </p>
-                                        </div>
-                                    </div>
-                                    <div class="body-order-card">
-                                        <div class="info">
-                                            <button class="text-body status-order">Processing</button>
-                                            <p class="text-body payment-method-order">Phương thức thanh toán:
-                                                Thẻ tín dụng</p>
-                                            <p class="text-body shipping-method-order">Phương thức giao hàng:
-                                                Giao hàng tiêu chuẩn</p>
-                                        </div>
-                                        <div class="images-order-card">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 1">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 2">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 3">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="order-card">
-                                    <div class="header-order-card">
-                                        <div>
-                                            <p class="text-header date-order">Date Order: 10/05/2023</p>
-                                            <p class="text-header id-order">#12345</p>
-                                        </div>
-                                        <div>
-                                            <p class="text-header price-order">Price: <span class="price-value">1000000$</span> </p>
-                                        </div>
-                                    </div>
-                                    <div class="body-order-card">
-                                        <div class="info">
-                                            <button class="text-body status-order">Processing</button>
-                                            <p class="text-body payment-method-order">Phương thức thanh toán:
-                                                Thẻ tín dụng</p>
-                                            <p class="text-body shipping-method-order">Phương thức giao hàng:
-                                                Giao hàng tiêu chuẩn</p>
-                                        </div>
-                                        <div class="images-order-card">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 1">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 2">
-                                            <img src="../image/products/Mushroom_5.webp" alt="product 3">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- list Order Start -->
 
                             </div>
@@ -489,7 +498,21 @@
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
         </script>
 
+    <!-- Splider -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+
+    <!-- Call APIs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- Import JS -->
+    <script type="module" src="../javascript/call_apis/profile_user_demo_2_orders.js"></script>
+    <script type="module" src="../javascript/call_apis/logout.js"></script>
+    <script src="../javascript/call_apis/processProducts.js"></script>
+    <script src="../javascript/util/LocalStorageFunction.js"></script>
+    <script src="../javascript/call_apis/localStorageAndCookieProcess.js"></script>
+
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script type="module" src="../javascript/header_scroll_down.js"></script>
     <script src="../javascript/p_header_right_section.js"></script>

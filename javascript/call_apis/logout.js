@@ -1,8 +1,7 @@
 import { applicationUrls } from './default_apis.js'
 import { pageUrls } from './default_urls_page.js'
 
-
-const logoutButton = document.querySelector('#buttonLogout');
+const logoutButton = document.querySelector('.a-log-out');
 
 logoutButton.addEventListener('click', () => {
     let promise = axios({
@@ -18,9 +17,7 @@ logoutButton.addEventListener('click', () => {
             console.log(response);
 
             // Remove all Local Storage and Cookies
-            localStorageCookiesProcess.removeAllSelectedToEditObjects();
-            customLocalStorage.removeItemFromLocalStorage("MFoody - currentUser");
-            customLocalStorage.removeItemFromLocalStorage("MFoody - tokenCurrentUser");
+            localStorageCookiesProcess.removeAllMfoodyObjects();
             window.location.href = pageUrls.signin_signup_page_local;
         })
         .catch(function (response) {

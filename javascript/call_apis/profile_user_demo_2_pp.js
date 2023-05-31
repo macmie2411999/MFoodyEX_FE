@@ -175,7 +175,7 @@ function renderOrdersOfUser(arrayAllOrdersOfCurrentUser) {
                     </ul>
 
                     <div class="d-flex justify-content-center">
-                        <button class="button-card-body"> <a href="#">See More...</a></button>
+                        <button class="button-card-body"> <a href="profile_user_demo_2_orders.html">See More...</a></button>
                     </div>
                 </div>
             </div>

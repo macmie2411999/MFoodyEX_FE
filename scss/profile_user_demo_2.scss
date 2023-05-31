@@ -202,11 +202,12 @@ $text-c10-grey: #172033;
         .main-content {
             // display: flex;
             width: 100%;
-        
+
             .default-profile-user {
-                
+
                 .list-orders {
                     position: relative;
+
                     .title-part {
                         color: $text-c8-primary !important;
                         // font-size: 1.5rem;
@@ -216,14 +217,15 @@ $text-c10-grey: #172033;
                         position: absolute;
                         top: -1% !important;
                         right: 0;
-                        
+
                         .container-filter-product {
                             padding-right: 15px;
+
                             .filter-group {
                                 display: inline-block;
                                 width: auto;
                                 text-align: right;
-                
+
                                 .form-select {
                                     display: inline-block;
                                     width: auto;
@@ -241,6 +243,7 @@ $text-c10-grey: #172033;
                     .container-list-orders {
                         // width: 1600px;
                         width: 100%;
+
                         // position: relative;
                         .order-card {
                             background: white;
@@ -266,6 +269,12 @@ $text-c10-grey: #172033;
                                     font-size: 1.3rem !important;
                                     font-weight: 700;
                                     margin-bottom: 10px;
+                                    opacity: 1;
+                                }
+
+                                .date-order {
+                                    color: #000;
+                                    opacity: 0.5 !important;
                                 }
 
                                 .id-order {
@@ -273,10 +282,25 @@ $text-c10-grey: #172033;
                                     font-size: 1.1rem !important;
                                 }
 
-                                .price-value{
+                                .product-not-sale {
                                     font-size: 1.5rem !important;
                                     color: $text-c6-primary;
                                     opacity: 0.8;
+                                }
+
+                                .sale-price-order {
+                                    font-size: 1.5rem !important;
+                                    color: $text-c3-yellow !important;
+                                    opacity: 0.8;
+                                }
+
+                                .full-price-order {
+                                    font-size: 1.5rem !important;
+                                    color: #757575;
+                                    opacity: 1 !important;
+                                    text-decoration: line-through;
+                                    text-decoration-thickness: 2px;
+                                    text-decoration-color: rgba(131, 131, 131, .4);
                                 }
 
                             }
@@ -311,6 +335,18 @@ $text-c10-grey: #172033;
                                         margin-bottom: 20px;
                                         opacity: 1;
                                         font-size: 1.3rem !important;
+                                    }
+
+                                    .Processing {
+                                        background-color: $text-c1-primary !important;
+                                    }
+
+                                    .Completed {
+                                        background-color: $text-c8-primary !important;
+                                    }
+
+                                    .Aborted {
+                                        background-color: $text-c3-yellow !important;
                                     }
                                 }
 

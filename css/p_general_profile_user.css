@@ -1779,34 +1779,40 @@ body {
   opacity: 1;
 }
 
-.default-profile-user {
+.content-user-card-information {
+  width: 100%;
+}
+.content-user-card-information .default-profile-user {
   background-color: #fff;
 }
-.default-profile-user .container .row .card {
+.content-user-card-information .default-profile-user .container {
+  width: 100%;
+}
+.content-user-card-information .default-profile-user .container .row .card {
   border: 1px solid #eee;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
-.default-profile-user .container .row .card a {
+.content-user-card-information .default-profile-user .container .row .card a {
   font-size: 1rem !important;
   text-decoration: none;
   color: #000;
   opacity: 0.5;
 }
-.default-profile-user .container .row .card a:hover {
+.content-user-card-information .default-profile-user .container .row .card a:hover {
   opacity: 0.7;
 }
-.default-profile-user .container .row .card ul {
+.content-user-card-information .default-profile-user .container .row .card ul {
   padding-left: 5px !important;
   width: 100%;
 }
-.default-profile-user .container .row .card .card-body .title-ele-entity {
+.content-user-card-information .default-profile-user .container .row .card .card-body .title-ele-entity {
   position: relative;
 }
-.default-profile-user .container .row .card .card-body .title-ele-entity .ele-entity {
+.content-user-card-information .default-profile-user .container .row .card .card-body .title-ele-entity .ele-entity {
   color: #009f4d;
   font-size: 18px;
 }
-.default-profile-user .container .row .card .card-body .title-ele-entity .general-ele-entity {
+.content-user-card-information .default-profile-user .container .row .card .card-body .title-ele-entity .general-ele-entity {
   color: #F67E3C;
   position: absolute;
   padding-right: 0px;
@@ -1814,15 +1820,15 @@ body {
   right: 0;
   top: 0;
 }
-.default-profile-user .container .row .card .card-body .list-entity {
+.content-user-card-information .default-profile-user .container .row .card .card-body .list-entity {
   margin: 10px 0 10px 0 !important;
   list-style: none !important;
 }
-.default-profile-user .container .row .card .card-body .button-card-body {
+.content-user-card-information .default-profile-user .container .row .card .card-body .button-card-body {
   border: none !important;
   background-color: transparent !important;
 }
-.default-profile-user .container .row .card .card-body .btn-upgrade-avatar {
+.content-user-card-information .default-profile-user .container .row .card .card-body .btn-upgrade-avatar {
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -1832,9 +1838,9 @@ body {
   display: inline-block;
   padding: 10px 20px;
 }
-.default-profile-user .container .row .card .card-body .btn-upgrade-avatar:hover {
+.content-user-card-information .default-profile-user .container .row .card .card-body .btn-upgrade-avatar:hover {
   background-color: #F8F8F8;
 }
-.default-profile-user .container .row .card img {
+.content-user-card-information .default-profile-user .container .row .card img {
   width: 150px;
 }

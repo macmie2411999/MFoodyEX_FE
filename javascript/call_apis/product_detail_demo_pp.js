@@ -3,7 +3,7 @@
 
 import { token_admin, token_user } from './default_tokens.js';
 import { commentUrls } from './default_apis.js';
-import { getAllProducts, getAllProductsApi, countTotalNumberProductsApi } from './products_apis.js';
+import { getAllProducts, getAllProductsApi} from './products_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -51,7 +51,6 @@ async function run() {
     updatePagination();
 
 }
-
 run();
 
 // Add new comment
@@ -104,13 +103,16 @@ form.addEventListener('submit', (event) => {
                         'Authorization': 'Bearer ' + token_curent_user
                     },
                 })
-                    .then(function (response) {
+                    .then(async function (response) {
                         console.log(response);
                         alert('Comment added successfully!');
 
-                        // Save to LocalStorage new value
-                        arrayAllProducts = getAllProductsApi();
+                        // Save to LocalStorage new Data
+                        arrayAllProducts = await getAllProductsApi();
                         customLocalStorage.saveItemToLocalStorage(arrayAllProducts, "MFoody - arrayAllProducts");
+
+                        // Reload the new Data
+                        run();
                         
                     })
                     .catch(function (error) {

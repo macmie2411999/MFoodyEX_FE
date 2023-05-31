@@ -84,6 +84,10 @@ function getUserByEmailApi(tokenLogin, userName) {
         if (currentUser.roleUser === "USER") {
             // Direct to admin main page
             window.location.href = pageUrls.catalog_page_local;
+        } else if (currentUser.roleUser === "ADMIN"){
+            localStorageCookiesProcess.removeAllMfoodyObjects();
+
+            alert("Your have role invalid!")
         }
 
     })
