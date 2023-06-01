@@ -194,6 +194,7 @@ function createRatingStars(rating) {
     return starsHTML;
 }
 
+// Table Product
 function createProductCard(product) {
     let tempPrice = '';
 

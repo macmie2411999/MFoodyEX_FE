@@ -7,6 +7,8 @@
 // @import '../scss/footer_home_demo.scss';
 @import '../scss/header_home_demo_2.scss';
 @import '../scss/footer_home_demo_2.scss';
+@import '../scss/splider_and_modal.scss';
+@import '../scss/table_products.scss';
 
 // Card
 // @import '../scss/p_product_card.scss';
@@ -198,7 +200,8 @@ $text-c10-grey: #172033;
                 }
             }
         }
-
+        
+        // Page Order
         .main-content {
             // display: flex;
             width: 100%;
@@ -366,6 +369,59 @@ $text-c10-grey: #172033;
                 }
             }
         }
+
+        // Page Favorites
+        .main-content-favorites {
+            // display: flex;
+            width: 100%;
+
+            .default-profile-user {
+
+                .list-favorites {
+                    position: relative;
+
+                    .title-part {
+                        color: $text-c8-primary !important;
+                        // font-size: 1.5rem;
+                    }
+
+                    .filter-product {
+                        position: absolute;
+                        top: -1% !important;
+                        right: 0;
+
+                        .container-filter-product {
+                            padding-right: 15px;
+
+                            .filter-group {
+                                display: inline-block;
+                                width: auto;
+                                text-align: right;
+
+                                .form-select {
+                                    display: inline-block;
+                                    width: auto;
+                                    padding: 5px 30px 5px 10px;
+                                    font-size: 1.2rem;
+                                    color: #000;
+                                    opacity: 0.5 !important;
+                                    font-weight: 400;
+                                    // Add any other styles for the select element
+                                }
+                            }
+                        }
+                    }
+
+                    .container-list-favorites {
+                        // width: 1600px;
+                        width: 100%;
+
+                        
+                    }
+                }
+            }
+        }
+
     }
 }
 

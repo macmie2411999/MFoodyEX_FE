@@ -106,7 +106,7 @@
                                     <span class="fa-solid fa-search" id="span-search"></span>
                                 </button>
                             </li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-heart"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-heart" onclick="redirectToFavorite()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
                         </ul>
@@ -471,6 +471,9 @@
     <script>
         function redirectToProfile() {
             window.location.href = "profile_user_demo_2.html";
+        }
+        function redirectToFavorite() {
+            window.location.href = "profile_user_demo_2_favorites.html";
         }
     </script>
 

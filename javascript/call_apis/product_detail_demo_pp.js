@@ -54,7 +54,6 @@ async function run() {
 run();
 
 // Add new comment
-// Add new comment
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     let checkUserRole = localStorageCookiesProcess.checkUserRole();
@@ -123,9 +122,6 @@ form.addEventListener('submit', (event) => {
         });
     }
 });
-
-
-
 
 // Render
 function renderDetailProduct(product) {

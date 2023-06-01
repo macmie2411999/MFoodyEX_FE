@@ -71,7 +71,19 @@ export const commentUrls = {
   comment_deleteAllByIDUser_local: baseURL + "comment/deleteByIdUser/",
   comment_deleteAllByIDProduct_local: baseURL + "comment/deleteByIdProduct/"
 };
-  
+
+// FavoriteListProductMfoody
+export const favoriteListUrls = {
+  favorite_list_getAllByIDUser_local: baseURL + "favoriteListProducts/getByIdUser/",
+};
+
+// FavoriteProductMfoody
+export const favoriteProductUrls = {
+  favorite_product_add_local: baseURL + "favoriteProduct/add",
+  favorite_product_deleteByIDs_local: baseURL + "favoriteProduct/delete/idFavoriteListProducts/"
+  // favorite_product_deleteByIDs_local: baseURL + "favoriteProduct/delete/idFavoriteListProducts/350060/idProduct/530022",
+};
+
 // Application
 export const applicationUrls = {
   application_login_local: baseURL + "applicationMfoody/login",

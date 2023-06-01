@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/faq_demo.min.css">
-    <title>FAQ MFoody - Grocery Store</title>
+    <link rel="stylesheet" href="../css/profile_user_demo_2.min.css">
+    <title>Favorite MFoody - Grocery Store</title>
     <link rel="icon" href="../image/icon/icon_gfgl_green_64.png">
 
     <!-- jQuery-->
@@ -51,6 +51,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
+    <!-- Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide"></script>
+
 </head>
 
 <body>
@@ -85,7 +90,7 @@
                         <a class="nav-link" href="blog_demo.html">BLOG</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="faq_demo.html">FAQ'S</a>
+                        <a class="nav-link" href="faq_demo.html">FAQ'S</a>
                     </li>
                 </ul>
 
@@ -94,14 +99,16 @@
                     <fieldset class="container_header_right_section">
 
                         <ul class="toolbar">
-                            <li class="container-search"><input type="search" id="search" placeholder="What are you looking for?"></li>
+                            <li class="container-search"><input type="search" id="search"
+                                    placeholder="What are you looking for?"></li>
                             <li class="li-search">
                                 <button type="submit" id="btn-search">
                                     <span class="fa-solid fa-search" id="span-search"></span>
                                 </button>
                             </li>
                             <li class="not-search"><a href="#" class="fa-solid fa-heart" onclick="redirectToFavorite()"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-user"
+                                    onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
                         </ul>
 
@@ -114,75 +121,138 @@
     </nav>
     <!-- HEADER END -->
 
-    <!-- FAQ PAGE -->
-    <section class="faq-page">
+    <!-- SIDEBAR PAGE -->
+    <main class="profile-full-list">
+        <div class="container-profile-full-list">
 
-        <!-- BreadCrumb -->
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">FAQ's</li>
-            </ol>
-        </nav>
-        <br>
-        <!-- BreadCrumb End -->
+            <!-- Sidebar  -->
+            <nav id="sidebar" class="sidebar">
 
-
-        <div class="faq-container">
-
-            <div class="img-faq-questions-email">
-                <img src="../image/pages/fqa_page.jpg" alt="Company Logo">
-            </div>
-
-            <div class="faq-intro text-center mb-md-5 mb-4">
-                <h3 class="title mx-lg-5">Your Guide to Getting the Answers You Need</h3>
-                <p class="title-content mt-2">Get answers to commonly asked questions about our services</p>
-            </div>
-
-            <div class="horizontal-line"></div>
-
-            <!-- Nav Ques -->
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <li class="nav-item active" data-target="general">General</li>
-                    <li class="nav-item" data-target="pricing">Pricing</li>
-                    <li class="nav-item" data-target="order">Order</li>
-                    <li class="nav-item" data-target="account">Account</li>
+                <ul class="list-unstyled components">
+                    <li>
+                        <button>
+                            <i class="fa-regular fa-address-card fa-2xl"></i>
+                        </button>
+                        <a href="profile_user_demo_2.html" class="category">Information</a>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-receipt fa-2xl"></i>
+                        </button>
+                        <a href="profile_user_demo_2_orders.html" class="category">Orders</a>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-credit-card fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category">Credit Cards</a>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category">Cart</a>
+                    </li>
+                    <li class="active">
+                        <button>
+                            <i class="fa-solid fa-bookmark fa-2xl"></i>
+                        </button>
+                        <a href="profile_user_demo_2_favorites.html" class="category">Favorites</a>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-comments fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category">Comments</a>
+                    </li>
+                    <!-- <li>
+                        <button>
+                            <i class="fa-solid fa-gear fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category">Setting</a>
+                    </li> -->
+                    <li>
+                        <button>
+                            <i class="icon-log-out fa-solid fa-right-from-bracket fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category a-log-out">Log Out</a>
+                    </li>
+                    <!-- <li>
+                        <button>
+                            <i class="icon-delete-account fa-solid fa-user-minus fa-2xl"></i>
+                        </button>
+                        <a href="#" class="category a-delete-account">Delete Account</a>
+                    </li> -->
                 </ul>
             </nav>
 
-            <div class="faq-questions-container question-list active" id="general">
-                <!-- List FAQs here -->
+            <!-- Page Content  -->
+            <div class="main-content-favorites">
+                <!-- p_general_profile_user -->
+                <section class="default-profile-user">
+
+                    <div class="container py-5">
+                        <!-- BreadCrumb -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Favorites</li>
+                            </ol>
+                        </nav>
+                        <!-- BreadCrumb End -->
+
+                        <!-- Deviding Line -->
+                        <div class="horizontal-line">
+                            <div class="circle"></div>
+                        </div>
+
+                        <div class="row list-favorites">
+                            <h2 class="title-bottom title-part"> Favorite Products</h2>
+                            <div class="col-12 container-list-favorites">
+
+                                <div class="filter-product">
+                                    <div class="container-filter-product">
+                                        <!-- Sort By Filter -->
+                                        <div class="filter-group">
+                                            <select class="form-select" id="sort-by">
+                                                <option value="date">Recently</option>
+                                                <option value="price price-high-to-low">Price: High to Low</option>
+                                                <option value="price price-low-to-high">Price: Low to High</option>
+                                                <option value="status status-canceled">Status: Canceled</option>
+                                                <option value="status status-processing">Status: Processing</option>
+                                                <option value="status status-received">Status: Received</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- List Favorites Start -->
+                                <div class="more-products">
+                                    <div class="container-more-products">
+
+                                        <div id="productList" class="row productList">
+                                            <!-- Product cards will be appended here -->
+                                        </div>
+                                        <div class="pagination-container">
+                                            <button id="prevBtn" class="pagination-btn">Prev</button>
+                                            <div id="pagination" class="pagination">
+                                                <!-- Pagination buttons will be appended here -->
+                                            </div>
+                                            <button id="nextBtn" class="pagination-btn">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- List Favorites End -->
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- p_general_profile_user End -->
             </div>
-
-            <div class="faq-questions-container question-list" id="pricing">
-                <!-- List FAQs here -->
-            </div>
-
-            <div class="faq-questions-container question-list" id="order">
-                <!-- List FAQs here -->
-            </div>
-
-            <div class="faq-questions-container question-list" id="account">
-                <!-- List FAQs here -->
-            </div>
-            <!-- Nav Ques End -->
-
-            <!-- Deviding Line -->
-            <div class="horizontal-line"></div>
-
-            <div class="faq-questions-email">
-                <div class="container-faq-questions-email">
-                    <h3 class="title-faq-questions-email"> Can't find an answer to your question?</h3>
-                    <p class="content-faq-questions-email"> Ask us anything, we are here to help you to deal with
-                        anything.</p>
-                    <button class="button-faq-questions-email">Ask your question</button>
-                </div>
-            </div>
-
         </div>
-    </section>
-    <!-- FAQ PAGE END -->
+    </main>
+    <!-- SIDEBAR PAGE END -->
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -192,7 +262,8 @@
                     <div class="col-lg-4 col-md-6 column_mfoody_infor">
 
                         <div class="footer_logo mb-4">
-                            <a class="navbar-brand" href="#"><img width="auto" height="90" src="../image/icon/icon_logo_brand_updated3_crop.png" alt="Company Logo">
+                            <a class="navbar-brand" href="#"><img width="auto" height="90"
+                                    src="../image/icon/icon_logo_brand_updated3_crop.png" alt="Company Logo">
                             </a>
                         </div>
 
@@ -320,13 +391,29 @@
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
         </script>
 
+    <!-- Splider -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+
+    <!-- Call APIs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- Import JS -->
-    <script type="module" src="../javascript/faq_render_list.js"></script>
-    <script type="module" src="../javascript/faq_question_toggle.js"></script>
-    <script type="module" src="../javascript/faq_navbar.js"></script>
-    <script src="../javascript/p_header_right_section.js"></script>
+    <script type="module" src="../javascript/call_apis/profile_user_demo_2_favorites.js"></script>
+    <script type="module" src="../javascript/call_apis/logout.js"></script>
+    <script type="module" src="../javascript/call_apis/favorite_list_products_apis.js"></script>
+    <script type="module" src="../javascript/call_apis/favorite_products_apis.js"></script>
+    <script src="../javascript/call_apis/processProducts.js"></script>
+    <script src="../javascript/util/LocalStorageFunction.js"></script>
+    <script src="../javascript/call_apis/localStorageAndCookieProcess.js"></script>
+
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script type="module" src="../javascript/header_scroll_down.js"></script>
+    <script src="../javascript/p_header_right_section.js"></script>
+    <script src="../javascript/catalog_show_element_in_ul.js"></script>
+    <script src="../javascript/p_sidebar_sample.js"></script>
+    <script src="../javascript/profile_user_demo_sidebar.js"></script>
 
 </body>
 

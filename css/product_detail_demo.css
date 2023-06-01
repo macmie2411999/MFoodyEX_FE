@@ -1877,11 +1877,13 @@ body {
 .more-products .container-more-products .productList .card .heart-icon svg {
   color: #DFE0E2;
   border-radius: 50%;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.1s ease-in-out;
 }
-.more-products .container-more-products .productList .card .heart-icon svg:hover {
+.more-products .container-more-products .productList .card .heart-icon:hover svg {
   color: #AAE640;
-  cursor: pointer;
+}
+.more-products .container-more-products .productList .card .heart-icon.active svg {
+  color: #AAE640;
 }
 .more-products .container-more-products .productList .card img {
   scale: 0.8;

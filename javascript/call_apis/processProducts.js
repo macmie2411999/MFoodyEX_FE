@@ -127,6 +127,31 @@ let processlistProducts = {
         return tags;
     },
 
+    // Function update comment in arrayAllProducts
+    // addNewCommentToProductOfArrayAllProducts: function (arrayAllProducts, newComment) {
+    //     let choosenProduct = arrayAllProducts.find(product => product.idProduct === newComment.idProduct);
+    //     choosenProduct.listComment.push();
+    // },
+
+    getFavoriteProducts: function (arrayAllProducts, favoriteListProducts) {
+        let arrayIdProducts = [];
+        let arrayFavoriteProducts = [];
+      
+        favoriteListProducts.forEach((ObjectIdFavoriteProductMFoody) => {
+            // console.log(ObjectIdFavoriteProductMFoody.idFavoriteProductMFoody.idProduct)
+            arrayIdProducts.push(ObjectIdFavoriteProductMFoody.idFavoriteProductMFoody.idProduct)
+        });
+
+        arrayIdProducts.forEach((idProduct) => {
+            let matchProduct = arrayAllProducts.find(product => product.idProduct === idProduct);
+            if(matchProduct != undefined){
+                arrayFavoriteProducts.push(matchProduct);
+            }
+        })
+      
+        return arrayFavoriteProducts;
+      },
+
 
     isArrayNull: function (arr) {
         return arr === null;
