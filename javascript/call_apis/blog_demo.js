@@ -3,21 +3,33 @@
 
 import { token_admin, token_user } from './default_tokens.js';
 import { getAllProducts} from './products_apis.js';
+import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
+import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
 
 let productsGeneral = [];
 let arrayAllProducts = [];
+let favoriteListOfCurrentUser = [];
+let arrayFavoriteProducts = [];
+let idFavoriteListProducts = '';
 
 // **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
+    favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+    idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+    arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
 
-    productsGeneral = processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(10, 20).concat(
-        processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
-        processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20));
+    productsGeneral = processlistProducts.getRandomProducts(
+        processlistProducts.getRemainingProducts(
+            arrayAllProducts,
+            processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
+            processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
+            processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20),
+            arrayFavoriteProducts), 100);
 
     renderProductsToScrollList(productsGeneral);
 
@@ -50,12 +62,14 @@ function renderProductsToScrollList(arrayProducts) {
         }
 
         contentHTML += `
-        <div class="card">
+        <div class="card" data-product-id="${product.idProduct}">
             <div class="tag-container">
                 ${tagsHtml}
             </div>
-            <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-            <img src="../image/products/${product.albumProduct}.webp" class="card-img-top"
+            <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
+            <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                 alt="...">
             <div class="card-body">
                 <span class="rated-star card-text"><i class="fa-solid fa-star ${ratingClass}"></i> ${product.ratingProduct}
@@ -75,6 +89,116 @@ function renderProductsToScrollList(arrayProducts) {
     }
     document.getElementById("listScrollCard").innerHTML = contentHTML;
 }
+
+// Process Modal
+document.getElementById('staticBackdrop').addEventListener('show.bs.modal', function (event) {
+
+    // Button that triggered the modal
+    let button = event.relatedTarget;
+
+    // Move up the DOM to the parent element with 'product' or 'card' class
+    let parentElement = button.closest('.product, .card');
+
+    // Extract product id from data-* attribute
+    let productId = parentElement.getAttribute('data-product-id');
+
+    // find the product in arrayAllProducts
+    let product = arrayAllProducts.find(item => item.idProduct == productId);
+
+    // update modal content
+    updateModal(product);
+});
+
+function updateModal(product) {
+
+    console.log(product)
+    // find the modal
+    let modal = document.getElementById('staticBackdrop');
+
+    // update the product image
+    modal.querySelector('#product-image').src = "../image/products/" + product.albumProduct + ".webp";
+
+    // update the product name
+    modal.querySelector('.name-product').textContent = product.nameProduct;
+
+    // update the product comment
+    modal.querySelector('.comments').innerHTML = `<span class="text-in-card-information">Comments: ${product.listComments.length} </span>`;
+
+    // update the product rating
+    let ratingElement = modal.querySelector('.star-rating');
+    ratingElement.innerHTML = createRatingStars(product.ratingProduct);
+
+
+    // update the product id
+    modal.querySelector('.id-product .text-in-card-information').textContent = "ID: " + product.idProduct;
+
+    // update the brand name
+    modal.querySelector('.name-brand').innerHTML = `<i class="fa-solid fa-tag"></i> ${product.brandProduct}`;
+
+    // update the category name
+    modal.querySelector('.name-category').innerHTML = `<i class="fa-solid fa-tag"></i> ${product.categoryProduct}`;
+
+    // update the sale price
+    modal.querySelector('.sale-price').textContent = product.salePriceProduct + "₽/" + product.weightProduct;
+
+    // update the full price
+    let priceElement = modal.querySelector('.sale-price');
+    if (priceElement) {
+        let fullPriceElement = priceElement.querySelector('.full-price');
+        if (fullPriceElement) {
+            fullPriceElement.textContent = product.fullPriceProduct + "₽/Kg";
+        }
+    }
+
+    // update the full price
+    modal.querySelector('.in-stock').textContent = product.storehouseQuantityProduct + " Products in Stock";
+
+    // update the product detail href
+    modal.querySelector('#buttonDetailProductModal').href = `../../html/product_detail_demo.html?idProduct=${product.idProduct}`;
+
+    // update the product description
+    modal.querySelector('.content-description').textContent = product.descriptionProduct;
+}
+
+// Helper function to create HTML for rating stars
+function createRatingStars(rating) {
+    const fullStars = Math.floor(rating);
+    const half = (rating - fullStars) >= 0.5 ? 1 : 0;
+    const emptyStars = 5 - fullStars - half;
+
+    let starsHTML = '';
+
+    for (let i = 0; i < fullStars; i++) {
+        starsHTML += '<i class="fas fa-star active"></i>';
+    }
+
+    for (let i = 0; i < half; i++) {
+        starsHTML += '<i class="fas fa-star-half-alt active"></i>';
+    }
+
+    for (let i = 0; i < emptyStars; i++) {
+        starsHTML += '<i class="fa-solid fa-star"></i>';
+    }
+
+    return starsHTML;
+}
+
+// Add event for icon heart
+$(document).on('click', '.heart-icon', async function (event) {
+
+    $(this).toggleClass('active');
+
+    const productId = $(this).data('product-id');
+
+    if ($(this).hasClass('active')) {
+        await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+    } else {
+        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+    }
+
+    // Reload new data
+    // await run();
+});
 
 
 

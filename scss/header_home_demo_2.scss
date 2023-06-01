@@ -204,37 +204,6 @@ $text-c11-grey: #151421;
   }
 }
 
-// .scrolled-down {
-//   .container_navbar_top_header {
-//     .img-navbar-brand {
-//       opacity: 0;
-//       transform: translateX(-100%);
-//       transition: all 1s ease;
-//     }
-
-//     .selection_container {
-//       // transform: translateX(-222.48px);
-//       transform: translateX(-20%);
-//       transition: all 1s ease;
-//     }
-//   }
-// }
-
-// .scrolled-up {
-//   .container_navbar_top_header {
-//     .img-navbar-brand {
-//       opacity: 1;
-//       transform: translateX(0%);
-//       transition: all 1s ease;
-//     }
-
-//     .selection_container {
-//       transform: translateX(0%);
-//       transition: all 1s ease;
-//     }
-//   }
-// }
-
 .wrap-sliders {
   height: auto;
   margin-top: 90px !important;
@@ -604,3 +573,56 @@ $text-c11-grey: #151421;
 
   }
 }
+
+// Custom Alert Start
+.custom-alert {
+  position: fixed;
+  z-index: 9999;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+  min-height: 50px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.mfoody_success {
+  background-color: #AAE640;
+}
+
+.mfoody_fail {
+  background-color: #FF3E3E;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+#alert-message {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+}
+// Custom Alert End
+
+

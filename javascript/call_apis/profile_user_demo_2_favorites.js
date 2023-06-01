@@ -12,6 +12,7 @@ const productsPerPage = 10;
 let currentPage = 1;
 let arrayAllProducts = [];
 let favoriteListOfCurrentUser = [];
+let arrayFavoriteProducts = [];
 let productsGeneral = [];
 let idFavoriteListProducts = '';
 
@@ -64,7 +65,7 @@ function createProductCard(product) {
             <span class="heart-icon active" data-product-id="${product.idProduct}"> 
                 <i class="fa-solid fa-heart heart-icon-toggle"></i> 
             </span>
-            <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" alt="...">
+            <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="card-img-top" alt="...">
             <div class="card-body">
                 <span class="rated-star card-text"><i class="fa-solid fa-star ${ratingClass}"></i> ${product.ratingProduct} </span>
                 <h5 class="card-title">${product.nameProduct}</h5>
@@ -147,12 +148,105 @@ $(document).on('click', '.heart-icon', async function () {
     if ($(this).hasClass('active')) {
         await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
     } else {
-        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);  
     }
 
     // Reload new data
     await run();
 });
+
+// Process Modal
+document.getElementById('staticBackdrop').addEventListener('show.bs.modal', function (event) {
+
+    // Button that triggered the modal
+    let button = event.relatedTarget;
+
+    // Move up the DOM to the parent element with 'product' or 'card' class
+    let parentElement = button.closest('.product, .card');
+
+    // Extract product id from data-* attribute
+    let productId = parentElement.getAttribute('data-product-id');
+
+    // find the product in arrayAllProducts
+    let product = arrayAllProducts.find(item => item.idProduct == productId);
+
+    // update modal content
+    updateModal(product);
+});
+
+function updateModal(product) {
+
+    console.log(product)
+    // find the modal
+    let modal = document.getElementById('staticBackdrop');
+
+    // update the product image
+    modal.querySelector('#product-image').src = "../image/products/" + product.albumProduct + ".webp";
+
+    // update the product name
+    modal.querySelector('.name-product').textContent = product.nameProduct;
+
+    // update the product comment
+    modal.querySelector('.comments').innerHTML = `<span class="text-in-card-information">Comments: ${product.listComments.length} </span>`;
+
+    // update the product rating
+    let ratingElement = modal.querySelector('.star-rating');
+    ratingElement.innerHTML = createRatingStars(product.ratingProduct);
+
+
+    // update the product id
+    modal.querySelector('.id-product .text-in-card-information').textContent = "ID: " + product.idProduct;
+
+    // update the brand name
+    modal.querySelector('.name-brand').innerHTML = `<i class="fa-solid fa-tag"></i> ${product.brandProduct}`;
+
+    // update the category name
+    modal.querySelector('.name-category').innerHTML = `<i class="fa-solid fa-tag"></i> ${product.categoryProduct}`;
+
+    // update the sale price
+    modal.querySelector('.sale-price').textContent = product.salePriceProduct + "₽/" + product.weightProduct;
+
+    // update the full price
+    let priceElement = modal.querySelector('.sale-price');
+    if (priceElement) {
+        let fullPriceElement = priceElement.querySelector('.full-price');
+        if (fullPriceElement) {
+            fullPriceElement.textContent = product.fullPriceProduct + "₽/Kg";
+        }
+    }
+
+    // update the full price
+    modal.querySelector('.in-stock').textContent = product.storehouseQuantityProduct + " Products in Stock";
+
+    // update the product detail href
+    modal.querySelector('#buttonDetailProductModal').href = `../../html/product_detail_demo.html?idProduct=${product.idProduct}`;
+
+    // update the product description
+    modal.querySelector('.content-description').textContent = product.descriptionProduct;
+}
+
+// Helper function to create HTML for rating stars
+function createRatingStars(rating) {
+    const fullStars = Math.floor(rating);
+    const half = (rating - fullStars) >= 0.5 ? 1 : 0;
+    const emptyStars = 5 - fullStars - half;
+
+    let starsHTML = '';
+
+    for (let i = 0; i < fullStars; i++) {
+        starsHTML += '<i class="fas fa-star active"></i>';
+    }
+
+    for (let i = 0; i < half; i++) {
+        starsHTML += '<i class="fas fa-star-half-alt active"></i>';
+    }
+
+    for (let i = 0; i < emptyStars; i++) {
+        starsHTML += '<i class="fa-solid fa-star"></i>';
+    }
+
+    return starsHTML;
+}
 
 
 

@@ -60,6 +60,11 @@
 </head>
 
 <body>
+    <!-- CUSTOM ALERT -->
+    <div id="custom-alert" class="custom-alert">
+        <span id="alert-message"></span>
+    </div>
+    <!-- CUSTOM ALERT END-->
 
     <!-- HEADER -->
     <nav class="navbar navbar-expand-lg navbar_top_header">
@@ -100,14 +105,17 @@
                     <fieldset class="container_header_right_section">
 
                         <ul class="toolbar">
-                            <li class="container-search"><input type="search" id="search" placeholder="What are you looking for?"></li>
+                            <li class="container-search"><input type="search" id="search"
+                                    placeholder="What are you looking for?"></li>
                             <li class="li-search">
                                 <button type="submit" id="btn-search">
                                     <span class="fa-solid fa-search" id="span-search"></span>
                                 </button>
                             </li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-heart" onclick="redirectToFavorite()"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-heart"
+                                    onclick="redirectToFavorite()"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-user"
+                                    onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
                         </ul>
 
@@ -198,15 +206,17 @@
                         </button>
 
                         <button class="brand-button button-in-card">
-                            <a href="#" class="name-brand link-button-in-card"> <i class="fa-solid fa-tag"></i> Top Rated
+                            <a href="#" class="name-brand link-button-in-card"> <i class="fa-solid fa-tag"></i> Top
+                                Rated
                             </a>
                         </button>
 
                         <button class="category-button button-in-card">
-                            <a href="#" class="name-category link-button-in-card"> <i class="fa-solid fa-tag"></i> Popular </a>
+                            <a href="#" class="name-category link-button-in-card"> <i class="fa-solid fa-tag"></i>
+                                Popular </a>
                         </button>
 
-                        
+
                     </div>
                 </div>
 
@@ -424,7 +434,7 @@
                         <div class="container container-product-slider">
                             <div class="row">
                                 <div class="splide splide-slider-CD">
-                                    
+
                                     <div class="splide__track">
                                         <div class="splide__list" id="list_product_top_rate">
 
@@ -1090,7 +1100,7 @@
                                                                 MFoody Store</span>
                                                             <span class="status-si">Available today</span>
                                                         </div>
-        
+
                                                         <div class="col">
                                                             <span class="address-store title-si"> <i
                                                                     class="fa-solid fa-truck-fast"></i>
@@ -1100,8 +1110,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
-                                                
+
+
                                                 <!-- <div class="table-user-information">
                                                     <table class="table table-bordered table-responsive-md">
                                                         <thead>
@@ -1163,10 +1173,11 @@
     <script src="../javascript/call_apis/processComments.js"></script>
     <script src="../javascript/util/LocalStorageFunction.js"></script>
     <script src="../javascript/call_apis/localStorageAndCookieProcess.js"></script>
-    
+
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script type="module" src="../javascript/header_scroll_down.js"></script>
     <script src="../javascript/p_header_right_section.js"></script>
+    <script src="../javascript/show_alert_mfoody.js"></script>
     <script src="../javascript/catalog_show_element_in_ul.js"></script>
     <script type="module" src="../javascript/slide_product_card_demo_2.js"></script>
     <!-- <script type="module" src="../javascript/list_catalog_products_10per.js"></script> -->

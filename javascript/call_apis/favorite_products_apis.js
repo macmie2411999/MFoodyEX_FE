@@ -20,10 +20,12 @@ export async function deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListP
 
         // Handle if successfully get data
         console.log(res);
+        showAlert('Product Removed!', 2000, 'mfoody_fail');
         return res;
 
     } catch (err) {
         // Handle if failed
+        showAlert('Something Wrong!', 2000, 'mfoody_fail');
         console.log(err);
     }
 }
@@ -47,10 +49,12 @@ export async function addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProd
 
         // Handle if successfully get data
         console.log(res);
+        showAlert('Product Added!', 2000, 'mfoody_success');
         return res;
 
     } catch (err) {
         // Handle if failed
+        showAlert('Something Wrong!', 2000, 'mfoody_fail');
         console.log(err);
     }
 }

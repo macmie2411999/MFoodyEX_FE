@@ -821,6 +821,12 @@ $text-c10-grey: #172033;
 // Splide SCSS End
 
 // Splider RES Start
+@media (min-width: 1200px) {
+    .splide__slide {
+      flex-basis: calc(100% / 3);
+    }
+  }
+  
 @media (min-width: 992px) and (max-width: 1199px) {
     .splide__slide {
         flex-basis: calc(100% / 2);

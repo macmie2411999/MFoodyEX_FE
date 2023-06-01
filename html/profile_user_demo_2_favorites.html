@@ -60,6 +60,12 @@
 
 <body>
 
+    <!-- CUSTOM ALERT -->
+    <div id="custom-alert" class="custom-alert">
+        <span id="alert-message"></span>
+    </div>
+    <!-- CUSTOM ALERT END-->
+
     <!-- HEADER -->
     <nav class="navbar navbar-expand-lg navbar_top_header">
         <div class="container-fluid container_navbar_top_header">
@@ -106,7 +112,8 @@
                                     <span class="fa-solid fa-search" id="span-search"></span>
                                 </button>
                             </li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-heart" onclick="redirectToFavorite()"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-heart"
+                                    onclick="redirectToFavorite()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-user"
                                     onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
@@ -375,6 +382,181 @@
         }
     </script>
 
+    <!-- Product Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered custom-modal-width ">
+            <div class="modal-content">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <div class="modal-body">
+                    <!-- Paste your product detail content here -->
+                    <div class="product-detail">
+                        <div class="product-detail-container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 item-photo">
+                                    <img style="max-width:90%;" class="img-fluid mx-auto d-block image img-zoomable"
+                                        src="../image/products/Product_Mfoody.png" id="product-image" />
+                                    <div class="magnifier" id="magnifier"></div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 card-information">
+                                    <div class="header-card part-of-card">
+                                        <span class="name-product">Name Product</span>
+                                        <div class="rating-comments row">
+
+                                            <div class="col-xs-5 col-sm-4 rating">
+                                                <span class="text-in-card-information">Rating:</span>
+                                                <div class="star-rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 comments">
+                                                <span class="text-in-card-information">Comments:
+                                                    5054 </span>
+                                            </div>
+                                            <div class="col-xs-3 col-sm-4 id-product">
+                                                <span class="text-in-card-information id-product">ID:
+                                                    92834</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="container-button-in-card">
+                                            <button class="brand-button button-in-card">
+                                                <a href="#" class="name-brand link-button-in-card">
+                                                    <i class="fa-solid fa-tag"></i> Perestok</a>
+                                            </button>
+
+                                            <button class="category-button button-in-card">
+                                                <a href="#" class="name-category link-button-in-card">
+                                                    <i class="fa-solid fa-tag"></i> Vegetable</a>
+                                            </button>
+
+                                            <button class="mark-button button-in-card">
+                                                <a href="#" class="name-category link-button-in-card">
+                                                    <i class="fa-solid fa-tag"></i> New Product</a>
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="body-card part-of-card">
+                                        <div class="row price-cart-favorite">
+                                            <div class="col-xs-12 col-sm-6 price-container">
+                                                <h4 class="sale-price">150$/Kg <span class="full-price">170$/Kg</span>
+                                                </h4>
+                                                <span class="in-stock">150 Kg in Stock</span>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-6 button-container">
+                                                <div class="section">
+                                                    <a class="btn button-to-detail" id="buttonDetailProductModal">
+                                                        <span class="button-content button-to-detail-sp">
+                                                            <span class="glyphicon glyphicon-shopping-cart"
+                                                                aria-hidden="true"></span>
+                                                            More Details
+                                                        </span>
+                                                    </a>
+                                                </div>
+
+                                                <div class="section">
+                                                    <button class="btn button-to-cart">
+                                                        <span class="button-content button-to-cart-sp">
+                                                            <span class="glyphicon glyphicon-shopping-cart"
+                                                                aria-hidden="true"></span>
+                                                            Add to Cart
+                                                        </span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="section">
+                                                    <button class="btn button-to-favorite-list">
+                                                        <span class="button-content button-to-favorite-list-sp">
+                                                            <span class="glyphicon glyphicon-heart-empty"
+                                                                aria-hidden="true"></span>
+                                                            Add to Favorite List
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bottom-card part-of-card">
+                                        <div class="section" style="padding-bottom:5px;">
+                                            <h4 class="title-description">Description</h4>
+                                            <div class="content-description">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                elit. Veritatis dolores cumque iure,
+                                                perferendis assumenda vero amet, temporibus
+                                                architecto magnam velit soluta quaerat. Odio
+                                                rerum hic tempore mollitia sint deserunt maiores!
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="delivery-information part-of-card">
+                                        <div class="section" style="padding-bottom:5px;">
+                                            <h4 class="title-delivery-information">Shipping
+                                                Information</h4>
+                                            <div class="content-delivery-information row">
+
+                                                <div class="shipping-information-top">
+                                                    <div class="row container-shipping-information-top">
+                                                        <div class="col">
+                                                            <span class="address-store title-si"> <i
+                                                                    class="fa-solid fa-location-dot"></i>
+                                                                MFoody Store</span>
+                                                            <span class="status-si">Available today</span>
+                                                        </div>
+
+                                                        <div class="col">
+                                                            <span class="address-store title-si"> <i
+                                                                    class="fa-solid fa-truck-fast"></i>
+                                                                Express
+                                                                delivery</span>
+                                                            <span class="status-si">Available today </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <!-- <div class="table-user-information">
+                                                    <table class="table table-bordered table-responsive-md">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Phone Number</th>
+                                                                <th>Address</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>User 1</td>
+                                                                <td>0123456789</td>
+                                                                <td>123 Street, City, Country</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div> -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Calling jQuery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -411,6 +593,7 @@
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script type="module" src="../javascript/header_scroll_down.js"></script>
     <script src="../javascript/p_header_right_section.js"></script>
+    <script src="../javascript/show_alert_mfoody.js"></script>
     <script src="../javascript/catalog_show_element_in_ul.js"></script>
     <script src="../javascript/p_sidebar_sample.js"></script>
     <script src="../javascript/profile_user_demo_sidebar.js"></script>

@@ -7,6 +7,7 @@
 // @import '../scss/footer_home_demo.scss';
 @import '../scss/header_home_demo_2.scss';
 @import '../scss/footer_home_demo_2.scss';
+@import '../scss/splider_and_modal.scss';
 @import '../scss/scroll_list.scss';
 
 // Card
@@ -490,9 +491,9 @@ $text-c10-grey: #172033;
 }
 
 // Fade when switch page in List Products
-.fade {
-    opacity: 0;
-    transition: opacity 0.5s;
-}
+// .fade {
+//     opacity: 0;
+//     transition: opacity 0.5s;
+// }
 
 // Main Style END

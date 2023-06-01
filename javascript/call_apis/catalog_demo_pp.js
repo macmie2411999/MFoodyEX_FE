@@ -3,6 +3,8 @@
 
 import { token_admin, token_user } from './default_tokens.js';
 import { getAllProducts } from './products_apis.js';
+import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
+import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -10,18 +12,24 @@ const productsPerPage = 10;
 let currentPage = 1;
 let productsGeneral = [];
 let arrayAllProducts = [];
-let arrayAllComments = [];
+let favoriteListOfCurrentUser = [];
+let arrayFavoriteProducts = [];
+let idFavoriteListProducts = '';
 
 // **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    // arrayAllComments = await getAllComments(); // Assuming getAllComments is also async
-    
-    productsGeneral = processlistProducts.getRandomProducts(processlistProducts.getRemainingProducts(
-        arrayAllProducts, processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
-        processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
-        processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20)), 100);
+    favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+    idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+    arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+    productsGeneral = processlistProducts.getRandomProducts(
+        processlistProducts.getRemainingProducts(
+            arrayAllProducts,
+            processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
+            processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
+            processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20),
+            arrayFavoriteProducts), 100);
 
     renderProductsToSpliderss();
     showProducts();
@@ -113,12 +121,10 @@ document.getElementById('staticBackdrop').addEventListener('show.bs.modal', func
 
     // find the product in arrayAllProducts
     let product = arrayAllProducts.find(item => item.idProduct == productId);
-    console.log(productId)
 
     // update modal content
     updateModal(product);
 });
-
 
 function updateModal(product) {
 
@@ -165,7 +171,7 @@ function updateModal(product) {
     modal.querySelector('.in-stock').textContent = product.storehouseQuantityProduct + " Products in Stock";
 
     // update the product detail href
-    modal.querySelector('#buttonDetailProductModal').href=`../../html/product_detail_demo.html?idProduct=${product.idProduct}`;
+    modal.querySelector('#buttonDetailProductModal').href = `../../html/product_detail_demo.html?idProduct=${product.idProduct}`;
 
     // update the product description
     modal.querySelector('.content-description').textContent = product.descriptionProduct;
@@ -214,12 +220,14 @@ function createProductCard(product) {
     }
 
     return `
-        <div class="card" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-product-id="${product.idProduct}">
+        <div class="card"  data-product-id="${product.idProduct}">
             <div class="tag-container">
                 ${tagsHtml}
             </div>
-            <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
-            <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" alt="...">
+            <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
+            <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="...">
             <div class="card-body">
                 <span class="rated-star card-text"><i class="fa-solid fa-star ${ratingClass}"></i> ${product.ratingProduct} </span>
                 <h5 class="card-title">${product.nameProduct}</h5>
@@ -292,6 +300,24 @@ $("#nextBtn").click(() => {
         updatePagination();
     }
 });
+
+// Add event for icon heart
+$(document).on('click', '.heart-icon', async function (event) {
+
+    $(this).toggleClass('active');
+
+    const productId = $(this).data('product-id');
+
+    if ($(this).hasClass('active')) {
+        await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+    } else {
+        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+    }
+
+    // Reload new data
+    // await run();
+});
+
 
 
 

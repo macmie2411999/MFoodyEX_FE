@@ -4,6 +4,8 @@
 import { token_admin, token_user } from './default_tokens.js';
 import { commentUrls } from './default_apis.js';
 import { getAllProducts, getAllProductsApi} from './products_apis.js';
+import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
+import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -13,7 +15,9 @@ let currentPage = 1;
 let productsGeneral = [];
 let similarProducts = [];
 let arrayAllProducts = [];
-let arrayAllCommentsByIdProduct = [];
+let favoriteListOfCurrentUser = [];
+let arrayFavoriteProducts = [];
+let idFavoriteListProducts = '';
 let choosenProduct = [];
 let catalogPage = "http://127.0.0.1:5501/html/catalog_demo.html"
 
@@ -24,10 +28,16 @@ console.log('Search Value: ' + searchValue);
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    productsGeneral = processlistProducts.getRandomProducts(processlistProducts.getRemainingProducts(
-        arrayAllProducts, processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
-        processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
-        processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20)), 100);
+    favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+    idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+    arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+    productsGeneral = processlistProducts.getRandomProducts(
+        processlistProducts.getRemainingProducts(
+            arrayAllProducts,
+            processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
+            processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
+            processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20),
+            arrayFavoriteProducts), 100);
 
     // Check searchValue != null and Search and display products
     if (searchValue) {
@@ -328,7 +338,9 @@ function renderProductsToScrollList(arrayProducts) {
             <div class="tag-container">
                 ${tagsHtml}
             </div>
-            <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
+            <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
             <img src="../image/products/${product.albumProduct}.webp" class="card-img-top"
                 alt="...">
             <div class="card-body">
@@ -596,11 +608,11 @@ function createProductCard(product) {
     }
 
     return `
-        <div class="card"  data-product-id="${product.idProduct}">
+        <div class="card" data-product-id="${product.idProduct}">
             <div class="tag-container">
                 ${tagsHtml}
             </div>
-            <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
+            <span class="heart-icon" data-product-id="${product.idProduct}"> <i class="fa-solid fa-heart"></i> </span>
             <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" alt="...">
             <div class="card-body">
                 <span class="rated-star card-text"><i class="fa-solid fa-star ${ratingClass}"></i> ${product.ratingProduct} </span>
@@ -614,6 +626,7 @@ function createProductCard(product) {
                 <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
         </div>`;
+
 }
 
 function showProducts() {
@@ -674,6 +687,22 @@ $("#nextBtn").click(() => {
     }
 });
 
+// Add event for icon heart
+$(document).on('click', '.heart-icon', async function (event) {
+
+    $(this).toggleClass('active');
+
+    const productId = $(this).data('product-id');
+
+    if ($(this).hasClass('active')) {
+        await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+    } else {
+        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+    }
+
+    // Reload new data
+    // await run();
+});
 
 
 

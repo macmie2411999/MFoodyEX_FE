@@ -524,6 +524,11 @@
   scale: 1.2;
 }
 
+@media (min-width: 1200px) {
+  .splide__slide {
+    flex-basis: 33.3333333333%;
+  }
+}
 @media (min-width: 992px) and (max-width: 1199px) {
   .splide__slide {
     flex-basis: 50%;
