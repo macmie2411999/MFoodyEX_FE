@@ -2,7 +2,7 @@
 // Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
-import { getCartOfCurrentUser } from './cart_apis.js';
+import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 import { getAllProducts } from './products_apis.js';
 
 // Sundries variables
@@ -19,9 +19,7 @@ const current_user = customLocalStorage.getItemFromLocalStorage("MFoody - curren
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
     cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
-
     renderCartOfUser(cartOfCurrentUser);
-
 }
 
 run();

@@ -136,7 +136,7 @@ let processlistProducts = {
     getFavoriteProducts: function (arrayAllProducts, favoriteListProducts) {
         let arrayIdProducts = [];
         let arrayFavoriteProducts = [];
-      
+
         favoriteListProducts.forEach((ObjectIdFavoriteProductMFoody) => {
             // console.log(ObjectIdFavoriteProductMFoody.idFavoriteProductMFoody.idProduct)
             arrayIdProducts.push(ObjectIdFavoriteProductMFoody.idFavoriteProductMFoody.idProduct)
@@ -144,13 +144,17 @@ let processlistProducts = {
 
         arrayIdProducts.forEach((idProduct) => {
             let matchProduct = arrayAllProducts.find(product => product.idProduct === idProduct);
-            if(matchProduct != undefined){
+            if (matchProduct != undefined) {
                 arrayFavoriteProducts.push(matchProduct);
             }
         })
-      
+
         return arrayFavoriteProducts;
-      },
+    },
+
+    checkProductInArray: function (arrayProducts, idProduct) {
+        return arrayProducts.some(product => product.idProduct === idProduct);
+    },
 
 
     isArrayNull: function (arr) {

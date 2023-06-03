@@ -3,9 +3,11 @@
 
 import { token_admin, token_user } from './default_tokens.js';
 import { commentUrls } from './default_apis.js';
-import { getAllProducts, getAllProductsApi} from './products_apis.js';
+import { getAllProducts, getAllProductsApi } from './products_apis.js';
 import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
+import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
+import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -19,6 +21,7 @@ let favoriteListOfCurrentUser = [];
 let arrayFavoriteProducts = [];
 let idFavoriteListProducts = '';
 let choosenProduct = [];
+let cartOfCurrentUser = [];
 let catalogPage = "http://127.0.0.1:5501/html/catalog_demo.html"
 
 // Get key from URL
@@ -28,9 +31,7 @@ console.log('Search Value: ' + searchValue);
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
-    idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
-    arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+
     productsGeneral = processlistProducts.getRandomProducts(
         processlistProducts.getRemainingProducts(
             arrayAllProducts,
@@ -122,7 +123,7 @@ form.addEventListener('submit', (event) => {
 
                         // Reload the new Data
                         run();
-                        
+
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -130,21 +131,26 @@ form.addEventListener('submit', (event) => {
                     });
             }
         });
+    } else {
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }
 });
 
 // Render
-function renderDetailProduct(product) {
+async function renderDetailProduct(product) {
     console.log("Render rederDetailProduct");
     let contentHTML = '';
     let userShippingInforHTML = '';
+    let toCartButtonHTML = '';
+    let toFavoriteListButtonHTML = '';
     let ratingStar = '';
     let tempPrice = '';
     let checkUserRole = localStorageCookiesProcess.checkUserRole();
 
     if (checkUserRole) {
+        // Add Shipping Information
         let curent_user = customLocalStorage.getItemFromLocalStorage("MFoody - currentUser");
-        userShippingInforHTML+=`
+        userShippingInforHTML += `
         <div class="table-user-information">
             <table class="table table-bordered table-responsive-md">
                 <thead>
@@ -163,8 +169,47 @@ function renderDetailProduct(product) {
                 </tbody>
             </table>
         </div>
-        `
-    
+        `;
+
+        // If product already in Cart
+        cartOfCurrentUser = await getCartOfCurrentUserApi(); // Add await here
+        if(processCart.checkProductInCart(cartOfCurrentUser, product.idProduct)){
+            toCartButtonHTML += `
+            <span class="button-content button-to-cart-sp active" data-product-id="${product.idProduct}">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                Remove From Cart
+            </span>
+            `;
+        } else {
+            toCartButtonHTML += `
+            <span class="button-content button-to-cart-sp" data-product-id="${product.idProduct}">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                Add to Cart
+            </span>
+            `;
+        }
+
+        // If product already in Favorite List
+        // Call and save Infor
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+        if(processlistProducts.checkProductInArray(arrayFavoriteProducts, product.idProduct)){
+            toFavoriteListButtonHTML += `
+            <span class="button-content button-to-favorite-list-sp active" data-product-id="${product.idProduct}">
+                <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                Remove From Favorite List
+            </span>
+            `;
+        } else {
+            toFavoriteListButtonHTML += `
+            <span class="button-content button-to-favorite-list-sp" data-product-id="${product.idProduct}">
+                <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                Add to Favorite List
+            </span>
+            `;
+        }
+
     }
 
     // Process Present rating Of Products
@@ -247,19 +292,13 @@ function renderDetailProduct(product) {
                     <div class="col-xs-12 col-sm-6 button-container">
                         <div class="section">
                             <button class="btn button-to-cart">
-                                <span class="button-content button-to-cart-sp">
-                                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                                    Add to Cart
-                                </span>
+                                ${toCartButtonHTML}
                             </button>
                         </div>
 
                         <div class="section">
                             <button class="btn button-to-favorite-list">
-                                <span class="button-content button-to-favorite-list-sp">
-                                    <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-                                    Add to Favorite List
-                                </span>
+                                ${toFavoriteListButtonHTML}
                             </button>
                         </div>
                     </div>
@@ -354,7 +393,7 @@ function renderProductsToScrollList(arrayProducts) {
                 </button>
                 <button class="more-infor"> <a href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i
                             class="fa-solid fa-magnifying-glass"></i></a></button>
-                <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
         </div>
         `
@@ -623,7 +662,7 @@ function createProductCard(product) {
                     ${tempPrice}
                 </button>
                 <button class="more-infor"> <a href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i class="fa-solid fa-magnifying-glass"></i></a></button>
-                <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
         </div>`;
 
@@ -687,17 +726,105 @@ $("#nextBtn").click(() => {
     }
 });
 
+// Add event for 2 button to Cart and to FL (foe modal and favorite list)
+$(document).on('click', '.button-to-cart-sp', async function (event) {
+    if (localStorageCookiesProcess.checkUserRole()) {
+
+        // Call and save Infor
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+    
+        // Add product to favorite list
+        $(this).toggleClass('active');
+        const productId = $(this).data('product-id');
+        let productToCart = processlistProducts.getProductById(arrayAllProducts, productId);
+        if ($(this).hasClass('active')) {
+            await addDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productToCart);
+            document.querySelector('.button-to-cart .button-content').textContent = 'Remove from Cart';
+
+        } else {
+            await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
+            document.querySelector('.button-to-cart .button-content').textContent = 'Add to Cart';
+        }
+    } else {
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
+    }
+});
+
+// Add event for 2 button to Cart and to FL (foe modal and favorite list)
+$(document).on('click', '.button-to-favorite-list-sp', async function (event) {
+    if (localStorageCookiesProcess.checkUserRole()) {
+
+        // Call and save Infor
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+    
+        // Add product to favorite list
+        $(this).toggleClass('active');
+        const productId = $(this).data('product-id');
+        if ($(this).hasClass('active')) {
+            await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+            document.querySelector('.button-to-favorite-list .button-content').textContent = 'Remove from Favorite List';
+
+        } else {
+            await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+            document.querySelector('.button-to-favorite-list .button-content').textContent = 'Add to Favorite List';
+        }
+    } else {
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
+    }
+});
+
 // Add event for icon heart
 $(document).on('click', '.heart-icon', async function (event) {
+    if (localStorageCookiesProcess.checkUserRole()) {
+        // Call and save Infor
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
 
-    $(this).toggleClass('active');
-
-    const productId = $(this).data('product-id');
-
-    if ($(this).hasClass('active')) {
-        await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        // Add product to favorite list
+        $(this).toggleClass('active');
+        const productId = $(this).data('product-id');
+        if ($(this).hasClass('active')) {
+            await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        } else {
+            await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        }
     } else {
-        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
+    }
+
+    // Reload new data
+    // await run();
+});
+
+// Add event for icon cart
+$(document).on('click', '.to-cart', async function (event) {
+
+    if (localStorageCookiesProcess.checkUserRole()) {
+        // Call and save Infor
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+
+        // Add product to cart
+        $(this).toggleClass('active');
+        const productId = $(this).data('product-id');
+        let productToCart = processlistProducts.getProductById(arrayAllProducts, productId);
+        if ($(this).hasClass('active')) {
+            await addDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productToCart);
+
+            // Thay đổi class của icon
+            const iconElement = $(this).find('svg.fa-cart-plus');
+            iconElement.attr('class', 'svg-inline--fa fa-check');
+        } else {
+            await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
+
+            // Thay đổi class của icon
+            const iconElement = $(this).find('svg.fa-check');
+            iconElement.attr('class', 'svg-inline--fa fa-cart-plus');
+        }
+    } else {
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }
 
     // Reload new data

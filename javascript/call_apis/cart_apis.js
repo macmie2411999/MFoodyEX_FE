@@ -35,7 +35,7 @@ export async function getCartOfCurrentUserApi() {
         });
 
         // Handle if successfully get data
-        // console.log(res.data);
+        console.log(res.data);
         return res.data;
 
     } catch (err) {

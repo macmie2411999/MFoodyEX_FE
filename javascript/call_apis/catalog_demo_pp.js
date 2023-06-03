@@ -23,10 +23,6 @@ let cartOfCurrentUser = [];
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
-    idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
-    arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
-    cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
 
     productsGeneral = processlistProducts.getRandomProducts(
         processlistProducts.getRemainingProducts(
@@ -307,32 +303,22 @@ $("#nextBtn").click(() => {
 
 // Add event for icon heart
 $(document).on('click', '.heart-icon', async function (event) {
+    if (localStorageCookiesProcess.checkUserRole()) {
+        // Call and save Infor
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
 
-    $(this).toggleClass('active');
-
-    const productId = $(this).data('product-id');
-
-    if ($(this).hasClass('active')) {
-        await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        // Add product to favorite list
+        $(this).toggleClass('active');
+        const productId = $(this).data('product-id');
+        if ($(this).hasClass('active')) {
+            await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        } else {
+            await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        }
     } else {
-        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
-    }
-
-    // Reload new data
-    // await run();
-});
-
-// Add event for icon cart
-$(document).on('click', '.heart-icon', async function (event) {
-
-    $(this).toggleClass('active');
-
-    const productId = $(this).data('product-id');
-
-    if ($(this).hasClass('active')) {
-        await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
-    } else {
-        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }
 
     // Reload new data
@@ -342,36 +328,39 @@ $(document).on('click', '.heart-icon', async function (event) {
 // Add event for icon cart
 $(document).on('click', '.to-cart', async function (event) {
 
-    $(this).toggleClass('active');
+    if (localStorageCookiesProcess.checkUserRole()) {
+        // Call and save Infor
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
 
-    const productId = $(this).data('product-id');
+        // Add product to cart
+        $(this).toggleClass('active');
+        const productId = $(this).data('product-id');
+        let productToCart = processlistProducts.getProductById(arrayAllProducts, productId);
+        if ($(this).hasClass('active')) {
+            await addDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productToCart);
 
-    let productToCart = processlistProducts.getProductById(arrayAllProducts, productId);
+            // Thay đổi class của icon
+            const iconElement = $(this).find('svg.fa-cart-plus');
+            console.log("icon1: " + iconElement.attr('class'));
+            iconElement.attr('class', 'svg-inline--fa fa-check');
+            console.log("icon2: " + iconElement.attr('class'));
+        } else {
+            await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
 
-    if ($(this).hasClass('active')) {
-        await addDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productToCart);
-
-        // Thay đổi class của icon
-        const iconElement = $(this).find('svg.fa-cart-plus');
-        console.log("icon1: " + iconElement.attr('class'));
-        iconElement.attr('class', 'svg-inline--fa fa-check');
-        console.log("icon2: " + iconElement.attr('class'));
+            // Thay đổi class của icon
+            const iconElement = $(this).find('svg.fa-check');
+            console.log("icon1: " + iconElement.attr('class'));
+            iconElement.attr('class', 'svg-inline--fa fa-cart-plus');
+            console.log("icon2: " + iconElement.attr('class'));
+        }
     } else {
-        await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
-
-        // Thay đổi class của icon
-        const iconElement = $(this).find('svg.fa-check');
-        console.log("icon1: " + iconElement.attr('class'));
-        iconElement.attr('class', 'svg-inline--fa fa-cart-plus');
-        console.log("icon2: " + iconElement.attr('class'));
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }
-
-
-
 
     // Reload new data
     // await run();
 });
+
 
 
 
