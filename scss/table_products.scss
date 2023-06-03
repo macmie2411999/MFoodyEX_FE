@@ -226,8 +226,8 @@ $text-c10-grey: #172033;
 
                         white-space: normal;
                         display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        /* max lines to display */
+                        -webkit-line-clamp: 2; /* max lines to display */
+                        text-align: justify;
                         -webkit-box-orient: vertical;
                     }
 
@@ -249,15 +249,12 @@ $text-c10-grey: #172033;
                     .tag-prices {
                         width: 50%;
                         display: flex;
-                        // flex-direction: row;
-                        // justify-content: space-between;
                         flex-wrap: nowrap;
                         justify-content: center;
                         align-items: center;
                         background: #fff !important;
                         border: none !important;
 
-                        // height: 64px;
                         button {
                             padding-top: 0 !important;
                             padding-bottom: 0 !important;

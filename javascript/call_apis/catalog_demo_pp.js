@@ -5,6 +5,8 @@ import { token_admin, token_user } from './default_tokens.js';
 import { getAllProducts } from './products_apis.js';
 import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
 import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
+import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
+import { getCartOfCurrentUser } from './cart_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -15,6 +17,7 @@ let arrayAllProducts = [];
 let favoriteListOfCurrentUser = [];
 let arrayFavoriteProducts = [];
 let idFavoriteListProducts = '';
+let cartOfCurrentUser = [];
 
 // **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
 
@@ -23,6 +26,8 @@ async function run() {
     favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
     idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
     arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+    cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+
     productsGeneral = processlistProducts.getRandomProducts(
         processlistProducts.getRemainingProducts(
             arrayAllProducts,
@@ -38,12 +43,11 @@ async function run() {
 
 run();
 
-
 // Render
 function renderProductsToSpliderss() {
-    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20), 'list_product_sale_off', "Discount");
-    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20), 'list_product_top_rate', "Best");
-    renderProductsToSplider(processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20), 'list_product_new_product', "New");
+    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 40), 'list_product_sale_off', "Discount");
+    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 40), 'list_product_top_rate', "Best");
+    renderProductsToSplider(processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 40), 'list_product_new_product', "New");
 }
 
 // Call APIs
@@ -237,7 +241,7 @@ function createProductCard(product) {
                     ${tempPrice}
                 </button>
                 <button class="more-infor"> <a href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i class="fa-solid fa-magnifying-glass"></i></a></button>
-                <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
         </div>`;
 
@@ -245,7 +249,7 @@ function createProductCard(product) {
 
 function showProducts() {
     const productList = $("#productList");
-    productList.addClass("fade");
+    productList.addClass("fade-list-products");
 
     setTimeout(() => {
         productList.empty();
@@ -257,7 +261,7 @@ function showProducts() {
             productList.append(createProductCard(productsGeneral[i]));
         }
 
-        productList.removeClass("fade");
+        productList.removeClass("fade-list-products");
     }, 500);
 }
 
@@ -313,6 +317,57 @@ $(document).on('click', '.heart-icon', async function (event) {
     } else {
         await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
     }
+
+    // Reload new data
+    // await run();
+});
+
+// Add event for icon cart
+$(document).on('click', '.heart-icon', async function (event) {
+
+    $(this).toggleClass('active');
+
+    const productId = $(this).data('product-id');
+
+    if ($(this).hasClass('active')) {
+        await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+    } else {
+        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+    }
+
+    // Reload new data
+    // await run();
+});
+
+// Add event for icon cart
+$(document).on('click', '.to-cart', async function (event) {
+
+    $(this).toggleClass('active');
+
+    const productId = $(this).data('product-id');
+
+    let productToCart = processlistProducts.getProductById(arrayAllProducts, productId);
+
+    if ($(this).hasClass('active')) {
+        await addDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productToCart);
+
+        // Thay đổi class của icon
+        const iconElement = $(this).find('svg.fa-cart-plus');
+        console.log("icon1: " + iconElement.attr('class'));
+        iconElement.attr('class', 'svg-inline--fa fa-check');
+        console.log("icon2: " + iconElement.attr('class'));
+    } else {
+        await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
+
+        // Thay đổi class của icon
+        const iconElement = $(this).find('svg.fa-check');
+        console.log("icon1: " + iconElement.attr('class'));
+        iconElement.attr('class', 'svg-inline--fa fa-cart-plus');
+        console.log("icon2: " + iconElement.attr('class'));
+    }
+
+
+
 
     // Reload new data
     // await run();

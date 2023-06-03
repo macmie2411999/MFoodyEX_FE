@@ -2,9 +2,11 @@
 @import '../scss/base';
 
 // Header and Footer Style
-@import '../scss/header_home_demo.scss';
+// @import '../scss/header_home_demo.scss';
 
-@import '../scss/footer_home_demo.scss';
+// @import '../scss/footer_home_demo.scss';
+
+@import '../scss/header_home_demo_2.scss';
 // Header and Footer Style End
 
 $text-c1-primary:#AAE640;
@@ -116,7 +118,7 @@ button {
     box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    min-width: 768px;
     max-width: 100%;
     min-height: 540px;
 
@@ -135,6 +137,32 @@ button {
             justify-content: center;
             align-items: center;
             text-align: center;
+
+            .form-group {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 10px;
+                width: 100%;
+
+                label {
+                    display: block;
+                    width: 120px;
+                    text-align: left;
+                    margin-left: 10px;
+                    color: #000;
+                    opacity: 0.8;
+                    font-size: 1.1rem;
+                }
+
+                input {
+                    flex-grow: 1 !important;
+                    background: #F2F3F5 !important;
+                    border: none !important;
+                    padding: 12px 15px !important;
+                    width: 100% !important;
+                }
+            }
 
             .social-container {
                 margin: 20px 0;
@@ -168,10 +196,17 @@ button {
     }
 
     .sign-up-container {
+        // scale: 0.9;
         left: 0;
         width: 50%;
         z-index: 1;
         opacity: 0;
+
+        #signup_user_form{
+            scale: 0.9;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
     }
 }
 

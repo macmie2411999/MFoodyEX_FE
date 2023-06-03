@@ -57,8 +57,8 @@ function searchProducts(searchValue) {
 
 // Render
 function renderProductsToSpliderss() {
-    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20), 'list_product_sale_off', "Discount");
-    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20), 'list_product_top_rate', "Best");
+    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 40), 'list_product_sale_off', "Discount");
+    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 40), 'list_product_top_rate', "Best");
 }
 
 // Call APIs
@@ -152,7 +152,6 @@ document.getElementById('staticBackdrop').addEventListener('show.bs.modal', func
     updateModal(product);
 });
 
-
 function updateModal(product) {
 
     console.log(product)
@@ -171,7 +170,6 @@ function updateModal(product) {
     // update the product rating
     let ratingElement = modal.querySelector('.star-rating');
     ratingElement.innerHTML = createRatingStars(product.ratingProduct);
-
 
     // update the product id
     modal.querySelector('.id-product .text-in-card-information').textContent = "ID: " + product.idProduct;
@@ -273,7 +271,7 @@ function showProducts() {
     const containerMoreProducts = $(".container-more-products");
     const filterProducts = $(".filter-product");
 
-    productList.addClass("fade");
+    productList.addClass("fade-list-products");
 
     setTimeout(() => {
         productList.empty();
@@ -297,7 +295,7 @@ function showProducts() {
             titleMoreProducts.text(`Result for "${searchValue}"`);
         }
 
-        productList.removeClass("fade");
+        productList.removeClass("fade-list-products");
     }, 500);
 }
 

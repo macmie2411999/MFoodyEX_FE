@@ -84,6 +84,22 @@ export const favoriteProductUrls = {
   // favorite_product_deleteByIDs_local: baseURL + "favoriteProduct/delete/idFavoriteListProducts/350060/idProduct/530022",
 };
 
+// DetailProductOrderMfoody
+export const detailProductOrderUrls = {
+  detail_product_order_add_local: baseURL + "detailProductOrder/add",
+  detail_product_order_add_array_local: baseURL + "detailProductOrder/addArrayObjects",
+  detail_product_order_deleteByIDs_local: baseURL + "detailProductOrder/delete/idOrder/"
+  // favorite_product_deleteByIDs_local: baseURL + "favoriteProduct/delete/idFavoriteListProducts/350060/idProduct/530022",
+};
+
+// DetailProductOrderMfoody
+export const detailProductCartUrls = {
+  detail_product_cart_add_local: baseURL + "detailProductCart/add",
+  detail_product_cart_add_array_local: baseURL + "detailProductCart/addArrayObjects",
+  detail_product_cart_deleteByIDs_local: baseURL + "detailProductCart/delete/idCart/"
+  // favorite_product_deleteByIDs_local: baseURL + "favoriteProduct/delete/idFavoriteListProducts/350060/idProduct/530022",
+};
+
 // Application
 export const applicationUrls = {
   application_login_local: baseURL + "applicationMfoody/login",

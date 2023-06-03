@@ -1,12 +1,10 @@
 /* Set rates + misc */
-var taxRate = 0.05;
-var shippingRate = 15.00;
-var fadeTime = 300;
-
+let taxRate = 0.05;
+let shippingRate = 15.00;
+let fadeTime = 300;
 
 /* Assign actions */
 $('.product-quantity input').change(function () {
-  // console.log('change');
   updateQuantity(this);
 });
 
@@ -17,15 +15,15 @@ $('.product-removal button').click(function () {
 /* Update quantity */
 function updateQuantity(quantityInput) {
   /* Calculate line price */
-  var productRow = $(quantityInput).parent().parent().parent().parent();
-  var price = parseFloat(productRow.find('.product-price').text().match(/[\d\.]+/));
-  var quantity = $(quantityInput).val();
-  var linePrice = price * quantity;
+  let productRow = $(quantityInput).parent().parent().parent().parent();
+  let price = parseFloat(productRow.find('.product-price').text().match(/[\d\.]+/));
+  let quantity = $(quantityInput).val();
+  let linePrice = price * quantity;
 
   /* Update line price display and recalc cart totals */
   productRow.find('.product-line-price').each(function () {
     $(this).fadeOut(fadeTime, function () {
-      $(this).text(linePrice.toFixed(2));
+      $(this).text(linePrice.toFixed(2) + '₽');
       recalculateCart();
       $(this).fadeIn(fadeTime);
     });
@@ -33,28 +31,28 @@ function updateQuantity(quantityInput) {
 }
 
 function recalculateCart() {
-  var subtotal = 0;
+  let subtotal = 0;
 
   /* Sum up row totals */
   $('.product').each(function () {
-    var price = $(this).find('.product-price').text().replace('$', '');
-    var quantity = $(this).find('.quantity-input').val();
-    var linePrice = parseFloat(price) * quantity;
-    $(this).find('.product-line-price').text(linePrice.toFixed(2));
+    let price = $(this).find('.product-price').text().replace('$', '');
+    let quantity = $(this).find('.quantity-input').val();
+    let linePrice = parseFloat(price) * quantity;
+    $(this).find('.product-line-price').text(linePrice.toFixed(2) + '₽');
     subtotal += linePrice;
   });
 
   /* Calculate totals */
-  var tax = subtotal * taxRate;
-  var shipping = (subtotal > 0 ? shippingRate : 0);
-  var total = subtotal + tax + shipping;
+  let tax = subtotal * taxRate;
+  let shipping = $('#shipping-select').val() == '0' ? 0 : shippingRate;
+  let total = subtotal + tax + shipping;
 
   /* Update totals display */
   $('.totals-value').fadeOut(fadeTime, function () {
-    $('#cart-subtotal').html(subtotal.toFixed(2));
-    $('#cart-tax').html(tax.toFixed(2));
-    $('#cart-shipping').html(shipping.toFixed(2));
-    $('#cart-total').html(total.toFixed(2));
+    $('#cart-subtotal').html(subtotal.toFixed(2) + '₽');
+    $('#cart-tax').html(tax.toFixed(2) + '₽');
+    $('#cart-shipping').html(shipping.toFixed(2) + '₽');
+    $('#cart-total').html(total.toFixed(2) + '₽');
     if (total == 0) {
       $('.checkout').fadeOut(fadeTime);
     } else {
@@ -67,9 +65,13 @@ function recalculateCart() {
 /* Remove item from cart */
 function removeItem(removeButton) {
   /* Remove row from DOM and recalc cart total */
-  var productRow = $(removeButton).parent().parent().parent().parent().parent().parent().parent();
+  let productRow = $(removeButton).parent().parent().parent().parent().parent().parent().parent();
   productRow.slideUp(fadeTime, function () {
     productRow.remove();
     recalculateCart();
   });
 }
+
+$('#shipping-select').change(function() {
+  recalculateCart();
+});

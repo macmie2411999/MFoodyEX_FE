@@ -108,7 +108,8 @@
                             </li>
                             <li class="not-search"><a href="#" class="fa-solid fa-heart" onclick="redirectToFavorite()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart"
+                                onclick="redirectToCart()"></a></li>
                         </ul>
 
                     </fieldset>
@@ -307,6 +308,9 @@
         }
         function redirectToFavorite() {
             window.location.href = "profile_user_demo_2_favorites.html";
+        }
+        function redirectToCart() {
+            window.location.href = "profile_user_demo_2_cart.html";
         }
     </script>
 

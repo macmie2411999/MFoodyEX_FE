@@ -116,7 +116,8 @@
                                     onclick="redirectToFavorite()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-user"
                                     onclick="redirectToProfile()"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart "></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart"
+                                onclick="redirectToCart()"></a></li>
                         </ul>
 
                     </fieldset>
@@ -158,7 +159,7 @@
                         <button>
                             <i class="fa-solid fa-cart-shopping fa-2xl"></i>
                         </button>
-                        <a href="#" class="category">Cart</a>
+                        <a href="profile_user_demo_2_cart.html" class="category">Cart</a>
                     </li>
                     <li class="active">
                         <button>
@@ -379,6 +380,9 @@
         }
         function redirectToFavorite() {
             window.location.href = "profile_user_demo_2_favorites.html";
+        }
+        function redirectToCart() {
+            window.location.href = "profile_user_demo_2_cart.html";
         }
     </script>
 

@@ -2569,8 +2569,8 @@ body {
   padding-bottom: 0 !important;
   white-space: normal;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* max lines to display */
+  -webkit-line-clamp: 2; /* max lines to display */
+  text-align: justify;
   -webkit-box-orient: vertical;
 }
 .more-products .container-more-products .productList .card .card-body .card-text {

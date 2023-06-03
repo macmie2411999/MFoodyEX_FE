@@ -83,7 +83,7 @@ function createProductCard(product) {
 
 function showProducts() {
     const productList = $("#productList");
-    productList.addClass("fade");
+    productList.addClass("fade-list-products");
 
     setTimeout(() => {
         productList.empty();
@@ -95,7 +95,7 @@ function showProducts() {
             productList.append(createProductCard(productsGeneral[i]));
         }
 
-        productList.removeClass("fade");
+        productList.removeClass("fade-list-products");
     }, 500);
 }
 
