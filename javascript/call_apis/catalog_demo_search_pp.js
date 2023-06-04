@@ -459,6 +459,31 @@ $(document).on('click', '.to-cart', async function (event) {
     // await run();
 });
 
+// Catalog Active Tab
+$(document).ready(function () {
+    // Xác định tab active ban đầu
+    let MFoody_activeTab = localStorage.getItem('MFoody_activeTab');
+    if (MFoody_activeTab) {
+        $('.sidebar li').removeClass('active');
+        let activeLi = $('.sidebar li').filter(function () {
+            return $(this).find('a').attr('href') === MFoody_activeTab;
+        });
+        activeLi.addClass('active');
+    }
+
+    $('.category').click(function (event) {
+        event.preventDefault();
+        let parentLi = $(this).closest('li');
+
+        $('.sidebar li').removeClass('active');
+        parentLi.addClass('active');
+
+        let url = $(this).attr('href');
+        localStorage.setItem('MFoody_activeTab', parentLi.find('a').attr('href')); // Lưu trạng thái "active" vào localStorage
+        window.location.href = url;
+    });
+});
+
 
 
 

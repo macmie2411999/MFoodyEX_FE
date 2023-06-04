@@ -10,7 +10,7 @@ import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
-const productsPerPage = 10;
+const productsPerPage = 20;
 let currentPage = 1;
 let productsGeneral = [];
 let arrayAllProducts = [];
@@ -18,7 +18,15 @@ let favoriteListOfCurrentUser = [];
 let arrayFavoriteProducts = [];
 let idFavoriteListProducts = '';
 let cartOfCurrentUser = [];
-let userSignedIn = localStorageCookiesProcess.checkUserRole();;
+let userSignedIn = localStorageCookiesProcess.checkUserRole();
+let searchResults = localStorage.getItem('MFoody - searchResults')
+  ? JSON.parse(localStorage.getItem('MFoody - searchResults'))
+  : {};
+
+// Get key from URL
+const searchParams = new URLSearchParams(window.location.search);
+const searchValue = searchParams.get('category');
+let foundProductsMatchs = true;
 
 // **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
 
@@ -35,25 +43,54 @@ async function run() {
         arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
     }
 
-    productsGeneral = processlistProducts.getRandomProducts(
-        processlistProducts.getRemainingProducts(
-            arrayAllProducts,
-            processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
-            processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
-            processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20)), 100);
-
     renderProductsToSpliderss();
+
+    // Check searchValue != null and Search and display products
+    if (!searchValue) {
+        productsGeneral = processlistProducts.getRandomProducts(
+            processlistProducts.getRemainingProducts(
+                arrayAllProducts,
+                processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
+                processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
+                processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20)), 100);
+    } else {
+        productsGeneral = searchProducts(searchValue);
+    }
+
     showProducts();
     updatePagination();
 }
 
 run();
 
+// Find Product with its category matchs
+// Retrieve the searchResults object from localStorage (if available)
+function searchProducts(searchValue) {
+  // Check if there is a corresponding array for the searchValue in localStorage
+  if (searchResults[searchValue]) {
+    // Return the array from localStorage
+    return searchResults[searchValue];
+  } else {
+    // Perform the filter operation to get the matchedProducts array
+    const matchedProducts = arrayAllProducts.filter(
+      (product) =>
+        product.categoryProduct.toLowerCase().includes(searchValue.toLowerCase())
+    );
+
+    // Save the array in searchResults object
+    searchResults[searchValue] = matchedProducts;
+
+    // Save the updated searchResults object in localStorage
+    localStorage.setItem('MFoody - searchResults', JSON.stringify(searchResults));
+
+    return matchedProducts;
+  }
+}
+
 // Render
 function renderProductsToSpliderss() {
     renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 40), 'list_product_sale_off', "Discount");
     renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 40), 'list_product_top_rate', "Best");
-    renderProductsToSplider(processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 40), 'list_product_new_product', "New");
 }
 
 // Call APIs
@@ -62,6 +99,16 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
     let contentHTML = '';
     let tempPrice = '';
     for (let product of arrayProducts) {
+
+        // Process Present Tag Of Products
+        // let tagClass = "";
+        // if (tagProduct === "New") {
+        //     tagClass = "new-product";
+        // } else if (tagProduct === "Top Rate") {
+        //     tagClass = "top-rate";
+        // } else if (tagProduct === "Sale Off") {
+        //     tagClass = "sale-off";
+        // }
 
         // Process Present Ratting Of Products
         let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
@@ -100,7 +147,7 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
                                     <div class="col button-infor">
                                         <button class="more-infor">
                                             <a
-                                                href="product_detail_demo.html?idProduct=${product.idProduct}"><i
+                                                href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i
                                                     class="fa-solid fa-magnifying-glass"></i></a></button>
                                         <button class="to-cart"><i
                                                 class="fa-solid fa-cart-plus"></i></button>
@@ -131,6 +178,7 @@ document.getElementById('staticBackdrop').addEventListener('show.bs.modal', func
 
     // find the product in arrayAllProducts
     let product = arrayAllProducts.find(item => item.idProduct == productId);
+    console.log(productId)
 
     // update modal content
     updateModal(product);
@@ -154,7 +202,6 @@ function updateModal(product) {
     // update the product rating
     let ratingElement = modal.querySelector('.star-rating');
     ratingElement.innerHTML = createRatingStars(product.ratingProduct);
-
 
     // update the product id
     modal.querySelector('.id-product .text-in-card-information').textContent = "ID: " + product.idProduct;
@@ -293,6 +340,10 @@ function createProductCard(product) {
 
 function showProducts() {
     const productList = $("#productList");
+    const titleMoreProducts = $(".title-more-products");
+    const containerMoreProducts = $(".container-more-products");
+    const filterProducts = $(".filter-product");
+
     productList.addClass("fade-list-products");
 
     setTimeout(() => {
@@ -303,6 +354,18 @@ function showProducts() {
 
         for (let i = startIndex; i < endIndex; i++) {
             productList.append(createProductCard(productsGeneral[i]));
+        }
+
+        // Update the title with search keyword
+
+        if (!searchValue) {
+            titleMoreProducts.text(`Our Products`);
+        } else if (productsGeneral.length === 0) {
+            titleMoreProducts.text(`No Categories match "${searchValue}"`);
+            containerMoreProducts.hide();
+            filterProducts.hide();
+        } else {
+            titleMoreProducts.text(`Category "${searchValue}"`);
         }
 
         productList.removeClass("fade-list-products");
@@ -441,6 +504,12 @@ $(document).ready(function () {
         window.location.href = url;
     });
 });
+
+
+
+
+
+
 
 
 

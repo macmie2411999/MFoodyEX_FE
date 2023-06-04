@@ -166,6 +166,11 @@ $text-c10-grey: #172033;
         padding-right: 15px;
         padding-left: 0px;
 
+        li {
+            padding-left: 10px !important;
+            border-radius: 5px !important;
+        }
+
         .sidebar {
             background-color: #fff;
             padding: 20px;
@@ -184,18 +189,18 @@ $text-c10-grey: #172033;
 
                 button {
                     text-decoration: none;
-                    background-color: #fff;
+                    background-color: transparent;
                     border: 0px solid #ccc;
                     border-radius: 5px;
                     color: $text-c3-primary;
                     font-weight: bold;
                     cursor: pointer;
                     display: inline-block;
-                    padding-right: 0px;
+                    padding-right: 10px !important;
                     text-align: center;
                     width: 20px;
                     position: absolute;
-                    right: 0;
+                    right: 10px;
                     top: 0;
                 }
             }
@@ -204,6 +209,23 @@ $text-c10-grey: #172033;
                 color: #000 !important;
                 opacity: 0.7 !important;
                 font-size: 1.2rem;
+            }
+
+            .active {
+                background-color: $text-c5-primary !important;
+
+                .category {
+                    color: #fff !important;
+                    opacity: 1 !important;
+                }
+
+                .button-has-sub-menu {
+                    background-color: transparent !important;
+                    svg {
+                        color: #fff !important;
+                    }
+                }
+
             }
 
             .category:hover {
@@ -217,10 +239,11 @@ $text-c10-grey: #172033;
 
             .title-area {
                 text-align: left;
-                font-size: 2rem;;
+                font-size: 2rem;
+                ;
                 opacity: 0.9;
                 color: #4da56a !important;
-                font-family: "Jost",sans-serif !important;
+                font-family: "Jost", sans-serif !important;
             }
 
             // .tags-product {
@@ -289,6 +312,7 @@ $text-c10-grey: #172033;
         }
     }
 }
+
 // Main Style End
 
 // -------------------------------------------------- FOR ALL --------------------------------------------------
@@ -299,6 +323,7 @@ $text-c10-grey: #172033;
         display: none;
     }
 }
+
 // Side bar RES End
 
 // Adjust number of Product on a line of Table (Start) - 4 products a line - 
@@ -311,6 +336,5 @@ $text-c10-grey: #172033;
         }
     }
 }
+
 // Adjust number of Product on a line of Table (End)
-
-

@@ -2749,6 +2749,10 @@ body {
   padding-right: 15px;
   padding-left: 0px;
 }
+.catalog-full-list .container-catalog-full-list li {
+  padding-left: 10px !important;
+  border-radius: 5px !important;
+}
 .catalog-full-list .container-catalog-full-list .sidebar {
   background-color: #fff;
   padding: 20px;
@@ -2766,24 +2770,37 @@ body {
 }
 .catalog-full-list .container-catalog-full-list .sidebar .has-sub-menu button {
   text-decoration: none;
-  background-color: #fff;
+  background-color: transparent;
   border: 0px solid #ccc;
   border-radius: 5px;
   color: #009f4d;
   font-weight: bold;
   cursor: pointer;
   display: inline-block;
-  padding-right: 0px;
+  padding-right: 10px !important;
   text-align: center;
   width: 20px;
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 0;
 }
 .catalog-full-list .container-catalog-full-list .sidebar .category {
   color: #000 !important;
   opacity: 0.7 !important;
   font-size: 1.2rem;
+}
+.catalog-full-list .container-catalog-full-list .sidebar .active {
+  background-color: #408A36 !important;
+}
+.catalog-full-list .container-catalog-full-list .sidebar .active .category {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+.catalog-full-list .container-catalog-full-list .sidebar .active .button-has-sub-menu {
+  background-color: transparent !important;
+}
+.catalog-full-list .container-catalog-full-list .sidebar .active .button-has-sub-menu svg {
+  color: #fff !important;
 }
 .catalog-full-list .container-catalog-full-list .sidebar .category:hover {
   color: #408A36 !important;
