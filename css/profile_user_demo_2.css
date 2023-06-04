@@ -4947,13 +4947,27 @@ body {
   font-weight: 600;
   margin-left: 20px;
 }
-.shopping-cart .container-shopping-cart .container .content .content-container .list-items .items .product .container-product .infor-product .container-infor .product-general h4 {
+.shopping-cart .container-shopping-cart .container .content .content-container .list-items .items .product .container-product .infor-product .container-infor .product-general .title-product-in-cart {
   font-size: 1.7rem !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
   opacity: 0.8;
+  text-decoration: none;
+  color: #000;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* max lines to display */
+  text-align: justify;
+  -webkit-box-orient: vertical;
+}
+.shopping-cart .container-shopping-cart .container .content .content-container .list-items .items .product .container-product .infor-product .container-infor .product-general .title-product-in-cart:hover {
+  color: #015A28;
+}
+.shopping-cart .container-shopping-cart .container .content .content-container .list-items .items .product .container-product .infor-product .container-infor .product-general .product-star-and-sale {
+  margin-top: 10px !important;
 }
 .shopping-cart .container-shopping-cart .container .content .content-container .list-items .items .product .container-product .infor-product .container-infor .product-general .product-star-and-sale .rated-star svg {
   color: gold;

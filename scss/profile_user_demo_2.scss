@@ -528,7 +528,7 @@ $text-c10-grey: #172033;
                                 .container-product {
                                     padding: 0 !important;
                                     margin: 0 !important;
-                                    
+
                                     .image-product {
                                         img {
                                             margin-left: 5px !important;
@@ -549,13 +549,29 @@ $text-c10-grey: #172033;
                                                 font-weight: 600;
                                                 margin-left: 20px;
 
-                                                h4 {
+                                                .title-product-in-cart {
                                                     font-size: 1.7rem !important;
                                                     @include processLongText();
                                                     opacity: 0.8;
+                                                    text-decoration: none;
+                                                    color: #000;
+                                                    white-space: normal;
+                                                    display: -webkit-box;
+                                                    -webkit-line-clamp: 2;
+                                                    /* max lines to display */
+                                                    text-align: justify;
+                                                    -webkit-box-orient: vertical;
+                                                    // transition: all 0.3 ease;
+                                                    // padding-bottom: 50px !important;
+
+                                                    &:hover {
+                                                        color: $text-c4-primary;
+                                                    }
                                                 }
 
                                                 .product-star-and-sale {
+                                                    margin-top: 10px !important;
+
                                                     .rated-star {
                                                         svg {
                                                             color: gold;

@@ -6,7 +6,7 @@ import { getAllProducts } from './products_apis.js';
 import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
 import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
 import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
-import { getCartOfCurrentUser } from './cart_apis.js';
+import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -18,19 +18,29 @@ let favoriteListOfCurrentUser = [];
 let arrayFavoriteProducts = [];
 let idFavoriteListProducts = '';
 let cartOfCurrentUser = [];
+let userSignedIn = localStorageCookiesProcess.checkUserRole();;
 
 // **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
 
+    if (userSignedIn) {
+        // If product already in Cart
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+
+        // If product already in Favorite List
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+    }
+
     productsGeneral = processlistProducts.getRandomProducts(
         processlistProducts.getRemainingProducts(
             arrayAllProducts,
             processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
             processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
-            processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20),
-            arrayFavoriteProducts), 100);
+            processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20)), 100);
 
     renderProductsToSpliderss();
     showProducts();
@@ -66,12 +76,12 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
 
         contentHTML += `
         <div class=" splide__slide " >
-            <div class="product" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop" data-product-id="${product.idProduct}">
+            <div class="product" data-product-id="${product.idProduct}">
                 <div class="row container-product">
                     <div class="col-md-5 image-product">
                         <img class="img-fluid mx-auto d-block image"
-                            src="../image/products/${product.albumProduct}.webp">
+                            src="../image/products/${product.albumProduct}.webp" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop" data-product-id="${product.idProduct}">
                     </div>
                     <div class="col-md-7 infor-product">
                         <div class="row container-infor">
@@ -90,7 +100,7 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
                                     <div class="col button-infor">
                                         <button class="more-infor">
                                             <a
-                                                href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i
+                                                href="product_detail_demo.html?idProduct=${product.idProduct}"><i
                                                     class="fa-solid fa-magnifying-glass"></i></a></button>
                                         <button class="to-cart"><i
                                                 class="fa-solid fa-cart-plus"></i></button>
@@ -203,6 +213,8 @@ function createRatingStars(rating) {
 // Table Product
 function createProductCard(product) {
     let tempPrice = '';
+    let toCartButtonHTML = '';
+    let toFavoriteListButtonHTML = '';
 
     // Process Present Rating Of Products
     let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
@@ -219,14 +231,50 @@ function createProductCard(product) {
                      <span class="tag-full-price">${product.fullPriceProduct}₽</span>`
     }
 
+    if (userSignedIn) {
+        // If product already in Cart
+        if (processCart.checkProductInCart(cartOfCurrentUser, product.idProduct)) {
+            toCartButtonHTML = `
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-check"></i></button>
+            `;
+        } else {
+            toCartButtonHTML = `
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+            `;
+        }
+
+        // If product already in Favorite List
+        if (processlistProducts.checkProductInArray(arrayFavoriteProducts, product.idProduct)) {
+            toFavoriteListButtonHTML = `
+            <span class="heart-icon active" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
+            `;
+        } else {
+            toFavoriteListButtonHTML = `
+            <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
+            `;
+        }
+    } else {
+        toCartButtonHTML = `
+            <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+            `;
+
+        toFavoriteListButtonHTML = `
+            <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
+            `;
+    }
+
     return `
         <div class="card"  data-product-id="${product.idProduct}">
             <div class="tag-container">
                 ${tagsHtml}
             </div>
-            <span class="heart-icon" data-product-id="${product.idProduct}"> 
-                <i class="fa-solid fa-heart"></i> 
-            </span>
+            ${toFavoriteListButtonHTML}
             <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="...">
             <div class="card-body">
                 <span class="rated-star card-text"><i class="fa-solid fa-star ${ratingClass}"></i> ${product.ratingProduct} </span>
@@ -237,7 +285,7 @@ function createProductCard(product) {
                     ${tempPrice}
                 </button>
                 <button class="more-infor"> <a href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i class="fa-solid fa-magnifying-glass"></i></a></button>
-                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+                ${toCartButtonHTML}
             </div>
         </div>`;
 
@@ -317,6 +365,10 @@ $(document).on('click', '.heart-icon', async function (event) {
         } else {
             await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
         }
+
+        // // Re-load
+        // showProducts();
+        // updatePagination();
     } else {
         showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }
@@ -353,6 +405,10 @@ $(document).on('click', '.to-cart', async function (event) {
             iconElement.attr('class', 'svg-inline--fa fa-cart-plus');
             console.log("icon2: " + iconElement.attr('class'));
         }
+
+        // // Re-load
+        // showProducts();
+        // updatePagination();
     } else {
         showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }

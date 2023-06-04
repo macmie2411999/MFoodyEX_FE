@@ -4,6 +4,8 @@
 import { token_admin, token_user } from './default_tokens.js';
 import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 import { getAllProducts } from './products_apis.js';
+import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
+import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
 
 // Sundries variables
 let cartOfCurrentUser = [];
@@ -32,6 +34,10 @@ function renderCartOfUser(cartOfCurrentUser) {
     for (let detailProductCart of listDetailProductCarts) {
         let product = processlistProducts.getProductById(arrayAllProducts, detailProductCart.idDetailProductCartMFoody.idProduct);
 
+        // Create tags for the product
+        let tags = processlistProducts.generateProductTags(product, 4, 1, 40, '22/04/2023');
+        let tagsHtml = tags.map(tag => `<span class="tag-product ${tag}"> ${tag} </span>`).join('');
+
         contentHTML += `
         <div class="product">
         <div class="container-product row">
@@ -42,13 +48,16 @@ function renderCartOfUser(cartOfCurrentUser) {
             <div class="col-md-9 infor-product">
                 <div class="container-infor row">
                     <div class="col-md-7 product-general">
-                        <h4 href="#">${product.nameProduct}</h4>
+                        <a class="title-product-in-cart" href="product_detail_demo.html?idProduct=${product.idProduct}">${product.nameProduct}</a>
                         <div class="product-star-and-sale">
-                            <span class="tag-product"> New Product </span>
-                            <span class="rated-star card-text">
+                            <div class="tag-container mb-2">
+                                ${tagsHtml}
+                                <span class="rated-star card-text">
                                 <i class="fa-solid fa-star"></i>
                                 ${product.ratingProduct}
                             </span>
+                            </div>
+                            
                         </div>
                         <div class="product-info">
                             <div class="product-description">${product.descriptionProduct}</div>
@@ -70,7 +79,7 @@ function renderCartOfUser(cartOfCurrentUser) {
                                     min="1" class="form-control quantity-input">
                             </div>
                             <div class="col-md-6 product-removal">
-                                <button class="remove-product">
+                                <button class="remove-product" data-product-id="${product.idProduct}">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </div>
@@ -89,7 +98,9 @@ function renderCartOfUser(cartOfCurrentUser) {
         updateQuantity(this);
     });
 
-    $('.product-removal button').off('click').on('click', function () {
+    $('.product-removal button').off('click').on('click', async function () {
+        const productId = $(this).data('product-id');
+        await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
         removeItem(this);
     });
 

@@ -64,6 +64,9 @@
   color: #AAE640;
   cursor: pointer;
 }
+.scrolling-container .scrolling-wrapper .card .heart-icon.active svg {
+  color: #AAE640;
+}
 .scrolling-container .scrolling-wrapper .card img {
   scale: 0.8;
 }

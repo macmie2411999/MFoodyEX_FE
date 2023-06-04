@@ -19,9 +19,7 @@ const current_user = customLocalStorage.getItemFromLocalStorage("MFoody - curren
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
     arrayAllOrdersOfCurrentUser = await getAllOrdersOfCurrentUser(); // Add await here
-
     renderOdersOfUser(arrayAllOrdersOfCurrentUser);
-
 }
 
 run();

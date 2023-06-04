@@ -5,6 +5,8 @@ import { token_admin, token_user } from './default_tokens.js';
 import { getAllProducts } from './products_apis.js';
 import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
 import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
+import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
+import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -15,6 +17,8 @@ let arrayAllProducts = [];
 let favoriteListOfCurrentUser = [];
 let arrayFavoriteProducts = [];
 let idFavoriteListProducts = '';
+let cartOfCurrentUser = [];
+let userSignedIn = localStorageCookiesProcess.checkUserRole();;
 
 // Get key from URL
 const searchParams = new URLSearchParams(window.location.search);
@@ -25,9 +29,17 @@ let foundProductsMatchs = true;
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
-    idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
-    arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+
+    if (userSignedIn) {
+        // If product already in Cart
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+
+        // If product already in Favorite List
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+    }
+
     renderProductsToSpliderss();
 
     // Check searchValue != null and Search and display products
@@ -37,8 +49,7 @@ async function run() {
                 arrayAllProducts,
                 processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 20),
                 processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
-                processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20),
-                arrayFavoriteProducts), 100);
+                processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20)), 100);
     } else {
         productsGeneral = searchProducts(searchValue);
     }
@@ -91,12 +102,12 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
 
         contentHTML += `
         <div class=" splide__slide " >
-            <div class="product" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop" data-product-id="${product.idProduct}">
+            <div class="product" data-product-id="${product.idProduct}">
                 <div class="row container-product">
                     <div class="col-md-5 image-product">
                         <img class="img-fluid mx-auto d-block image"
-                            src="../image/products/${product.albumProduct}.webp">
+                            src="../image/products/${product.albumProduct}.webp" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop" data-product-id="${product.idProduct}">
                     </div>
                     <div class="col-md-7 infor-product">
                         <div class="row container-infor">
@@ -225,8 +236,11 @@ function createRatingStars(rating) {
     return starsHTML;
 }
 
+// Table Product
 function createProductCard(product) {
     let tempPrice = '';
+    let toCartButtonHTML = '';
+    let toFavoriteListButtonHTML = '';
 
     // Process Present Rating Of Products
     let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
@@ -243,12 +257,50 @@ function createProductCard(product) {
                      <span class="tag-full-price">${product.fullPriceProduct}₽</span>`
     }
 
+    if (userSignedIn) {
+        // If product already in Cart
+        if (processCart.checkProductInCart(cartOfCurrentUser, product.idProduct)) {
+            toCartButtonHTML = `
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-check"></i></button>
+            `;
+        } else {
+            toCartButtonHTML = `
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+            `;
+        }
+
+        // If product already in Favorite List
+        if (processlistProducts.checkProductInArray(arrayFavoriteProducts, product.idProduct)) {
+            toFavoriteListButtonHTML = `
+            <span class="heart-icon active" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
+            `;
+        } else {
+            toFavoriteListButtonHTML = `
+            <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
+            `;
+        }
+    } else {
+        toCartButtonHTML = `
+            <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+            `;
+
+        toFavoriteListButtonHTML = `
+            <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                <i class="fa-solid fa-heart"></i> 
+            </span>
+            `;
+    }
+
     return `
-        <div class="card" data-product-id="${product.idProduct}">
+        <div class="card"  data-product-id="${product.idProduct}">
             <div class="tag-container">
                 ${tagsHtml}
             </div>
-            <span class="heart-icon" data-product-id="${product.idProduct}"> <i class="fa-solid fa-heart"></i> </span>
+            ${toFavoriteListButtonHTML}
             <img src="../image/products/${product.albumProduct}.webp" class="card-img-top" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="...">
             <div class="card-body">
                 <span class="rated-star card-text"><i class="fa-solid fa-star ${ratingClass}"></i> ${product.ratingProduct} </span>
@@ -259,7 +311,7 @@ function createProductCard(product) {
                     ${tempPrice}
                 </button>
                 <button class="more-infor"> <a href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i class="fa-solid fa-magnifying-glass"></i></a></button>
-                <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                ${toCartButtonHTML}
             </div>
         </div>`;
 
@@ -341,15 +393,66 @@ $("#nextBtn").click(() => {
 
 // Add event for icon heart
 $(document).on('click', '.heart-icon', async function (event) {
+    if (localStorageCookiesProcess.checkUserRole()) {
+        // Call and save Infor
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
 
-    $(this).toggleClass('active');
+        // Add product to favorite list
+        $(this).toggleClass('active');
+        const productId = $(this).data('product-id');
+        if ($(this).hasClass('active')) {
+            await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        } else {
+            await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        }
 
-    const productId = $(this).data('product-id');
-
-    if ($(this).hasClass('active')) {
-        await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        // // Re-load
+        // showProducts();
+        // updatePagination();
     } else {
-        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
+    }
+
+    // Reload new data
+    // await run();
+});
+
+// Add event for icon cart
+$(document).on('click', '.to-cart', async function (event) {
+
+    if (localStorageCookiesProcess.checkUserRole()) {
+        // Call and save Infor
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+
+        // Add product to cart
+        $(this).toggleClass('active');
+        const productId = $(this).data('product-id');
+        let productToCart = processlistProducts.getProductById(arrayAllProducts, productId);
+        if ($(this).hasClass('active')) {
+            await addDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productToCart);
+
+            // Thay đổi class của icon
+            const iconElement = $(this).find('svg.fa-cart-plus');
+            console.log("icon1: " + iconElement.attr('class'));
+            iconElement.attr('class', 'svg-inline--fa fa-check');
+            console.log("icon2: " + iconElement.attr('class'));
+        } else {
+            await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
+
+            // Thay đổi class của icon
+            const iconElement = $(this).find('svg.fa-check');
+            console.log("icon1: " + iconElement.attr('class'));
+            iconElement.attr('class', 'svg-inline--fa fa-cart-plus');
+            console.log("icon2: " + iconElement.attr('class'));
+        }
+
+        // // Re-load
+        // showProducts();
+        // updatePagination();
+    } else {
+        showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }
 
     // Reload new data

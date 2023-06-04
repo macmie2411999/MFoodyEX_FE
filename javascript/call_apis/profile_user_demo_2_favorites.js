@@ -4,8 +4,10 @@
 import { token_admin, token_user } from './default_tokens.js';
 import { getAllOrdersOfCurrentUser } from './orders_apis.js';
 import { getAllProducts } from './products_apis.js';
+import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
 import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
+import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
 
 // Sundries variables
 const productsPerPage = 10;
@@ -15,6 +17,7 @@ let favoriteListOfCurrentUser = [];
 let arrayFavoriteProducts = [];
 let productsGeneral = [];
 let idFavoriteListProducts = '';
+let cartOfCurrentUser = [];
 
 // Process LocalStorage and Check Cookies
 localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -28,6 +31,7 @@ async function run() {
     favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
     idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
     productsGeneral = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+    cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
 
     // Render Favorite List
     showProducts();
@@ -41,6 +45,7 @@ run();
 // Table Product
 function createProductCard(product) {
     let tempPrice = '';
+    let toCartButtonHTML = '';
 
     // Process Present Rating Of Products
     let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
@@ -55,6 +60,17 @@ function createProductCard(product) {
     } else {
         tempPrice = `<span class="tag-sale-price">${product.salePriceProduct}₽</span>
                      <span class="tag-full-price">${product.fullPriceProduct}₽</span>`
+    }
+
+    // If product already in Cart
+    if(processCart.checkProductInCart(cartOfCurrentUser, product.idProduct)){
+        toCartButtonHTML += `
+            <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-check"></i></button>
+        `;
+    } else {
+        toCartButtonHTML += `
+            <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+        `;
     }
 
     return `
@@ -75,7 +91,7 @@ function createProductCard(product) {
                     ${tempPrice}
                 </button>
                 <button class="more-infor"> <a href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i class="fa-solid fa-magnifying-glass"></i></a></button>
-                <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
+                ${toCartButtonHTML}
             </div>
         </div>`;
 
@@ -148,11 +164,36 @@ $(document).on('click', '.heart-icon', async function () {
     if ($(this).hasClass('active')) {
         await addFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
     } else {
-        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);  
+        await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
     }
 
     // Reload new data
     await run();
+});
+
+// Add event for icon cart
+$(document).on('click', '.to-cart', async function (event) {
+
+    // Add product to cart
+    $(this).toggleClass('active');
+    const productId = $(this).data('product-id');
+    let productToCart = processlistProducts.getProductById(arrayAllProducts, productId);
+    if ($(this).hasClass('active')) {
+        await addDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productToCart);
+
+        // Thay đổi class của icon
+        const iconElement = $(this).find('svg.fa-cart-plus');
+        iconElement.attr('class', 'svg-inline--fa fa-check');
+    } else {
+        await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
+
+        // Thay đổi class của icon
+        const iconElement = $(this).find('svg.fa-check');
+        iconElement.attr('class', 'svg-inline--fa fa-cart-plus');
+    }
+
+    // Reload new data
+    // await run();
 });
 
 // Process Modal

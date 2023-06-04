@@ -172,8 +172,8 @@ async function renderDetailProduct(product) {
         `;
 
         // If product already in Cart
-        cartOfCurrentUser = await getCartOfCurrentUserApi(); // Add await here
-        if(processCart.checkProductInCart(cartOfCurrentUser, product.idProduct)){
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+        if (processCart.checkProductInCart(cartOfCurrentUser, product.idProduct)) {
             toCartButtonHTML += `
             <span class="button-content button-to-cart-sp active" data-product-id="${product.idProduct}">
                 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
@@ -194,7 +194,7 @@ async function renderDetailProduct(product) {
         favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
         idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
         arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
-        if(processlistProducts.checkProductInArray(arrayFavoriteProducts, product.idProduct)){
+        if (processlistProducts.checkProductInArray(arrayFavoriteProducts, product.idProduct)) {
             toFavoriteListButtonHTML += `
             <span class="button-content button-to-favorite-list-sp active" data-product-id="${product.idProduct}">
                 <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
@@ -210,7 +210,27 @@ async function renderDetailProduct(product) {
             `;
         }
 
+    } else {
+        toCartButtonHTML += `
+            <span class="button-content button-to-cart-sp" data-product-id="${product.idProduct}">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                Add to Cart
+            </span>
+            `;
+
+        toFavoriteListButtonHTML += `
+            <span class="button-content button-to-favorite-list-sp" data-product-id="${product.idProduct}">
+                <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                Add to Favorite List
+            </span>
+            `;
     }
+
+    // Create tags for the product
+    let tags = processlistProducts.generateProductTags(product, 4, 1, 40, '22/04/2023');
+    let tagsHtml = tags.map(tag => `<button class="mark-button button-in-card">
+        <a href="#" class="name-category link-button-in-card ${tag}"> <i class="fa-solid fa-tag"></i>${tag}</a>
+        </button>`).join('');
 
     // Process Present rating Of Products
     let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
@@ -274,10 +294,7 @@ async function renderDetailProduct(product) {
                             ${product.categoryProduct}</a>
                     </button>
 
-                    <button class="mark-button button-in-card">
-                        <a href="#" class="name-category link-button-in-card"> <i class="fa-solid fa-tag"></i>
-                            New Product</a>
-                    </button>
+                    ${tagsHtml}
                 </div>
 
             </div>
@@ -350,10 +367,26 @@ async function renderDetailProduct(product) {
     document.getElementById("productDetailContainer").innerHTML = contentHTML;
 }
 
-function renderProductsToScrollList(arrayProducts) {
+async function renderProductsToScrollList(arrayProducts) {
     console.log("Render renderProductsToSplider");
     let contentHTML = '';
     let tempPrice = '';
+    let toCartButtonHTML = '';
+    let toFavoriteListButtonHTML = '';
+    let checkRoleUser = localStorageCookiesProcess.checkUserRole();
+
+    // Check if user already signed in
+    if (checkRoleUser) {
+        // If product already in Cart
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+
+        // If product already in Favorite List
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+
+    }
+
     for (let product of arrayProducts) {
 
         // Process Present Rating Of Products
@@ -363,13 +396,51 @@ function renderProductsToScrollList(arrayProducts) {
         let tags = processlistProducts.generateProductTags(product, 4, 1, 40, '22/04/2023');
         let tagsHtml = tags.map(tag => `<span class="tag-product ${tag}"> ${tag} </span>`).join('');
 
-
         // Process Price
         if (product.salePriceProduct === product.fullPriceProduct) {
             tempPrice = `<span class="tag-sale-price product-not-sale">${product.salePriceProduct}₽</span>`
         } else {
             tempPrice = `<span class="tag-sale-price">${product.salePriceProduct}₽</span>
                      <span class="tag-full-price">${product.fullPriceProduct}₽</span>`
+        }
+
+        // Check if user already signed in
+        if (checkRoleUser) {
+            // If product already in Cart
+            if (processCart.checkProductInCart(cartOfCurrentUser, product.idProduct)) {
+                toCartButtonHTML = `
+                    <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-check"></i></button>
+                `;
+            } else {
+                toCartButtonHTML = `
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+            `;
+            }
+
+            // If product already in Favorite List
+            if (processlistProducts.checkProductInArray(arrayFavoriteProducts, product.idProduct)) {
+                toFavoriteListButtonHTML = `
+                <span class="heart-icon active" data-product-id="${product.idProduct}"> 
+                    <i class="fa-solid fa-heart"></i> 
+                </span>
+                `;
+            } else {
+                toFavoriteListButtonHTML = `
+                <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                    <i class="fa-solid fa-heart"></i> 
+                </span>
+                `;
+            }
+        } else {
+            toCartButtonHTML = `
+                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+                `;
+    
+            toFavoriteListButtonHTML = `
+                <span class="heart-icon" data-product-id="${product.idProduct}"> 
+                    <i class="fa-solid fa-heart"></i> 
+                </span>
+                `;
         }
 
         contentHTML += `
@@ -393,7 +464,7 @@ function renderProductsToScrollList(arrayProducts) {
                 </button>
                 <button class="more-infor"> <a href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i
                             class="fa-solid fa-magnifying-glass"></i></a></button>
-                <button class="to-cart" data-product-id="${product.idProduct}"><i class="fa-solid fa-cart-plus"></i></button>
+                ${toCartButtonHTML}
             </div>
         </div>
         `
@@ -732,7 +803,7 @@ $(document).on('click', '.button-to-cart-sp', async function (event) {
 
         // Call and save Infor
         cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
-    
+
         // Add product to favorite list
         $(this).toggleClass('active');
         const productId = $(this).data('product-id');
@@ -758,7 +829,7 @@ $(document).on('click', '.button-to-favorite-list-sp', async function (event) {
         favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
         idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
         arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
-    
+
         // Add product to favorite list
         $(this).toggleClass('active');
         const productId = $(this).data('product-id');

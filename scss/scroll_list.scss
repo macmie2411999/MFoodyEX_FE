@@ -140,6 +140,12 @@ $text-c10-grey: #172033;
                     color: $text-c1-primary;
                     cursor: pointer;
                 }
+                
+                &.active {
+                    svg {
+                        color: $text-c1-primary;
+                    }
+                }
             }
 
             img {
