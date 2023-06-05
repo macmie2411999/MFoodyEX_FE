@@ -20,7 +20,7 @@ export async function deleteDetailProductOrderByIDsOfCurrentUserApi(idOrder, idP
 
         // Handle if successfully get data
         console.log(res);
-        showAlert('Product Removed From Order!', 2000, 'mfoody_fail');
+        showAlert('Product Removed From Order!', 2000, 'mfoody_success');
         return res;
 
     } catch (err) {
@@ -63,28 +63,28 @@ export async function addDetailProductOrderByIDsOfCurrentUserApi(idOrder, obDPO)
     }
 }
 
-export async function addArrayDetailProductOrderByIDsOfCurrentUserApi(idOrder, arrayObDPO) {
+export async function addArrayDetailProductOrderByIDsOfCurrentUserApi(arrayObDPO) {
     console.log('Call addArrayDetailProductOrderByIDsOfCurrentUserApi');
 
     let newArrayDetailProductOrder = [];
 
     // Create Data
-    for (const element of arrayObDPO) {
-        let newDetailProductOrder = {
-            idOrder: idOrder,
-            idProduct: element.idProduct,
-            quantityDetailProductOrder: element.quantityDetailProductOrder,
-            salePriceDetailProductOrder: element.salePriceDetailProductOrder,
-            fullPriceDetailProductOrder: element.fullPriceDetailProductOrder
-        };
-        newArrayDetailProductOrder.push(newDetailProductOrder);
-    }
+    // for (const element of arrayObDPO) {
+    //     let newDetailProductOrder = {
+    //         idOrder: idOrder,
+    //         idProduct: element.idProduct,
+    //         quantityDetailProductOrder: element.quantityDetailProductOrder,
+    //         salePriceDetailProductOrder: element.salePriceDetailProductOrder,
+    //         fullPriceDetailProductOrder: element.fullPriceDetailProductOrder
+    //     };
+    //     newArrayDetailProductOrder.push(newDetailProductOrder);
+    // }
 
     try {
         const res = await axios({
             url: detailProductOrderUrls.detail_product_order_add_array_local,
             method: 'POST',
-            data: newArrayDetailProductOrder,
+            data: arrayObDPO,
             headers: {
                 'Authorization': 'Bearer ' + token_current_user
             }

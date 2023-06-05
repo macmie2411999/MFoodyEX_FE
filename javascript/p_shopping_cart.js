@@ -1,5 +1,5 @@
 /* Set rates + misc */
-let taxRate = 0.05;
+let taxRate = 0;
 let shippingRate = 15.00;
 let fadeTime = 300;
 

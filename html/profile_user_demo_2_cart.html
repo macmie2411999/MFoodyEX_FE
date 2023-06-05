@@ -117,7 +117,7 @@
                             <li class="not-search"><a href="#" class="fa-solid fa-user"
                                     onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart"
-                                onclick="redirectToCart()"></a></li>
+                                    onclick="redirectToCart()"></a></li>
                         </ul>
 
                     </fieldset>
@@ -314,39 +314,55 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-12 col-lg-4">
+                                                    <div class="col-md-12 col-lg-4" id="checkInformation">
                                                         <div class="summary">
-                                                          <div class="summary-item">
-                                                            <label class="subtotal-label">Subtotal</label>
-                                                            <div class="totals-value price subtotal-value" id="cart-subtotal">0</div>
-                                                          </div>
-                                                          <div class="summary-item">
-                                                            <label class="tax-label">Tax (5%)</label>
-                                                            <div class="totals-value price tax-value" id="cart-tax">0</div>
-                                                          </div>
-                                                      
-                                                          <div class="summary-item">
-                                                            <div class="shipping-container">
-                                                              <div class="shipping-options">
-                                                                <select id="shipping-select">
-                                                                  <option value="0">Receipt At Store</option>
-                                                                  <option value="15">Ship To Home</option>
-                                                                </select>
-                                                              </div>
-                                                              <div class="totals-value price shipping-value" id="cart-shipping">0</div>
+                                                            <div class="summary-item">
+                                                                <label class="subtotal-label">Subtotal</label>
+                                                                <div class="totals-value price subtotal-value"
+                                                                    id="cart-subtotal">0</div>
                                                             </div>
-                                                          </div>
-                                                      
-                                                          <div class="summary-item totals-item-total">
-                                                            <label class="grand-total-label">Grand Total</label>
-                                                            <div class="totals-value price grand-total-value" id="cart-total">0</div>
-                                                          </div>
-                                                          <div class="checkout-container">
-                                                            <button class="checkout">Check Out</button>
-                                                          </div>
+                                                            <!-- <div class="summary-item">
+                                                                <label class="tax-label">Tax (5%)</label>
+                                                                <div class="totals-value price tax-value" id="cart-tax">
+                                                                    0</div>
+                                                            </div> -->
+
+                                                            <div class="summary-item">
+                                                                <div class="shipping-container">
+                                                                    <div class="shipping-options">
+                                                                        <select id="shipping-select">
+                                                                            <option value="0">Receipt At Store</option>
+                                                                            <option value="15">Ship To Home</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="totals-value price shipping-value"
+                                                                        id="cart-shipping">0</div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="summary-item totals-item-total">
+                                                                <label class="grand-total-label">Grand Total</label>
+                                                                <div class="totals-value price grand-total-value"
+                                                                    id="cart-total">0</div>
+                                                            </div>
+
+                                                            <div class="summary-item">
+                                                                <div class="payment-container">
+                                                                    <div class="payment-options">
+                                                                        <select id="payment-select">
+                                                                            <option value="0">By Cash</option>
+                                                                            <option value="15">Credit Card</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="checkout-container">
+                                                                <button class="checkout" id="checkout-btn">Check
+                                                                    Out</button>
+                                                            </div>
                                                         </div>
-                                                      </div>
-                                                      
+                                                    </div>
 
                                                 </div>
                                             </div>

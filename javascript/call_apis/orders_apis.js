@@ -44,3 +44,29 @@ export async function getAllOrdersOfCurrentUserApi() {
     }
 }
 
+export async function addNewOrderApi(orderData) {
+    console.log('Call addNewOrderApi');
+    try {
+      const res = await axios({
+        url: orderUrls.order_add_local,
+        method: 'POST',
+        data: orderData,
+        headers: {
+          'Authorization': 'Bearer ' + token_current_user
+        }
+      });
+  
+      // Handle if successfully created a new order
+      if (res.status === 201) {
+        const idOrder = res.data; // Giả sử response.data chứa idOrder
+        console.log('New order created with id:', idOrder);
+        return idOrder;
+      }
+  
+    } catch (err) {
+      // Handle if failed
+      console.log(err);
+    }
+  }
+  
+

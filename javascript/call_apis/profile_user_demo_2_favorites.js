@@ -5,7 +5,7 @@ import { token_admin, token_user } from './default_tokens.js';
 import { getAllOrdersOfCurrentUser } from './orders_apis.js';
 import { getAllProducts } from './products_apis.js';
 import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
-import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
+import { getFavoriteListOfCurrentUser, getFavoriteListOfCurrentUserApi } from './favorite_list_products_apis.js';
 import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
 import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
 
@@ -28,7 +28,7 @@ const current_user = customLocalStorage.getItemFromLocalStorage("MFoody - curren
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+    favoriteListOfCurrentUser = await getFavoriteListOfCurrentUserApi(); // Add await here
     idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
     productsGeneral = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
     cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
@@ -104,16 +104,27 @@ function showProducts() {
     setTimeout(() => {
         productList.empty();
 
-        const startIndex = (currentPage - 1) * productsPerPage;
-        const endIndex = Math.min(startIndex + productsPerPage, productsGeneral.length);
+        if (productsGeneral.length === 0) {
+            $("#prevBtn").hide();
+            $("#nextBtn").hide();
+            productList.append(`
+                <div class="empty-content-HTML">
+                    <span class="empty-content-HTML-span">Your Favorite List is Empty</span>
+                </div>
+            `);
+        } else {
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = Math.min(startIndex + productsPerPage, productsGeneral.length);
 
-        for (let i = startIndex; i < endIndex; i++) {
-            productList.append(createProductCard(productsGeneral[i]));
+            for (let i = startIndex; i < endIndex; i++) {
+                productList.append(createProductCard(productsGeneral[i]));
+            }
         }
 
         productList.removeClass("fade-list-products");
     }, 500);
 }
+
 
 function updatePagination() {
     const pagination = $("#pagination");

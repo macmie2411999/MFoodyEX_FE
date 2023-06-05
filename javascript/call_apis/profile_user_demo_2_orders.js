@@ -2,7 +2,7 @@
 // Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
-import { getAllOrdersOfCurrentUser } from './orders_apis.js';
+import { getAllOrdersOfCurrentUser, getAllOrdersOfCurrentUserApi } from './orders_apis.js';
 import { getAllProducts} from './products_apis.js';
 
 // Sundries variables
@@ -18,8 +18,8 @@ const current_user = customLocalStorage.getItemFromLocalStorage("MFoody - curren
 
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    arrayAllOrdersOfCurrentUser = await getAllOrdersOfCurrentUser(); // Add await here
-    renderOdersOfUser(arrayAllOrdersOfCurrentUser);
+    arrayAllOrdersOfCurrentUser = await getAllOrdersOfCurrentUserApi(); // Add await here
+    renderOdersOfUser(arrayAllOrdersOfCurrentUser.reverse());
 }
 
 run();
@@ -74,6 +74,12 @@ function renderOdersOfUser(arrayAllOrdersOfCurrentUser) {
             </div>
         </div>
         `;
+    }
+    if(contentHTML === ''){
+        contentHTML+=`
+        <div class="empty-content-HTML">
+            <span class= "empty-content-HTML-span"> You Have No Order</span>
+        </div>`
     }
     document.getElementById("listOrderCards").innerHTML = contentHTML;
 }

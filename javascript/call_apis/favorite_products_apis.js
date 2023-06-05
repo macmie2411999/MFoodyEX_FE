@@ -20,7 +20,7 @@ export async function deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListP
 
         // Handle if successfully get data
         console.log(res);
-        showAlert('Product Removed!', 2000, 'mfoody_fail');
+        showAlert('Product Removed!', 2000, 'mfoody_success');
         return res;
 
     } catch (err) {

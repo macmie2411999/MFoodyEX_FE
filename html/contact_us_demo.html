@@ -111,11 +111,12 @@
                                     <span class="fa-solid fa-search" id="span-search"></span>
                                 </button>
                             </li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-heart" onclick="redirectToFavorite()"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-heart"
+                                    onclick="redirectToFavorite()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-user"
                                     onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart"
-                                onclick="redirectToCart()"></a></li>
+                                    onclick="redirectToCart()"></a></li>
                         </ul>
 
                     </fieldset>
@@ -221,12 +222,12 @@
         <div class="horizontal-line">
             <div class="circle"></div>
         </div>
-        <section class="form-contact">
+        <section class="form-contact" id="form-contact">
             <div class="form-contact-over py-5">
                 <div class="form-contact-container py-lg-3">
                     <div class="form-content">
                         <div class="form-content-container">
-                            <form action="" method="">
+                            <form id="feed_back_form">
                                 <div class="form-title-content">
                                     <h3 class="title text-center mb-2">Let’s talk about your experience!</h3>
                                     <p class="title-form mb-lg-5 mb-4 text-center">Whether you have a question or
@@ -406,7 +407,16 @@
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
         </script>
 
+    <!-- Call APIs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- Import JS -->
+    <script type="module" src="../javascript/call_apis/contact_us_demo.js"></script>
+    <script src="../javascript/util/LocalStorageFunction.js"></script>
+    <script src="../javascript/call_apis/localStorageAndCookieProcess.js"></script>
+
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script type="module" src="../javascript/header_scroll_down.js"></script>
     <script src="../javascript/show_alert_mfoody.js"></script>

@@ -96,7 +96,8 @@ export const detailProductOrderUrls = {
 export const detailProductCartUrls = {
   detail_product_cart_add_local: baseURL + "detailProductCart/add",
   detail_product_cart_add_array_local: baseURL + "detailProductCart/addArrayObjects",
-  detail_product_cart_deleteByIDs_local: baseURL + "detailProductCart/delete/idCart/"
+  detail_product_cart_deleteByIDs_local: baseURL + "detailProductCart/delete/idCart/",
+  detail_product_cart_deleteByIdCart_local: baseURL + "detailProductCart/deleteByIdCart/"
   // favorite_product_deleteByIDs_local: baseURL + "favoriteProduct/delete/idFavoriteListProducts/350060/idProduct/530022",
 };
 

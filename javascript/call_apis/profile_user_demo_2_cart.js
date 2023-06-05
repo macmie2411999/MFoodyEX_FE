@@ -4,8 +4,11 @@
 import { token_admin, token_user } from './default_tokens.js';
 import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 import { getAllProducts } from './products_apis.js';
+import { addNewOrderApi } from './orders_apis.js';
 import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
-import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
+import { deleteDetailProductCartByIDsOfCurrentUserApi, deleteAllDetailProductCartByIdCartApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
+import { addArrayDetailProductOrderByIDsOfCurrentUserApi } from './detail_product_order_apis.js';
+
 
 // Sundries variables
 let cartOfCurrentUser = [];
@@ -39,7 +42,7 @@ function renderCartOfUser(cartOfCurrentUser) {
         let tagsHtml = tags.map(tag => `<span class="tag-product ${tag}"> ${tag} </span>`).join('');
 
         contentHTML += `
-        <div class="product">
+        <div class="product" data-product-id="${product.idProduct}" data-cart-id="${cartOfCurrentUser.idCart}">
         <div class="container-product row">
             <div class="col-md-3 image-product">
                 <img class="img-fluid mx-auto d-block image"
@@ -92,6 +95,14 @@ function renderCartOfUser(cartOfCurrentUser) {
     
         `;
     }
+
+    if(contentHTML === ''){
+        // $("#checkInformation").hide();
+        contentHTML+=`
+        <div class="empty-content-HTML">
+            <span class= "empty-content-HTML-span"> Your Cart is Empty</span>
+        </div>`
+    }
     document.getElementById("listProductsInCart").innerHTML = contentHTML;
 
     $('.product-quantity input').off('change').on('change', function () {
@@ -106,6 +117,143 @@ function renderCartOfUser(cartOfCurrentUser) {
 
     recalculateCart();
 }
+
+// Check Out
+$('#checkout-btn').on('click', async function () {
+    try {
+        proccessCartMfoody();
+        let orderCurrentUser = proccessOrderMfoody();
+        let idOrder = await addNewOrderApi(orderCurrentUser);
+        let arrayObDPO = proccessListDetailProductOrderMfoody(idOrder);
+        await addArrayDetailProductOrderByIDsOfCurrentUserApi(arrayObDPO);
+        await deleteAllDetailProductCartByIdCartApi(cartOfCurrentUser.idCart);
+        showAlert('Your Order created successfully!', 2000, 'mfoody_success');
+      } catch (error) {
+        console.log(error);
+      }
+});
+
+// Procces Cart and Order
+
+function proccessCartMfoody() {
+    // Get product list in cart from DOM
+    let productList = document.querySelectorAll('.product');
+
+    // Create an array to store product objects
+    let cartItems = [];
+
+    // Loop through the product list and create an audience for each product
+    productList.forEach((product) => {
+        let idProduct = product.getAttribute('data-product-id');
+        let idCart = product.getAttribute('data-cart-id');
+        let quantity = product.querySelector('.quantity-input').value;
+        let salePrice = product.querySelector('.product-price').innerText.replace(/₽/g, '');
+        let fullPrice = product.querySelector('.tag-full-price').innerText.replace(/₽/g, '');
+
+        // Create product object and add to array
+        let productItem = {
+            idProduct: idProduct,
+            idCart: idCart,
+            quantityDetailProductCart: quantity,
+            salePriceDetailProductCart: salePrice,
+            fullPriceDetailProductCart: fullPrice
+        };
+
+        cartItems.push(productItem);
+    });
+
+    // Store array of products into localStorage
+    localStorage.setItem('MFoody - cartItems', JSON.stringify(cartItems));
+    return JSON.stringify(cartItems);
+}
+
+function proccessListDetailProductOrderMfoody(idOrder) {
+    // Get product list in cart from DOM
+    let productList = document.querySelectorAll('.product');
+
+    // Create an array to store product objects
+    let orderItems = [];
+
+    // Loop through the product list and create an audience for each product
+    productList.forEach((product) => {
+        let idProduct = product.getAttribute('data-product-id');
+        let quantity = product.querySelector('.quantity-input').value;
+        let salePrice = product.querySelector('.product-price').innerText.replace(/₽/g, '');
+        let fullPrice = product.querySelector('.tag-full-price').innerText.replace(/₽/g, '');
+
+        // Create product object and add to array
+        let productItem = {
+            idOrder: idOrder,
+            idProduct: idProduct,
+            quantityDetailProductOrder: quantity,
+            salePriceDetailProductOrder: salePrice,
+            fullPriceDetailProductOrder: fullPrice
+        };
+
+        orderItems.push(productItem);
+    });
+
+    // Store array of products into localStorage
+    // localStorage.setItem('MFoody - cartItems', JSON.stringify(cartItems));
+    return orderItems;
+}
+
+function proccessOrderMfoody() {
+    // Get the current date in the format dd/mm/yyyy
+    let today = new Date();
+    let dateOrder = today.toLocaleDateString('en-GB');
+
+    // Get the selected shipping method and price
+    let shippingMethodSelect = document.getElementById('shipping-select');
+    let shippingMethodOrder = shippingMethodSelect.options[shippingMethodSelect.selectedIndex].text;
+    let shippingPriceOrder = parseFloat(document.getElementById('cart-shipping').innerText);
+
+    // Get the quantity, subtotal, and total values
+    let quantityAllProductsInOrder = 0;
+    let totalSalePriceOrder = 0;
+    let totalFullPriceOrder = 0;
+
+    let productList = document.querySelectorAll('.product');
+    productList.forEach((product) => {
+        let quantity = parseInt(product.querySelector('.quantity-input').value);
+        let salePrice = parseFloat(product.querySelector('.product-price').innerText.replace(/₽/g, ''));
+        let fullPrice = parseFloat(product.querySelector('.tag-full-price').innerText.replace(/₽/g, ''));
+
+        quantityAllProductsInOrder += quantity;
+        totalSalePriceOrder += salePrice * quantity;
+        totalFullPriceOrder += fullPrice * quantity;
+    });
+
+    // Get the selected payment method
+    let paymentMethodSelect = document.getElementById('payment-select');
+    let paymentMethodOrder = paymentMethodSelect.options[paymentMethodSelect.selectedIndex].text;
+
+    // Set the default status to "Processing"
+    let statusOrder = 'Processing';
+
+    // Get the idUser (assuming it's already available or stored somewhere)
+    let idUser = current_user.idUser;
+
+    // Create the order object
+    let order = {
+        dateOrder: dateOrder,
+        dateReceiptOrder: dateOrder,
+        shippingPriceOrder: shippingPriceOrder,
+        shippingMethodOrder: shippingMethodOrder,
+        quantityAllProductsInOrder: quantityAllProductsInOrder,
+        totalSalePriceOrder: totalSalePriceOrder,
+        totalFullPriceOrder: totalFullPriceOrder,
+        paymentMethodOrder: paymentMethodOrder,
+        statusOrder: statusOrder,
+        idUser: idUser
+    };
+
+    // Store the order object in localStorage
+    localStorage.setItem('MFoody - orderMfoody', JSON.stringify(order));
+    return order;
+}
+
+
 
 
 

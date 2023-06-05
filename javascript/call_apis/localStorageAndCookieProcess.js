@@ -13,7 +13,7 @@ let localStorageCookiesProcess = {
 
     removeAllMfoodyObjects: function () {
         Object.keys(localStorage).forEach(key => {
-            if (key.startsWith("MFoody -")) {
+            if (key.startsWith("MFoody")) {
                 localStorage.removeItem(key);
             }
         });

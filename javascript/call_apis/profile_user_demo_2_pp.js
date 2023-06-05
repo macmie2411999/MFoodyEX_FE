@@ -2,10 +2,10 @@
 // Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
-import { getAllCreditCardsOfCurrentUser } from './credit_cards_apis.js';
-import { getAllOrdersOfCurrentUser } from './orders_apis.js';
-import { getCartOfCurrentUser } from './cart_apis.js';
-import { getAllCommentsOfCurrentUser } from './comments_apis.js';
+import { getAllCreditCardsOfCurrentUser, getAllCreditCardsOfCurrentUserApi } from './credit_cards_apis.js';
+import { getAllOrdersOfCurrentUser, getAllOrdersOfCurrentUserApi } from './orders_apis.js';
+import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
+import { getAllCommentsOfCurrentUser, getAllCommentsOfCurrentUserApi } from './comments_apis.js';
 
 // Sundries variables
 let arrayAllCreditCardsOfCurrentUser = [];
@@ -23,10 +23,10 @@ renderFirstPartOfInforUser(current_user);
 renderSecondPartOfInforUser(current_user);
 
 async function run() {
-    arrayAllCreditCardsOfCurrentUser = await getAllCreditCardsOfCurrentUser(); // Add await here
-    arrayAllOrdersOfCurrentUser = await getAllOrdersOfCurrentUser(); // Add await here
-    cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
-    arrayAllCommentsOfCurrentUser = await getAllCommentsOfCurrentUser(); // Add await here
+    arrayAllCreditCardsOfCurrentUser = await getAllCreditCardsOfCurrentUserApi(); // Add await here
+    arrayAllOrdersOfCurrentUser = await getAllOrdersOfCurrentUserApi(); // Add await here
+    cartOfCurrentUser = await getCartOfCurrentUserApi(); // Add await here
+    arrayAllCommentsOfCurrentUser = await getAllCommentsOfCurrentUserApi(); // Add await here
 
     renderCreditCardsOfUser(arrayAllCreditCardsOfCurrentUser);
     renderOrdersOfUser(arrayAllOrdersOfCurrentUser);

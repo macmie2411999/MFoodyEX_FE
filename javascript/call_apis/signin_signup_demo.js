@@ -238,6 +238,9 @@ function validateSignUpForm() {
         .then(function (response) {
             console.log(response);
             showAlert('Your account has been created!', 2000, 'mfoody_success');
+            setTimeout(() => {
+                location.reload();
+            }, 4000);
         })
         .catch(function (error) {
             console.log(error);

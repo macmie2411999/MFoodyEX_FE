@@ -128,7 +128,7 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
                                             <a
                                                 href="../../html/product_detail_demo.html?idProduct=${product.idProduct}"><i
                                                     class="fa-solid fa-magnifying-glass"></i></a></button>
-                                        <button class="to-cart"><i
+                                        <button class="to-cart" data-product-id="${product.idProduct}"><i
                                                 class="fa-solid fa-cart-plus"></i></button>
                                     </div>
                                 </div>

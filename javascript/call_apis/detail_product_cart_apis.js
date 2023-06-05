@@ -20,7 +20,31 @@ export async function deleteDetailProductCartByIDsOfCurrentUserApi(idCart, idPro
 
         // Handle if successfully get data
         console.log(res);
-        showAlert('Product Removed From Cart!', 2000, 'mfoody_fail');
+        showAlert('Product Removed From Cart!', 2000, 'mfoody_success');
+        return res;
+
+    } catch (err) {
+        // Handle if failed
+        showAlert('Something Wrong!', 2000, 'mfoody_fail');
+        console.log(err);
+    }
+}
+
+export async function deleteAllDetailProductCartByIdCartApi(idCart) {
+    console.log('Call deleteDetailProductCartByIDsOfCurrentUserApi');
+    try {
+        const res = await axios({
+            url: detailProductCartUrls.detail_product_cart_deleteByIdCart_local + idCart,
+            method: 'DELETE',
+            headers: {
+                // 'Authorization': 'Bearer ' + token_current_admin
+                'Authorization': 'Bearer ' + token_current_user
+            }
+        });
+
+        // Handle if successfully get data
+        console.log(res);
+        showAlert('Removed All Products From Cart!', 2000, 'mfoody_success');
         return res;
 
     } catch (err) {
