@@ -107,6 +107,8 @@ function showProducts() {
         if (productsGeneral.length === 0) {
             $("#prevBtn").hide();
             $("#nextBtn").hide();
+            document.getElementById("productList").style.cssText = "padding: 0 !important;";
+
             productList.append(`
                 <div class="empty-content-HTML">
                     <span class="empty-content-HTML-span">Your Favorite List is Empty</span>
@@ -122,6 +124,11 @@ function showProducts() {
         }
 
         productList.removeClass("fade-list-products");
+
+        // Preload process
+        document.querySelector('#productList').style.display = 'flex';
+        document.querySelector('.pagination-container').style.display = 'flex';
+        document.querySelector('.container-loader-table-product').style.display = 'none';
     }, 500);
 }
 

@@ -817,8 +817,35 @@ $text-c10-grey: #172033;
         }
     }
 }
-
 // Splide SCSS End
+
+.container-loader-splider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    height: 100px;
+    width: 100%;
+
+    .loader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid $text-c1-primary;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 // Splider RES Start
 @media (min-width: 1200px) {
@@ -932,5 +959,15 @@ $text-c10-grey: #172033;
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }

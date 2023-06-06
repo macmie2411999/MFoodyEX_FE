@@ -218,9 +218,8 @@
                             <h2 class="title-bottom title-part"> Products In Cart</h2>
                             <div class="col-12 container-list-cart">
 
-                                <div class="filter-product">
+                                <!-- <div class="filter-product">
                                     <div class="container-filter-product">
-                                        <!-- Sort By Filter -->
                                         <div class="filter-group">
                                             <select class="form-select" id="sort-by">
                                                 <option value="date">Recently</option>
@@ -232,19 +231,29 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <!-- List Products In Cart Start -->
                                 <main class="shopping-cart">
                                     <section class="container-shopping-cart">
-                                        <div class="container">
+                                        <div class="container" id="content-container-shopping-cart">
+
+                                            <!-- Pre-load Start -->
+                                            <div class="container-loader-cart">
+                                                <div class="loader"></div>
+                                            </div>
+                                            <!-- Pre-load End -->
+                                            
                                             <div class="content">
-                                                <div class="row content-container">
+                                                
+                                                <div class="row content-container" id="content-container-cart">
+
                                                     <div class="col-md-12 col-lg-8 list-items">
+
                                                         <div class="items" id="listProductsInCart">
 
                                                             <!-- List Products-->
-                                                            <div class="product">
+                                                            <!-- <div class="product">
                                                                 <div class="row container-product">
                                                                     <div class="col-md-3 image-product">
                                                                         <img class="img-fluid mx-auto d-block image"
@@ -308,7 +317,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
                                                             <!-- List Products END-->
                                                         </div>
@@ -429,17 +438,17 @@
                         <div id="categories-4" class="widget_categories">
                             <h6 class="name_column">Products</h6>
                             <ul>
-                                <li class="cat-item cat-item-1"><a href="#">Spice & Condiments</a>
+                                <li class="cat-item cat-item-1"><a href="catalog_demo_search_category.html?category=Специи и приправы и пряности">Spice & Condiments</a>
                                 </li>
-                                <li class="cat-item cat-item-2"><a href="#">Hard-shelled Nuts</a>
+                                <li class="cat-item cat-item-2"><a href="catalog_demo_search_category.html?category=Орехи и семечки">Hard-shelled Nuts</a>
                                 </li>
-                                <li class="cat-item cat-item-3"><a href="#">Vegetables</a>
+                                <li class="cat-item cat-item-3"><a href="catalog_demo_search_category.html?category=Овощи">Vegetables</a>
                                 </li>
-                                <li class="cat-item cat-item-4"><a href="#">Jam & Syrup</a>
+                                <li class="cat-item cat-item-4"><a href="catalog_demo_search_category.html?category=Варенье, джемы и сиропы">Jam & Syrup</a>
                                 </li>
-                                <li class="cat-item cat-item-5"><a href="#">Cereals & Beans</a>
+                                <li class="cat-item cat-item-5"><a href="catalog_demo_search_category.html?category=Крупы и бобовые">Cereals & Beans</a>
                                 </li>
-                                <li class="cat-item cat-item-6"><a href="#">Fresh & Dried Fruits</a>
+                                <li class="cat-item cat-item-6"><a href="catalog_demo_search_category.html?category=Смеси орехов и сухофруктов">Fresh & Dried Fruits</a>
                                 </li>
                             </ul>
 

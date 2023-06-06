@@ -74,6 +74,8 @@ $text-c10-grey: #172033;
         padding-top: 10px;
         padding-bottom: 10px;
 
+        
+
         .card {
             margin-left: 10px;
             width: 268px;
@@ -140,7 +142,7 @@ $text-c10-grey: #172033;
                     color: $text-c1-primary;
                     cursor: pointer;
                 }
-                
+
                 &.active {
                     svg {
                         color: $text-c1-primary;
@@ -272,6 +274,16 @@ $text-c10-grey: #172033;
                 }
             }
         }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
 

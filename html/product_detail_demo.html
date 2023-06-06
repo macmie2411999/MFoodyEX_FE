@@ -118,10 +118,12 @@
                                     <span class="fa-solid fa-search" id="span-search"></span>
                                 </button>
                             </li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-heart" onclick="redirectToFavorite()"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-user" onclick="redirectToProfile()"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-heart"
+                                    onclick="redirectToFavorite()"></a></li>
+                            <li class="not-search"><a href="#" class="fa-solid fa-user"
+                                    onclick="redirectToProfile()"></a></li>
                             <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart"
-                                onclick="redirectToCart()"></a></li>
+                                    onclick="redirectToCart()"></a></li>
                         </ul>
 
                     </fieldset>
@@ -136,7 +138,14 @@
     <!-- PRODUCT DETAIL PAGE -->
     <main class="product-detail">
 
+        <!-- Pre-load Start -->
+        <div class="container-loader-product-detail">
+            <div class="loader"></div>
+        </div>
+        <!-- Pre-load End -->
+
         <div class="product-detail-container" id="productDetailContainer">
+
             <div class="row">
                 <div class="col-xs-12 col-sm-6 item-photo">
                     <img style="max-width:90%;" class="img-fluid mx-auto d-block image img-zoomable"
@@ -498,7 +507,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -647,13 +656,21 @@
                     <span class="title-area title-similar-products">Similar Products</span>
                     <div class="container-similar-products">
 
+                        <!-- Pre-load Start -->
+                        <div class="container-loader-scroll-list">
+                            <div class="loader"></div>
+                        </div>
+                        <!-- Pre-load End -->
+
                         <div class="scrolling-container">
                             <button class="arrow-btn left-arrow" onclick="scrollLeftSM()"><i
                                     class="fa-solid fa-angle-left"></i></i></button>
                             <div class="scrolling-wrapper" id="listScrollCard">
                                 <!-- List product cards -->
 
-                                <div class="card">
+
+
+                                <!-- <div class="card">
                                     <span class="tag-product"> New Product </span>
                                     <span class="heart-icon"> <i class="fa-solid fa-heart"></i> </span>
                                     <img src="../image/products/Product_Mfoody.png" class="card-img-top" alt="...">
@@ -798,7 +815,7 @@
                                                     class="fa-solid fa-magnifying-glass"></i></a></button>
                                         <button class="to-cart"><i class="fa-solid fa-cart-plus"></i></button>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <button class="arrow-btn right-arrow" onclick="scrollRightSM()"><i
                                     class="fa-solid fa-angle-right"></i></button>
@@ -815,6 +832,12 @@
                 <div class="more-products">
                     <span class="title-area title-more-products">More Products</span>
                     <div class="container-more-products">
+
+                        <!-- Pre-load Start -->
+                        <div class="container-loader-table-product">
+                            <div class="loader"></div>
+                        </div>
+                        <!-- Pre-load End -->
 
                         <div id="productList" class="row productList">
                             <!-- Product cards will be appended here -->
@@ -883,17 +906,17 @@
                         <div id="categories-4" class="widget_categories">
                             <h6 class="name_column">Products</h6>
                             <ul>
-                                <li class="cat-item cat-item-1"><a href="#">Spice & Condiments</a>
+                                <li class="cat-item cat-item-1"><a href="catalog_demo_search_category.html?category=Специи и приправы и пряности">Spice & Condiments</a>
                                 </li>
-                                <li class="cat-item cat-item-2"><a href="#">Hard-shelled Nuts</a>
+                                <li class="cat-item cat-item-2"><a href="catalog_demo_search_category.html?category=Орехи и семечки">Hard-shelled Nuts</a>
                                 </li>
-                                <li class="cat-item cat-item-3"><a href="#">Vegetables</a>
+                                <li class="cat-item cat-item-3"><a href="catalog_demo_search_category.html?category=Овощи">Vegetables</a>
                                 </li>
-                                <li class="cat-item cat-item-4"><a href="#">Jam & Syrup</a>
+                                <li class="cat-item cat-item-4"><a href="catalog_demo_search_category.html?category=Варенье, джемы и сиропы">Jam & Syrup</a>
                                 </li>
-                                <li class="cat-item cat-item-5"><a href="#">Cereals & Beans</a>
+                                <li class="cat-item cat-item-5"><a href="catalog_demo_search_category.html?category=Крупы и бобовые">Cereals & Beans</a>
                                 </li>
-                                <li class="cat-item cat-item-6"><a href="#">Fresh & Dried Fruits</a>
+                                <li class="cat-item cat-item-6"><a href="catalog_demo_search_category.html?category=Смеси орехов и сухофруктов">Fresh & Dried Fruits</a>
                                 </li>
                             </ul>
 

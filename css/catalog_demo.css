@@ -2353,6 +2353,31 @@ body {
   scale: 1.2;
 }
 
+.container-loader-splider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  height: 100px;
+  width: 100%;
+}
+.container-loader-splider .loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #AAE640;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (min-width: 1200px) {
   .splide__slide {
     flex-basis: 33.3333333333%;
@@ -2442,6 +2467,14 @@ body {
     transform: scale(1);
   }
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .more-products {
   position: relative;
 }
@@ -2494,6 +2527,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  display: none;
 }
 .more-products .container-more-products .productList .card {
   margin: 5px;
@@ -2659,6 +2693,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  display: none;
 }
 .more-products .container-more-products .pagination-container .pagination-btn {
   background-color: #f1f1f1;
@@ -2677,6 +2712,31 @@ body {
   display: flex;
 }
 
+.container-loader-table-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  height: 100px;
+  width: 100%;
+}
+.container-loader-table-product .loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #AAE640;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .catalog-full-list {
   zoom: 0.8;
   margin-top: 150px;
@@ -2740,6 +2800,9 @@ body {
   height: 15px;
   background-color: #DEDDDC;
   border-radius: 50%;
+}
+.catalog-full-list .container-product-slider {
+  display: none;
 }
 .catalog-full-list .container-catalog-full-list {
   max-width: 1600px;

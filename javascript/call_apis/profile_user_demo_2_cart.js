@@ -96,14 +96,23 @@ function renderCartOfUser(cartOfCurrentUser) {
         `;
     }
 
-    if(contentHTML === ''){
+    if (contentHTML === '') {
         // $("#checkInformation").hide();
-        contentHTML+=`
+        contentHTML += `
         <div class="empty-content-HTML">
             <span class= "empty-content-HTML-span"> Your Cart is Empty</span>
         </div>`
+
+        document.getElementById("content-container-shopping-cart").style.cssText = "padding: 0 !important;";
+        document.getElementById("content-container-shopping-cart").style.cssText = "margin: 0 !important;";
+        document.getElementById("content-container-shopping-cart").innerHTML = contentHTML;
+    } else {
+        document.querySelector('.content-container').style.display = 'flex';
+        document.getElementById("listProductsInCart").innerHTML = contentHTML;
+
+        // Preload process
+        document.querySelector('.container-loader-cart').style.display = 'none';
     }
-    document.getElementById("listProductsInCart").innerHTML = contentHTML;
 
     $('.product-quantity input').off('change').on('change', function () {
         updateQuantity(this);
@@ -128,9 +137,9 @@ $('#checkout-btn').on('click', async function () {
         await addArrayDetailProductOrderByIDsOfCurrentUserApi(arrayObDPO);
         await deleteAllDetailProductCartByIdCartApi(cartOfCurrentUser.idCart);
         showAlert('Your Order created successfully!', 2000, 'mfoody_success');
-      } catch (error) {
+    } catch (error) {
         console.log(error);
-      }
+    }
 });
 
 // Procces Cart and Order

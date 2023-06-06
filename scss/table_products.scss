@@ -132,6 +132,8 @@ $text-c10-grey: #172033;
 
             justify-content: center;
 
+            display: none;
+
             .card {
                 margin: 5px;
                 margin-bottom: 10px;
@@ -327,6 +329,7 @@ $text-c10-grey: #172033;
             justify-content: center;
             align-items: center;
             margin-top: 10px;
+            display: none;
 
             .pagination-btn {
                 background-color: #f1f1f1;
@@ -352,3 +355,31 @@ $text-c10-grey: #172033;
 }
 
 // More Product End
+
+.container-loader-table-product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    height: 100px;
+    width: 100%;
+
+    .loader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid $text-c1-primary;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

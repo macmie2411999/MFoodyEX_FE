@@ -142,6 +142,10 @@ async function renderProductsToScrollList(arrayProducts) {
         `
     }
     document.getElementById("listScrollCard").innerHTML = contentHTML;
+
+    // Preload process
+    document.querySelector('.scrolling-container').style.display = 'flex';
+    document.querySelector('.container-loader-scroll-list').style.display = 'none';
 }
 
 // Process Modal

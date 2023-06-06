@@ -363,12 +363,16 @@ async function renderDetailProduct(product) {
         </div>
     </div>
     `;
-
+    
     document.getElementById("productDetailContainer").innerHTML = contentHTML;
+
+    document.querySelector('.container-loader-product-detail').style.display = 'none';
+    document.querySelector('.product-detail-container').style.display = 'block';
+    document.querySelector('.bottom-product-detail').style.display = 'block';
 }
 
 async function renderProductsToScrollList(arrayProducts) {
-    console.log("Render renderProductsToSplider");
+    console.log("Render renderProductsToScrollList");
     let contentHTML = '';
     let tempPrice = '';
     let toCartButtonHTML = '';
@@ -470,6 +474,10 @@ async function renderProductsToScrollList(arrayProducts) {
         `
     }
     document.getElementById("listScrollCard").innerHTML = contentHTML;
+
+    // Preload process
+    document.querySelector('.scrolling-container').style.display = 'flex';
+    document.querySelector('.container-loader-scroll-list').style.display = 'none';
 }
 
 function renderCommentsAndRatingPart1(product) {
@@ -754,6 +762,11 @@ function showProducts() {
         }
 
         productList.removeClass("fade");
+
+        // Preload process
+        document.querySelector('#productList').style.display = 'flex';
+        document.querySelector('.pagination-container').style.display = 'flex';
+        document.querySelector('.container-loader-table-product').style.display = 'none';
     }, 500);
 }
 

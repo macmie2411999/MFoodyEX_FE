@@ -158,6 +158,10 @@ $text-c10-grey: #172033;
 
     }
 
+    .container-product-slider {
+        display: none;
+    }
+
     .container-catalog-full-list {
         max-width: 1600px;
         margin-right: auto;
@@ -217,10 +221,11 @@ $text-c10-grey: #172033;
 
             .title-area {
                 text-align: left;
-                font-size: 2rem;;
+                font-size: 2rem;
+                ;
                 opacity: 0.9;
                 color: #4da56a !important;
-                font-family: "Jost",sans-serif !important;
+                font-family: "Jost", sans-serif !important;
             }
 
             .tags-product {
@@ -287,15 +292,17 @@ $text-c10-grey: #172033;
                             margin-top: 10px;
 
                             // Splide SCSS Start
-                            
+
                             // Splide SCSS End
                         }
                     }
                 }
             }
+
         }
     }
 }
+
 // Main Style End
 
 // -------------------------------------------------- FOR ALL --------------------------------------------------
@@ -306,4 +313,5 @@ $text-c10-grey: #172033;
         display: none;
     }
 }
+
 // Side bar RES End

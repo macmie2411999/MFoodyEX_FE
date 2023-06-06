@@ -89,12 +89,12 @@ function searchProducts(searchValue) {
 
 // Render
 function renderProductsToSpliderss() {
-    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 40), 'list_product_sale_off', "Discount");
-    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 40), 'list_product_top_rate', "Best");
+    renderProductsToSplider(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 40), 'list_product_sale_off', "Discount", "1");
+    renderProductsToSplider(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 40), 'list_product_top_rate', "Best", "2");
 }
 
 // Call APIs
-function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduct) {
+function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduct, stt) {
     console.log("Render renderProductsToSplider");
     let contentHTML = '';
     let tempPrice = '';
@@ -162,6 +162,8 @@ function renderProductsToSplider(arrayProducts, idElementListProducts, tagProduc
             `;
     }
     document.getElementById(idElementListProducts).innerHTML = contentHTML;
+    document.querySelector('#container-product-slider-' + stt).style.display = 'block';
+    document.querySelector('.container-loader-splider-' + stt).style.display = 'none';
 }
 
 // Process Modal
@@ -369,6 +371,11 @@ function showProducts() {
         }
 
         productList.removeClass("fade-list-products");
+
+        // Preload process
+        document.querySelector('#productList').style.display = 'flex';
+        document.querySelector('.pagination-container').style.display = 'flex';
+        document.querySelector('.container-loader-table-product').style.display = 'none';
     }, 500);
 }
 
