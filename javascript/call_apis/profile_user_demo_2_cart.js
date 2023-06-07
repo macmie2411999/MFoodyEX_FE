@@ -9,10 +9,10 @@ import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCu
 import { deleteDetailProductCartByIDsOfCurrentUserApi, deleteAllDetailProductCartByIdCartApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
 import { addArrayDetailProductOrderByIDsOfCurrentUserApi } from './detail_product_order_apis.js';
 
-
 // Sundries variables
 let cartOfCurrentUser = [];
 let arrayAllProducts = [];
+let orderPage = "profile_user_demo_2_orders.html";
 
 // Process LocalStorage and Check Cookies
 localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
@@ -137,6 +137,9 @@ $('#checkout-btn').on('click', async function () {
         await addArrayDetailProductOrderByIDsOfCurrentUserApi(arrayObDPO);
         await deleteAllDetailProductCartByIdCartApi(cartOfCurrentUser.idCart);
         showAlert('Your Order created successfully!', 2000, 'mfoody_success');
+        setTimeout(() => {
+            window.location.href = orderPage;
+        }, 2000);
     } catch (error) {
         console.log(error);
     }

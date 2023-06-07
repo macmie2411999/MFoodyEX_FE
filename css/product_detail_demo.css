@@ -2602,7 +2602,7 @@ body {
   border-radius: 12px;
   list-style-type: none;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .menu-items li {
   width: 100%;
@@ -2617,11 +2617,11 @@ body {
   margin: 0px 4px;
   border-bottom: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .menu-items .active {
   background-color: #fff;
-  color: #000;
+  color: #009f4d;
 }
 .product-detail .bottom-product-detail .container-bottom-product-detail .content-bottom-product-detail {
   margin-bottom: 20px;

@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/profile_user_demo_2.min.css">
-    <title>Favorite MFoody - Grocery Store</title>
+    <link rel="stylesheet" href="../css/slider_for_home.min.css">
+    <title>Catalog MFoody - Grocery Store</title>
     <link rel="icon" href="../image/icon/icon_gfgl_green_64.png">
 
     <!-- jQuery-->
@@ -56,10 +56,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide"></script>
 
+
 </head>
 
 <body>
-
     <!-- CUSTOM ALERT -->
     <div id="custom-alert" class="custom-alert">
         <span id="alert-message"></span>
@@ -67,315 +67,197 @@
     <!-- CUSTOM ALERT END-->
 
     <!-- HEADER -->
-    <nav class="navbar navbar-expand-lg navbar_top_header">
-        <div class="container-fluid container_navbar_top_header">
-            <a class="navbar-brand" href="#"><img width="auto" height="60" class="img-navbar-brand"
-                    src="../image/icon/icon_logo_brand_updated1_crop.png" alt="Company Logo">
-            </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse selection_container" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 list_selection">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="home_demo.html">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="catalog_demo.html">PRODUCTS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact_us_demo.html">CONTACT</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="about_us_demo.html">ABOUT</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog_demo.html">BLOG</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq_demo.html">FAQ'S</a>
-                    </li>
-                </ul>
-
-                <form class="header_right_section" action="#" method="GET">
-
-                    <fieldset class="container_header_right_section">
-
-                        <ul class="toolbar">
-                            <li class="container-search"><input type="search" id="search"
-                                    placeholder="What are you looking for?"></li>
-                            <li class="li-search">
-                                <button type="submit" id="btn-search">
-                                    <span class="fa-solid fa-search" id="span-search"></span>
-                                </button>
-                            </li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-heart"
-                                    onclick="redirectToFavorite()"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-user"
-                                    onclick="redirectToProfile()"></a></li>
-                            <li class="not-search"><a href="#" class="fa-solid fa-shopping-cart"
-                                    onclick="redirectToCart()"></a></li>
-                        </ul>
-
-                    </fieldset>
-
-                </form>
-
-            </div>
-        </div>
-    </nav>
     <!-- HEADER END -->
 
-    <!-- SIDEBAR PAGE -->
-    <main class="profile-full-list">
-        <div class="container-profile-full-list">
+    <!-- CATALOG PAGE -->
 
-            <!-- Sidebar  -->
-            <nav id="sidebar" class="sidebar">
+    <!-- <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-cross" viewBox="0 0 32 32">
+                <title>close</title>
+                <path
+                    d="M31.7 25.7L22 16l9.7-9.7a1 1 0 0 0 0-1.4L27.1.3a1 1 0 0 0-1.4 0L16 10 6.3.3a1 1 0 0 0-1.4 0L.3 4.9a1 1 0 0 0 0 1.4L10 16 .3 25.7a1 1 0 0 0 0 1.4l4.6 4.6a1 1 0 0 0 1.4 0L16 22l9.7 9.7a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z" />
+            </symbol>
+        </defs>
+    </svg> -->
 
-                <ul class="list-unstyled components">
-                    <li>
-                        <button>
-                            <i class="fa-regular fa-address-card fa-2xl"></i>
-                        </button>
-                        <a href="profile_user_demo_2.html" class="category">Information</a>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="fa-solid fa-receipt fa-2xl"></i>
-                        </button>
-                        <a href="profile_user_demo_2_orders.html" class="category">Orders</a>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="fa-solid fa-credit-card fa-2xl"></i>
-                        </button>
-                        <a href="#" class="category">Credit Cards</a>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="fa-solid fa-cart-shopping fa-2xl"></i>
-                        </button>
-                        <a href="profile_user_demo_2_cart.html" class="category">Cart</a>
-                    </li>
-                    <li class="active">
-                        <button>
-                            <i class="fa-solid fa-bookmark fa-2xl"></i>
-                        </button>
-                        <a href="profile_user_demo_2_favorites.html" class="category">Favorites</a>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="fa-solid fa-comments fa-2xl"></i>
-                        </button>
-                        <a href="#" class="category">Comments</a>
-                    </li>
-                    <!-- <li>
-                        <button>
-                            <i class="fa-solid fa-gear fa-2xl"></i>
-                        </button>
-                        <a href="#" class="category">Setting</a>
-                    </li> -->
-                    <li>
-                        <button>
-                            <i class="icon-log-out fa-solid fa-right-from-bracket fa-2xl"></i>
-                        </button>
-                        <a href="#" class="category a-log-out">Log Out</a>
-                    </li>
-                    <!-- <li>
-                        <button>
-                            <i class="icon-delete-account fa-solid fa-user-minus fa-2xl"></i>
-                        </button>
-                        <a href="#" class="category a-delete-account">Delete Account</a>
-                    </li> -->
-                </ul>
-            </nav>
+    <div class="slide-page" data-modal-state="closed">
+        <div class="container-slide-page">
+            <div class="card-slider">
 
-            <!-- Page Content  -->
-            <div class="main-content-favorites">
-                <!-- p_general_profile_user -->
-                <section class="default-profile-user">
-
-                    <div class="container py-5">
-                        <!-- BreadCrumb -->
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="header_demo_2.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Favorites</li>
-                            </ol>
-                        </nav>
-                        <!-- BreadCrumb End -->
-
-                        <!-- Deviding Line -->
-                        <div class="horizontal-line">
-                            <div class="circle"></div>
-                        </div>
-
-                        <div class="row list-favorites">
-                            <h2 class="title-bottom title-part"> Favorite Products</h2>
-                            <div class="col-12 container-list-favorites">
-
-                                <!-- <div class="filter-product">
-                                    <div class="container-filter-product">
-                                        <div class="filter-group">
-                                            <select class="form-select" id="sort-by">
-                                                <option value="date">Recently</option>
-                                                <option value="price price-high-to-low">Price: High to Low</option>
-                                                <option value="price price-low-to-high">Price: Low to High</option>
-                                                <option value="status status-canceled">Status: Canceled</option>
-                                                <option value="status status-processing">Status: Processing</option>
-                                                <option value="status status-received">Status: Received</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                                <!-- List Favorites Start -->
-                                <div class="more-products">
-                                    <div class="container-more-products">
-
-                                        <!-- Pre-load Start -->
-                                        <div class="container-loader-table-product">
-                                            <div class="loader"></div>
-                                        </div>
-                                        <!-- Pre-load End -->
-
-                                        <div id="productList" class="row productList">
-                                            <!-- Product cards will be appended here -->
-                                        </div>
-                                        <div class="pagination-container">
-                                            <button id="prevBtn" class="pagination-btn">Prev</button>
-                                            <div id="pagination" class="pagination">
-                                                <!-- Pagination buttons will be appended here -->
-                                            </div>
-                                            <button id="nextBtn" class="pagination-btn">Next</button>
-                                        </div>
-                                    </div>
+                <div class="card-wrapper">
+                    <article class="card card-carousel-hp">
+                        <picture class="card__background">
+                            <img src="../image/pages/home_carousel_1.avif">
+                        </picture>
+                        
+                        <h3 class="card__title">Asesoría Angelical</h3>
+                        <div class="content-card">
+                            <div class="container-content-card">
+                                <div class="card__duration">
+                                    Duración: 3 horas Duración: 3 horas Duración: 3 horas Duración: 3 horas
                                 </div>
-                                <!-- List Favorites End -->
-
-                            </div>
+                            </div> 
                         </div>
-                    </div>
-                </section>
-                <!-- p_general_profile_user End -->
-            </div>
-        </div>
-    </main>
-    <!-- SIDEBAR PAGE END -->
+                        
+                        <button class="card__category">
+                            See More
+                        </button>
+                    </article>
+                </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer_embrace ">
-            <div class="footer_container py-md-4">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 column_mfoody_infor">
-
-                        <div class="footer_logo mb-4">
-                            <a class="navbar-brand" href="#"><img width="auto" height="90"
-                                    src="../image/icon/icon_logo_brand_updated3_crop.png" alt="Company Logo">
-                            </a>
+                <div class="card-wrapper">
+                    <article class="card card-carousel-hp">
+                        <picture class="card__background">
+                            <img src="../image/pages/home_carousel_2.avif">
+                        </picture>
+                        
+                        <h3 class="card__title">Asesoría Angelical</h3>
+                        <div class="content-card">
+                            <div class="container-content-card">
+                                <div class="card__duration">
+                                    Duración: 3 horas Duración: 3 horas Duración: 3 horas Duración: 3 horas
+                                </div>
+                            </div> 
                         </div>
+                        
+                        <button class="card__category">
+                            See More
+                        </button>
+                    </article>
+                </div>
 
-                        <p class="content_company"> <a>Mfoody is a company specializing in the sale of fresh and healthy
-                                food items, including Vegetables, Cereals & Beans, Fruits, and more. With a commitment
-                                to
-                                quality and sustainability, Mfoody sources its products from trusted suppliers and
-                                delivers them
-                                straight to customers' doors, making it easier than ever to eat well and live well.</a>
-                        </p>
-
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 pr-lg-5 mt-md-0 mt-5 column_contact_info">
-                        <h6 class="name_column">Contact Infomation </h6>
-
-                        <p class="content_contact_info mb-2">
-                            Address : MFoody Store, Moscow, Russia </p>
-
-                        <p class="content_contact_info mb-2">Phone Number : <a href="tel:89653682225">
-                                +7(965) 368 22-25</a></p>
-
-                        <p class="content_contact_info mb-2">Email : <a href="mailto:caoducmanh2411999@gmail.com">
-                                mfoodystore@gmail.com</a></p>
-
-                        <p class="content_contact_info mb-2">Support : <a href="mailto:caoducmanh2411999@support.com">
-                                mfoodysupport@gmail.com</a></p>
-
-                        <p class="content_contact_info mb-2">
-                            Our working hours are from 9:00 AM to 5:00 PM from Monday to Friday. Contact us via email or
-                            leave a message for afterhours support. </p>
-
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 mt-lg-0 mt-5 column_categories">
-                        <div id="categories-4" class="widget_categories">
-                            <h6 class="name_column">Products</h6>
-                            <ul>
-                                <li class="cat-item cat-item-1"><a href="catalog_demo_search_category.html?category=Специи и приправы и пряности">Spice & Condiments</a>
-                                </li>
-                                <li class="cat-item cat-item-2"><a href="catalog_demo_search_category.html?category=Орехи и семечки">Hard-shelled Nuts</a>
-                                </li>
-                                <li class="cat-item cat-item-3"><a href="catalog_demo_search_category.html?category=Овощи">Vegetables</a>
-                                </li>
-                                <li class="cat-item cat-item-4"><a href="catalog_demo_search_category.html?category=Варенье, джемы и сиропы">Jam & Syrup</a>
-                                </li>
-                                <li class="cat-item cat-item-5"><a href="catalog_demo_search_category.html?category=Крупы и бобовые">Cereals & Beans</a>
-                                </li>
-                                <li class="cat-item cat-item-6"><a href="catalog_demo_search_category.html?category=Смеси орехов и сухофруктов">Fresh & Dried Fruits</a>
-                                </li>
-                            </ul>
-
+                <div class="card-wrapper">
+                    <article class="card card-carousel-hp">
+                        <picture class="card__background">
+                            <img src="../image/pages/home_carousel_3.jpeg">
+                        </picture>
+                        
+                        <h3 class="card__title">Asesoría Angelical</h3>
+                        <div class="content-card">
+                            <div class="container-content-card">
+                                <div class="card__duration">
+                                    Duración: 3 horas Duración: 3 horas Duración: 3 horas Duración: 3 horas
+                                </div>
+                            </div> 
                         </div>
-                    </div>
+                        
+                        <button class="card__category">
+                            See More
+                        </button>
+                    </article>
+                </div>
 
-                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 mt-lg-0 mt-5 column_follow_us">
-                        <div id="follow_us-4" class="widget_follow_us">
-                            <h6 class="name_column">Follow Us</h6>
-                            <div class="container_follow_us mt-md-4 mt-3">
-                                <ul>
-                                    <li><a href="https://www.facebook.com/mie.mac.378" class="facebook">
-                                            <span class="fab fa-facebook-square fa-lg"></span>
-                                            <span style="padding-left: 5px">Facebook</span>
-                                        </a></li>
-                                    <li><a href="https://github.com/macmie2411999" class="github">
-                                            <span class="fab fa-github-square fa-lg"></span>
-                                            <span style="padding-left: 5px">Github</span>
-                                        </a></li>
-                                    <li><a href="https://twitter.com" class="twitter">
-                                            <span class="fab fa-twitter-square fa-lg"></span>
-                                            <span style="padding-left: 5px">Twitter</span>
-                                        </a></li>
-                                    <li><a href="https://instagram.com" class="instagram">
-                                            <span class="fab fa-instagram-square fa-lg"></span>
-                                            <span style="padding-left: 5px">Instagram</span>
-                                        </a></li>
-                                    <li><a href="https://in.linkedin.com" class="linkedin">
-                                            <span class="fab fa-linkedin-in fa-lg"></span>
-                                            <span style="padding-left: 5px">Linked In</span>
-                                        </a></li>
-                                </ul>
-                            </div>
+                <div class="card-wrapper">
+                    <article class="card card-carousel-hp">
+                        <picture class="card__background">
+                            <img src="../image/pages/home_carousel_4.avif">
+                        </picture>
+                        
+                        <h3 class="card__title">Asesoría Angelical</h3>
+                        <div class="content-card">
+                            <div class="container-content-card">
+                                <div class="card__duration">
+                                    Duración: 3 horas Duración: 3 horas Duración: 3 horas Duración: 3 horas
+                                </div>
+                            </div> 
                         </div>
-                    </div>
+                        
+                        <button class="card__category">
+                            See More
+                        </button>
+                    </article>
+                </div>
+
+                <div class="card-wrapper">
+                    <article class="card card-carousel-hp">
+                        <picture class="card__background">
+                            <img src="../image/pages/home_carousel_5.avif">
+                        </picture>
+                        
+                        <h3 class="card__title">Asesoría Angelical</h3>
+                        <div class="content-card">
+                            <div class="container-content-card">
+                                <div class="card__duration">
+                                    Duración: 3 horas Duración: 3 horas Duración: 3 horas Duración: 3 horas
+                                </div>
+                            </div> 
+                        </div>
+                        
+                        <button class="card__category">
+                            See More
+                        </button>
+                    </article>
+                </div>
+
+                <div class="card-wrapper">
+                    <article class="card card-carousel-hp">
+                        <picture class="card__background">
+                            <img src="../image/pages/home_carousel_6.avif">
+                        </picture>
+                        
+                        <h3 class="card__title">Asesoría Angelical</h3>
+                        <div class="content-card">
+                            <div class="container-content-card">
+                                <div class="card__duration">
+                                    Duración: 3 horas Duración: 3 horas Duración: 3 horas Duración: 3 horas
+                                </div>
+                            </div> 
+                        </div>
+                        
+                        <button class="card__category">
+                            See More
+                        </button>
+                    </article>
                 </div>
 
             </div>
         </div>
 
-        <!-- COPY RIGHT -->
-        <section class="copyright text-center">
-            <div class="copyright_container">
-                <p class="content_copyright">&copy; 2023 <a href="#">
-                        MFoody </a> All Rights Reserved
-                </p>
+        <div class="overlay"></div>
+        
+        <div class="modal-wrapper">
+            <div class="modal">
+                <button class="modal__close-button" type="button">
+                    <svg class="icon icon-cross">
+                        <use xlink:href="#icon-cross"></use>
+                    </svg>
+                </button>
+                <div class="modal__scroll-area">
+                    <header class="modal__header">
+                        <div class="card__background">
+                            <img src="../image/pages/home_carousel_1.avif">
+                        </div>
+                        <button class="card__category">
+                            See More
+                        </button>
+                        <h1 class="card__title">Asesoría Angelical</h1>
+                        <div class="card__duration">
+                            Duración: 3 horas
+                        </div>
+                    </header>
+                    <main class="modal__content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem
+                            est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro
+                            atque eligendi rerum vero nam?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem
+                            est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro
+                            atque eligendi rerum vero nam?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem
+                            est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro
+                            atque eligendi rerum vero nam?</p>
+                    </main>
+                </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-    </footer>
+    <!-- CATALOG PAGE END -->
+
+    <!-- FOOTER -->
+
     <!-- FOOTER END -->
 
     <!-- Redirect -->
@@ -591,11 +473,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Import JS -->
-    <script type="module" src="../javascript/call_apis/profile_user_demo_2_favorites.js"></script>
-    <script type="module" src="../javascript/call_apis/logout.js"></script>
-    <script type="module" src="../javascript/call_apis/favorite_list_products_apis.js"></script>
-    <script type="module" src="../javascript/call_apis/favorite_products_apis.js"></script>
+    <script type="module" src="../javascript/slider_for_home.js"></script>
     <script src="../javascript/call_apis/processProducts.js"></script>
+    <script src="../javascript/call_apis/processComments.js"></script>
     <script src="../javascript/call_apis/proccessCart.js"></script>
     <script src="../javascript/util/LocalStorageFunction.js"></script>
     <script src="../javascript/call_apis/localStorageAndCookieProcess.js"></script>
@@ -605,8 +485,10 @@
     <script src="../javascript/p_header_right_section.js"></script>
     <script src="../javascript/show_alert_mfoody.js"></script>
     <script src="../javascript/catalog_show_element_in_ul.js"></script>
-    <script src="../javascript/p_sidebar_sample.js"></script>
-    <script src="../javascript/profile_user_demo_sidebar.js"></script>
+    <script type="module" src="../javascript/slide_product_card_demo_2.js"></script>
+    <script src="../javascript/slide_product_card.js"></script>
+    <!-- <script type="module" src="../javascript/list_catalog_products_10per.js"></script> -->
+
 
 </body>
 

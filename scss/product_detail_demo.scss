@@ -528,7 +528,7 @@ $text-c11-grey: #151421;
                 border-radius: 12px;
                 list-style-type: none;
                 text-align: center;
-                transition: all 0.3s ease;
+                transition: all 0.5s ease;
 
                 li {
                     width: 100%;
@@ -543,12 +543,12 @@ $text-c11-grey: #151421;
                     margin: 0px 4px;
                     border-bottom: none;
                     cursor: pointer;
-                    transition: all 0.3s ease;
+                    transition: all 0.5s ease;
                 }
 
                 .active {
                     background-color: #fff;
-                    color: #000;
+                    color: $text-c3-primary;
                 }
             }
 

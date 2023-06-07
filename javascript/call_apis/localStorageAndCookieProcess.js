@@ -1,7 +1,7 @@
 // import { index_page_local , signin_signup_page_local, catalog_page_local} from './default_urls_page.js'
 
-let homePage = "http://127.0.0.1:5501/html/header_demo_2.html";
-let signInPage = "http://127.0.0.1:5501/html/signin_signup_demo.html";
+let homePage = "header_demo_2.html";
+let signInPage = "signin_signup_demo.html";
 
 let localStorageCookiesProcess = {
 
