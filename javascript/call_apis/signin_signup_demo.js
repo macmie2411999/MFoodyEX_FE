@@ -272,7 +272,7 @@ function getUserByEmailApi(tokenLogin, userName) {
 
             if (currentUser.roleUser === "USER") {
                 // Direct to admin main page
-                window.location.href = pageUrls.catalog_page_local;
+                window.location.href = pageUrls.home_page_local;
             } else if (currentUser.roleUser === "ADMIN") {
                 localStorageCookiesProcess.removeAllMfoodyObjects();
                 showAlert('Your have role invalid!', 2000, 'mfoody_fail');

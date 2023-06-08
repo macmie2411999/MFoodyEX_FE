@@ -19,6 +19,10 @@ let arrayFavoriteProducts = [];
 let idFavoriteListProducts = '';
 let cartOfCurrentUser = [];
 let userSignedIn = localStorageCookiesProcess.checkUserRole();
+if (userSignedIn) {
+    // Hide Subscribe
+    document.querySelector('#subscribeMfoody').style.display = 'none';
+}
 let searchResults = localStorage.getItem('MFoody - searchResults')
   ? JSON.parse(localStorage.getItem('MFoody - searchResults'))
   : {};

@@ -101,6 +101,11 @@ export const detailProductCartUrls = {
   // favorite_product_deleteByIDs_local: baseURL + "favoriteProduct/delete/idFavoriteListProducts/350060/idProduct/530022",
 };
 
+// Subscriber
+export const subscriberUrls = {
+  subscriber_add_local: baseURL + "subscriber/add",
+};
+
 // Application
 export const applicationUrls = {
   application_login_local: baseURL + "applicationMfoody/login",

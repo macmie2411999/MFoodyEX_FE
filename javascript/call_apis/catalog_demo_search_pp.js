@@ -19,6 +19,10 @@ let arrayFavoriteProducts = [];
 let idFavoriteListProducts = '';
 let cartOfCurrentUser = [];
 let userSignedIn = localStorageCookiesProcess.checkUserRole();;
+if (userSignedIn) {
+    // Hide Subscribe
+    document.querySelector('#subscribeMfoody').style.display = 'none';
+}
 
 // Get key from URL
 const searchParams = new URLSearchParams(window.location.search);

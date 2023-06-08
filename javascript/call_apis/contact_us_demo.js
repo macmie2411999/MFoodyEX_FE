@@ -5,6 +5,12 @@ import { token_admin, token_user } from './default_tokens.js';
 import { addFeedBackMailMfoodyApi } from './feed_back_mail_apis.js';
 import { feedbackUrls } from './default_apis.js';
 
+let userSignedIn = localStorageCookiesProcess.checkUserRole();
+if (userSignedIn) {
+    // Hide Subscribe
+    document.querySelector('#subscribeMfoody').style.display = 'none';
+}
+
 // **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
 
 document.getElementById('feed_back_form').addEventListener('submit', function(event) {

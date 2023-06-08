@@ -1,16 +1,16 @@
 // -by Mac Mie
-// Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
 import { getAllProducts } from './products_apis.js';
-import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 import { getFavoriteListOfCurrentUser } from './favorite_list_products_apis.js';
 import { deleteFavoriteProductByIDsOfCurrentUserApi, addFavoriteProductByIDsOfCurrentUserApi } from './favorite_products_apis.js';
 import { deleteDetailProductCartByIDsOfCurrentUserApi, addDetailProductCartByIDsOfCurrentUserApi } from './detail_product_cart_apis.js';
+import { getCartOfCurrentUser, getCartOfCurrentUserApi } from './cart_apis.js';
 
 // Process LocalStorage and Check Cookies
 // localStorageCookiesProcess.checkTokenAndUserInformationAtOtherPages();
-
+const productsPerPage = 10;
+let currentPage = 1;
 let productsGeneral = [];
 let arrayAllProducts = [];
 let favoriteListOfCurrentUser = [];
@@ -23,13 +23,18 @@ if (userSignedIn) {
     document.querySelector('#subscribeMfoody').style.display = 'none';
 }
 
-// **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
-
 async function run() {
     arrayAllProducts = await getAllProducts(); // Add await here
-    // favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
-    // idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
-    // arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+
+    if (userSignedIn) {
+        // If product already in Cart
+        cartOfCurrentUser = await getCartOfCurrentUser(); // Add await here
+
+        // If product already in Favorite List
+        favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
+        idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
+        arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
+    }
 
     productsGeneral = processlistProducts.getRandomProducts(
         processlistProducts.getRemainingProducts(
@@ -38,15 +43,18 @@ async function run() {
             processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 20),
             processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 20)), 100);
 
-    renderProductsToScrollList(productsGeneral);
-
+    renderProductsToScrollList(processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 40), "New", "listScrollCard_newProduct", "new-product");
+    renderProductsToScrollList(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 40), "Discount", "listScrollCard_discountProduct", "discount-product");
+    renderProductsToScrollList(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 40), "Best", "listScrollCard_bestProduct", "best-product");
+    renderProductsToScrollList(processlistProducts.sortByPopularityDesc(arrayAllProducts).slice(0, 40), "Popular", "listScrollCard_popularProduct", "popular-product");
+    // showProducts();
+    // updatePagination();
 }
 
 run();
 
-
 // Render
-async function renderProductsToScrollList(arrayProducts) {
+async function renderProductsToScrollList(arrayProducts, tagProduct, idSrollList, nameSrollList) {
     console.log("Render renderProductsToSplider");
     let contentHTML = '';
     let tempPrice = '';
@@ -63,7 +71,6 @@ async function renderProductsToScrollList(arrayProducts) {
         favoriteListOfCurrentUser = await getFavoriteListOfCurrentUser(); // Add await here
         idFavoriteListProducts = favoriteListOfCurrentUser.idFavoriteListProducts;
         arrayFavoriteProducts = processlistProducts.getFavoriteProducts(arrayAllProducts, favoriteListOfCurrentUser.favoriteListProducts);
-
     }
 
     for (let product of arrayProducts) {
@@ -72,8 +79,7 @@ async function renderProductsToScrollList(arrayProducts) {
         let ratingClass = product.ratingProduct > 0 ? 'active-rating' : 'inactive-rating';
 
         // Create tags for the product
-        let tags = processlistProducts.generateProductTags(product, 4, 1, 40, '22/04/2023');
-        let tagsHtml = tags.map(tag => `<span class="tag-product ${tag}"> ${tag} </span>`).join('');
+        let tagsHtml = `<span class="tag-product ${tagProduct}"> ${tagProduct} </span>`
 
         // Process Price
         if (product.salePriceProduct === product.fullPriceProduct) {
@@ -146,11 +152,11 @@ async function renderProductsToScrollList(arrayProducts) {
         </div>
         `
     }
-    document.getElementById("listScrollCard").innerHTML = contentHTML;
+    document.getElementById(idSrollList).innerHTML = contentHTML;
 
     // Preload process
-    document.querySelector('.scrolling-container').style.display = 'flex';
-    document.querySelector('.container-loader-scroll-list').style.display = 'none';
+    document.querySelector('.scrolling-container-' + nameSrollList).style.display = 'flex';
+    document.querySelector('.container-loader-scroll-list-' + nameSrollList).style.display = 'none';
 }
 
 // Process Modal
@@ -262,6 +268,10 @@ $(document).on('click', '.heart-icon', async function (event) {
         } else {
             await deleteFavoriteProductByIDsOfCurrentUserApi(idFavoriteListProducts, productId);
         }
+
+        // // Re-load
+        // showProducts();
+        // updatePagination();
     } else {
         showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }
@@ -286,14 +296,22 @@ $(document).on('click', '.to-cart', async function (event) {
 
             // Thay đổi class của icon
             const iconElement = $(this).find('svg.fa-cart-plus');
+            console.log("icon1: " + iconElement.attr('class'));
             iconElement.attr('class', 'svg-inline--fa fa-check');
+            console.log("icon2: " + iconElement.attr('class'));
         } else {
             await deleteDetailProductCartByIDsOfCurrentUserApi(cartOfCurrentUser.idCart, productId);
 
             // Thay đổi class của icon
             const iconElement = $(this).find('svg.fa-check');
+            console.log("icon1: " + iconElement.attr('class'));
             iconElement.attr('class', 'svg-inline--fa fa-cart-plus');
+            console.log("icon2: " + iconElement.attr('class'));
         }
+
+        // // Re-load
+        // showProducts();
+        // updatePagination();
     } else {
         showAlert('You need to Sign In first!', 2000, 'mfoody_fail');
     }
@@ -301,12 +319,4 @@ $(document).on('click', '.to-cart', async function (event) {
     // Reload new data
     // await run();
 });
-
-
-
-
-
-
-
-
 

@@ -1,5 +1,4 @@
 // -by Mac Mie
-// Import class User
 
 import { token_admin, token_user } from './default_tokens.js';
 import { getAllProducts } from './products_apis.js';
@@ -18,7 +17,11 @@ let favoriteListOfCurrentUser = [];
 let arrayFavoriteProducts = [];
 let idFavoriteListProducts = '';
 let cartOfCurrentUser = [];
-let userSignedIn = localStorageCookiesProcess.checkUserRole();;
+let userSignedIn = localStorageCookiesProcess.checkUserRole();
+if (userSignedIn) {
+    // Hide Subscribe
+    document.querySelector('#subscribeMfoody').style.display = 'none';
+}
 
 // **** kiểm tra tính lỗi thời của dữ liệu bằng cách gọi api countTotal
 

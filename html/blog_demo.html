@@ -362,7 +362,6 @@
                                 <button class="arrow-btn right-arrow" onclick="scrollRightSM()"><i
                                         class="fa-solid fa-angle-right"></i></button>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -371,6 +370,25 @@
         </div>
     </main>
     <!-- CATALOG PAGE END -->
+
+    <!-- SUBSCRIBE -->
+    <section class="subscribe-mfoody py-5" id="subscribeMfoody">
+        <div class="container-subscribe-mfoody py-md-5 py-sm-4 py-2 HomePageNewsletter">
+            <div class="bottom-info">
+                <div class="header-section text-center">
+                    <h3 class="title-big">Subscribe Our Store To Get More Updates</h3>
+                    <p class="mt-3 pr-lg-5">Don't miss out on the opportunity to be the first to know and enjoy a
+                        seamless shopping experience. Join our community of subscribers today!</p>
+                </div>
+                <form class="subscribe mt-5" id="subscribe_form">
+                    <div class="input-group-text"><span class="fa fa-paper-plane"></span></div>
+                    <input class="input-email" type="email" name="email" placeholder="Your Email Address" required="">
+                    <button class="btn btn-style btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- SUBSCRIBE END -->
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -702,6 +720,7 @@
     <script src="../javascript/util/LocalStorageFunction.js"></script>
     <script src="../javascript/call_apis/localStorageAndCookieProcess.js"></script>
 
+    <script type="module" src="../javascript/call_apis/add_subscriber.js"></script>
     <script type="module" src="../javascript/slick_carousel_header_home.js"></script>
     <script type="module" src="../javascript/header_scroll_down.js"></script>
     <script src="../javascript/p_header_right_section.js"></script>
