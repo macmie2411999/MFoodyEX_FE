@@ -46,7 +46,7 @@ async function run() {
     renderProductsToScrollList(processlistProducts.sortByNewnessDesc(arrayAllProducts).slice(0, 40), "New", "listScrollCard_newProduct", "new-product");
     renderProductsToScrollList(processlistProducts.getDiscountedlistProducts(arrayAllProducts).slice(0, 40), "Discount", "listScrollCard_discountProduct", "discount-product");
     renderProductsToScrollList(processlistProducts.sortByRatingDesc(arrayAllProducts).slice(0, 40), "Best", "listScrollCard_bestProduct", "best-product");
-    renderProductsToScrollList(processlistProducts.sortByPopularityDesc(arrayAllProducts).slice(0, 40), "Popular", "listScrollCard_popularProduct", "popular-product");
+    renderProductsToScrollList(processlistProducts.sortByPopularityDesc(arrayAllProducts).slice(5, 40), "Popular", "listScrollCard_popularProduct", "popular-product");
     // showProducts();
     // updatePagination();
 }

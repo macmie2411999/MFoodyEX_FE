@@ -27,11 +27,12 @@ run();
 // Render
 function renderOdersOfUser(arrayAllOrdersOfCurrentUser) {
     let contentHTML = '';
-    let imgHTML = '';
     
+    console.log(arrayAllOrdersOfCurrentUser)
     let listDetailProductOrders = [];
     for (let order of arrayAllOrdersOfCurrentUser) {
         let tempPrice = '';
+        let imgHTML = '';
         // Process Images
         listDetailProductOrders = order.listDetailProductOrders;
         for (let detailProductOrder of listDetailProductOrders) {

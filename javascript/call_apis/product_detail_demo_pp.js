@@ -115,7 +115,7 @@ form.addEventListener('submit', (event) => {
                 })
                     .then(async function (response) {
                         console.log(response);
-                        alert('Comment added successfully!');
+                        showAlert('Comment added successfully!', 2000, 'mfoody_success');
 
                         // Save to LocalStorage new Data
                         arrayAllProducts = await getAllProductsApi();
@@ -127,7 +127,7 @@ form.addEventListener('submit', (event) => {
                     })
                     .catch(function (error) {
                         console.log(error);
-                        alert('Failed to add comment.');
+                        showAlert('Failed to add comment.', 2000, 'mfoody_fail');
                     });
             }
         });
